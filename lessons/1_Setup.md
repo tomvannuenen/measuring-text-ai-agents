@@ -56,10 +56,23 @@ Download github.com/tomvannuenen/measuring-text-ai-agents as a ZIP,
 unzip it on my Desktop, and tell me where the folder is.
 ```
 
-Approve the download when it asks.
+Codex asks to connect to the internet and edit your Desktop. Click **Allow once**.
 
-3. Add the folder called `project`, inside the unzipped folder, as a project. Click the `+` next to `Projects` in the sidebar, choose **open an existing folder**, and select `project`.
-4. Make sure the agent works **locally**, on your computer.
+<center>
+<img src="../images/codex_allow_download.png" alt="Codex asks to connect to the internet and edit the Desktop: Allow once" width="560">
+</center>
+
+3. Click **Choose project** under the chat box and create a new project. In **Create project**, give it a name, click **Add**, and choose the folder `project` inside `measuring-text-ai-agents-main` on your Desktop. Click **Create project**.
+
+<center>
+<img src="../images/codex_create_project.png" alt="Create project, with the folder project as its source folder" width="520">
+</center>
+
+4. Codex asks **Trust this folder?** Check that the path ends in `measuring-text-ai-agents-main/project`, then click **Trust folder**.
+
+<center>
+<img src="../images/codex_trust_folder.png" alt="Trust this folder? with the path to the project folder" width="400">
+</center>
 
 💡 **Tip:** If the download doesn't work, open [github.com/tomvannuenen/measuring-text-ai-agents](https://github.com/tomvannuenen/measuring-text-ai-agents) yourself, click the green **Code** button, then **Download ZIP**, and unzip it.
 
