@@ -106,10 +106,17 @@ they are hostile, and tell me how reliable the labels are.
 
 Approve what it asks. It takes a few minutes; we look at the slides meanwhile.
 
+If it labels nothing, ask:
+
+```
+So you did not label anything, like I asked?
+```
+
 🔔 **Questions:**
-- Did it call a language model, or label the comments itself?
-- Did it use the `hostile` column? When?
-- What did it report as "reliable"? Did it label anything twice?
+- Did it write code, or read the comments and decide? Click "Worked for …" above its reply to see each step.
+- Did it mention the `hostile` column?
+- What did it report as "reliable"? Which number?
+- Did it save its labels to a file? If so, how many of its labels match the `hostile` column?
 
 ## Conversations
 
