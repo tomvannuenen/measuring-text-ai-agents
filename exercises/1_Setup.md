@@ -87,7 +87,7 @@ The project folder looks like a small research project:
 
 Every comment comes with a **gold label** in the column `hostile` (yes or no). We coded these comments ourselves with a detailed codebook. They are our best reading, not the truth: for about one comment in five, a careful second coder could disagree.
 
-The rest of the download sits one level up, outside the project: these lessons, and a `backup` folder with results we prepared earlier, in case the internet or the API fails. Your agent doesn't need them.
+The rest of the download sits one level up, outside the project: these exercises, and a `backup` folder with results we prepared earlier, in case the internet or the API fails. Your agent doesn't need them.
 
 💡 **Tip:** Not sure where the folder is? Ask the agent: "What folder are we in? Give me the full path."
 

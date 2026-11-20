@@ -17,14 +17,14 @@ Then open only the folder called `project` as your Codex project. If the downloa
 
 ## The exercises
 
-1. [Setup](lessons/1_Setup.md)
-2. [Build the pipeline](lessons/2_Build_the_Pipeline.md)
-3. [Try it yourself](lessons/3_Try_It.md)
+1. [Setup](exercises/1_Setup.md)
+2. [Build the pipeline](exercises/2_Build_the_Pipeline.md)
+3. [Try it yourself](exercises/3_Try_It.md)
 
 ## The data
 
 The comments come from the Reddit forum r/AmItheAsshole, and they are in English. Each has our hand-coded label for hostility.
 
 - `project/`: the data, as a small research project. This is the folder your agent works in.
-- `lessons/`: the three exercises.
+- `exercises/`: the three exercises.
 - `backup/`: results we prepared earlier, in case the internet or the API fails.

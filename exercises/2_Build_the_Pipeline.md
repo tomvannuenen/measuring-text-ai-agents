@@ -60,7 +60,7 @@ Then we'll look at the room's answers, Qwen's labels and our gold labels.
 - On which comments did the room agree? On which did it split?
 - Where the room split, was the comment unclear, or the codebook?
 
-Write down a rule that would settle each split. You'll need them in lesson 3.
+Write down a rule that would settle each split. You'll need them in exercise 3.
 
 <a id='section3'></a>
 

@@ -144,11 +144,11 @@ End with a section "Decisions I did not ask for", listing every choice you made
 that I did not explicitly specify.
 ```
 
-Then go back to your first try in lesson 1, the one-sentence request. Put its answer next to your `WORKFLOW.md`.
+Then go back to your first try in exercise 1, the one-sentence request. Put its answer next to your `WORKFLOW.md`.
 
 🔔 **Question:** Which decisions did that first agent make without asking: model, definition, number of runs, the meaning of "reliable"? Did it use the gold-label column?
 
-📚 **More:** the folder `lessons/_full_version/` has the five-lesson version of this workshop. For the same study on Brazilian floor speeches, with Portuguese codebooks, ask the instructor for the `camara/` folder.
+📚 **More:** for a longer, five-part version of this workshop, or the same study on Brazilian floor speeches with Portuguese codebooks, ask the instructor.
 
 # Key Points
 
