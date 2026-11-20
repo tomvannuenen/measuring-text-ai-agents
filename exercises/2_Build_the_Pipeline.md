@@ -2,17 +2,15 @@
 
 ### Learning Objectives
 
-- Code short texts by hand with a simple codebook, and see where coders disagree.
 - Have an agent write a labeling script and run it.
 - Label 100 comments five times and read the reliability numbers.
 
 ### Sections
 1. [Today's Task](#section1)
-2. [Code Five Comments by Hand](#section2)
-3. [The Agent Builds the Pipeline](#section3)
-4. [Label 100 Comments, Five Times](#section4)
-5. [Send the Uncertain Comments to a Stronger Model](#section5)
-6. [Ask What It Decided](#section6)
+2. [The Agent Builds the Pipeline](#section3)
+3. [Label 100 Comments, Five Times](#section4)
+4. [Send the Uncertain Comments to a Stronger Model](#section5)
+5. [Ask What It Decided](#section6)
 
 <a id='section1'></a>
 
@@ -46,27 +44,11 @@ We coded every comment ourselves with a longer codebook. These **gold labels** a
 
 The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst). The comments come from a UC Berkeley course on computational social science.
 
-<a id='section2'></a>
-
-# Code Five Comments by Hand
-
-## 🥊 Challenge 2: You Are the Coder
-
-Scan the QR code on the screen and answer the form on your phone. For each comment, choose **yes** or **no**, using only the one-line codebook. Work alone, and take about four minutes.
-
-Then we'll look at the room's answers, Qwen's labels and our gold labels.
-
-🔔 **Questions:**
-- On which comments did the room agree? On which did it split?
-- Where the room split, was the comment unclear, or the codebook?
-
-Write down a rule that would settle each split. You'll need them in exercise 3.
-
 <a id='section3'></a>
 
 # The Agent Builds the Pipeline
 
-Now let the model code the same five comments, five times each. In a new conversation:
+Now let the model code the five comments you coded by hand in exercise 1, five times each. In a new conversation:
 
 ```
 Write a script label.py that labels the comments in a CSV file using a codebook file

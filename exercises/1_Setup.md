@@ -3,6 +3,7 @@
 ### Learning Objectives
 
 - Distinguish a chat assistant from a coding agent.
+- Code five comments by hand, and see where coders disagree.
 - Open the project folder in the Codex app and give the agent a first task in one sentence.
 - Set permissions and give the agent written rules in `AGENTS.md`.
 - Add the API key that lets your code call a language model.
@@ -16,10 +17,11 @@
 ### Sections
 1. [What Is a Coding Agent?](#section1)
 2. [Get the Project](#section2)
-3. [First Try: One Sentence](#section2b)
-4. [Permissions](#section3)
-5. [Give Your Agent Rules](#section4)
-6. [Add the API Key](#section5)
+3. [Code Five Comments by Hand](#section2a)
+4. [First Try: One Sentence](#section2b)
+5. [Permissions](#section3)
+6. [Give Your Agent Rules](#section4)
+7. [Add the API Key](#section5)
 
 <a id='section1'></a>
 
@@ -91,11 +93,33 @@ The rest of the download sits one level up, outside the project: these exercises
 
 💡 **Tip:** Not sure where the folder is? Ask the agent: "What folder are we in? Give me the full path."
 
+<a id='section2a'></a>
+
+# Code Five Comments by Hand
+
+## 🥊 Challenge 1: You Are the Coder
+
+Before any agent labels anything, you code a few comments yourself. Scan the QR code on the screen and answer the form on your phone. For each comment, choose **yes** or **no**, using only this question:
+
+```
+Is this comment hostile or insulting toward someone?
+```
+
+Work alone, and take about four minutes. Then we'll look at the room's answers, Qwen's labels and our gold labels.
+
+🔔 **Questions:**
+- On which comments did the room agree? On which did it split?
+- Where the room split, was the comment unclear, or the question?
+
+Write down a rule that would settle each split. You'll need them in exercise 3.
+
+These five comments are in `data/coder_5.csv`, with our gold labels in the column `hostile`.
+
 <a id='section2b'></a>
 
 # First Try: One Sentence
 
-## 🥊 Challenge 1: Just Ask
+## 🥊 Challenge 2: Just Ask
 
 Before any rules or settings, give the agent the task the way many people would. Paste:
 
