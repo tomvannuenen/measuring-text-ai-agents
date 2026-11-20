@@ -11,7 +11,8 @@
 1. [The Prompt Is the Instrument](#section1)
 2. [Robustness: Small Edits](#section2)
 3. [Multi-Turn: Pushing Back](#section3)
-4. [Take-Home: Write It Down](#section4)
+4. [Build Something With Your Results](#section4)
+5. [Write It All Down](#section5)
 
 Each section goes with one part of the slides. Start a new conversation for each.
 
@@ -126,9 +127,25 @@ match the column hostile before and after.
 
 <a id='section4'></a>
 
-# Take-Home: Write It Down
+# Build Something With Your Results
 
-Today's measurement lives in two places: your files, and several long conversations full of decisions. Get them out:
+Research outputs don't have to be static images pasted into slides. Turn today's work into something people can click through. In a new conversation:
+
+```
+Build an interactive dashboard in an HTML file from this project's data and runs:
+- a table of the 100 working comments, with my gold label and the label from each run
+- a filter for comments where the runs disagree, or where they disagree with my label
+- agreement with my labels and Krippendorff's alpha for each codebook I tried
+- click a comment to see its full text and every label it got
+```
+
+Open yours, then look at your neighbor's. Do they look different from yours?
+
+<a id='section5'></a>
+
+# Write It All Down
+
+Today's analysis lives in two places: your files, and several long conversations full of decisions. Chat transcripts are where research decisions become opaque. Get them out:
 
 ```
 Write a file WORKFLOW.md that documents today's labeling study in enough detail
@@ -143,6 +160,18 @@ and how the labels were compared with the gold labels.
 End with a section "Decisions I did not ask for", listing every choice you made
 that I did not explicitly specify.
 ```
+
+🔔 **Question:** What does a good entry in this file look like?
+
+Read `WORKFLOW.md`, especially the last section. Look for decisions you didn't know were made. For instance:
+
+- which provider answered, and whether it fell back to another one
+- how failed calls were retried, and how many still failed
+- how a tie between runs was counted
+- whether answers like "Yes." were cleaned up before counting
+- whether the codebook was changed before it was sent
+
+If any of these are missing, ask the agent to investigate and update the file.
 
 Then go back to your first try in exercise 1, the one-sentence request. Put its answer next to your `WORKFLOW.md`.
 
