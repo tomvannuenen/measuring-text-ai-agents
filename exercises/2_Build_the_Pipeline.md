@@ -76,6 +76,17 @@ You don't need to write code, but you should be able to point at each of these d
 
 🔔 **Question:** Did the model change its answer between runs on any comment? Does five identical answers mean the answer is *right*?
 
+## Compare: the Room, Qwen and the Gold Labels
+
+On the screen: the room's answers from exercise 1, Qwen's five runs, and our gold labels.
+
+🔔 **Questions:**
+- On which comments did the room agree? On which did it split?
+- Where the room split, was the comment unclear, or the question?
+- Where did Qwen agree with the room, and where with the gold labels?
+
+Write down a rule that would settle each split. You'll need them in exercise 3.
+
 <a id='section4'></a>
 
 # Label 100 Comments, Five Times

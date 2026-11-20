@@ -105,13 +105,7 @@ Before any agent labels anything, you code a few comments yourself. Scan the QR 
 Is this comment hostile or insulting toward someone?
 ```
 
-Work alone, and take about four minutes. Then we'll look at the room's answers, Qwen's labels and our gold labels.
-
-🔔 **Questions:**
-- On which comments did the room agree? On which did it split?
-- Where the room split, was the comment unclear, or the question?
-
-Write down a rule that would settle each split. You'll need them in exercise 3.
+Work alone, and take about four minutes. We come back to your answers in exercise 2, after a model has coded the same five comments.
 
 These five comments are in `data/coder_5.csv`, with our gold labels in the column `hostile`.
 
