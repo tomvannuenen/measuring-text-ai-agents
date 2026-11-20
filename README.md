@@ -1,6 +1,6 @@
 # Measuring Text with AI Agents
 
-These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). It runs in São Paulo at CEBRAP on 23 November 2026 and at LAPS/USP on 26 November 2026.
+These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab).
 
 ## Before you start
 
