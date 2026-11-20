@@ -142,7 +142,7 @@ Inside a project you can start many **conversations**. Keep to **one conversatio
 
 ## Model and Effort
 
-The small chip in the text box (something like `GPT-5.6 Luna Medium`) sets which model the agent uses and how much effort it spends. The defaults are fine. If you hit the free tier's usage limit, choose a smaller model or lower effort.
+The small chip in the text box (something like `GPT-6.2 Sol Light`) sets which model the agent uses and how much effort it spends. The defaults are fine. If you hit the free tier's usage limit, choose a smaller model or lower effort.
 
 💡 **Tip:** This is the model that *writes your code*. Later today your code calls a *different* model to label the comments. Keep the two apart. They can each vary from run to run, for different reasons.
 

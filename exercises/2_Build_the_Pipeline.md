@@ -106,7 +106,7 @@ Write down two numbers: **% identical** (comments with the same label in all fiv
 
 # Send the Uncertain Comments to a Stronger Model
 
-Keep Qwen's labels where its five runs agreed, and send only the other comments to a stronger model, as on slides 33–34:
+Keep Qwen's labels where its five runs agreed, and send only the other comments to a stronger model, as on slides 32–33:
 
 ```
 Find the comments in runs/working_v0_qwen.csv where the five runs did not all
