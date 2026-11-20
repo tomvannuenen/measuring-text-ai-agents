@@ -4,7 +4,9 @@ These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D
 
 ## Before you start
 
-Bring a laptop (macOS or Windows) with the ChatGPT app installed, and sign in. A free account is enough.
+We'll be working with a coding agent called [Codex](https://chatgpt.com/codex/), which is a mode in the ChatGPT app. It is developed by OpenAI.
+
+Bring a laptop (macOS or Windows) with the app installed, and sign in. A free account is enough.
 
 At the start of the workshop, open Codex in the ChatGPT app (click **ChatGPT ⌄** at the top left and choose **Codex**), click **New chat**, and paste:
 
