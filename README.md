@@ -9,7 +9,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 3. [First try](#step-3-first-try)
 4. [Ask for approval](#step-4-ask-for-approval)
 5. [Give your agent rules](#step-5-give-your-agent-rules)
-6. [Add the API key](#step-6-add-the-api-key)
+6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
 9. [Ask a stronger model](#step-9-ask-a-stronger-model)
@@ -120,7 +120,7 @@ Which columns could give away the answer, and how will you keep them away
 from the labeling model?
 ```
 
-## Step 6. Add the API key
+## Step 6. Add the API key and test it
 
 Paste:
 
@@ -130,6 +130,18 @@ and open it in a text editor, so I can paste the key myself.
 ```
 
 Open [tinyurl.com/mtai-key](https://tinyurl.com/mtai-key) when the instructor says so, and copy the key. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
+
+Then check that the key works with one call, in the same chat:
+
+```
+Make one test call to Qwen through OpenRouter, following AGENTS.md.
+Use "Is this comment hostile or insulting toward someone? Answer yes or no."
+as the system prompt, and the first comment in data/coder_5.csv as the user message.
+Save the whole response to runs/test_call.json. Then show me the answer,
+the model and provider that answered, and how many tokens it used.
+```
+
+Open `runs/test_call.json` and find the answer, the model and the provider.
 
 ## Step 7. Build the pipeline
 
