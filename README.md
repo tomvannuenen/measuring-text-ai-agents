@@ -5,7 +5,7 @@ These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D
 Start a new chat in Codex for each step, unless the step says otherwise.
 
 1. [Get the project](#step-1-get-the-project)
-2. [Code five comments by hand](#step-2-code-five-comments-by-hand)
+2. [Look at the data, then code five comments by hand](#step-2-look-at-the-data-then-code-five-comments-by-hand)
 3. [First try](#step-3-first-try)
 4. [Ask for approval](#step-4-ask-for-approval)
 5. [Give your agent rules](#step-5-give-your-agent-rules)
@@ -47,9 +47,17 @@ When Codex asks **Trust this folder?**, check that the path ends in `measuring-t
 
 If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself.
 
-## Step 2. Code five comments by hand
+## Step 2. Look at the data, then code five comments by hand
 
-Scan the QR code on the screen and answer the form on your phone. For each comment, choose yes or no, alone, using only this question:
+Paste this, and click **Allow once** when Codex asks:
+
+```
+Open data/working_100.csv in my spreadsheet app.
+```
+
+Each row is one comment. The column `hostile` already has a yes or no label for each comment.
+
+Then scan the QR code on the screen and answer the form on your phone. For each comment, choose yes or no, alone, using only this question:
 
 ```
 Is this comment hostile or insulting toward someone?
