@@ -52,10 +52,11 @@ If the download doesn't work, click the green **Code** button on this page, then
 Paste this, and click **Allow once** when Codex asks:
 
 ```
-Open data/working_100.csv in my spreadsheet app.
+Open reddit.com/r/AmItheAsshole in my browser.
+Then open data/working_100.csv in my spreadsheet app.
 ```
 
-Each row is one comment. The column `hostile` already has a yes or no label for each comment.
+The first is the forum the comments come from. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
 
 Then scan the QR code on the screen and answer the form on your phone. For each comment, choose yes or no, alone, using only this question:
 
