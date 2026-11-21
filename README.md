@@ -72,12 +72,6 @@ Label the 100 comments in data/working_100.csv by whether
 they are hostile, and tell me how reliable the labels are.
 ```
 
-If it labels nothing, ask:
-
-```
-So you did not label anything, like I asked?
-```
-
 ## Step 4. Ask for approval
 
 Click the approval chip in the text box and choose **Ask for approval**. From now on, Codex asks before it runs a command or uses the internet.
