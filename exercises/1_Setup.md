@@ -226,7 +226,7 @@ Create a file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,
 and open it in a text editor, so I can paste the key myself.
 ```
 
-In the editor, replace `paste-your-key-here` with the key the instructor gives you, then save and close.
+Open [tinyurl.com/mtai-key](https://tinyurl.com/mtai-key) in your browser when the instructor says so, and copy the key. In the editor, replace `paste-your-key-here` with that key, then save and close.
 
 💡 **Tip:** To see hidden files yourself, press `Cmd + Shift + .` in a Finder window (Mac). In Windows Explorer, use View → Show → Hidden items.
 
