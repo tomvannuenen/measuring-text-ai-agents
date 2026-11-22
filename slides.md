@@ -536,7 +536,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; font-size:30px; line-height:1.4; text-align:left;">
 <p style="margin:0;">Codex reads it at the start of every conversation. Claude Code reads <code>CLAUDE.md</code> the same way.</p>
-<p style="margin:0;">Your first try ran without one. In step 5 you paste our rules into it.</p>
+<p style="margin:0;">Your first try ran without one. In step 5, you ask Codex to create it with our rules.</p>
 </div>
 
 ---
