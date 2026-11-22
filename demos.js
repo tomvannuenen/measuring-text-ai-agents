@@ -282,7 +282,7 @@
   /* Hand coding, part 2 (slide 42): all five comments at once, with the room, Qwen's five runs and the gold label.
      With the live form, the room column fills from today's answers; without it, click yes or no to mark the room's choice. */
   const HC_QUOTES = [
-    "“…you were tired? You are going to lose your daughters if you continue to play favorites.”",
+    "“You are going to lose your daughters if you continue to play favorites.”",
     "“She's just butthurt that your friend confided in you…”",
     "“There's no gray area. You knowingly stole.”",
     "“Being an overprotective mama bear is going to do more harm than good…”",

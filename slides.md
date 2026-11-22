@@ -639,10 +639,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## The prompt: comparing answers to Qwen
+## Your answers, Qwen and the gold labels
 
 <div class="demo" data-demo="labelresults"></div>
-<span class="fragment hc-step"></span><span class="fragment hc-step"></span>
+<p class="fragment hc-step rv-def">Reliability means the same label when you ask again.</p>
+<p class="fragment hc-step rv-def">Validity means the label matches what we mean, here our gold label.</p>
 
 ---
 
@@ -688,11 +689,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <p class="yt-copy">Copy it from step 8 on the GitHub page.</p>
 
-<p class="yt-look">This takes a few minutes. Write down % identical and Krippendorff’s alpha.</p>
+<p class="yt-look">This takes a few minutes. Write down % identical and Krippendorff’s alpha. Both measure reliability.</p>
 
 ---
 
-## Same prompt, same comment, ten runs
+## Ten runs of the same comment test reliability
 
 
 
