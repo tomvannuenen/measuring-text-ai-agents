@@ -447,22 +447,22 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 ## Agents and APIs
 
 <div style="display:flex; align-items:stretch; margin-top:20px; min-height:520px;">
-<div class="fragment fade-up" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
+<div style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
 <div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">Agent</b><span style="font-size:26px; color:#888;">Codex</span></div>
 <div style="background:#f0efea; padding:10px 18px; border-radius:12px; font-size:27px; margin-top:18px; align-self:flex-end;">Label the comments.</div>
-<div style="font-size:26px; line-height:1.7; margin:14px 0 0 4px; color:#3a3a37; text-align:left;">read <code>data/</code><br>wrote <code>label.py</code><br>ran it, fixed an error<br>ran it again …</div>
+<div style="font-size:26px; line-height:1.7; margin:14px 0 0 4px; color:#3a3a37; text-align:left;"><span class="fragment" data-fragment-index="1">read <code>data/</code></span><br><span class="fragment" data-fragment-index="2">wrote <code>label.py</code></span><br><span class="fragment" data-fragment-index="3">ran <code>label.py</code>, fixed an error</span><br><span class="fragment" data-fragment-index="4">ran it again …</span></div>
 <div style="border:1px solid #cfcfc8; border-radius:14px; padding:12px 16px; margin-top:auto; text-align:left;">
 <div style="color:#aaa; font-size:22px;">Ask anything</div>
 <div style="display:flex; gap:12px; margin-top:8px;"><span style="border:1px solid #cfcfc8; border-radius:999px; padding:5px 16px; font-size:22px; background:#fff; white-space:nowrap;">GPT-6.2 Sol Light</span><span style="border:1px solid #cfcfc8; border-radius:999px; padding:5px 16px; font-size:22px; background:#fff; white-space:nowrap;">Ask for approval</span></div>
 </div>
 <div style="display:flex; gap:12px; font-size:22px; color:#d9481f; margin-top:6px; text-align:left;"><span style="width:168px; padding-left:16px;">model, effort</span><span style="padding-left:16px;">permissions</span></div>
 </div>
-<div class="fragment fade-right" style="width:140px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+<div class="fragment fade-right" data-fragment-index="3" style="width:140px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
 <code style="font-size:22px; background:none !important;">label.py</code>
 <div style="font-size:64px; line-height:1;">→</div>
 <div style="font-size:22px; color:#888;">calls</div>
 </div>
-<div class="fragment fade-up" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
+<div class="fragment fade-up" data-fragment-index="3" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
 <div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">API</b><span style="font-size:26px; color:#888;">one call</span></div>
 <div style="display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap;"><span style="font-size:22px; color:#888;">model</span><span style="border:1px solid #cfcfc8; color:#555; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">gpt-6.2-sol</span><span style="border:2px solid #d9481f; color:#d9481f; font-weight:700; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">qwen3-235b</span><span style="font-size:20px; color:#d9481f;">today: cheap</span></div>
 <div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; line-height:1.65; padding:16px 20px; margin-top:12px; text-align:left;">temperature: <b>0</b><br>top_k: <b>1</b><br>prompt: codebook<br>text: "Your aunt is a…"</div>
