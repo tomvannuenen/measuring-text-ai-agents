@@ -231,7 +231,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ---
 
-## Agents: just ask for a label?
+## An agent at work
 
 <div class="appwin">
   <div class="titlebar"><span class="dots"><i></i><i></i><i></i></span><span>Codex: starter</span></div>
@@ -341,7 +341,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ---
 
-## Your first try: one sentence
+## Your first try: just ask for labels
 
 <div class="ex-tag">Step 3</div>
 
