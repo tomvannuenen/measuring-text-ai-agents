@@ -85,7 +85,7 @@
 
 <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:34px; align-items:center; margin-top:10px;">
 <ol style="font-size:28px; line-height:1.45; margin:0; text-align:left;">
-<li>Under the chat box, click <b>Choose project</b>, then <b>New project</b>.</li>
+<li>Above the chat box, click <b>Choose project</b>, then <b>New project</b>.</li>
 <li>Click <b>Add</b> and choose the folder <code>ai-workshop</code> on your Desktop.</li>
 <li>Check that it says <b>This computer</b>, then click <b>Create project</b>.</li>
 <li>If Codex asks <b>Trust this folder?</b>, click <b>Trust folder</b>.</li>
@@ -374,9 +374,11 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; margin-top:10px;">
-<p style="font-size:30px; line-height:1.45; margin:0; text-align:left;">Start a new chat in your project. Copy <span style="white-space:nowrap">step 3</span> from the GitHub page, paste it, and approve what Codex asks.</p>
+<p style="font-size:28px; line-height:1.4; margin:0; text-align:left;">Start a new chat, click <b>Choose project</b> and pick <code>ai-workshop</code>. Then paste <span style="white-space:nowrap">step 3</span> from the GitHub page and approve what Codex asks.</p>
 <img src="img/codex_approve.png" alt="Permissions: Deny or Allow once" style="width:100%; margin:0; border-radius:8px; box-shadow:none;">
 </div>
+
+<div style="position:relative; width:520px; margin:16px 0 0;"><img src="img/codex_choose_project.png" alt="A new chat in Codex: This computer and Choose project above the chat box" style="width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"><div style="position:absolute; left:39%; top:8%; width:32%; height:22%; border:4px solid #d9481f; border-radius:10px;"></div></div>
 
 <pre class="ft-code"><code class="nohighlight" style="font-size:26px; padding:18px 22px;">Label the 100 comments in data/working_100.csv by whether
 they are hostile, and tell me how reliable the labels are.</code></pre>
