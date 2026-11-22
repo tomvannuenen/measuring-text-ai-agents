@@ -166,6 +166,31 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ---
 
+## The verdict and hostility
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:12px; text-align:left;">
+<div style="border:2px solid #bbb; border-radius:12px; padding:18px 22px;">
+<div style="font-size:30px; font-weight:700; margin-bottom:10px;">The verdict: NTA or YTA</div>
+<ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
+<li>The commenter states it, often in the first word.</li>
+<li>A keyword search finds most verdicts.</li>
+<li>Little interpretation is needed.</li>
+</ul>
+</div>
+<div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:18px 22px;">
+<div style="font-size:30px; font-weight:700; margin-bottom:10px; color:#d9481f;">Hostility</div>
+<ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
+<li>The researcher defines the concept.</li>
+<li>Coders have to read for mockery, sarcasm and the target of an attack.</li>
+<li>Careful coders disagree on about one comment in six.</li>
+</ul>
+</div>
+</div>
+
+<p class="fragment" style="font-size:27px; line-height:1.4; margin-top:26px; text-align:left;">LLMs can read meaning in context and follow a codebook across thousands of texts. That makes them useful for constructs like hostility, and it is also where their labels need the most checking.</p>
+
+---
+
 ## Today's task
 
 <div class="tk-reply">
@@ -991,12 +1016,12 @@ Which of these questions can you answer now?
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 60</i></div>
-<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 16</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 53</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 53</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 60</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 64</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 61</i></div>
+<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 17</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 54</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 54</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 61</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 65</i></div>
 </div>
 
 ---
