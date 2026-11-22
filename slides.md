@@ -326,7 +326,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 <p style="margin:0;"><b>Effort</b> is how long it thinks. More effort helps on hard tasks, and also uses up limits faster.</p>
 </div>
 
-<p style="font-size:26px; margin-top:20px;">Today the defaults are fine. If you hit the free limits, pick a smaller model or lower effort.</p>
+<p style="font-size:27px; margin-top:20px; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> Raise the model or the effort only when a step needs it. The highest settings use up the free limits fast.</p>
 
 ---
 
