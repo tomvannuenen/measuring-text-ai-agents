@@ -19,7 +19,7 @@
 
 <p class="muted">Tom van Nuenen · UC Berkeley D-Lab · São Paulo, November 2026</p>
 
-<p></p>
+<p style="font-size:30px; margin-top:40px;">The slides are at <b style="color:#d9481f;">tomvannuenen.me/measuring-text-ai-agents</b></p>
 
 ---
 
