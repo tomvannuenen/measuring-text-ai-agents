@@ -267,11 +267,11 @@
     const render = () => {
       const qr = L.formUrl ? el("div", { class: "hc-form" },
         el("img", { src: "img/form_qr.png", alt: "", onerror: function () { this.remove(); } }),
-        el("div", {}, el("div", { class: "hc-url" }, L.formUrl.replace(/^https?:\/\//, "")),
+        el("div", {}, el("div", { class: "hc-url" }, L.formShort || L.formUrl.replace(/^https?:\/\//, "")),
           el("div", { class: "hc-count" }, live.units ? `${live.coders} ${live.coders === 1 ? "answer" : "answers"} so far` : "Waiting for answers…"))) : null;
       swap(body, qr,
         el("div", { class: "hc-q" }, "Hostile or insulting?", el("span", { class: "pill yes" }, "yes"), el("span", { class: "pill no" }, "no")),
-        el("div", { class: "hc-sub" }, "5 comments, on your phone"));
+        el("div", { class: "hc-sub" }, "5 comments, on your laptop"));
     };
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
     render();
