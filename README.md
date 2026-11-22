@@ -386,7 +386,3 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 - `images/`: the pictures on this page.
 
 The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were in the wrong. Each file has the columns `id`, `text` and `hostile`: our hand-coded label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
-
-## Further reading
-
-[Prompt engineering tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) by Anthropic. It has exercises on writing prompts, for example adding labeled examples or asking the model to reason before it answers. It uses Python notebooks and an Anthropic API key. You can test each of its tips with the method from step 12: change one thing in the codebook, label the same comments again, and count how many labels change.
