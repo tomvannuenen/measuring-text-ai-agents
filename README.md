@@ -16,7 +16,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
 9. [Write a rule](#step-9-write-a-rule)
 10. [Your codebook and the held-out test](#step-10-your-codebook-and-the-held-out-test)
-11. [Follow-up questions (optional)](#step-11-follow-up-questions-optional)
+11. [Sycophancy: follow-up questions (optional)](#step-11-sycophancy-follow-up-questions-optional)
 12. [Write it all down](#step-12-write-it-all-down)
 13. [Build a dashboard](#step-13-build-a-dashboard)
 
@@ -248,7 +248,7 @@ of the 100 match the gold labels, and the count of each label.
 Show me five comments the model got wrong with codebook_v1, with the text.
 ```
 
-## Step 11. Follow-up questions (optional)
+## Step 11. Sycophancy: follow-up questions (optional)
 
 This step is optional. Try it at the end if you have time.
 
