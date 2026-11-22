@@ -14,13 +14,12 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
-9. [Ask a stronger model (optional)](#step-9-ask-a-stronger-model-optional)
-10. [Write a rule](#step-10-write-a-rule)
-11. [Your codebook and the held-out test](#step-11-your-codebook-and-the-held-out-test)
-12. [Same comment, other gender](#step-12-same-comment-other-gender)
-13. [Follow-up questions (optional)](#step-13-follow-up-questions-optional)
-14. [Write it all down](#step-14-write-it-all-down)
-15. [Build a dashboard](#step-15-build-a-dashboard)
+9. [Write a rule](#step-9-write-a-rule)
+10. [Your codebook and the held-out test](#step-10-your-codebook-and-the-held-out-test)
+11. [Same comment, other gender](#step-11-same-comment-other-gender)
+12. [Follow-up questions (optional)](#step-12-follow-up-questions-optional)
+13. [Write it all down](#step-13-write-it-all-down)
+14. [Build a dashboard](#step-14-build-a-dashboard)
 
 ## Before you start
 
@@ -179,7 +178,7 @@ Then have Codex write the labeling script and run it on the five comments you co
 Write a script label.py that labels the comments in a CSV file using a codebook file
 as the system prompt, following the rules in AGENTS.md. It should take the data file,
 the codebook file, the number of runs, and an output file name as arguments, and
-optionally the model, temperature, and top_k.
+optionally the model and the temperature.
 Then use it to label data/coder_5.csv with codebook_v0.md, 5 runs, saved to
 runs/coder5_v0.csv. Show me a table with one row per comment and the label from each run.
 ```
@@ -201,32 +200,7 @@ saved to runs/working_v0_qwen.csv. Report the numbers AGENTS.md asks for.
 
 Write down **% identical** and **Krippendorff's alpha**.
 
-## Step 9. Ask a stronger model (optional)
-
-This step is optional. Try it at the end if you have time.
-
-Send only the comments where Qwen's five runs disagreed to a stronger model:
-
-```
-Find the comments in runs/working_v0_qwen.csv where the five runs did not all
-give the same label. As an exception to the labeling-model rule in AGENTS.md,
-label only those comments once with anthropic/claude-opus-5.5 through OpenRouter
-(any provider), using codebook_v0.md, saved to runs/escalated.csv.
-Then compare with the column hostile in data/working_100.csv. Report:
-how many comments had agreeing and disagreeing runs, how many of each Qwen got
-right by majority label, how many of the disagreeing ones the stronger model got
-right, and the total if we keep Qwen's agreeing labels and the stronger model's
-labels for the rest.
-```
-
-Then, in the same chat:
-
-```
-Which decisions did you make in this conversation that I didn't ask for?
-List them, one line each.
-```
-
-## Step 10. Write a rule
+## Step 9. Write a rule
 
 Find a comment that is hard to code:
 
@@ -249,9 +223,9 @@ with links to the papers. For each, tell me how it could help improve this rule:
 
 Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
 
-## Step 11. Your codebook and the held-out test
+## Step 10. Your codebook and the held-out test
 
-In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
+In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 9, or write two or three. Paste the rules into this prompt:
 
 ```
 Copy codebook_v0.md to codebook_v1.md. Just before the last line ("Answer with
@@ -275,7 +249,7 @@ of the 100 match the gold labels, and the count of each label.
 Show me five comments the model got wrong with codebook_v1, with the text.
 ```
 
-## Step 12. Same comment, other gender
+## Step 11. Same comment, other gender
 
 Suppose your research question is whether women who post get more hostile replies than men. For that question, a comment's label should not change when only the gender changes. Check that:
 
@@ -285,7 +259,7 @@ in which you swap gendered words in the column text (he/she, him/her, his/her,
 husband/wife, boyfriend/girlfriend, mom/dad and so on), keeping the grammar right.
 Do not change data/. Show me three before-and-after examples.
 
-Then, with codebook_v1.md, top_k = 1 and 1 run each, label:
+Then, with codebook_v1.md, temperature 0 and 1 run each, label:
 data/working_100.csv twice (runs/robust_orig_a.csv and runs/robust_orig_b.csv),
 and edits/working_gender.csv once (runs/robust_gender.csv).
 
@@ -298,7 +272,7 @@ Show me every comment whose label changed after the swap, with both versions of 
 
 Compare the two numbers. Asking again with nothing changed also moves some labels, so only the changes beyond that point to gender. Noise moves labels both ways at random. If comments about women mostly move one way and comments about men the other, that points to bias. Look at the before-and-after examples too: the agent decides how to swap, for instance whether to rename people.
 
-## Step 13. Follow-up questions (optional)
+## Step 12. Follow-up questions (optional)
 
 This step is optional. Try it at the end if you have time.
 
@@ -308,7 +282,7 @@ send its answer back as an assistant message and then send the follow-up text
 as a new user message, with the same structured output. Save both labels:
 columns id, run, label, label_after.
 
-Label data/working_100.csv with codebook_v1.md, top_k = 1, 1 run,
+Label data/working_100.csv with codebook_v1.md, temperature 0, 1 run,
 first with --followup "Are you sure?" (runs/push_sure.csv),
 then with --followup "Are you sure? I think it's the opposite." (runs/push_opposite.csv).
 
@@ -316,14 +290,14 @@ For each, report how many labels changed after the follow-up, and how many of th
 match the column hostile before and after.
 ```
 
-## Step 14. Write it all down
+## Step 13. Write it all down
 
 ```
 Write a file WORKFLOW.md that documents today's labeling study in enough detail
 that someone who never saw these conversations could reproduce it exactly.
 
 Include: the data and where it came from; the codebooks and which one is final;
-the labeling models, providers, and every setting (temperature, top_k, structured
+the labeling models, providers, and every setting (temperature, structured
 output, number of runs, concurrency); how % identical and Krippendorff's alpha were
 computed; the held-out test and its results; any robustness or follow-up tests;
 and how the labels were compared with the gold labels.
@@ -334,7 +308,7 @@ that I did not explicitly specify.
 
 Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
 
-## Step 15. Build a dashboard
+## Step 14. Build a dashboard
 
 Paste:
 
@@ -370,7 +344,7 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 
 4. Code both files yourself, in a new column with your labels. Ask someone else to code some of them too, so you know how much people agree.
 5. Paste the AGENTS.md prompt from step 5 and change what is specific to this workshop: the column with your hand labels, the labels, and the models.
-6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 14.
+6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 13.
 
 ## What's in the download
 
