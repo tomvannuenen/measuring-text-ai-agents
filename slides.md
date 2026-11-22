@@ -67,14 +67,14 @@
 <p style="font-size:30px; margin:0 0 12px; text-align:left;">In Codex, click <b>New chat</b>, type this, and click <b>Allow once</b> when it asks.</p>
 
 <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:center;">
-<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:30px; background:#f0efea; color:#111; border-radius:3px; padding:16px 20px; text-align:left;">Download the GitHub repository at<br><span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; color:#d9481f; font-weight:700;">tinyurl.com/mtai-workshop</span> as a ZIP, unzip it<br>on my Desktop as measuring-text-ai-agents,<br>and tell me where the folder is. Then open<br>the repository's page in my browser.</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:30px; background:#f0efea; color:#111; border-radius:3px; padding:16px 20px; text-align:left;">Download the GitHub repository at<br><span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; color:#d9481f; font-weight:700;">tinyurl.com/mtai-workshop</span> as a ZIP, unzip it<br>on my Desktop as ai-workshop,<br>and tell me where the folder is. Then open<br>the repository's page in my browser.</div>
 <img src="img/codex_allow_download.png" alt="Codex asks to connect to the internet and edit the Desktop: Allow once" style="width:100%; margin:0; border-radius:10px; box-shadow:none;">
 </div>
 
 <p style="font-size:28px; margin-top:20px;">Keep the GitHub page open. Every step and prompt today is on that page.</p>
 </div>
 
-<p class="fragment" style="font-size:28px; line-height:1.4; color:#6f6f69; margin-top:14px; text-align:left;">If you don't want to use Codex in your browser, open tinyurl.com/mtai-workshop yourself and click Code → Download ZIP.</p>
+<p class="fragment" style="font-size:28px; line-height:1.4; color:#6f6f69; margin-top:14px; text-align:left;">If you don't want to use Codex in your browser, open tinyurl.com/mtai-workshop yourself, click Code → Download ZIP, and rename the unzipped folder to ai-workshop.</p>
 
 ---
 
@@ -86,11 +86,11 @@
 <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:34px; align-items:center; margin-top:10px;">
 <ol style="font-size:28px; line-height:1.45; margin:0; text-align:left;">
 <li>Under the chat box, click <b>Choose project</b>, then <b>New project</b>.</li>
-<li>Click <b>Add</b> and choose the folder <code>measuring-text-ai-agents</code> on your Desktop.</li>
+<li>Click <b>Add</b> and choose the folder <code>ai-workshop</code> on your Desktop.</li>
 <li>Check that it says <b>This computer</b>, then click <b>Create project</b>.</li>
 <li>If Codex asks <b>Trust this folder?</b>, click <b>Trust folder</b>.</li>
 </ol>
-<img src="img/codex_create_project.png" alt="Create project, with the folder measuring-text-ai-agents as its source folder, on This computer" style="width:100%; margin:0; border-radius:10px; box-shadow:none;">
+<img src="img/codex_create_project.png" alt="Create project, with the folder ai-workshop as its source folder, on This computer" style="width:100%; margin:0; border-radius:10px; box-shadow:none;">
 </div>
 
 <p style="font-size:28px; margin-top:24px;">Start every new chat in this project. Codex then works only inside this folder.</p>
@@ -307,7 +307,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ## What you downloaded
 
-<div style="display:grid; grid-template-columns:auto 1fr; column-gap:40px; margin-top:14px; text-align:left; border:2px solid #111; border-radius:12px; padding:18px 26px; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 0px; color:#d9481f; font-weight:700;">measuring-text-ai-agents/</div><div style="font-size:24px; color:#d9481f; padding:3px 0;">your Codex project</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">README.md</div><div style="font-size:24px; color:#555; padding:3px 0;">the workshop page, with every step</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/coder_5.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">5 comments to code by hand</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/working_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments to label</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/heldout_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments kept aside for testing</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">images/</div><div style="font-size:24px; color:#555; padding:3px 0;">pictures for the workshop page</div></div>
+<div style="display:grid; grid-template-columns:auto 1fr; column-gap:40px; margin-top:14px; text-align:left; border:2px solid #111; border-radius:12px; padding:18px 26px; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 0px; color:#d9481f; font-weight:700;">ai-workshop/</div><div style="font-size:24px; color:#d9481f; padding:3px 0;">your Codex project</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">README.md</div><div style="font-size:24px; color:#555; padding:3px 0;">the workshop page, with every step</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/coder_5.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">5 comments to code by hand</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/working_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments to label</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/heldout_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments kept aside for testing</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">images/</div><div style="font-size:24px; color:#555; padding:3px 0;">pictures for the workshop page</div></div>
 
 <p style="font-size:28px; margin-top:20px;">Each data file has three columns: <code>id</code>, <code>text</code> and <code>hostile</code>.</p>
 
@@ -525,7 +525,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 
 <div style="display:grid; grid-template-columns:400px 1fr; gap:28px; margin-top:18px; text-align:left; align-items:start;">
-<div style="border:2px solid #111; border-radius:12px; padding:16px 18px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; white-space:nowrap; line-height:1.8; background:#fff;">measuring-text-ai-agents/<br>&nbsp;&nbsp;<b style="color:#d9481f; border:2px solid #d9481f; border-radius:6px; padding:0 6px;">AGENTS.md</b><br>&nbsp;&nbsp;README.md<br>&nbsp;&nbsp;data/</div>
+<div style="border:2px solid #111; border-radius:12px; padding:16px 18px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; white-space:nowrap; line-height:1.8; background:#fff;">ai-workshop/<br>&nbsp;&nbsp;<b style="color:#d9481f; border:2px solid #d9481f; border-radius:6px; padding:0 6px;">AGENTS.md</b><br>&nbsp;&nbsp;README.md<br>&nbsp;&nbsp;data/</div>
 <div style="border:2px solid #111; border-radius:12px; overflow:hidden; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; padding:8px 14px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">AGENTS.md</div>
 <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:23px; line-height:1.6; padding:14px 18px; white-space:pre-wrap;"># Project rules
 - Never modify anything in data/.
