@@ -36,6 +36,17 @@
 
 ---
 
+## Context windows
+
+<ul style="font-size:27px; line-height:1.4; margin:4px 0 16px 1em; max-width:1040px; text-align:left;"><li>The context window holds everything the model sees at once.</li><li class="fragment" data-fragment-index="1">That includes your instructions, the whole conversation and every file it reads.</li><li class="fragment" data-fragment-index="2">The window has a limit. In a long chat, early parts get dropped or summarized.</li></ul>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; text-align:left;">
+<div class="fragment" data-fragment-index="3" style="border:2px solid #bbb; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px;">One long chat</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; opacity:.35; text-decoration:line-through;">your instructions</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">files it listed</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">commands and their output</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">comment 1, comment 2 … comment 100</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">the labels so far</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label depends on everything before it. Early instructions can fall out of the window.</p></div>
+<div class="fragment" data-fragment-index="4" style="border:2px solid #d9481f; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px; color:#d9481f;">One call per comment</div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 1</div></div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 2</div></div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:5px 12px; margin:0 0 6px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 3</div></div><div style="font-size:20px; color:#6f6f69;">… one call for each comment</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label sees the same codebook and one comment. Later today you do this through an API.</p></div>
+</div>
+
+---
+
 ## Agents
 
 <ul style="font-size:28px; line-height:1.45; margin:6px 0 24px 1em; max-width:1000px; text-align:left;"><li class="fragment">An agent is an LLM with tools.</li><li class="fragment">It reads files, runs commands and checks the results.</li><li class="fragment">Today you use Codex.</li></ul>
@@ -1023,12 +1034,12 @@ Which of these questions can you answer now?
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 61</i></div>
-<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 17</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 54</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 54</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 61</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 65</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 62</i></div>
+<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 18</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 55</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 55</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 62</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 66</i></div>
 </div>
 
 ---
