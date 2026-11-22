@@ -376,3 +376,7 @@
 
 /* 22 Nov: slide 42, one line per click naming reliability (Qwen column) and validity (gold column). */
 .reveal .rv-def { font-size: 24px !important; margin: 6px 0 0 !important; text-align: left; }
+
+/* 22 Nov: slide 51, three short definitions as bullets, one per click. */
+.reveal ul.st-defs { font-size: 24px !important; margin: 12px 0 0 1.1em !important; text-align: left; }
+.reveal ul.st-defs li { margin: 2px 0; }

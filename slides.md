@@ -754,10 +754,10 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="pv-row">
 <div class="pv-card"><div class="h">1. One-line prompt</div><div class="pv-code">Is this comment hostile or insulting toward someone?<br><br>yes / no</div></div>
-<div class="pv-arr"><div>→</div><span>+ rules</span></div>
-<div class="pv-card"><div class="h">2. Codebook</div><div class="pv-code">Does the comment attack a person?<br><br>Name-calling: yes.<br>Harsh criticism of an action: no.<br>…</div></div>
-<div class="pv-arr"><div>→</div><span>+ setting</span></div>
-<div class="pv-card"><div class="h">3. top_k = 1</div><div class="pv-code">Same codebook.<br><br><span class="pv-bar on">no</span><span class="pv-bar">yes</span><br>Always the most likely word.</div></div>
+<div class="pv-arr fragment" data-fragment-index="1"><div>→</div><span>+ rules</span></div>
+<div class="pv-card fragment" data-fragment-index="1"><div class="h">2. Codebook</div><div class="pv-code">Does the comment attack a person?<br><br>Name-calling: yes.<br>Harsh criticism of an action: no.<br>…</div></div>
+<div class="pv-arr fragment" data-fragment-index="2"><div>→</div><span>+ setting</span></div>
+<div class="pv-card fragment" data-fragment-index="2"><div class="h">3. top_k = 1</div><div class="pv-code">Same codebook.<br><br><span class="pv-bar on">no</span><span class="pv-bar">yes</span><br>Always the most likely label.</div></div>
 </div>
 
 ---
@@ -766,8 +766,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="st-row">
 <div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-<div class="st-col"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Greedy means the model always takes the most likely label.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-<div class="st-col"><div class="h">Models with greedy</div>
+<div class="st-col fragment" data-fragment-index="1"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Set temperature to 0 or top_k to 1.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col fragment" data-fragment-index="5"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
 <div class="st-av"><span>Gemini</span><b>✓</b></div>
 <div class="st-av"><span>GPT-5 reasoning</span><b class="no">✗</b></div>
@@ -777,10 +777,13 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="demo" data-demo="stloop" style="display:none;"></div>
 
-<p class="st-def">Temperature sets how much the chances spread out. At temperature 0, the top label always wins.</p>
-<p class="st-def">top_k limits the draw to the k most likely labels. With top_k = 1, only the top label is left.</p>
+<ul class="st-defs">
+<li class="fragment" data-fragment-index="2">Temperature sets how spread out the chances are.</li>
+<li class="fragment" data-fragment-index="3">top_k keeps only the k most likely labels.</li>
+<li class="fragment" data-fragment-index="4">Greedy always takes the most likely label.</li>
+</ul>
 
-<p class="st-foot">Each dot is one run of the same comment. Orange means yes. Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</p>
+<p class="st-foot">Each dot is one run of the same comment. Orange means yes. <span class="fragment" data-fragment-index="5">Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</span></p>
 
 ---
 
