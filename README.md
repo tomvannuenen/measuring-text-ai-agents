@@ -58,6 +58,8 @@ Then open data/working_100.csv in my spreadsheet app.
 
 The first is the forum the comments come from. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
 
+In Excel, widen the column `text` to read the comments. A yellow bar about possible data loss is normal. Close the file without saving.
+
 Then code five comments yourself. Paste:
 
 ```
@@ -109,6 +111,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - Labeling models: qwen/qwen3-235b-a22b-2507 (the default) and deepseek/deepseek-v4-flash. Use provider DeepInfra only for both, with no fallbacks, and require providers to support every parameter we send.
 - Use the codebook file I name as the system prompt. Send each comment as the user message: the column text, and nothing else.
 - The labels are yes and no. Restrict answers to them with structured output. If a codebook lists different labels, ask me before running.
+- API calls need network access, which the sandbox blocks. Ask for network access when you start each labeling job, instead of trying inside the sandbox first.
 - Send at most 8 requests at a time. Retry failed requests up to 5 times with increasing waits, and report how many still failed.
 - Append one line per labeling job to runs/LOG.md: date, data file, codebook, model, provider, settings, number of runs.
 - Before any labeling job, tell me how many calls it will make and estimate the cost from the token counts in runs/test_call.json and the model's price on openrouter.ai. Wait for my OK.
@@ -230,8 +233,8 @@ Alone or in pairs, find a comment that is hard to code:
 
 ```
 Show me 5 comments from data/working_100.csv where the five runs in
-runs/working_v0_qwen.csv did not all agree, with the full text and each
-run's label. Don't show the gold labels, and don't suggest any rules.
+runs/working_v0_qwen.csv did not all agree, with the full text as plain
+paragraphs and each run's label. Don't show the gold labels, and don't suggest any rules.
 ```
 
 **No API?** Use `../backup/working_v0_qwen.csv` in place of `runs/working_v0_qwen.csv`.
@@ -254,8 +257,8 @@ Open the links and check that each paper exists and says what the agent claims. 
 In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
 
 ```
-Copy codebook_v0.md to codebook_v1.md. Insert the rules below just before the
-last line ("Answer with the label only."), exactly as I wrote them.
+Copy codebook_v0.md to codebook_v1.md. Just before the last line ("Answer with
+the label only."), add a line "Rules:" and then the rules below, exactly as I wrote them.
 If I also give changes to the question or the label definitions, make
 exactly those changes. Do not add, remove, or rephrase anything else.
 Then show me the whole new codebook.
