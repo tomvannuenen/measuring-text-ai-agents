@@ -341,25 +341,6 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ---
 
-## The agent reads AGENTS.md first
-
-<div style="display:grid; grid-template-columns:400px 1fr; gap:28px; margin-top:18px; text-align:left; align-items:start;">
-<div style="border:2px solid #111; border-radius:12px; padding:16px 18px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; white-space:nowrap; line-height:1.8; background:#fff;">measuring-text-ai-agents/<br>&nbsp;&nbsp;<b style="color:#d9481f; border:2px solid #d9481f; border-radius:6px; padding:0 6px;">AGENTS.md</b><br>&nbsp;&nbsp;README.md<br>&nbsp;&nbsp;data/</div>
-<div style="border:2px solid #111; border-radius:12px; overflow:hidden; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; padding:8px 14px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">AGENTS.md</div>
-<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:23px; line-height:1.6; padding:14px 18px; white-space:pre-wrap;"># Project rules
-- Never modify anything in data/.
-- The column hostile holds our gold labels.
-  Never send it to a labeling model.
-- Propose a plan before creating or editing files.</div></div>
-</div>
-
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; font-size:30px; line-height:1.4; text-align:left;">
-<p style="margin:0;">Codex reads it at the start of every conversation. Claude Code reads <code>CLAUDE.md</code> the same way.</p>
-<p style="margin:0;">In step 5 you paste our rules into it. Your first try runs without one.</p>
-</div>
-
----
-
 ## Your first try: one sentence
 
 <div class="ex-tag">Step 3</div>
@@ -535,6 +516,27 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The user checks</div>
 <div style="display:flex; flex-direction:column; gap:12px;"><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Show me the lines that set the model.</div><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Which decisions did you make that I didn't ask for?</div></div>
 </div>
+</div>
+
+---
+
+## The agent reads AGENTS.md first
+
+<div class="ex-tag">Step 5</div>
+
+<div style="display:grid; grid-template-columns:400px 1fr; gap:28px; margin-top:18px; text-align:left; align-items:start;">
+<div style="border:2px solid #111; border-radius:12px; padding:16px 18px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; white-space:nowrap; line-height:1.8; background:#fff;">measuring-text-ai-agents/<br>&nbsp;&nbsp;<b style="color:#d9481f; border:2px solid #d9481f; border-radius:6px; padding:0 6px;">AGENTS.md</b><br>&nbsp;&nbsp;README.md<br>&nbsp;&nbsp;data/</div>
+<div style="border:2px solid #111; border-radius:12px; overflow:hidden; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; padding:8px 14px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">AGENTS.md</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:23px; line-height:1.6; padding:14px 18px; white-space:pre-wrap;"># Project rules
+- Never modify anything in data/.
+- The column hostile holds our gold labels.
+  Never send it to a labeling model.
+- Propose a plan before creating or editing files.</div></div>
+</div>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; font-size:30px; line-height:1.4; text-align:left;">
+<p style="margin:0;">Codex reads it at the start of every conversation. Claude Code reads <code>CLAUDE.md</code> the same way.</p>
+<p style="margin:0;">Your first try ran without one. In step 5 you paste our rules into it.</p>
 </div>
 
 ---
