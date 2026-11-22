@@ -813,7 +813,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="ex-tag">Step 10</div>
 
-<p class="yt-intro">Alone or in pairs, find a comment that is hard to code.</p>
+<p class="yt-intro">Find a comment that is hard to code.</p>
 
 <div class="yt-box">Show me 5 comments from data/working_100.csv where the five runs in<br>runs/working_v0_qwen.csv did not all agree, with the full text as plain<br>paragraphs and each run’s label. Don’t show the gold labels, and don’t suggest any rules.</div>
 

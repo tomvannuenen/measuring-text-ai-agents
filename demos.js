@@ -327,7 +327,7 @@
     step();
   };
 
-  /* The room's codebook: pairs propose rules, Claude merges them, the room votes,
+  /* The room's codebook: people propose rules, Claude merges them, the room votes,
      and Claude labels the five comments with the one-line question and with the top three rules. */
   builders.roomcodebook = function (root) {
     const L = window.LIVE || {};
@@ -370,14 +370,14 @@
         swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted. Pick up to three.`, L.voteShort),
           C.map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
             el("div", { style: "width:52px; flex:none; font-size:26px;" }, c.id),
-            el("div", { style: "flex:1; font-size:27px;" }, c.text, el("span", { style: M }, ` · ${c.pairs} ${c.pairs === 1 ? "pair" : "pairs"}`)),
+            el("div", { style: "flex:1; font-size:27px;" }, c.text, el("span", { style: M }, ` · ${c.pairs} ${c.pairs === 1 ? "proposal" : "proposals"}`)),
             el("div", { style: "width:170px; flex:none; background:#ecebe6; height:24px;" }, el("div", { style: `height:24px; width:${100 * (live.votes[c.id] || 0) / maxv}%; background:#111;` })),
             el("div", { style: "width:44px; flex:none; font-size:26px;" }, String(live.votes[c.id] || 0)))),
           el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 150), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), busyNote(), err()));
         return;
       }
       const P = live.proposals;
-      swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. One rule per pair.`, L.proposeShort),
+      swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. Everyone can send rules.`, L.proposeShort),
         el("div", {}, P.slice(-6).map((r) => el("div", { style: M + " font-size:26px; margin:4px 0; font-style:italic;" }, `“${r.text}”`))),
         el("div", { class: "row", style: "margin-top:12px;" }, button("Merge with Claude", () => act("merge", 45), "primary"), busyNote(), err()));
     }
