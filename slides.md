@@ -203,7 +203,7 @@
 </div>
 </div>
 
-<p class="fragment" style="font-size:27px; line-height:1.4; margin-top:26px; text-align:left;">LLMs can read meaning in context and follow a codebook across thousands of texts. That makes them useful for constructs like hostility, and it is also where their labels need the most checking.</p>
+<ul style="font-size:27px; line-height:1.4; margin:24px 0 0 1.1em; padding:0; text-align:left;"><li class="fragment">LLMs read meaning in context.</li><li class="fragment">They can apply a codebook to thousands of texts.</li><li class="fragment">This is also where their labels need the most checking.</li></ul>
 
 ---
 
