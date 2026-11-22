@@ -165,10 +165,13 @@
 <div style="width:640px;">
 <img src="img/aita_post.png" alt="A post: AITA for refusing to lend my sister money after she spent months judging my financial decisions?" style="width:100%; border:1px solid #ddd; border-radius:8px; margin:0 0 10px;">
 <img src="img/aita_reply.png" alt="A reply: NTA. Sounds like your parents are offering to pay. She is their daughter after all, they signed up for supporting her." style="width:84%; margin:0 0 0 16%; border:1px solid #ddd; border-radius:8px;">
-<div class="fragment" style="margin:4px 0 0 calc(16% + 64px); font-size:26px; font-weight:700; color:#d9481f; text-align:left;">↑ an easy label</div>
+<div class="fragment" data-fragment-index="1" style="margin:4px 0 0 calc(16% + 64px); font-size:26px; font-weight:700; color:#d9481f; text-align:left;">↑ an easy label</div>
+
 </div>
 <img src="img/aita_sidebar.png" alt="The r/AmItheAsshole sidebar: tell us about a non-violent conflict, give both sides, and find out if you're right or the asshole. 2.5 million members." style="height:430px; border:1px solid #ddd; border-radius:8px; margin:0;">
 </div>
+
+<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:14px; margin:12px 0 0 0;"><div style="flex:1; border:1px solid #ddd; border-radius:8px; background:#fff; padding:10px 16px; font-size:21px; line-height:1.4; text-align:left; color:#1a1a1b;">seriously!!!! Girlfriend makes you a whole giant tray of lasagna, you take it all home and you can’t even buy her a sandwich? <span style="border-bottom:3px solid #d9481f;">You’re awful.</span></div><div style="width:200px; font-size:26px; font-weight:700; line-height:1.25; color:#d9481f; text-align:left;">← a harder label</div></div>
 
 ---
 
