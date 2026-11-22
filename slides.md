@@ -165,6 +165,7 @@
 <div style="width:640px;">
 <img src="img/aita_post.png" alt="A post: AITA for refusing to lend my sister money after she spent months judging my financial decisions?" style="width:100%; border:1px solid #ddd; border-radius:8px; margin:0 0 10px;">
 <img src="img/aita_reply.png" alt="A reply: NTA. Sounds like your parents are offering to pay. She is their daughter after all, they signed up for supporting her." style="width:84%; margin:0 0 0 16%; border:1px solid #ddd; border-radius:8px;">
+<div class="fragment" style="margin:4px 0 0 calc(16% + 64px); font-size:26px; font-weight:700; color:#d9481f; text-align:left;">↑ an easy label</div>
 </div>
 <img src="img/aita_sidebar.png" alt="The r/AmItheAsshole sidebar: tell us about a non-violent conflict, give both sides, and find out if you're right or the asshole. 2.5 million members." style="height:430px; border:1px solid #ddd; border-radius:8px; margin:0;">
 </div>
