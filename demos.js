@@ -528,6 +528,93 @@
   /* Reliability against validity (slide 44). Starts with Qwen on the five comments of slide 40 (the same label in all
      five runs, so plotted at α = 1; 3 of 5 right), moves Qwen to the working set (α 0.90, 79%), then the other five models. Numbers from the guide,
      "Each model against itself" (working_100, one-line prompt, 5 runs each). Clicks: the two empty fragments after the demo. */
+  /* "What is an API?": two ways into the same model. Click 1: one comment goes through the chat app and a
+     paragraph comes back. Click 2: label.py sends 100 comments through the API and saves 100 labels. */
+  builders.apiflow = function (root) {
+    const NS = "http://www.w3.org/2000/svg", O = "#d9481f";
+    const W = 1000, H = 360;
+    const fs = (n, c, w) => `font-size="${n}" fill="${c || "#111"}"${w ? ` font-weight="${w}"` : ""}`;
+    let g = `<rect x="600" y="10" width="380" height="330" rx="10" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/>`;
+    g += `<text x="790" y="42" text-anchor="middle" ${fs(20, "#555")}>the company’s server</text>`;
+    g += `<rect x="740" y="140" width="190" height="80" rx="10" fill="#111"/><text x="835" y="191" text-anchor="middle" ${fs(34, "#fff", 700)}>LLM</text>`;
+    g += `<rect x="540" y="70" width="130" height="56" rx="10" fill="#fff" stroke="#111" stroke-width="2"/><text x="605" y="106" text-anchor="middle" ${fs(22)}>chat app</text>`;
+    g += `<rect x="540" y="234" width="130" height="56" rx="10" fill="#fff" stroke="${O}" stroke-width="3"/><text x="605" y="270" text-anchor="middle" ${fs(26, O, 700)}>API</text>`;
+    g += `<line x1="670" y1="98" x2="740" y2="165" stroke="#bbb" stroke-width="2.5"/><line x1="670" y1="262" x2="740" y2="195" stroke="#bbb" stroke-width="2.5"/>`;
+    g += `<circle cx="70" cy="78" r="17" fill="none" stroke="#111" stroke-width="3"/><path d="M40,128 q30,-40 60,0" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/><text x="70" y="160" text-anchor="middle" ${fs(22)}>you</text>`;
+    g += `<path d="M45,224 h50 l18,18 v62 h-68 z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M95,224 v18 h18" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>`;
+    g += `<text x="79" y="280" text-anchor="middle" ${fs(20, "#111", 700)}>.py</text><text x="79" y="330" text-anchor="middle" ${fs(22)}>label.py</text>`;
+    g += `<line x1="130" y1="98" x2="534" y2="98" stroke="#e2e2dc" stroke-width="2"/><line x1="130" y1="262" x2="534" y2="262" stroke="#f3d3c6" stroke-width="2"/>`;
+    g += `<g class="af-chat"></g><g class="af-dots"></g>`;
+    const svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", 880); svg.setAttribute("height", Math.round(H * 0.88));
+    svg.style.cssText = "font-family:inherit; overflow:visible; display:block; margin:0 auto;";
+    svg.innerHTML = g;
+    const chatG = svg.querySelector(".af-chat"), dotG = svg.querySelector(".af-dots");
+    const capChat = el("div", { class: "af-cap", style: "font-size:24px; color:#555; min-height:34px; text-align:left;" });
+    const capApi = el("div", { class: "af-cap", style: "font-size:24px; color:" + O + "; min-height:34px; text-align:left;" });
+    const file = el("div", { style: "font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; font-size:19px; line-height:1.45; border:2px solid #111; border-radius:8px; padding:8px 14px; width:300px; text-align:left; background:#fff; visibility:hidden; margin-top:6px;" });
+    put(root, svg, el("div", { style: "display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:4px; align-items:start;" }, capChat, el("div", {}, capApi, file)));
+    const LBL = ["yes", "no", "no", "yes", "no", "yes", "no", "no", "yes", "no"];
+    let raf = null, shown = -1;
+    const stop = () => { if (raf) cancelAnimationFrame(raf); raf = null; };
+    const lerpPath = (pts, t) => {
+      const segs = []; let tot = 0;
+      for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); segs.push(d); tot += d; }
+      let s = Math.max(0, Math.min(1, t)) * tot;
+      for (let i = 0; i < segs.length; i++) { if (s <= segs[i]) { const f = segs[i] ? s / segs[i] : 0; return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f]; } s -= segs[i]; }
+      return pts[pts.length - 1];
+    };
+    const bubble = (x, y, w, txt, dark) => `<g transform="translate(${x} ${y})"><rect x="${-w / 2}" y="-18" width="${w}" height="36" rx="18" fill="${dark ? "#111" : "#f0efea"}"/><text x="0" y="7" text-anchor="middle" font-size="20" fill="${dark ? "#fff" : "#111"}">${txt}</text></g>`;
+    const CHAT_OUT = [[150, 98], [534, 98], [740, 165]], CHAT_BACK = [[740, 175], [534, 118], [170, 118]];
+    const API_OUT = [[130, 256], [534, 256], [740, 190]], API_BACK = [[740, 200], [534, 270], [130, 270]];
+    function chat(animate) {
+      stop(); dotG.innerHTML = ""; file.style.visibility = "hidden"; capApi.textContent = "";
+      const t0 = performance.now(), D1 = 1400, D2 = 1600;
+      const frame = (now) => {
+        const t = animate ? now - t0 : D1 + D2;
+        if (t < D1) { const [x, y] = lerpPath(CHAT_OUT, t / D1); chatG.innerHTML = bubble(x, y, 320, "Is “Your aunt is a…” hostile?", false); }
+        else { const [x, y] = lerpPath(CHAT_BACK, (t - D1) / D2); chatG.innerHTML = bubble(x, y, 360, "Yes. Calling her a… (a paragraph)", true); }
+        if (t < D1 + D2) raf = requestAnimationFrame(frame);
+        else { raf = null; capChat.textContent = "One comment, typed by hand. The answer is a paragraph."; }
+      };
+      capChat.textContent = ""; raf = requestAnimationFrame(frame);
+    }
+    function api(animate) {
+      stop(); chatG.innerHTML = ""; capChat.textContent = "One comment, typed by hand. The answer is a paragraph.";
+      const N = 100, GAP = 45, TRIP = 1100, t0 = performance.now();
+      const rows = [];
+      file.style.visibility = "visible";
+      const frame = (now) => {
+        const t = animate ? now - t0 : N * GAP + 2 * TRIP;
+        let h = "", done = 0;
+        for (let i = 0; i < N; i++) {
+          const s = t - i * GAP; if (s < 0) break;
+          if (s < TRIP) { const [x, y] = lerpPath(API_OUT, s / TRIP); h += `<circle cx="${x}" cy="${y}" r="6" fill="${O}"/>`; }
+          else if (s < 2 * TRIP) { const [x, y] = lerpPath(API_BACK, (s - TRIP) / TRIP); h += `<circle cx="${x}" cy="${y}" r="6" fill="#111"/>`; }
+          else done++;
+        }
+        dotG.innerHTML = h;
+        const last = [];
+        for (let k = Math.max(0, done - 3); k < done; k++) last.push(`comment ${k + 1}, ${LBL[k % LBL.length]}`);
+        file.innerHTML = `<div style="color:#6f6f69;">runs/labels.csv</div>` + (last.length ? last.join("<br>") : "&nbsp;");
+        capApi.textContent = `${done} of ${N} labels saved. Same prompt and settings each time.`;
+        if (done < N) raf = requestAnimationFrame(frame); else raf = null;
+      };
+      raf = requestAnimationFrame(frame);
+    }
+    const step = () => {
+      const sec = root.closest("section");
+      const n = sec ? sec.querySelectorAll(".af-step.visible").length : 0;
+      const here = window.Reveal && Reveal.getCurrentSlide() === sec;
+      if (n === shown) return; const prev = shown; shown = n;
+      if (n === 0) { stop(); chatG.innerHTML = ""; dotG.innerHTML = ""; file.style.visibility = "hidden"; capChat.textContent = ""; capApi.textContent = ""; }
+      else if (n === 1) chat(here && prev < 1);
+      else api(here && prev < 2);
+    };
+    if (window.Reveal) { Reveal.on("fragmentshown", step); Reveal.on("fragmenthidden", step); Reveal.on("slidechanged", () => { shown = -1; step(); }); }
+    step();
+  };
+
   builders.relval = function (root) {
     const M = [["Claude Haiku", 0.94, 84], ["Gemini Flash-Lite", 0.88, 89], ["Ministral 8B", 0.93, 69], ["GPT-6 Luna", 0.88, 69], ["DeepSeek", 0.74, 79]];
     const Q5 = [1.0, 60], Q100 = [0.90, 79];

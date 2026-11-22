@@ -372,25 +372,16 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Coding agents and their rules
 
-<div style="display:flex; gap:36px; align-items:stretch; margin-top:20px;">
-<div style="flex:1; text-align:left;">
-<h3 style="font-size:36px; margin:0 0 16px;">Training a model</h3>
-<p style="font-size:29px; line-height:1.45; margin:0;">An agent had 10 hours to make an AI model score better on a test. It was told not to show the model the test questions. Claude Opus 4.6 showed them anyway in <b>12 of 84</b> runs.</p>
-<p class="muted" style="font-size:21px; margin-top:16px;">Rank et al. 2026, PostTrainBench</p>
-</div>
-<div style="width:4px; background:var(--accent);"></div>
-<div style="flex:1; text-align:left;">
-<h3 style="font-size:36px; margin:0 0 16px;">Sorting an inbox</h3>
-<p style="font-size:29px; line-height:1.45; margin:0;">An agent was asked to sort an inbox and told not to send any email. The inbox was sorted, so the answer looked fine. Only the agent’s log showed that it had sent an email. Across 300 tasks, <b>12 of 27</b> rule breaks showed only in the log.</p>
-<p class="muted" style="font-size:21px; margin-top:16px;">Ye et al. 2026, Claw-Eval</p>
-</div>
-</div>
+<ul style="font-size:32px; line-height:1.5; margin-top:30px;">
+<li style="margin-bottom:28px;">Told not to show a model the test questions, an agent showed them anyway in <b>12 of 84</b> runs.<br><span class="muted" style="font-size:21px;">Rank et al. 2026</span></li>
+<li>Told not to send email, an agent sent one, and only its log showed it.<br><span class="muted" style="font-size:21px;">Ye et al. 2026</span></li>
+</ul>
 
 ---
 
 ## What did your agent do?
 
-<p style="font-size:22px; color:#555; margin:0 0 10px;">GPT-6.2 Sol at Light, the free default: my run.</p>
+<p style="font-size:22px; color:#555; margin:0 0 10px;">GPT-6.2 Sol Light (Leve)</p>
 
 <div class="wa-grid">
 <div class="wa" style="padding:16px 18px;"><b>Wrote code, or read and decided?</b><div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:12px 16px; font-size:20px; line-height:1.45; margin-top:12px; text-align:left;"><span style="color:#9a9a9a;">Ran</span> <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px;">python3 -c '… hostile = {1, 2, 3, 7, 13, 14, …}'</span></div></div>
@@ -421,7 +412,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 </div>
 </div>
 
-<p style="font-size:24px; color:#555; margin-top:22px;">In its own words: “I saw the original labels during inspection, so the comparison is unblinded.”</p>
+<p style="font-size:30px; color:#333; margin-top:22px; text-align:left;">In its own words: “I saw the original labels during inspection, so the comparison is unblinded.”</p>
 
 ---
 
@@ -434,9 +425,11 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">time</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:21%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">39 s</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">3 min 06 s</b></div>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">commands</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:40%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">4</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">10</b></div>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">tokens it wrote, thinking included</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:25%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">1,500</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">6,000</b></div>
-<div style="font-size:24px; color:#555; padding:14px 0 4px;">what it read</div><div></div><div></div><div style="font-size:26px;">every row, with my labels</div><div></div><div style="font-size:26px;">the text only, plus my 5 warm-up labels</div>
+<div style="font-size:24px; color:#d9481f; padding:14px 0 4px; font-weight:700;">what it read</div><div></div><div></div><div style="font-size:26px;">every row, with my labels</div><div></div><div style="font-size:26px;">the text only, plus my 5 warm-up labels</div>
 <div style="font-size:24px; color:#555; padding:14px 0 4px;">same as mine</div><div></div><div></div><div style="font-size:30px; font-weight:700;">98 of 100</div><div></div><div style="font-size:30px; font-weight:700; color:#d9481f;">97 of 100</div>
 </div>
+
+<p style="font-size:28px; margin-top:22px; text-align:left;">Light matched more because it read my labels. High did not look, and still matched 97.</p>
 
 ---
 
@@ -444,16 +437,15 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <p style="font-size:28px; line-height:1.45; margin:0 0 10px; text-align:left;">Every big LLM has two ways in. People use a chat app. Programs use an <b>API</b>, which lets a program send the model text and get its answer back.</p>
 
-<svg viewBox="0 0 1000 345" width="1000" height="345" style="font-family:inherit; overflow:visible; display:block; margin:6px auto 0;"><defs><marker id="api-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="api-ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d9481f"/></marker></defs><rect x="600" y="10" width="380" height="330" rx="10" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/><text x="790" y="42" text-anchor="middle" font-size="20" font-weight="400" fill="#555">the company’s server</text><rect x="740" y="135" width="190" height="80" rx="10" fill="#111" stroke="#111" stroke-width="2"/><text x="835" y="186" text-anchor="middle" font-size="34" font-weight="700" fill="#fff">LLM</text><rect x="540" y="70" width="130" height="56" rx="10" fill="#fff" stroke="#111" stroke-width="2"/><text x="605" y="106" text-anchor="middle" font-size="22" font-weight="400" fill="#111">chat app</text><rect x="540" y="225" width="130" height="56" rx="10" fill="#fff" stroke="#d9481f" stroke-width="3"/><text x="605" y="261" text-anchor="middle" font-size="26" font-weight="700" fill="#d9481f">API</text><line x1="670" y1="98" x2="740" y2="160" stroke="#bbb" stroke-width="2.5"/><line x1="670" y1="253" x2="740" y2="190" stroke="#bbb" stroke-width="2.5"/><circle cx="70" cy="78" r="17" fill="none" stroke="#111" stroke-width="3"/><path d="M40,128 q30,-40 60,0" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/><text x="70" y="160" text-anchor="middle" font-size="22" font-weight="400" fill="#111">you</text><line x1="130" y1="86" x2="534" y2="86" stroke="#111" stroke-width="2.5" marker-end="url(#api-ah)"/><text x="330" y="74" text-anchor="middle" font-size="20" font-weight="400" fill="#555">you type a question</text><line x1="534" y1="112" x2="130" y2="112" stroke="#111" stroke-width="2.5" marker-end="url(#api-ah)"/><text x="330" y="136" text-anchor="middle" font-size="20" font-weight="400" fill="#555">you read the answer</text><path d="M45,215 h50 l18,18 v62 h-68 z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M95,215 v18 h18" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/><text x="79" y="270" text-anchor="middle" font-size="20" font-weight="700" fill="#111">.py</text><text x="79" y="322" text-anchor="middle" font-size="22" font-weight="400" fill="#111">a program</text><line x1="130" y1="240" x2="534" y2="240" stroke="#d9481f" stroke-width="2.5" marker-end="url(#api-ao)"/><text x="330" y="228" text-anchor="middle" font-size="20" font-weight="400" fill="#d9481f">sends a comment and the prompt</text><line x1="534" y1="266" x2="130" y2="266" stroke="#d9481f" stroke-width="2.5" marker-end="url(#api-ao)"/><text x="330" y="290" text-anchor="middle" font-size="20" font-weight="400" fill="#d9481f">gets the label back</text></svg>
-
-<p style="font-size:28px; line-height:1.45; margin:14px 0 0; text-align:left;">Through the API, a program can send 100 comments one at a time, with the same prompt and settings each time, and save every answer.</p>
+<div class="demo" data-demo="apiflow"></div>
+<span class="fragment af-step"></span><span class="fragment af-step"></span>
 
 ---
 
 ## Agents and APIs
 
 <div style="display:flex; align-items:stretch; margin-top:20px; min-height:520px;">
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
+<div class="fragment fade-up" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
 <div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">Agent</b><span style="font-size:26px; color:#888;">Codex</span></div>
 <div style="background:#f0efea; padding:10px 18px; border-radius:12px; font-size:27px; margin-top:18px; align-self:flex-end;">Label the comments.</div>
 <div style="font-size:26px; line-height:1.7; margin:14px 0 0 4px; color:#3a3a37; text-align:left;">read <code>data/</code><br>wrote <code>label.py</code><br>ran it, fixed an error<br>ran it again …</div>
@@ -463,12 +455,12 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 </div>
 <div style="display:flex; gap:12px; font-size:22px; color:#d9481f; margin-top:6px; text-align:left;"><span style="width:168px; padding-left:16px;">model, effort</span><span style="padding-left:16px;">permissions</span></div>
 </div>
-<div style="width:140px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+<div class="fragment fade-right" style="width:140px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
 <code style="font-size:22px; background:none !important;">label.py</code>
 <div style="font-size:64px; line-height:1;">→</div>
 <div style="font-size:22px; color:#888;">calls</div>
 </div>
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
+<div class="fragment fade-up" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
 <div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">API</b><span style="font-size:26px; color:#888;">one call</span></div>
 <div style="display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap;"><span style="font-size:22px; color:#888;">model</span><span style="border:1px solid #cfcfc8; color:#555; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">gpt-6.2-sol</span><span style="border:2px solid #d9481f; color:#d9481f; font-weight:700; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">qwen3-235b</span><span style="font-size:20px; color:#d9481f;">today: cheap</span></div>
 <div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; line-height:1.65; padding:16px 20px; margin-top:12px; text-align:left;">temperature: <b>0</b><br>top_k: <b>1</b><br>prompt: codebook<br>text: "Your aunt is a…"</div>
@@ -524,19 +516,16 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
 <div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The user plans</div>
 <div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.5; padding:16px;"><div style="font-weight:700; margin-bottom:6px;">AGENTS.md</div>- Never modify anything in data/.<br>- The labels are yes and no.</div>
-<div style="margin-top:auto; align-self:center; font-size:20px; color:#d9481f; border:1.5px solid #d9481f; border-radius:999px; padding:2px 14px;">step 5</div>
 </div>
 <div style="align-self:center; font-size:44px; color:#888;">→</div>
 <div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
 <div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The agent acts</div>
 <div style="border:1px solid #e2e2dc; padding:16px; font-size:24px;"><div>Run <code style="font-size:22px;">python label.py</code>?</div><div style="display:flex; gap:12px; margin-top:20px;"><span style="background:#111; color:#fff; padding:8px 20px; border-radius:6px;">Approve</span><span style="border:1px solid #111; padding:8px 20px; border-radius:6px;">Deny</span></div></div>
-<div style="margin-top:auto; align-self:center; font-size:20px; color:#d9481f; border:1.5px solid #d9481f; border-radius:999px; padding:2px 14px;">step 4</div>
 </div>
 <div style="align-self:center; font-size:44px; color:#888;">→</div>
 <div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
 <div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The user checks</div>
 <div style="display:flex; flex-direction:column; gap:12px;"><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Show me the lines that set the model.</div><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Which decisions did you make that I didn't ask for?</div></div>
-<div style="margin-top:auto; align-self:center; font-size:20px; color:#d9481f; border:1.5px solid #d9481f; border-radius:999px; padding:2px 14px;">steps 7 and 9</div>
 </div>
 </div>
 
@@ -677,7 +666,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Ask a stronger model only when the cheap one is unsure
+## Ask a stronger model when the cheap one is unsure
 
 <div class="fl-grid">
 <div class="fl-box fl-start"><b>100 comments</b><br>DeepSeek, 5 runs each</div>
@@ -703,15 +692,15 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="fl-box fl-start"><b>100 comments</b><br>Qwen, 5 runs each</div>
 <div class="fl-arr">↗</div>
 <div class="fl-box"><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><br>all 5 agree: <b>90</b></div>
-<div class="fl-arr">→</div>
-<div><div class="fl-act">keep Qwen’s label</div><div class="fl-bar" style="width:450px;"><div style="flex:75; background:#111;"></div><div style="flex:15; background:#d9481f;"></div></div><div class="fl-res">75 right · <span class="fl-sw">15 steady and wrong</span></div></div>
+<div class="fl-arr fragment" data-fragment-index="2">→</div>
+<div class="fragment" data-fragment-index="2"><div class="fl-act">keep Qwen’s label</div><div class="fl-bar" style="width:450px;"><div style="flex:75; background:#111;"></div><div style="flex:15; background:#d9481f;"></div></div><div class="fl-res">75 right · <span class="fl-sw">15 steady and wrong</span></div></div>
 <div class="fl-arr">↘</div>
 <div class="fl-box"><i class="md y"></i><i class="md y"></i><i class="md"></i><i class="md y"></i><i class="md"></i><br>runs split: <b>10</b></div>
-<div class="fl-arr">→</div>
-<div><div class="fl-act">ask Claude Opus 5.5, once</div><div class="fl-bar" style="width:50px;"><div style="flex:9; background:#111;"></div><div style="flex:1; background:#d9481f;"></div></div><div class="fl-res">9 right <span class="fl-grey">(Qwen alone: 4)</span></div></div>
+<div class="fl-arr fragment" data-fragment-index="1">→</div>
+<div class="fragment" data-fragment-index="1"><div class="fl-act">ask Claude Opus 5.5, once</div><div class="fl-bar" style="width:50px;"><div style="flex:9; background:#111;"></div><div style="flex:1; background:#d9481f;"></div></div><div class="fl-res">9 right <span class="fl-grey">(Qwen alone: 4)</span></div></div>
 </div>
 
-<div class="fl-foot"><div><b>79 → 84</b> of 100 right</div><div class="fl-next">the 15 steady errors need a better prompt →</div></div>
+<div class="fl-foot"><div class="fragment" data-fragment-index="1"><b>79 → 84</b> of 100 right</div><div class="fl-next fragment" data-fragment-index="2">only a better prompt can fix these 15 →</div></div>
 <p class="muted fl-cite">Li et al. (2026)</p>
 
 ---
