@@ -613,6 +613,92 @@
     requestAnimationFrame(frame);
   };
 
+  /* Slide 18: the agent's log appears line by line, as if it were happening now, then starts again. */
+  builders.logtype = function (root) {
+    const pane = root.closest("section").querySelector(".mainpane");
+    if (!pane) return;
+    const lines = [...pane.children].filter((d) => !d.classList.contains("demo") && !d.classList.contains("user"));
+    lines.forEach((d) => { d.style.transition = "opacity .35s, transform .35s"; });
+    const set = (n) => lines.forEach((d, i) => { d.style.opacity = i < n ? "1" : "0"; d.style.transform = i < n ? "none" : "translateY(6px)"; });
+    let n = 0;
+    setInterval(() => {
+      if (!loopActive(root)) { set(lines.length); n = 0; return; }
+      set(n);
+      n = n >= lines.length + 4 ? 0 : n + 1;
+    }, 900);
+  };
+
+  /* Slide 34: one comment at a time goes from the text column through label.py and Qwen into the runs.
+     The gold label column never lights up. */
+  builders.colflow = function (root) {
+    const sec = root.closest("section");
+    const grid = sec.querySelector('div[style*="grid-template-columns:300px 50px 230px"]');
+    if (!grid) return;
+    const kids = [...grid.children];
+    const csv = kids.find((k) => k.textContent.includes("working_100.csv"));
+    const textCol = csv && csv.querySelector('div[style*="outline"]');
+    const rows = textCol ? [...textCol.children].slice(1) : [];
+    const py = kids.find((k) => k.textContent.trim().startsWith("label.py"));
+    const qwen = kids.find((k) => k.textContent.includes("Qwen"));
+    const arrows = kids.filter((k) => k.textContent.trim() === "→");
+    const stack = kids[kids.length - 1];
+    const cards = stack ? [...stack.children] : [];
+    const front = cards[cards.length - 1];
+    if (!rows.length || !py || !qwen || !front) return;
+    const O = "#d9481f";
+    const base = () => {
+      rows.forEach((r) => { r.style.color = "#555"; r.style.background = ""; });
+      [py, qwen].forEach((b) => { b.style.borderColor = "#111"; });
+      arrows.forEach((a) => { a.style.color = ""; });
+      front.style.borderColor = "#111";
+    };
+    const frontLines = front.innerHTML.split("<br>");
+    let tick = 0;
+    setInterval(() => {
+      if (!loopActive(root)) { base(); front.innerHTML = frontLines.join("<br>"); tick = 0; return; }
+      const row = Math.floor(tick / 5) % rows.length, ph = tick % 5;
+      base();
+      if (ph === 0) { rows[row].style.background = "#fbe3d9"; rows[row].style.color = "#111"; }
+      if (ph === 1) { arrows[0] && (arrows[0].style.color = O); py.style.borderColor = O; }
+      if (ph === 2) { arrows[1] && (arrows[1].style.color = O); qwen.style.borderColor = O; }
+      if (ph === 3) {
+        arrows[2] && (arrows[2].style.color = O); front.style.borderColor = O;
+        front.innerHTML = frontLines.map((l, i) => i === row + 1 ? `<b style="color:${O}">${l}</b>` : l).join("<br>");
+      }
+      if (ph === 4) front.innerHTML = frontLines.join("<br>");
+      tick++;
+    }, 650);
+  };
+
+  /* Slide 42: a second coder goes over the 21 judgment calls and says the opposite on some of them. */
+  builders.goldflip = function (root) {
+    const sec = root.closest("section");
+    const cells = [...sec.querySelectorAll('div[style*="width:28px; height:28px"]')];
+    const calls = cells.filter((c) => c.textContent.trim() === "?");
+    if (!calls.length) return;
+    const orig = calls.map((c) => c.getAttribute("style"));
+    const BLACK = "background:#111; color:#fff;", WHITE = "background:#fff; border:2px solid #bbb; color:#999;";
+    const legend = sec.querySelector('div[style*="margin-top:14px"]');
+    const cap = el("div", { style: "font-size:22px; margin-top:12px; min-height:30px; color:#d9481f; font-weight:600;" });
+    if (legend) legend.appendChild(cap);
+    const flipStyle = (s) => {
+      const head = s.split("font-weight:700;")[0] + "font-weight:700;";
+      return head + (s.includes("#111") ? WHITE : BLACK) + " outline:3px solid #d9481f; outline-offset:-1px;";
+    };
+    let tick = 0, pick = [];
+    setInterval(() => {
+      if (!loopActive(root)) { calls.forEach((c, i) => c.setAttribute("style", orig[i])); cap.textContent = ""; tick = 0; return; }
+      if (tick === 0) {
+        calls.forEach((c, i) => c.setAttribute("style", orig[i])); cap.textContent = "Our labels";
+        pick = calls.map((c, i) => i).sort(() => Math.random() - 0.5).slice(0, 8 + Math.floor(Math.random() * 6));
+      } else if (tick <= pick.length) {
+        const i = pick[tick - 1]; calls[i].setAttribute("style", flipStyle(orig[i]));
+        cap.textContent = `A second coder disagrees on ${tick} of 21`;
+      }
+      tick = tick >= pick.length + 6 ? 0 : tick + 1;
+    }, 420);
+  };
+
   builders.apiflow = function (root) {
     const NS = "http://www.w3.org/2000/svg", O = "#d9481f";
     const W = 1000, H = 360;

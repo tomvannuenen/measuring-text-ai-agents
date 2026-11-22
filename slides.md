@@ -248,6 +248,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
   </div>
 </div>
 
+<div class="demo" data-demo="logtype" style="display:none;"></div>
+
 ---
 
 ## What makes it an agent
@@ -506,6 +508,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <span><span style="color:#2a7d2a; font-weight:700;">✓</span> each comment alone <span style="color:#888;">(stateless)</span></span>
 </div>
 
+<div class="demo" data-demo="colflow" style="display:none;"></div>
+
 ---
 
 ## Working with an agent: plan, act, check
@@ -644,6 +648,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div style="font-size:20px; color:#d9481f; font-weight:600; margin:0 0 22px 6px;">our label: not hostile, a judgment call</div>
 </div>
 </div>
+
+<div class="demo" data-demo="goldflip" style="display:none;"></div>
 
 ---
 
