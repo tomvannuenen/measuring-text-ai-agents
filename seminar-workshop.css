@@ -1,0 +1,339 @@
+/* Workshop-only additions to Seminar white (vendor/seminar/seminar.css). */
+.reveal .demo .eyebrow, .reveal .tag { font-size: 18px !important; font-weight: 700 !important; color: #111 !important; }
+.reveal .demo .note { font-size: 17px !important; color: #6f6f69 !important; }
+.reveal .chip, .reveal .chips-lg .chip, .reveal p .chip { font-weight: 600 !important; }
+.reveal .demo button { font-size: 16px !important; border-radius: 3px !important; }
+.reveal .demo button.primary, .reveal .demo .seg button.on { background: #111 !important; color: #fff !important; }
+.reveal .card b { font-size: 21px !important; display: block; margin-bottom: 4px; }
+.reveal .card { background: transparent !important; border: 0 !important; border-top: 1px solid #cfcfc8 !important; border-radius: 0 !important; padding: 14px 0 0 !important; }
+.reveal .muted { color: #6f6f69 !important; }
+/* This deck is 1100 × 700, not 1920 × 1080: smaller type scale. */
+.reveal h1 { font-size: 52px !important; line-height: 1.02 !important; }
+.reveal h2 { font-size: 38px !important; line-height: 1.08 !important; margin-bottom: 22px !important; }
+.reveal h3 { font-size: 26px !important; }
+.reveal .slides [style*="font-size: 1"], .reveal .slides [style*="font-size:1"] { font-size: 15px !important; }
+.reveal .subtitle { font-weight: 500 !important; font-size: 26px !important; }
+/* Round 4: light prompt boxes and a light Codex window, so nothing in the deck is black. */
+.reveal pre code { background: #f0efea !important; color: #111 !important; border: 1px solid #e2e2dc; border-radius: 3px !important; }
+.reveal .demo.prompt .sentence { background: #f0efea !important; color: #111 !important; border: 1px solid #e2e2dc; }
+.reveal .appwin { background: #fff !important; color: #111 !important; border: 1px solid #d6d6cf; border-radius: 4px !important; box-shadow: none !important; }
+.reveal .appwin .titlebar { background: #f0efea !important; color: #6f6f69 !important; border-bottom: 1px solid #e2e2dc; }
+.reveal .appwin .dots i { background: #cfcfc8 !important; }
+.reveal .appwin .sidebar { background: #f7f6f2 !important; border-right: 1px solid #e2e2dc; }
+.reveal .appwin .thread { color: #6f6f69 !important; }
+.reveal .appwin .thread.active { background: #e6e5df !important; color: #111 !important; }
+.reveal .appwin .msg.user { background: #f0efea !important; color: #111 !important; }
+.reveal .appwin .step { color: #3a3a37 !important; }
+.reveal .appwin .step::before { color: #6f6f69 !important; }
+.reveal .appwin .step.err { color: #b23a17 !important; }
+.reveal .appwin .step.err::before { color: #d9481f !important; }
+.reveal .appwin .step.ok::before { color: #111 !important; }
+.reveal .appwin .reply { color: #111 !important; }
+.reveal .appwin code { background: rgba(0, 0, 0, 0.05) !important; color: #111 !important; }
+/* List numbers in the text font. */
+.reveal ol li::marker { font-family: "Schibsted Grotesk", sans-serif !important; font-weight: 600; font-variant-numeric: proportional-nums !important; }
+
+/* Tables: normal digit spacing. Tabular digits in this font also widen "." "," ";" in table text. */
+.reveal table, .reveal td, .reveal th { font-variant-numeric: lining-nums proportional-nums !important; }
+/* 17 Nov: slide 13 fills the frame. Bigger sentence, a bar of the agent's labels, fixed room for the answers. */
+.reveal .demo.prompt .sentence { font-size: 40px !important; line-height: 1.45 !important; padding: 22px 26px !important; }
+.reveal .demo.prompt .labelbar { margin-top: 26px; }
+.reveal .demo.prompt .labelbar .cap { font-size: 24px; color: #555; margin-bottom: 6px; }
+.reveal .demo.prompt .labelbar .strip { display: flex; height: 64px; border: 2px solid #111; border-radius: 6px; overflow: hidden; }
+.reveal .demo.prompt .labelbar .strip div { display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 600; }
+.reveal .demo.prompt .labelbar .yes { background: #111; color: #fff; }
+.reveal .demo.prompt .labelbar .no { background: #fff; color: #111; }
+.reveal .demo.prompt .labelbar .unc { background: #d9481f; color: #fff; }
+.reveal .demo.prompt .labelbar .ann { font-size: 24px; color: #d9481f; text-align: right; margin-top: 4px; }
+.reveal .demo.prompt .labelbar .ann span { display: inline-block; width: 4.2%; text-align: center; }
+.reveal .demo.prompt .answer { min-height: 172px !important; margin-top: 22px !important; }
+/* 17 Nov: slide 13 phrases get a highlighter stripe; answers are a few words or a small picture. */
+.reveal .demo.prompt .hot { border-bottom: 0 !important; padding: 0 2px; border-radius: 3px !important; color: #111 !important;
+  background: linear-gradient(transparent 62%, rgba(217,72,31,.28) 62%) !important; transition: background-color .25s; }
+.reveal .demo.prompt .hot:hover { background: rgba(217,72,31,.28) !important; }
+.reveal .demo.prompt .hot.on { background: #d9481f !important; color: #fff !important; }
+.reveal .demo.prompt .hot.seen:not(.on) { background: linear-gradient(transparent 62%, rgba(0,0,0,.14) 62%) !important; }
+.reveal .demo.prompt .answer .mk-big { font-size: 40px; font-weight: 700; line-height: 1.2; }
+.reveal .demo.prompt .answer .mk-small { font-size: 28px; color: #555; margin-top: 6px; }
+.reveal .demo.prompt .answer .mk-col { display: inline-block; vertical-align: top; border: 1px solid #bbb; padding: 10px 16px; font-family: "JetBrains Mono", monospace; font-size: 27px; margin-right: -1px; }
+.reveal .demo.prompt .answer .mk-col.key { border: 2px solid #d9481f; color: #d9481f; font-weight: 700; }
+.reveal .demo.prompt .answer .mk-key { display: inline-block; vertical-align: top; }
+.reveal .demo.prompt .answer .mk-lab { display: block; font-size: 26px; color: #d9481f; margin-top: 10px; white-space: nowrap; }
+.reveal .demo.prompt .answer .mk-pct { display: flex; align-items: baseline; gap: 20px; }
+.reveal .demo.prompt .answer .mk-pct b { font-size: 72px; }
+.reveal .demo.prompt .answer .mk-pct span { font-size: 28px; }
+.reveal .demo.prompt .answer .mk-pct em { font-style: normal; color: #d9481f; }
+/* 17 Nov: slide 10 "This workshop": the shared task on top, one small picture per topic. */
+.reveal .tw-task { display: flex; align-items: center; gap: 20px; margin-bottom: 22px; font-size: 30px; }
+.reveal .tw-task img { height: 120px; margin: 0; border: 1px solid #e2e2dc; }
+.reveal .tw-task .arr { color: #888; }
+.reveal .pill { display: inline-block; border-radius: 20px; padding: 0 16px; font-size: 22px; font-weight: 600; border: 2px solid #111; line-height: 1.5; }
+.reveal .pill.yes { background: #111; color: #fff; }
+.reveal .pill.no { background: #fff; color: #111; }
+.reveal .tw-cards { display: flex; gap: 14px; align-items: stretch; min-height: 330px; }
+.reveal .tw-card { flex: 1; border: 2px solid #111; border-radius: 14px; padding: 18px 16px; display: flex; flex-direction: column; gap: 16px; }
+.reveal .tw-card .h { font-size: 30px; font-weight: 700; }
+.reveal .tw-card .req { background: #f0efea; border: 1px solid #e2e2dc; padding: 10px 12px; font-size: 21px; line-height: 1.6; }
+.reveal .tw-card .hl { background: linear-gradient(transparent 62%, rgba(217,72,31,.35) 62%); }
+.reveal .tw-card .rows { font-size: 22px; line-height: 2.1; }
+.reveal .tw-card .rows div { white-space: nowrap; }
+.reveal .tw-card .or { color: #d9481f; }
+.reveal .tw-card .chat { display: flex; flex-direction: column; gap: 8px; font-size: 21px; }
+.reveal .tw-card .chat .bub { align-self: flex-end; background: #f0efea; border-radius: 14px 14px 4px 14px; padding: 6px 12px; }
+.reveal .tw-card .cap { font-size: 22px; color: #555; margin-top: auto; }
+/* 17 Nov: slide 16, the four comment sets as dot grids (black = sides with the poster in the answer key). */
+.reveal .ds-row { display: flex; gap: 30px; align-items: flex-start; margin-top: 6px; }
+.reveal .ds-col { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.reveal .ds-col.warm { flex: 0.7; }
+.reveal .ds-col .h { white-space: nowrap; }
+.reveal .ds-col .h { font-size: 30px; font-weight: 700; }
+.reveal .ds-col .h span { font-weight: 400; color: #555; }
+.reveal .ds-col .cap { font-size: 24px; color: #555; margin-top: 4px; line-height: 1.25; }
+.reveal .ds-grid { display: grid; grid-template-columns: repeat(10, 21px); gap: 6px; }
+.reveal .ds-col.warm .ds-grid { grid-template-columns: repeat(3, 40px); gap: 8px; }
+.reveal .ds-grid i, .reveal .ds-key i { display: block; width: 21px; height: 21px; border-radius: 50%; border: 2px solid #111; background: #fff; box-sizing: border-box; }
+.reveal .ds-col.warm .ds-grid i { width: 40px; height: 40px; }
+.reveal .ds-grid i.y, .reveal .ds-key i.y { background: #111; }
+.reveal .ds-key { font-size: 24px; color: #555; margin-top: 24px; display: flex; align-items: center; gap: 10px; }
+.reveal .ds-key i { display: inline-block; width: 20px; height: 20px; }
+.reveal .ds-key i:not(.y) { margin-left: 16px; }
+/* 17 Nov: slide 8, the hidden verdict marked as our answer key. Box and line are placed in % of the image (942 x 274; "?" box at 92-172, 86-126). */
+.reveal .tk-reply { position: relative; width: 900px; margin-top: 20px; }
+.reveal .tk-reply img { width: 100%; max-width: none; max-height: none; box-sizing: border-box; border: 1px solid #ddd; border-radius: 8px; margin: 0; display: block; }
+.reveal .tk-box { position: absolute; left: calc(9.766% - 5px); top: calc(31.387% - 5px); width: calc(8.493% + 10px); height: calc(14.599% + 10px); border: 4px solid #d9481f; border-radius: 7px; box-sizing: border-box; }
+.reveal .tk-line { position: absolute; left: calc(14.013% - 2px); top: calc(45.985% + 5px); width: 4px; height: calc(54.015% + 9px); background: #d9481f; }
+.reveal .tk-row { display: flex; justify-content: space-between; align-items: flex-start; width: 900px; margin-top: 14px; }
+.reveal .tk-key { margin-left: calc(9.766% - 5px); }
+.reveal .tk-key .h { font-size: 34px; font-weight: 700; color: #d9481f; }
+.reveal .tk-key .sub { font-size: 26px; color: #555; margin-top: 6px; max-width: 380px; }
+.reveal .tk-q div { font-size: 40px; white-space: nowrap; margin-bottom: 16px; }
+.reveal .tk-q span { display: inline-block; font-size: 32px; padding: 6px 26px; border: 2px solid #111; border-radius: 30px; margin-right: 6px; }
+/* 17 Nov: slide 9, label on the orange answer-key line, and bigger model rows. */
+.reveal .demo.hookdemo .bar-row { font-size: 23px !important; margin: 5px 0 !important; padding: 5px 0; grid-template-columns: 290px 1fr 70px !important; }
+.reveal .demo.hookdemo .bar-row .val { font-size: 23px !important; }
+.reveal .demo.hookdemo button.primary { font-size: 20px !important; padding: 8px 18px !important; }
+.reveal .demo.hookdemo .bar-row.truthlabel { margin-bottom: -4px !important; padding: 0; }
+.reveal .demo.hookdemo .tl-track { position: relative; height: 40px; }
+.reveal .demo.hookdemo .tl { position: absolute; bottom: 0; transform: translateX(-50%); white-space: nowrap; color: #d9481f; font-size: 22px; font-weight: 600; text-align: center; line-height: 1.15; }
+/* 17 Nov: hand coding split in two. Slide 17 is the form only; slide 18 shows all five comments with the room, Qwen and the answer key. */
+.reveal .demo.handcode .hc-form { display: flex; align-items: center; gap: 30px; margin: 10px 0 30px; }
+.reveal .demo.handcode .hc-form img { height: 230px; margin: 0; }
+.reveal .demo.handcode .hc-url { font-size: 38px; font-weight: 700; }
+.reveal .demo.handcode .hc-count { font-size: 28px; color: #555; margin-top: 10px; }
+.reveal .demo.handcode .hc-q { font-size: 44px; display: flex; align-items: center; gap: 16px; }
+.reveal .demo.handcode .hc-q .pill { font-size: 32px; padding: 2px 24px; }
+.reveal .demo.handcode .hc-sub { font-size: 28px; color: #555; margin-top: 14px; }
+.reveal .demo.handcode .hc-grid { display: grid; grid-template-columns: 1fr 220px 170px 120px; column-gap: 22px; row-gap: 24px; align-items: center; font-size: 26px; margin-top: 10px; }
+.reveal .demo.handcode .hc-grid .hd { color: #555; font-size: 20px; white-space: nowrap; }
+.reveal .demo.handcode .hc-grid .hd.key { color: #d9481f; font-weight: 600; }
+.reveal .demo.handcode .hc-text { line-height: 1.25; }
+.reveal .demo.handcode .hc-bar { display: flex; height: 30px; border: 2px solid #111; border-radius: 5px; overflow: hidden; font-size: 18px; }
+.reveal .demo.handcode .hc-bar .y { background: #111; color: #fff; padding-left: 6px; display: flex; align-items: center; }
+.reveal .demo.handcode .hc-bar .n { flex: 1; padding-left: 6px; display: flex; align-items: center; }
+.reveal .demo.handcode .hc-mark { display: flex; gap: 8px; }
+.reveal .demo.handcode .hc-mark button { font-size: 20px; padding: 4px 16px; }
+.reveal .demo.handcode .hc-dots { display: flex; gap: 5px; }
+.reveal .demo.handcode .hc-dots i { display: inline-block; width: 22px; height: 22px; border-radius: 50%; border: 2px solid #111; box-sizing: border-box; background: #fff; }
+.reveal .demo.handcode .hc-dots i.y { background: #111; }
+.reveal .demo.handcode .hc-key { display: inline-block; border: 2px solid #d9481f; color: #d9481f; background: #fff; border-radius: 20px; padding: 0 14px; font-size: 22px; font-weight: 600; }
+.reveal .demo.handcode .hc-key.y { background: #d9481f; color: #fff; }
+.reveal .demo.handcode .hc-alpha { display: flex; gap: 60px; margin-top: 26px; font-size: 30px; }
+.reveal .demo.handcode .hc-bar .y:empty { padding: 0; }
+.reveal .demo.handcode .hc-mark button.picked { background: #111; color: #fff; }
+.reveal .demo.handcode .hc-q:first-child { font-size: 56px; margin-top: 20px; }
+.reveal .demo.handcode .hc-q:first-child + .hc-sub { font-size: 32px; }
+/* Slide 18 clicks: Qwen appears on the first click, the answer key on the second. */
+.reveal .demo.handcode[data-step="0"] .hc-qwen, .reveal .demo.handcode[data-step="0"] .hc-keycell, .reveal .demo.handcode[data-step="1"] .hc-keycell { visibility: hidden; }
+/* 17 Nov: slide 17, Adcock & Collier's four levels, with levels 2 to 4 marked as this workshop. */
+.reveal .lv-wrap { display: flex; gap: 24px; align-items: stretch; margin-top: 6px; }
+.reveal .lv-col { flex: 1; }
+.reveal .lv { display: flex; align-items: center; gap: 18px; }
+.reveal .lv .n { width: 44px; height: 44px; border-radius: 50%; background: #d9481f; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; flex: none; }
+.reveal .lv .b { flex: 1; border: 2px solid #d9481f; border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+.reveal .lv .b b { font-size: 28px; white-space: nowrap; }
+.reveal .lv .b span { font-size: 23px; color: #333; text-align: right; }
+.reveal .lv.off .n { background: #ddd; color: #555; }
+.reveal .lv.off .b { border-color: #ccc; }
+.reveal .lv.off .b b { color: #888; }
+.reveal .lv.off .b span { color: #999; }
+.reveal .lv-arr { margin: 6px 0 6px 70px; font-size: 22px; color: #888; }
+.reveal .lv-bar { width: 6px; background: #d9481f; border-radius: 3px; margin-top: 76px; }
+.reveal .lv-lab { width: 120px; display: flex; align-items: center; color: #d9481f; font-size: 26px; font-weight: 700; margin-top: 76px; }
+.reveal .lv-cite { font-size: 22px !important; margin-top: 18px !important; }
+/* 17 Nov: slide 36, six sources of variation measured today. */
+.reveal .sv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.reveal .sv { border: 2px solid #111; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.reveal .sv b { font-size: 26px; }
+.reveal .sv .big { font-size: 44px; font-weight: 700; color: #d9481f; line-height: 1.1; }
+.reveal .sv span { font-size: 21px; color: #555; }
+.reveal .sv i { font-size: 18px; color: #999; font-style: normal; margin-top: auto; }
+.reveal .sv-cite { font-size: 20px !important; margin-top: 14px !important; }
+/* 17 Nov: slide 20, our six models on reliability against validity. */
+.reveal .demo.relval .rv-chart { display: flex; justify-content: center; }
+.reveal .demo.relval .rv-cap { font-size: 20px !important; text-align: center; margin-top: 4px !important; }
+.reveal .demo.relval svg text { font-family: inherit; }
+/* Slide 20 steps: 0 = Qwen on today's 5 comments; 1 = Qwen on 100; 2 = all six models. */
+.reveal .demo.relval .rv-q { transition: cx 1s, cy 1s, r 1s; }
+.reveal .demo.relval .rv-ql, .reveal .demo.relval .rv-ql2, .reveal .demo.relval .rv-ql3, .reveal .demo.relval .rv-late { transition: opacity .5s; }
+.reveal .demo.relval .rv-ql2, .reveal .demo.relval .rv-ql3, .reveal .demo.relval .rv-late { opacity: 0; }
+.reveal .demo.relval[data-step="1"] .rv-ql, .reveal .demo.relval[data-step="2"] .rv-ql { opacity: 0; }
+.reveal .demo.relval[data-step="1"] .rv-ql2 { opacity: 1; transition-delay: .8s; }
+.reveal .demo.relval[data-step="2"] .rv-ql3, .reveal .demo.relval[data-step="2"] .rv-late { opacity: 1; }
+/* 17 Nov: slide 21, ten runs per model as big dots (black yes, white no, dashed not yet run). */
+.reveal .demo.dice .dc-top { display: flex; gap: 24px; align-items: flex-start; }
+.reveal .demo.dice .dc-text { flex: 1; background: #f0efea; border: 1px solid #e2e2dc; padding: 20px 24px; font-size: 30px; line-height: 1.4; }
+.reveal .demo.dice .dc-k { color: #888; }
+.reveal .demo.dice .dc-key { text-align: center; padding-top: 6px; }
+.reveal .demo.dice .dc-key div { font-size: 20px; color: #d9481f; font-weight: 600; margin-bottom: 6px; }
+.reveal .demo.dice .hc-key { display: inline-block; border: 2px solid #d9481f; color: #d9481f; background: #fff; border-radius: 20px; padding: 0 16px; font-size: 24px; font-weight: 600; }
+.reveal .demo.dice .hc-key.y { background: #d9481f; color: #fff; }
+.reveal .demo.dice .dc-row { display: grid; grid-template-columns: 310px auto 1fr; align-items: center; gap: 22px; margin: 30px 0; }
+.reveal .demo.dice .dc-name { font-size: 28px; font-weight: 700; white-space: nowrap; }
+.reveal .demo.dice .dc-dots { display: flex; gap: 10px; }
+.reveal .demo.dice .dc-dots i { display: inline-block; width: 48px; height: 48px; border-radius: 50%; border: 3px solid #111; box-sizing: border-box; background: #fff; }
+.reveal .demo.dice .dc-dots i.y { background: #111; }
+.reveal .demo.dice .dc-dots i.e { border: 2px dashed #ccc; }
+.reveal .demo.dice .dc-tally { font-size: 26px; color: #555; white-space: nowrap; }
+.reveal .demo.dice .dc-btns button { font-size: 22px; padding: 8px 20px; }
+.reveal .demo.dice .dc-btns button { font-size: 22px !important; padding: 8px 20px !important; }
+/* Slide 22: label under the orange part of the "runs agreed" bar. */
+.reveal .sw-lab { position: absolute; top: 38px; left: 50%; transform: translateX(-50%); color: #d9481f; font-size: 22px; font-weight: 600; white-space: nowrap; }
+/* Slide 22: small run dots in the row labels, matching slide 21. */
+.reveal .md { display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #111; box-sizing: border-box; background: #fff; margin-left: 4px; vertical-align: -3px; }
+.reveal .md.y { background: #111; }
+.reveal .ml { font-size: 20px; color: #777; margin-top: 4px; }
+/* Slide 21, after the last run: majority right or wrong. */
+.reveal .demo.dice .dc-row { grid-template-columns: 250px auto 1fr; }
+.reveal .demo.dice .dc-tally { line-height: 1.2; }
+.reveal .demo.dice .dc-wrong { color: #d9481f; font-weight: 700; }
+.reveal .demo.dice .dc-right { color: #555; }
+.reveal .demo.dice .dc-dots.wrong { outline: 3px solid #d9481f; outline-offset: 6px; border-radius: 30px; }
+/* 17 Nov: slide 22 as a flow (Li et al.): 100 comments → Qwen 5 runs → agree / split → keep / ask Opus. */
+.reveal .fl-grid { display: grid; grid-template-columns: 260px 50px 300px 50px 1fr; grid-template-rows: auto auto; align-items: center; row-gap: 60px; margin-top: 40px; }
+.reveal .fl-box { border: 2px solid #111; border-radius: 10px; padding: 16px 18px; font-size: 28px; line-height: 1.25; }
+.reveal .fl-box .md { width: 26px; height: 26px; margin: 0 4px 0 0; }
+.reveal .fl-start { grid-row: 1 / span 2; text-align: center; }
+.reveal .fl-arr { font-size: 44px; color: #888; text-align: center; }
+.reveal .fl-act { font-size: 26px; margin-bottom: 6px; }
+.reveal .fl-bar { display: flex; height: 40px; }
+.reveal .fl-res { font-size: 24px; margin-top: 6px; }
+.reveal .fl-sw { color: #d9481f; font-weight: 600; }
+.reveal .fl-grey { color: #888; }
+.reveal .fl-foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 44px; font-size: 34px; }
+.reveal .fl-foot .muted { font-size: 20px; }
+.reveal .fl-next { font-size: 26px; color: #d9481f; font-weight: 600; }
+.reveal .fl-cite { font-size: 18px !important; text-align: right; margin-top: 8px !important; }
+/* 17 Nov: slide 23, the three prompt versions as cards with the real prompt text. */
+.reveal .pv-row { display: flex; align-items: stretch; gap: 6px; margin-top: 16px; }
+.reveal .pv-card { flex: 1; border: 2px solid #111; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.reveal .pv-card .h { font-size: 28px; font-weight: 700; white-space: nowrap; }
+.reveal .pv-code { flex: 1; background: #f0efea; border: 1px solid #e2e2dc; font-family: "JetBrains Mono", monospace; font-size: 24px; line-height: 1.45; padding: 14px; }
+.reveal .pv-arr { align-self: center; text-align: center; width: 90px; flex: none; }
+.reveal .pv-arr div { font-size: 40px; color: #888; }
+.reveal .pv-arr span { font-size: 20px; color: #d9481f; font-weight: 600; }
+.reveal .pv-bar { display: block; width: 50%; background: #ccc; padding: 2px 6px; margin-top: 4px; }
+.reveal .pv-bar.on { width: 80%; background: #111; color: #fff; margin-top: 0; }
+/* 17 Nov: slide 22, Li et al. working (left) and why it works in our data (right). */
+.reveal .li-wrap { display: flex; gap: 28px; margin-top: 24px; }
+.reveal .li-col { flex: 1; min-width: 0; }
+.reveal .li-sep { width: 4px; background: #d9481f; }
+.reveal .li-h { font-size: 30px; font-weight: 700; margin-bottom: 6px; }
+.reveal .li-sub { font-size: 22px; color: #555; }
+.reveal .li-row { display: flex; align-items: center; gap: 14px; margin: 30px 0; }
+.reveal .li-lab { width: 190px; text-align: right; font-size: 23px; line-height: 1.15; flex: none; }
+.reveal .li-lab .md { width: 18px; height: 18px; margin: 0 2px 0 0; }
+.reveal .li-bar { height: 48px; background: #111; flex: none; }
+.reveal .li-val { font-size: 24px; white-space: nowrap; }
+.reveal .li-foot { font-size: 26px; margin-top: 10px; }
+.reveal .li-foot span { color: #555; }
+/* 17 Nov: slide 25, decoding settings. */
+.reveal .st-row { display: flex; gap: 16px; margin-top: 18px; align-items: stretch; }
+.reveal .st-col { flex: 1; border: 2px solid #111; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 14px; min-height: 300px; }
+.reveal .st-col .h { font-size: 28px; font-weight: 700; }
+.reveal .st-bars div { display: flex; align-items: center; gap: 10px; font-size: 24px; margin: 8px 0; }
+.reveal .st-bars span { width: 50px; }
+.reveal .st-bars i { display: inline-block; height: 30px; background: #111; }
+.reveal .st-bars i.on { background: #111; }
+.reveal .st-bars i.off { background: #ddd; }
+.reveal .st-cap { font-size: 22px; color: #555; line-height: 1.3; }
+.reveal .st-av { display: flex; justify-content: space-between; gap: 10px; font-size: 22px; border-bottom: 1px solid #e2e2dc; padding: 8px 0; }
+.reveal .st-av b.no { color: #d9481f; }
+.reveal .st-foot { font-size: 26px !important; margin-top: 24px !important; }
+.reveal .st-foot .muted { font-size: 22px; }
+.reveal .li-wrap { margin-top: 34px; }
+.reveal .li-lab { width: 170px; }
+.reveal .li-row { margin: 44px 0; }
+.reveal .li-bar { height: 56px; }
+.reveal .li-h { font-size: 32px; }
+.reveal .li-foot { font-size: 28px; margin-top: 20px; }
+/* Slide 22: the split row is the one to escalate; outline it, no words. */
+.reveal .li-row.li-hi { outline: 3px solid #d9481f; outline-offset: 10px; border-radius: 8px; }
+/* Slide 25: what sampling gives over ten tries (white no, black yes). */
+.reveal .st-dots { display: flex; gap: 5px; }
+.reveal .st-dots i { display: inline-block; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #111; box-sizing: border-box; background: #fff; }
+.reveal .st-dots i.y { background: #111; }
+/* Slide 26: Qwen label above the step rows; step rows a bit tighter than slide 21. */
+.reveal .demo.dice .dc-who { font-size: 24px; color: #555; margin-top: 18px; }
+.reveal .demo.dice .dc-row { margin: 22px 0; }
+/* Slide 27: bigger rows, short labels (Reliability, Validity) that match slide 20. */
+.reveal .demo.expdemo .bar-row.exp { grid-template-columns: 180px 1fr 80px !important; font-size: 24px !important; margin: 6px 0 !important; }
+.reveal .demo.expdemo .bar-row.exp .val { font-size: 24px !important; }
+.reveal .demo.expdemo .eyebrow { font-size: 26px !important; font-weight: 700; margin-top: 10px; }
+.reveal .demo.expdemo .track { height: 26px !important; }
+.reveal .demo.expdemo .seg button { font-size: 22px !important; padding: 6px 16px !important; }
+.reveal .demo.dice[data-demo="steps"] .dc-text { font-size: 26px; padding: 16px 20px; }
+.reveal .demo.dice[data-demo="steps"] .dc-row { margin: 16px 0; grid-template-columns: 250px auto 1fr; }
+.reveal .demo.dice .dc-tally { white-space: nowrap; }
+/* Slide 20: four sets of comments, with arrows and a lock on the held-out set */
+.reveal .ds-row { gap: 14px; }
+.reveal .ds-col { flex: 0 0 auto; position: relative; }
+.reveal .ds-grid { grid-template-columns: repeat(10, 18px); gap: 5px; }
+.reveal .ds-grid i { width: 18px; height: 18px; }
+.reveal .ds-col.warm .ds-grid { grid-template-columns: repeat(3, 34px); }
+.reveal .ds-col.warm .ds-grid i { width: 34px; height: 34px; }
+.reveal .ds-col .cap { max-width: 230px; }
+.reveal .ds-col.warm .cap { max-width: 130px; }
+.reveal .ds-arrow { align-self: center; font-size: 40px; color: #888; margin: 0 -6px; }
+.reveal .ds-col.locked .ds-grid { opacity: 0.45; }
+.reveal .ds-lock { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%); font-size: 90px; }
+/* Slide 19: API keys in the news, two article screenshots */
+.reveal .news-shots { position: relative; height: 540px; margin-top: 10px; }
+.reveal .news-shots img { position: absolute; max-width: none; margin: 0; border: 1px solid #ccc; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+.reveal .news-shots img.a { left: 0; top: 14px; width: 660px; transform: rotate(-2deg); z-index: 1; }
+.reveal .news-shots img.b { left: 560px; top: 200px; width: 480px; transform: rotate(2.5deg); z-index: 2; }
+/* Slide 20: the indicator (level 3) is this part's subject */
+.reveal .lv.hi .b { background: #fbe9e3; border-width: 3px; }
+/* Slide 33: the held-out set stays locked until the room's codebook is done */
+.reveal .ho-lock { position: absolute; right: 0; top: 8px; display: flex; align-items: center; gap: 20px; font-size: 26px; color: #555; line-height: 1.3; text-align: left; }
+.reveal .ho-lock .g { position: relative; display: grid; grid-template-columns: repeat(10, 10px); gap: 3px; }
+.reveal .ho-lock .g i { display: block; width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #aaa; box-sizing: border-box; }
+.reveal .ho-lock .g i.y { background: #aaa; }
+.reveal .ho-lock .g span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 50px; }
+/* Slide 9: the loop back up from the labels to the definition */
+.reveal .lv-loop { position: relative; width: 70px; margin: 96px 0 24px; }
+.reveal .lv-loop .ln { position: absolute; left: 0; top: 0; bottom: 0; width: 40px; border: 5px solid #d9481f; border-left: none; border-radius: 0 18px 18px 0; }
+.reveal .lv-loop .hd { position: absolute; left: -14px; top: -13px; width: 0; height: 0; border-top: 13px solid transparent; border-bottom: 13px solid transparent; border-right: 18px solid #d9481f; }
+.reveal .lv-loop + .lv-lab { margin-top: 0; width: 150px; }
+/* Slide 8, hostility version: the question first, the gold labels under it */
+.reveal .tk-row.v2 { flex-direction: column; gap: 22px; }
+.reveal .tk-row.v2 .tk-key { margin-left: 0; }
+.reveal .tk-row.v2 .tk-key .sub { max-width: none; }
+/* Slide 13: first try, three steps */
+.reveal .ft-row { display: flex; align-items: center; gap: 14px; margin: 24px 0 26px; }
+.reveal .ft-step { flex: 1; border: 2px solid #111; border-radius: 14px; padding: 20px 18px; font-size: 30px; font-weight: 700; line-height: 1.25; }
+.reveal .ft-step .n { display: inline-flex; width: 40px; height: 40px; border-radius: 50%; background: #d9481f; color: #fff; align-items: center; justify-content: center; font-size: 22px; margin-right: 10px; vertical-align: 3px; }
+.reveal .ft-step small { font-size: 20px; font-weight: 400; color: #555; }
+.reveal .ft-step code { font-size: 28px; }
+.reveal .ft-arr { font-size: 40px; color: #888; }
+/* Slide 15: what did your agent do? */
+.reveal .wa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+.reveal .wa { border: 2px solid #111; border-radius: 14px; padding: 30px 28px; font-size: 34px; line-height: 1.3; min-height: 150px; }
+.reveal .wa b { color: #111; }
+.reveal .wa code { font-size: 30px; }
+.reveal pre.ft-code { width: 100%; box-shadow: none; margin: 10px 0 0; }
+.reveal pre.ft-code code { font-size: 30px; line-height: 1.5; padding: 28px 26px; white-space: pre-wrap; max-height: none; }
+.reveal .ft-step { padding: 28px 22px; font-size: 32px; }
+
+/* Exercise tag, top right: which exercise and section the participants work on at this slide */
+.reveal .slides section .ex-tag { position: absolute; top: -30px; right: 0; margin: 0; font-size: 20px; line-height: 1.3;
+  color: #6f6f69; padding: 0; background: #fff; white-space: nowrap; }

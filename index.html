@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measuring Text with AI Agents</title>
+
+  <link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="vendor/reveal/dist/theme/white.css">
+  <link rel="stylesheet" href="vendor/reveal/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <link rel="stylesheet" href="demos.css?v=1121x">
+
+  <style>
+    :root {
+      --berkeley-blue: #003262;
+      --california-gold: #FDB515;
+      --r-heading-font: "et-book", "Fraunces", "Iowan Old Style", Georgia, serif;
+      --r-main-font: "et-book", "Newsreader", "Iowan Old Style", Georgia, serif;
+      --r-code-font: "JetBrains Mono", "SF Mono", Menlo, monospace;
+      --r-heading-color: #111111;
+      --r-main-color: #111111;
+      --r-background-color: #fafaf8;
+      --r-link-color: #d9481f;
+      --r-main-font-size: 34px;
+    }
+    html, body, .reveal-viewport { background: #fafaf8; }
+    .reveal { font-weight: 400; }
+    .reveal strong, .reveal b { font-weight: 600; }
+    .reveal .slide-number { background: none; color: #6f6f69; font-family: var(--r-code-font); font-size: 13px; }
+    .reveal table { border-collapse: collapse; }
+    .reveal table th, .reveal table td { border-bottom: 1px solid #e2e2dc !important; }
+    .reveal table thead tr { border-bottom: 1.5px solid #111111; }
+    .reveal pre code { background: #111111 !important; color: #f0f0ec !important; font-size: 0.95em; }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+    }
+    .reveal h1 { font-size: 1.9em; line-height: 1.12; }
+    .reveal h2 { font-size: 1.32em; line-height: 1.15; margin-bottom: 0.65em; }
+    .reveal .slides section {
+      text-align: left;
+    }
+    .reveal .slides section.center-slide {
+      text-align: center;
+    }
+    .reveal p, .reveal li { line-height: 1.45; }
+    .reveal ul { display: block; margin-left: 0.8em; }
+    .reveal li { margin-bottom: 0.4em; }
+    .reveal pre {
+      width: 100%;
+      box-shadow: none;
+      border-radius: 8px;
+      font-size: 0.62em;
+      line-height: 1.4;
+    }
+    .reveal pre code { padding: 0.9em 1.1em; border-radius: 8px; }
+    .reveal code { color: #3a3a37; background: none; padding: 0; font-size: 0.82em; }
+    .reveal pre code { color: #f8f8f2; }
+    .reveal blockquote {
+      border-left: 2px solid #d9481f;
+      background: none;
+      box-shadow: none;
+      padding-left: 0.8em;
+      font-style: normal;
+      margin-left: 0;
+      width: 100%;
+    }
+    .reveal table { font-size: 0.85em; }
+    .reveal table th { color: #6f6f69; font-weight: 400; font-style: italic; }
+    .reveal table th, .reveal table td { padding: 0.35em 0.8em; }
+    .reveal .subtitle { color: #3a3a37; font-style: italic; font-size: 0.85em; margin-top: 1.1em; }
+    .reveal .logo { height: 190px; margin: 0 0 0.4em; box-shadow: none; }
+    .reveal .logo-end { height: 200px; margin-top: 1em; }
+    .reveal .muted { color: #6f6f69; font-size: 0.62em; font-family: var(--r-code-font); letter-spacing: 0; }
+    .gold { color: #c98a00; }
+    .reveal .screenshot {
+      max-height: 440px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 0.6em;
+      border-radius: 10px;
+      box-shadow: 0 10px 35px rgba(0, 20, 60, 0.25);
+    }
+    .reveal .chat {
+      width: 82%;
+      margin: 0 auto 0.8em;
+      font-size: 0.58em;
+    }
+    .reveal .chat .msg {
+      border-radius: 14px;
+      padding: 0.6em 1em;
+      margin: 0.55em 0;
+      line-height: 1.45;
+    }
+    .reveal .chat .user { background: #e7eef6; margin-left: 22%; }
+    .reveal .chat .bot { background: #f4f4f4; margin-right: 22%; }
+    .reveal .chat code {
+      background: rgba(0, 0, 0, 0.06);
+      padding: 0 0.25em;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .reveal .chat .codebox {
+      background: #1c1d21;
+      border-radius: 8px;
+      margin: 0.5em 0;
+      overflow: hidden;
+    }
+    .reveal .chat .codebar {
+      display: flex;
+      justify-content: space-between;
+      background: #35363c;
+      color: #c4c4c4;
+      font-family: var(--r-code-font);
+      font-size: 0.72em;
+      padding: 0.35em 1em;
+    }
+    .reveal .chat .codebox pre {
+      margin: 0;
+      padding: 0.6em 1em;
+      width: auto;
+      font-size: 0.9em;
+      color: #f0f0f0;
+      background: none;
+      box-shadow: none;
+    }
+    .reveal .appwin {
+      width: 86%;
+      margin: 0 auto 0.8em;
+      font-size: 0.55em;
+      background: #1e1f24;
+      color: #d8d8d8;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 20, 60, 0.25);
+    }
+    .reveal .appwin .titlebar {
+      display: flex;
+      align-items: center;
+      gap: 0.9em;
+      background: #2b2c31;
+      color: #9a9a9a;
+      font-size: 0.85em;
+      padding: 0.45em 1em;
+    }
+    .reveal .appwin .dots i {
+      display: inline-block;
+      width: 0.65em;
+      height: 0.65em;
+      border-radius: 50%;
+      background: #55565c;
+      margin-right: 0.35em;
+    }
+    .reveal .appwin .appbody { display: flex; }
+    .reveal .appwin .sidebar {
+      width: 24%;
+      background: #26272c;
+      padding: 0.8em 0.6em;
+    }
+    .reveal .appwin .thread {
+      padding: 0.35em 0.7em;
+      border-radius: 6px;
+      color: #9a9a9a;
+      margin-bottom: 0.3em;
+    }
+    .reveal .appwin .thread.active { background: #3a3b41; color: #fff; }
+    .reveal .appwin .mainpane { flex: 1; padding: 0.9em 1.2em; }
+    .reveal .appwin .msg.user {
+      background: #33415e;
+      color: #eef2f8;
+      border-radius: 12px;
+      padding: 0.5em 0.9em;
+      margin: 0 0 0.7em 22%;
+    }
+    .reveal .appwin .step {
+      font-family: var(--r-code-font);
+      font-size: 0.88em;
+      color: #9aa4b2;
+      margin: 0.35em 0;
+      padding-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .appwin .step::before { content: "▸ "; color: #6b7280; }
+    .reveal .appwin .step.err::before { content: "✗ "; color: #e0656a; }
+    .reveal .appwin .step.err { color: #cfa0a3; }
+    .reveal .appwin .step.ok::before { content: "✓ "; color: #6fbf82; }
+    .reveal .appwin .reply { margin-top: 0.7em; color: #e6e6e6; }
+    .reveal .appwin code {
+      background: rgba(255, 255, 255, 0.08);
+      color: #d8d8d8;
+      padding: 0 0.25em;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .reveal .small table { font-size: 0.74em; }
+    .reveal .small { margin-bottom: 0.6em; }
+    .reveal .progress { color: #d9481f; height: 2px; }
+    .reveal .controls { color: #6f6f69; }
+  </style>
+  <link rel="stylesheet" href="vendor/seminar/seminar.css?v=5">
+  <link rel="stylesheet" href="seminar-workshop.css?v=51">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="slides.md?v=1122proj2"
+               data-separator="^\r?\n---\r?\n$"
+               data-separator-notes="^Note:"
+               data-charset="utf-8">
+      </section>
+    </div>
+  </div>
+
+  <script src="vendor/reveal/dist/reveal.js"></script>
+  <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+  <script src="vendor/reveal/plugin/highlight/highlight.js"></script>
+  <script src="vendor/reveal/plugin/notes/notes.js"></script>
+  <script src="vendor/available.js"></script>
+  <script src="demo-data.js?v=1118h"></script>
+  <script src="demo-data-camara.js?v=1114g"></script>
+  <script src="demo-data-robust.js?v=1121t"></script>
+  <script src="live-config.js?v=13"></script>
+  <script src="demo-text.js?v=1121e101704"></script>
+  <script src="demos.js?v=1122proj"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'none',
+      width: 1100,
+      height: 700,
+      margin: 0.08,
+      scrollActivationWidth: null,
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    }).then(() => window.initDemos());
+  </script>
+</body>
+</html>
