@@ -295,11 +295,13 @@ data/working_100.csv twice (runs/robust_orig_a.csv and runs/robust_orig_b.csv),
 and edits/working_gender.csv once (runs/robust_gender.csv).
 
 Report how many of the 100 labels differ between the two runs of the original,
-and how many differ between the original and the swapped version.
+and how many differ between the original and the swapped version. For the swap, say how
+many labels went from no to yes and from yes to no, separately for comments that
+were about a woman and about a man before the swap.
 Show me every comment whose label changed after the swap, with both versions of the text.
 ```
 
-Compare the two numbers. Asking again with nothing changed also moves some labels, so only the changes beyond that point to gender. Look at the before-and-after examples too: the agent decides how to swap, for instance whether to rename people.
+Compare the two numbers. Asking again with nothing changed also moves some labels, so only the changes beyond that point to gender. Noise moves labels both ways at random. If comments about women mostly move one way and comments about men the other, that points to bias. Look at the before-and-after examples too: the agent decides how to swap, for instance whether to rename people.
 
 ## Step 13. Follow-up questions (optional)
 
