@@ -24,7 +24,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 
 Bring a laptop (macOS or Windows) with the ChatGPT app installed, and sign in. A free account is enough. We use [Codex](https://chatgpt.com/codex/), OpenAI's coding agent, which is a mode in the ChatGPT app.
 
-**No API?** If the key or the internet fails, the `backup` folder has our results. The steps say which file to use.
+**No API?** If the key or the labeling model fails, the `backup` folder has our results. The steps say which file to use.
 
 ## Step 1. Get the project
 
@@ -335,7 +335,7 @@ Open yours, then look at your neighbor's.
 ## What's in the download
 
 - `project/`: the data, as a small research project. This is the only folder you open in Codex.
-- `backup/`: our results, in case the internet or the API fails.
+- `backup/`: our results, in case the key or the labeling model fails.
 - `images/`: the pictures on this page.
 
 The comments come from the Reddit forum r/AmItheAsshole, in English. Each has our hand-coded label for hostility, in the column `hostile`. The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
