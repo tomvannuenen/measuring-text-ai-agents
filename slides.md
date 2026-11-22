@@ -488,7 +488,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div class="fragment fade-up" data-fragment-index="3" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
 <div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">API</b><span style="font-size:26px; color:#888;">one call</span></div>
 <div style="display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap;"><span style="font-size:22px; color:#888;">model</span><span style="border:1px solid #cfcfc8; color:#555; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">gpt-6.2-sol</span><span style="border:2px solid #d9481f; color:#d9481f; font-weight:700; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">qwen3-235b</span><span style="font-size:20px; color:#d9481f;">today: cheap</span></div>
-<div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; line-height:1.65; padding:16px 20px; margin-top:12px; text-align:left;">temperature: <b>0</b><br>top_k: <b>1</b><br>prompt: codebook<br>text: "Your aunt is a…"</div>
+<div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; line-height:1.65; padding:16px 20px; margin-top:12px; text-align:left;">temperature: <b>0</b><br>prompt: codebook<br>text: "Your aunt is a…"</div>
 <div style="font-size:44px; text-align:center; color:#888; line-height:1.2;">↓</div>
 <div style="align-self:center; background:#111; color:#fff; border-radius:999px; padding:6px 34px; font-size:32px;">yes</div>
 <div style="margin-top:auto; font-size:24px; color:#888; text-align:center;">🔑 key &nbsp;·&nbsp; $ per call</div>
@@ -688,17 +688,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Cohen’s kappa and Krippendorff’s alpha
-
-<div style="display:grid; grid-template-columns:1fr 1.25fr; gap:44px; margin-top:12px; text-align:left;">
-<div><div style="font-size:30px; font-weight:700; margin-bottom:4px;">Cohen’s kappa</div><p style="font-size:24px; margin:0 0 14px; color:#444;">Two coders. How often do they agree, beyond what chance would give?</p><div style="display:grid; grid-template-columns:130px 1fr 1fr 50px; gap:6px; align-items:center;"><div></div><div style="font-size:18px; color:#888; text-align:center;">me</div><div style="font-size:18px; color:#888; text-align:center;">the agent</div><div style="font-size:18px; color:#888; text-align:center;"></div><div style="font-size:20px; color:#555;">comment 1</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="font-size:28px; text-align:center; color:#2a7d2a;">✓</div><div style="font-size:20px; color:#555;">comment 2</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="font-size:28px; text-align:center; color:#2a7d2a;">✓</div><div style="font-size:20px; color:#555;">comment 3</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="font-size:28px; text-align:center; color:#d9481f;">✗</div><div style="font-size:20px; color:#555;">comment 4</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="font-size:28px; text-align:center; color:#2a7d2a;">✓</div></div></div>
-<div><div style="font-size:30px; font-weight:700; margin-bottom:4px; color:#d9481f;">Krippendorff’s alpha</div><p style="font-size:24px; margin:0 0 14px; color:#444;">The same idea for any number of coders, even when some labels are missing.</p><div style="display:grid; grid-template-columns:130px repeat(5,1fr); gap:6px; align-items:center;"><div></div><div style="font-size:18px; color:#888; text-align:center;">run 1</div><div style="font-size:18px; color:#888; text-align:center;">run 2</div><div style="font-size:18px; color:#888; text-align:center;">run 3</div><div style="font-size:18px; color:#888; text-align:center;">run 4</div><div style="font-size:18px; color:#888; text-align:center;">run 5</div><div style="font-size:20px; color:#555;">comment 1</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="font-size:20px; color:#555;">comment 2</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="font-size:20px; color:#555;">comment 3</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#d9481f; color:#fff; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">yes</div><div style="font-size:20px; color:#555;">comment 4</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div><div style="background:#e8e6df; color:#555; border-radius:6px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700;">no</div></div></div>
-</div>
-
-<p style="font-size:26px; margin-top:24px;">The agents reported kappa: their labels against mine. Today we use alpha, with five runs of one model as the coders.</p>
-
----
-
 ## Gold labels are an interpretation too
 
 <div style="display:flex; gap:48px; align-items:flex-start; margin-top:24px;">
@@ -734,39 +723,12 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Ten runs of the same comment test reliability
-
-
-
-<div class="demo" data-demo="dice"></div>
-<span class="fragment dc-step"></span>
-
----
-
 ## Reliability and validity
 
 <div class="demo" data-demo="relval"></div>
 <span class="fragment rv-step"></span><span class="fragment rv-step"></span>
 
-<p class="fragment" style="font-size:26px; margin:14px 0 0; text-align:left;">A third check comes in step 12: the label should stay the same when only something irrelevant changes, like the gender in a comment.</p>
-
----
-
-## Ask a stronger model when the cheap one is unsure
-
-<div class="fl-grid">
-<div class="fl-box fl-start"><b>100 comments</b><br>DeepSeek, 5 runs each</div>
-<div class="fl-arr">↗</div>
-<div class="fl-box"><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><br>all 5 agree: <b>74</b></div>
-<div class="fl-arr">→</div>
-<div><div class="fl-act">keep its label</div><div class="fl-bar" style="width:370px;"><div style="flex:65; background:#111;"></div><div style="flex:9; background:#d9481f;"></div></div><div class="fl-res"><b>88%</b> right</div></div>
-<div class="fl-arr">↘</div>
-<div class="fl-box" style="outline:3px solid #d9481f; outline-offset:4px;"><i class="md y"></i><i class="md y"></i><i class="md"></i><i class="md y"></i><i class="md"></i><br>runs split: <b>26</b></div>
-<div class="fl-arr">→</div>
-<div><div class="fl-act">ask a stronger model</div><div class="fl-bar" style="width:130px;"><div style="flex:14; background:#111;"></div><div style="flex:12; background:#d9481f;"></div></div><div class="fl-res"><b>54%</b> right on its own</div></div>
-</div>
-
-<div class="fl-foot"><div>Li et al. (2026): same accuracy or better, at <b>41%</b> of the cost</div></div>
+<p class="fragment" style="font-size:26px; margin:14px 0 0; text-align:left;">A third check comes in step 11: the label should stay the same when only something irrelevant changes, like the gender in a comment.</p>
 
 ---
 
@@ -777,17 +739,17 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="pv-arr fragment" data-fragment-index="1"><div>→</div><span>+ rules</span></div>
 <div class="pv-card fragment" data-fragment-index="1"><div class="h">2. Codebook</div><div class="pv-code">Does the comment attack a person?<br><br>Name-calling: yes.<br>Harsh criticism of an action: no.<br>…</div></div>
 <div class="pv-arr fragment" data-fragment-index="2"><div>→</div><span>+ setting</span></div>
-<div class="pv-card fragment" data-fragment-index="2"><div class="h">3. top_k = 1</div><div class="pv-code">Same codebook.<br><br><span class="pv-bar on">no</span><span class="pv-bar">yes</span><br>Always the most likely label.</div></div>
+<div class="pv-card fragment" data-fragment-index="2"><div class="h">3. Temperature 0</div><div class="pv-code">Same codebook.<br><br><span class="pv-bar on">no</span><span class="pv-bar">yes</span><br>Always the most likely label.</div></div>
 </div>
 
 ---
 
-## Greedy settings
+## Importance of temperature
 
 <div class="st-row">
 <div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-<div class="st-col fragment" data-fragment-index="1"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Set temperature to 0 or top_k to 1.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-<div class="st-col fragment" data-fragment-index="5"><div class="h">Models with greedy</div>
+<div class="st-col fragment" data-fragment-index="1"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Set the temperature to 0.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col fragment" data-fragment-index="4"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
 <div class="st-av"><span>Gemini</span><b>✓</b></div>
 <div class="st-av"><span>GPT-5 reasoning</span><b class="no">✗</b></div>
@@ -799,18 +761,10 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <ul class="st-defs">
 <li class="fragment" data-fragment-index="2">Temperature sets how spread out the chances are.</li>
-<li class="fragment" data-fragment-index="3">top_k keeps only the k most likely labels.</li>
-<li class="fragment" data-fragment-index="4">Greedy always takes the most likely label.</li>
+<li class="fragment" data-fragment-index="3">Greedy always takes the most likely label.</li>
 </ul>
 
-<p class="st-foot">Each dot is one run of the same comment. Orange means yes. <span class="fragment" data-fragment-index="5">Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</span></p>
-
----
-
-## The experiment on one comment
-
-<div class="demo" data-demo="steps"></div>
-<span class="fragment st-step"></span><span class="fragment st-step"></span><span class="fragment st-step"></span>
+<p class="st-foot">Each dot is one run of the same comment. Orange means yes. <span class="fragment" data-fragment-index="4">Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</span></p>
 
 ---
 
@@ -840,13 +794,13 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Write a rule
 
-<div class="ex-tag">Step 10</div>
+<div class="ex-tag">Step 9</div>
 
 <p class="yt-intro">Find a comment that is hard to code.</p>
 
 <div class="yt-box">Show me 5 comments from data/working_100.csv where the five runs in<br>runs/working_v0_qwen.csv did not all agree, with the full text as plain<br>paragraphs and each run’s label. Don’t show the gold labels, and don’t suggest any rules.</div>
 
-<p class="yt-copy">Copy it from step 10 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 9 on the GitHub page.</p>
 
 <p class="yt-look">Write one rule that settles your comment, in your own words, without looking at the gold labels.</p>
 
@@ -854,7 +808,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## The room's codebook
 
-<div class="ex-tag">Step 11</div>
+<div class="ex-tag">Step 10</div>
 
 
 <div class="demo" data-demo="roomcodebook"></div>
@@ -865,11 +819,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Your codebook and the held-out test
 
-<div class="ex-tag">Step 11</div>
+<div class="ex-tag">Step 10</div>
 
 <div class="yt-row"><span class="n">1</span><div><div class="yt-box">Copy codebook_v0.md to codebook_v1.md. Just before the last line (“Answer with<br>the label only.”), add a line “Rules:” and then the rules below, exactly as I wrote them.<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">2</span><div><div class="yt-box">Held-out test: label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,<br>3 runs each, saved to runs/heldout_v0.csv and runs/heldout_v1.csv.<br><span class="more">…</span></div></div></div>
 
-<p class="yt-copy">Copy the two prompts from step 11 on the GitHub page.</p>
+<p class="yt-copy">Copy the two prompts from step 10 on the GitHub page.</p>
 
 <p class="yt-look">Paste the room’s three rules at the end of the first prompt.</p>
 
@@ -925,7 +879,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Write it all down
 
-<div class="ex-tag">Step 14</div>
+<div class="ex-tag">Step 13</div>
 
 
 <p style="font-size:30px; margin:6px 0 0;">Today’s analysis lives in your files and in long chats full of decisions. Chats are where research decisions become opaque.</p>
@@ -938,7 +892,7 @@ how the reliability numbers were computed, and every test and its results.
 
 End with a section "Decisions I did not ask for".</code></pre>
 
-<p class="yt-copy">Copy it from step 14 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 13 on the GitHub page.</p>
 
 <p class="yt-look">What does a good entry in this file look like?</p>
 
@@ -946,7 +900,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Read WORKFLOW.md
 
-<div class="ex-tag">Step 14</div>
+<div class="ex-tag">Step 13</div>
 
 
 <p style="font-size:30px; margin:6px 0 10px;">Read it, especially the last section. Look for decisions you didn’t know were made. For instance:</p>
@@ -965,7 +919,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Build something with your results
 
-<div class="ex-tag">Step 15</div>
+<div class="ex-tag">Step 14</div>
 
 
 <p class="yt-intro">Research outputs don’t have to be static images pasted into slides.</p>
@@ -976,7 +930,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 - agreement with my labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got</code></pre>
 
-<p class="yt-copy">Copy it from step 15 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 14 on the GitHub page.</p>
 
 <p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
 
@@ -1268,7 +1222,7 @@ A model cannot check its own labels. A reference set labeled by people is needed
 Challenge 4: "Make the agreement between runs, and between the two models, as high as possible on the held-out set. Change whatever you need to."
 
 Changes to look for in the agent's report:
-- Temperature 0 and `top_k = 1`: runs repeat more; accuracy stays the same.
+- Temperature 0: runs repeat more; accuracy stays the same.
 - A new definition that pushes most comments to one label.
 - Rules written from the held-out comments, which then stop being held out.
 

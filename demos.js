@@ -976,7 +976,7 @@
   builders.steps = function (root) {
     /* The experiment on one comment (slide 52): Qwen, five runs per prompt version, in the style of slide 46. */
     const X = D.experiment.example;
-    const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "top_k = 1" };
+    const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "Temperature 0" };
     const k5 = D.coder5.findIndex((c) => c.text === X.text);
     let n = 0;
     const rows = X.steps.map((st) => ({ st, dots: el("div", { class: "dc-dots" }, st.runs.map(() => el("i", { class: "e" }))), tally: el("div", { class: "dc-tally" }) }));
@@ -1003,7 +1003,7 @@
     const M = D.experiment.models;
     let cur = 0;
     const mk = (name) => { const fill = el("div", { class: "fill" }), val = el("div", { class: "val" }); return { row: el("div", { class: "bar-row exp" }, el("div", {}, name), el("div", { class: "track" }, fill), val), fill, val }; };
-    const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "Codebook, top_k = 1" };
+    const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "Codebook, temperature 0" };
     const groups = M[0].steps.map((st) => ({ name: NAME[st.name] || st.name, rel: mk("Reliability"), val: mk("Validity") }));
     groups.forEach((g) => g.val.row.classList.add("all"));
     const seg = el("div", { class: "seg" });
@@ -1017,7 +1017,8 @@
     }
     root.classList.add("bars", "expdemo");
     put(root, el("div", { class: "row", style: "margin-bottom:8px" }, seg),
-      groups.map((g) => el("div", { class: "expgroup" }, el("div", { class: "eyebrow" }, g.name), g.rel.row, g.val.row)));
+      groups.map((g) => el("div", { class: "expgroup" }, el("div", { class: "eyebrow" }, g.name), g.rel.row, g.val.row)),
+      el("p", { class: "note", style: "margin-top:8px;" }, "Our runs used top_k = 1, which has the same effect as temperature 0."));
     draw();
   };
 
@@ -1078,7 +1079,7 @@
         row("as written, asked again", "base2"),
         el("tr", { class: "swap" }, el("td", {}, "genders swapped"), cols.map((c) => cell(c.base, c.gender)))),
       el("p", { class: "take" }, `Changing \u201c${from}\u201d to \u201c${to}\u201d flipped Qwen\u2019s label with the one-line prompt. Every other column kept its label.`),
-      el("p", { class: "note" }, `Qwen with top_k = 1. Luna at its default settings. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
+      el("p", { class: "note" }, `Qwen with greedy settings. Luna at its default settings. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
   };
 
   builders.robustbars = function (root) {
@@ -1096,7 +1097,7 @@
     root.classList.add("bars", "robust");
     put(root,
       el("div", { class: "row", style: "margin-bottom:10px" }, toggles(["Qwen", "DeepSeek"], (k) => { m = k; draw(); }), toggles(["One-line prompt", "Codebook"], (k) => { pr = k; draw(); })),
-      el("div", { class: "note", style: "margin-bottom:6px" }, `Labels that changed, out of ${RB.n}. Each version ran once, with top_k = 1.`),
+      el("div", { class: "note", style: "margin-bottom:6px" }, `Labels that changed, out of ${RB.n}. Each version ran once, with greedy settings.`),
       rows.map((r) => r.row));
     root.onshow = () => setTimeout(draw, 150);
   };
@@ -1115,7 +1116,7 @@
     turns[2].append(el("span", { class: "fork" }, "Follow-up 1"));
     turns[4].append(el("span", { class: "fork" }, "Follow-up 2"));
     put(root, el("div", { class: "turns" }, turns),
-      el("p", { class: "note" }, `Qwen with the codebook, top_k = 1. Each follow-up comes after the same first answer. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
+      el("p", { class: "note" }, `Qwen with the codebook and greedy settings. Each follow-up comes after the same first answer. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
   };
 
   /* Changed labels per model, prompt and condition (slides 63 and 64). Columns are grouped by open and closed weights,
