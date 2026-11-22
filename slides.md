@@ -760,7 +760,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Settings: temperature, top_k, greedy
+## Temperature, top_k and greedy settings
 
 <div class="st-row">
 <div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
