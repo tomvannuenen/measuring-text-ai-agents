@@ -111,6 +111,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - The labels are yes and no. Restrict answers to them with structured output. If a codebook lists different labels, ask me before running.
 - Send at most 8 requests at a time. Retry failed requests up to 5 times with increasing waits, and report how many still failed.
 - Append one line per labeling job to runs/LOG.md: date, data file, codebook, model, provider, settings, number of runs.
+- Before any labeling job, tell me how many calls it will make and estimate the cost from the token counts in runs/test_call.json and the model's price on openrouter.ai. Wait for my OK.
 
 ## Reporting
 - After every labeling job, report: the model and provider that actually answered (read them from the API responses), number of comments, number of runs, % of comments with identical labels across runs, Krippendorff's alpha (nominal, runs as coders), and the count of each label.
@@ -237,6 +238,17 @@ run's label. Don't show the gold labels, and don't suggest any rules.
 
 Write **one rule** that settles your comment, in your own words, without looking at the gold labels.
 
+If you have time, check your rule against published work:
+
+```
+Find two published definitions of incivility or hostility in online comments,
+with links to the papers. For each, tell me how it could help improve this rule:
+
+[paste your rule here]
+```
+
+Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
+
 ## Step 11. Your codebook and the held-out test
 
 In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
@@ -331,6 +343,24 @@ Build an interactive dashboard in an HTML file from this project's data and runs
 ```
 
 Open yours. In a group, look at someone else's too.
+
+## Use it on your own data
+
+The same steps work for your own texts and your own concept.
+
+1. Make a new folder with a subfolder `data/`. Put your texts in a CSV file there, one text per row, with the columns `id` and `text`.
+2. Open the folder in Codex and choose **Ask for approval**, as in step 4.
+3. Set aside a sample to code by hand before any model labels anything:
+
+```
+Draw 200 random rows from data/[your file].csv. Save 100 of them as
+data/working_100.csv and the other 100 as data/heldout_100.csv.
+Never open data/heldout_100.csv again unless I ask for a held-out test.
+```
+
+4. Code both files yourself, in a new column with your labels. Ask someone else to code some of them too, so you know how much people agree.
+5. Paste the AGENTS.md prompt from step 5 and change what is specific to this workshop: the column with your hand labels, the labels, and the models.
+6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 14.
 
 ## What's in the download
 
