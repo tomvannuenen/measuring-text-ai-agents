@@ -1,6 +1,6 @@
 # Measuring Text with AI Agents
 
-These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open during the workshop. The slides tell you which step to do, and every prompt is here to copy.
+These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open during the workshop. The slides tell you which step to do, and every prompt is here to copy. You can also work through the steps on your own.
 
 Start a new chat in Codex for each step, unless the step says otherwise.
 
@@ -12,13 +12,13 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
-9. [Ask a stronger model](#step-9-ask-a-stronger-model)
+9. [Ask a stronger model (optional)](#step-9-ask-a-stronger-model-optional)
 10. [Write a rule](#step-10-write-a-rule)
 11. [The room's codebook and the held-out test](#step-11-the-rooms-codebook-and-the-held-out-test)
 12. [Small edits](#step-12-small-edits)
-13. [Follow-up questions](#step-13-follow-up-questions)
-14. [Build a dashboard](#step-14-build-a-dashboard)
-15. [Write it all down](#step-15-write-it-all-down)
+13. [Follow-up questions (optional)](#step-13-follow-up-questions-optional)
+14. [Write it all down](#step-14-write-it-all-down)
+15. [Build a dashboard (optional)](#step-15-build-a-dashboard-optional)
 
 ## Before you start
 
@@ -58,11 +58,20 @@ Then open data/working_100.csv in my spreadsheet app.
 
 The first is the forum the comments come from. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
 
-Then scan the QR code on the screen and answer the form on your phone. For each comment, choose yes or no, alone, using only this question:
+Then code five comments yourself. Paste:
+
+```
+Show me the five comments in data/coder_5.csv, numbered, with the full text only.
+Don't show the column hostile.
+```
+
+For each comment, write down yes or no, alone, using only this question:
 
 ```
 Is this comment hostile or insulting toward someone?
 ```
+
+Keep your answers. In step 7 you compare them with the model's labels and with the column `hostile`.
 
 ## Step 3. First try
 
@@ -130,7 +139,7 @@ Create a file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,
 and open it in a text editor, so I can paste the key myself.
 ```
 
-Open [tinyurl.com/mtai-key](https://tinyurl.com/mtai-key) when the instructor says so, and copy the key. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
+In the workshop, the slides show where to copy today's key. On your own, create a key at [openrouter.ai/keys](https://openrouter.ai/keys) and add a few dollars of credit. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
 
 Then check that the key works with one call, in the same chat:
 
@@ -189,7 +198,9 @@ Write down **% identical** and **Krippendorff's alpha**.
 
 **No API?** Ask Codex to compute the same numbers from `../backup/working_v0_qwen.csv`.
 
-## Step 9. Ask a stronger model
+## Step 9. Ask a stronger model (optional)
+
+In the workshop, this step is shown on the slides. Try it at the end if you have time.
 
 Send only the comments where Qwen's five runs disagreed to a stronger model:
 
@@ -224,11 +235,11 @@ run's label. Don't show the gold labels, and don't suggest any rules.
 
 **No API?** Use `../backup/working_v0_qwen.csv` in place of `runs/working_v0_qwen.csv`.
 
-Write **one rule** that settles your comment, in your own words, without looking at the gold labels. Send it with the form on the screen.
+Write **one rule** that settles your comment, in your own words, without looking at the gold labels.
 
 ## Step 11. The room's codebook and the held-out test
 
-The room votes on the rules. Copy the three winning rules from the form on the screen and paste them into this prompt:
+In the workshop, the room votes on everyone's rules, and the slides show the three that win. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
 
 ```
 Copy codebook_v0.md to codebook_v1.md. Insert the rules below just before the
@@ -271,7 +282,9 @@ and how many differ between the original and the swapped version.
 Show me every comment whose label changed after the swap, with both versions of the text.
 ```
 
-## Step 13. Follow-up questions
+## Step 13. Follow-up questions (optional)
+
+In the workshop, this step is shown on the slides. Try it at the end if you have time.
 
 ```
 Add an option --followup to label.py. When it is set, after the model answers,
@@ -287,7 +300,27 @@ For each, report how many labels changed after the follow-up, and how many of th
 match the column hostile before and after.
 ```
 
-## Step 14. Build a dashboard
+## Step 14. Write it all down
+
+```
+Write a file WORKFLOW.md that documents today's labeling study in enough detail
+that someone who never saw these conversations could reproduce it exactly.
+
+Include: the data and where it came from; the codebooks and which one is final;
+the labeling models, providers, and every setting (temperature, top_k, structured
+output, number of runs, concurrency); how % identical and Krippendorff's alpha were
+computed; the held-out test and its results; any robustness or follow-up tests;
+and how the labels were compared with the gold labels.
+
+End with a section "Decisions I did not ask for", listing every choice you made
+that I did not explicitly specify.
+```
+
+Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
+
+## Step 15. Build a dashboard (optional)
+
+If you have time.
 
 ```
 Build an interactive dashboard in an HTML file from this project's data and runs:
@@ -298,24 +331,6 @@ Build an interactive dashboard in an HTML file from this project's data and runs
 ```
 
 Open yours, then look at your neighbor's.
-
-## Step 15. Write it all down
-
-```
-Write a file WORKFLOW.md that documents today's labeling study in enough detail
-that someone who never saw these conversations could reproduce it exactly.
-
-Include: the data and where it came from; the codebooks and which one is final;
-the labeling models, providers, and every setting (temperature, top_k, structured
-output, number of runs, concurrency); how % identical and Krippendorff's alpha were
-computed; the held-out test and its results; the robustness and follow-up tests;
-and how the labels were compared with the gold labels.
-
-End with a section "Decisions I did not ask for", listing every choice you made
-that I did not explicitly specify.
-```
-
-Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
 
 ## What's in the download
 
