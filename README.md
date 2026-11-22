@@ -20,7 +20,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 12. [Same comment, other gender](#step-12-same-comment-other-gender)
 13. [Follow-up questions (optional)](#step-13-follow-up-questions-optional)
 14. [Write it all down](#step-14-write-it-all-down)
-15. [Build a dashboard (optional)](#step-15-build-a-dashboard-optional)
+15. [Build a dashboard](#step-15-build-a-dashboard)
 
 ## Before you start
 
@@ -334,9 +334,9 @@ that I did not explicitly specify.
 
 Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
 
-## Step 15. Build a dashboard (optional)
+## Step 15. Build a dashboard
 
-If you have time.
+Paste:
 
 ```
 Build an interactive dashboard in an HTML file from this project's data and runs:
