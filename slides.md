@@ -95,6 +95,18 @@
 
 ---
 
+## All your projects
+
+<div class="ex-tag">Step 1 · Get the project</div>
+
+<p style="font-size:30px; line-height:1.45; margin:6px 0 16px; text-align:left;">To see all your projects, click <b>⋯</b> in the left bar of Codex, then <b>Projects</b>. The <b>⋯</b> next to a project lets you archive or delete it.</p>
+
+<img src="img/codex_projects.png" alt="Codex: the menu under the three dots in the left bar, with Projects, and the list of projects" style="width:84%; margin:0 auto; display:block; border-radius:10px; box-shadow:none;">
+
+<p style="font-size:28px; margin-top:16px;">Deleting a project leaves the files on your Desktop.</p>
+
+---
+
 ## Your perceptions
 
 <div class="demo" data-demo="where" data-round="start"></div>
@@ -894,12 +906,12 @@ Name a result from today that shows why one of these items matters.
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 53</i></div>
-<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 15</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 49</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 49</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 53</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 57</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 54</i></div>
+<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 16</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 50</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 50</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 54</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 58</i></div>
 </div>
 
 <p class="muted sv-cite">Barrie, Palaiologou &amp; Törnberg (2025)</p>

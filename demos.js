@@ -260,7 +260,7 @@
       el("div", { class: "note", style: "width:170px; white-space:nowrap;" }, `${u.yes} yes · ${u.no} no`));
   }
 
-  /* Hand coding, part 1 (slide 24): the form only. No results here, so nobody sees the room's answers before answering. */
+  /* Hand coding, part 1 (slide 25): the form only. No results here, so nobody sees the room's answers before answering. */
   builders.label = function (root) {
     const L = window.LIVE || {};
     const body = el("div");
@@ -279,7 +279,7 @@
     put(root, body);
   };
 
-  /* Hand coding, part 2 (slide 39): all five comments at once, with the room, Qwen's five runs and the gold label.
+  /* Hand coding, part 2 (slide 40): all five comments at once, with the room, Qwen's five runs and the gold label.
      With the live form, the room column fills from today's answers; without it, click yes or no to mark the room's choice. */
   const HC_QUOTES = [
     "“…you were tired? You are going to lose your daughters if you continue to play favorites.”",
@@ -360,7 +360,7 @@
           el("div", { style: "font-size:30px; margin-bottom:16px;" }, T.rules.map((r, n) => el("div", { style: "margin:4px 0;" }, `${n + 1}. ${r.text} `, el("span", { style: M }, `(${r.votes} ${r.votes === 1 ? "vote" : "votes"})`)))),
           el("table", { style: "font-size:30px; border-collapse:collapse; margin:0 0 12px;" },
             row("One-line question", T.v0), row("The room's codebook", T.v1),
-            live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, slide 39"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
+            live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, slide 40"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
           el("div", { style: M }, `${T.model} labeled each comment ${T.runs} times with each codebook, as in the workshop steps.${T.failed ? ` ${T.failed} calls failed.` : ""} The codebook is now at ${short(L.proposeUrl)}. Now do step 11 on the GitHub page with these three rules.`),
           el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), busyNote(), err()));
         return;
@@ -386,7 +386,7 @@
     put(root, body);
   };
 
-  /* 4. One comment, ten real runs per model, revealed one at a time (slide 42).
+  /* 4. One comment, ten real runs per model, revealed one at a time (slide 43).
      The comment is comment 2 of the hand-coding slides, so the first five Qwen runs are the ones the room saw. */
   builders.dice = function (root) {
     const d = D.dice;
@@ -525,7 +525,7 @@
   };
 
   /* 9. Reliability and validity as darts on a target. */
-  /* Reliability against validity (slide 43). Starts with Qwen on the five comments of slide 39 (the same label in all
+  /* Reliability against validity (slide 44). Starts with Qwen on the five comments of slide 40 (the same label in all
      five runs, so plotted at α = 1; 3 of 5 right), moves Qwen to the working set (α 0.90, 79%), then the other five models. Numbers from the guide,
      "Each model against itself" (working_100, one-line prompt, 5 runs each). Clicks: the two empty fragments after the demo. */
   builders.relval = function (root) {
@@ -693,7 +693,7 @@
 
   /* The experiment, one comment: three steps, five runs each. */
   builders.steps = function (root) {
-    /* The experiment on one comment (slide 48): Qwen, five runs per prompt version, in the style of slide 42. */
+    /* The experiment on one comment (slide 49): Qwen, five runs per prompt version, in the style of slide 43. */
     const X = D.experiment.example;
     const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "top_k = 1" };
     const k5 = D.coder5.findIndex((c) => c.text === X.text);
@@ -827,7 +827,7 @@
       el("p", { class: "note" }, `Qwen with the codebook, top_k = 1. Each follow-up comes after the same first answer. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
   };
 
-  /* Changed labels per model, prompt and condition (slides 56 and 57). Columns are grouped by open and closed weights,
+  /* Changed labels per model, prompt and condition (slides 57 and 58). Columns are grouped by open and closed weights,
      each group ordered small to big (DeepSeek V4 Flash: 13B active parameters, Qwen3: 22B; Luna is OpenAI's smaller model,
      Sol the bigger one). rows: entries with model, prompt, a condition under `key` and a count under `val`. */
   function modelBars(root, cls, rows, key, val, kinds, note) {
@@ -875,9 +875,9 @@
       `Labels that changed when the user’s opinion was added to the question, out of ${RB.n}.`);
   };
 
-  /* The room: the room's list of what a reviewer would want reported (slide 11), and a recap
+  /* The room: the room's list of what a reviewer would want reported (slide 12), and a recap
      before "Items to report" that sets results from today next to that list. Kept in memory and, where allowed, in localStorage, so a reload
-     keeps the answers. "Clear" on slide 11 empties all of it for the next session. */
+     keeps the answers. "Clear" on slide 12 empties all of it for the next session. */
   const ROOM_KEY = "workshop-room-v2";
   const ROOM = (() => { try { return JSON.parse(localStorage.getItem(ROOM_KEY)) || {}; } catch (e) { return {}; } })();
   ROOM.poll = ROOM.poll || {}; ROOM.ask = ROOM.ask || []; ROOM.results = ROOM.results || [];
@@ -944,7 +944,7 @@
   };
 
 
-  /* "Where are you?" (slide 8, data-round="start") and "Where are you now?" (data-round="end", cut from the deck on 21 Nov; the end form is unused).
+  /* "Where are you?" (slide 9, data-round="start") and "Where are you now?" (data-round="end", cut from the deck on 21 Nov; the end form is unused).
      Everyone answers two questions on their phone (forms 5 and 6 in the Google script); each answer is
      one dot in a 3 by 3 grid: what people have done (up) against whether they would trust AI to code
      their texts (across). At the end, the start dots become grey rings under the new orange dots.
