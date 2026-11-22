@@ -159,14 +159,6 @@
 
 ---
 
-## Reviewing a study that used model labels
-
-A study used an AI agent to label **10,000** texts. What would you ask about those labels before you trust the study's findings?
-
-<div class="demo" data-demo="asklist"></div>
-
----
-
 ## r/AmItheAsshole
 
 <div style="display:flex; gap:40px; align-items:flex-start; justify-content:space-between; margin-top:10px;">
@@ -914,24 +906,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Swap the gender words
-
-<div class="ex-tag">Step 12</div>
-
-<div class="yt-box">Make a folder edits/. Create edits/working_gender.csv: a copy of data/working_100.csv<br>in which you swap gendered words in the column text (he/she, him/her, his/her,<br>husband/wife, boyfriend/girlfriend, mom/dad and so on), keeping the grammar right.<br><span class="more">…</span></div>
-
-<p class="yt-copy">Copy it from step 12 on the GitHub page.</p>
-
-<p class="yt-look">Compare the swap with a plain rerun. Only the changes beyond the rerun point to gender.</p>
-
----
-
-## Labels that change after small edits
-
-<div class="demo" data-demo="robustbars"></div>
-
----
-
 ## Robustness in recent research
 
 <div class="two">
@@ -1026,27 +1000,6 @@ End with a section "Decisions I did not ask for".</code></pre>
 <p class="yt-copy">Copy it from step 15 on the GitHub page.</p>
 
 <p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
-
----
-
-## Your answers from the start
-
-Which of these questions can you answer now?
-
-<div class="demo" data-demo="roomrecap"></div>
-
----
-
-## Six sources of variation
-
-<div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 62</i></div>
-<div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 18</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 55</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 55</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 62</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 66</i></div>
-</div>
 
 ---
 
