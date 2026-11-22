@@ -366,7 +366,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 <div style="display:flex; font-size:20px; color:#555; margin-top:12px;"><div style="width:15%; padding:0 16px;">Reddit’s id</div><div style="flex:1; padding:0 16px;">the comment: all a coder sees</div><div style="width:16%; padding:0 16px; color:#d9481f;">our gold labels<br>40 of 100 “yes”</div></div>
 
-<p class="yt-copy">Copy it from step 2 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 2 on the GitHub page. Then open the file yourself: in <code>ai-workshop/data</code> on your Desktop, double-click <code>working_100.csv</code>.</p>
 
 ---
 
@@ -637,7 +637,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <div class="ex-tag">Step 6</div>
 
-<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a new file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,<br>and open it in a text editor. I will paste the key myself.<br>Don't open or read the file after that.</div></div></div><div class="yt-row"><span class="n">2</span><div><div style="display:flex; align-items:center; gap:22px;"><div class="txt">Copy the key you were given into the file that opens. Save it and close it.</div></div></div></div>
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a new file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,<br>and open it in a text editor. I will paste the key myself.<br>Don't open or read the file after that.</div></div></div><div class="yt-row"><span class="n">2</span><div><div style="display:flex; align-items:center; gap:22px;"><div class="txt">Copy the key you were given into the file that opens. <b>Save the file</b> (⌘S or Ctrl+S), then close it.</div></div></div></div>
 
 <p class="yt-copy">Copy the prompt from step 6 on the GitHub page.</p>
 
@@ -650,20 +650,29 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div class="ex-tag">Step 6</div>
 
 
-<p style="font-size:27px; margin:0 0 12px; text-align:left;">Before labeling anything, check that the key works with one call to Qwen.</p>
+<p style="font-size:27px; margin:0 0 8px; text-align:left;">Before labeling anything, check that the key works with one call to Qwen.</p>
 
-<pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:20px; padding:14px 20px;">Make one test call to Qwen through OpenRouter, following AGENTS.md.
+<pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:20px; padding:10px 20px;">Make one test call to Qwen through OpenRouter, following AGENTS.md.
 Use "Is this comment hostile or insulting toward someone? Answer yes or no."
 as the system prompt, and the first comment in data/coder_5.csv as the user message.
 Save the whole response to runs/test_call.json. Then show me the answer,
 the model and provider that answered, and how many tokens it used.</code></pre>
 
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; margin-top:18px;">
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; margin-top:10px;">
 <div style="border:2px solid #111; border-radius:10px; text-align:left; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; padding:8px 14px; border-bottom:1px solid #e2e2dc; color:#6f6f69;">runs/test_call.json</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.6; padding:12px 16px;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px;">"model": <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">"qwen/qwen3-235b-a22b-2507",</span></div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px;">"provider": <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">"DeepInfra",</span></div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px;">"content": <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; color:#d9481f; font-weight:700;">"yes",</span></div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px;">"usage": <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">{ "total_tokens": … }</span></div></div></div></div>
 <p style="font-size:26px; line-height:1.45; margin:0; text-align:left;">The answer comes back as a file. It says which model and provider answered, and how many tokens the call used. <span style="color:#6f6f69;">Shortened here. Yours has more.</span></p>
 </div>
 
 <p class="yt-copy">Copy it from step 6 on the GitHub page.</p>
+
+<p class="yt-look">Open <code>data/coder_5.csv</code> and read the first comment. Does the model’s answer match yours from step 2?</p>
+
+---
+
+## What happens in a test call
+
+<div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">1</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the first comment in <code>data/coder_5.csv</code></span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Your daughter and husband need…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">2</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">writes a short Python script</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">client.chat.completions.create(<br>&nbsp;&nbsp;model="qwen/qwen3-235b…",<br>&nbsp;&nbsp;messages=[question, comment])</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">3</span><span style="font-size:22px; font-weight:700; color:#111;">the script</span><span style="font-size:24px; line-height:1.3;">sends the comment to the API with your key</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">POST openrouter.ai/api/v1/…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#d9481f; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">4</span><span style="font-size:22px; font-weight:700; color:#d9481f;">Qwen</span><span style="font-size:24px; line-height:1.3;">answers, and the script saves the answer</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">runs/test_call.json<br>"content": "yes"</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">5</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the file and tells you in the chat</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Qwen answered “yes”.</span></div>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:14px; text-align:left;">Two models take part. Codex writes and runs the code and reports back. Qwen, behind the API, gives the label.</p>
 
 ---
 
@@ -1031,12 +1040,12 @@ Which of these questions can you answer now?
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 61</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 62</i></div>
 <div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 18</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 54</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 54</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 61</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 65</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 55</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 55</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 62</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 66</i></div>
 </div>
 
 ---
