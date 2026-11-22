@@ -13,12 +13,11 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 5. [Give your agent rules](#step-5-give-your-agent-rules)
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
-8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
-9. [Write a rule](#step-9-write-a-rule)
-10. [Your codebook and the held-out test](#step-10-your-codebook-and-the-held-out-test)
-11. [Sycophancy: follow-up questions (optional)](#step-11-sycophancy-follow-up-questions-optional)
-12. [Write it all down](#step-12-write-it-all-down)
-13. [Build a dashboard](#step-13-build-a-dashboard)
+8. [Write a rule](#step-8-write-a-rule)
+9. [Your codebook and the held-out test](#step-9-your-codebook-and-the-held-out-test)
+10. [Sycophancy: follow-up questions (optional)](#step-10-sycophancy-follow-up-questions-optional)
+11. [Write it all down](#step-11-write-it-all-down)
+12. [Build a dashboard](#step-12-build-a-dashboard)
 
 ## Before you start
 
@@ -71,7 +70,7 @@ For each comment, write down yes or no, alone, using only this question:
 
 > **Is this comment hostile or insulting toward someone?**
 
-Notice where the question leaves you unsure. If the definition is unclear to you, it is unclear to the model too.
+Notice where the question leaves you unsure. If the definition is unclear to you, it is unclear to the model too. You will write a rule for the hardest comment in step 8.
 
 Send your answers with the form at [tinyurl.com/mtai-code](https://tinyurl.com/mtai-code), and keep them. In step 7 you compare them with the model's labels and with the column `hostile`.
 
@@ -190,26 +189,16 @@ the line that reads the codebook, and the line that builds the message sent
 to the model. Which columns of the CSV go into that message?
 ```
 
-## Step 8. Label 100 comments, five times
+## Step 8. Write a rule
+
+Go back to the comment you were least sure about when you coded by hand in step 2. To see the five comments again, paste:
 
 ```
-Use label.py to label data/working_100.csv with codebook_v0.md, 5 runs,
-saved to runs/working_v0_qwen.csv. Report the numbers AGENTS.md asks for.
+Show me the five comments in data/coder_5.csv again, numbered, with the full text only.
+Don't show the column hostile.
 ```
 
-Write down **% identical** and **Krippendorff's alpha**.
-
-## Step 9. Write a rule
-
-Find a comment that is hard to code:
-
-```
-Show me 5 comments from data/working_100.csv where the five runs in
-runs/working_v0_qwen.csv did not all agree, with the full text as plain
-paragraphs and each run's label. Don't show the gold labels, and don't suggest any rules.
-```
-
-Write **one rule** that settles your comment, in your own words, without looking at the gold labels.
+Write **one rule** that settles that comment, in your own words, without looking at the gold labels.
 
 If you have time, check your rule against published work:
 
@@ -222,9 +211,9 @@ with links to the papers. For each, tell me how it could help improve this rule:
 
 Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
 
-## Step 10. Your codebook and the held-out test
+## Step 9. Your codebook and the held-out test
 
-In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 9, or write two or three. Paste the rules into this prompt:
+In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 8, or write two or three. Paste the rules into this prompt:
 
 ```
 Copy codebook_v0.md to codebook_v1.md. Just before the last line ("Answer with
@@ -248,7 +237,9 @@ of the 100 match the gold labels, and the count of each label.
 Show me five comments the model got wrong with codebook_v1, with the text.
 ```
 
-## Step 11. Sycophancy: follow-up questions (optional)
+For each codebook, write down **% identical** (reliability) and **how many match the gold labels** (validity).
+
+## Step 10. Sycophancy: follow-up questions (optional)
 
 This step is optional. Try it at the end if you have time.
 
@@ -266,7 +257,7 @@ For each, report how many labels changed after the follow-up, and how many of th
 match the column hostile before and after.
 ```
 
-## Step 12. Write it all down
+## Step 11. Write it all down
 
 ```
 Write a file WORKFLOW.md that documents today's labeling study in enough detail
@@ -284,13 +275,13 @@ that I did not explicitly specify.
 
 Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
 
-## Step 13. Build a dashboard
+## Step 12. Build a dashboard
 
 Paste:
 
 ```
 Build an interactive dashboard in an HTML file from this project's data and runs:
-- a table of the 100 working comments, with my gold label and the label from each run
+- a table of the 100 held-out comments, with my gold label and the label from each run
 - a filter for comments where the runs disagree, or where they disagree with my label
 - agreement with my labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got
@@ -320,7 +311,7 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 
 4. Code both files yourself, in a new column with your labels. Ask someone else to code some of them too, so you know how much people agree.
 5. Paste the AGENTS.md prompt from step 5 and change what is specific to this workshop: the column with your hand labels, the labels, and the models.
-6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 12.
+6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 11.
 
 ## What's in the download
 
