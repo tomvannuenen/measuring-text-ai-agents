@@ -829,26 +829,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Same comment, other gender
-
-
-
-<p style="font-size:26px; margin:0 0 10px; text-align:left;">If you compare how women and men are treated, the label should not depend on gender.</p>
-
-<div class="demo" data-demo="robustedit"></div>
-
----
-
-## Robustness in recent research
-
-<div class="two">
-<div class="card"><b>Moral judgments of whole posts</b>Four models judged 2,939 dilemmas. Small surface edits changed 7.5% of verdicts. Retelling the post in the third person changed 24.3%.<br><span class="muted">van Nuenen &amp; Sachdeva (2026), FAccT</span></div>
-<div class="card"><b>Prompt rewordings and false positives</b>For 94% of hypotheses with no real effect, a few rewordings of the prompt were enough to produce a significant result.<br><span class="muted">Baumann et al. (2025)</span></div>
-</div>
-
----
-
-## Multi-turn: one comment, two follow-ups
+## Measuring sycophancy
 
 
 
@@ -865,15 +846,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## Sycophancy: pushback after the answer
 
 <div class="demo" data-demo="pushbars"></div>
-
----
-
-## Multi-turn in recent research
-
-<div class="two">
-<div class="card"><b>Debate between models</b>In more than 30,000 debates, GPT-4.1 changed its verdict in 1–3% of cases. Claude and Gemini changed theirs in 28–41%. The order of speaking also changed the outcome.<br><span class="muted">Sachdeva &amp; van Nuenen (2026), COLM</span></div>
-<div class="card"><b>Models share their errors</b>When two models are both wrong, they agree on the wrong answer about 60% of the time.<br><span class="muted">Kim et al. (2025), ICML</span></div>
-</div>
 
 ---
 
