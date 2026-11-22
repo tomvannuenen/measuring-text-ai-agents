@@ -282,7 +282,7 @@
   /* Hand coding, part 2 (slide 42): all five comments at once, with the room, Qwen's five runs and the gold label.
      With the live form, the room column fills from today's answers; without it, click yes or no to mark the room's choice. */
   const HC_QUOTES = [
-    "“You are going to lose your daughters if you continue to play favorites.”",
+    "“Your daughter and husband need bonding time without you.”",
     "“She's just butthurt that your friend confided in you…”",
     "“There's no gray area. You knowingly stole.”",
     "“Being an overprotective mama bear is going to do more harm than good…”",
@@ -544,7 +544,7 @@
 
   /* 9. Reliability and validity as darts on a target. */
   /* Reliability against validity (slide 47). Starts with Qwen on the five comments of slide 42 (the same label in all
-     five runs, so plotted at α = 1; 3 of 5 right), moves Qwen to the working set (α 0.90, 79%), then the other five models. Numbers from the guide,
+     five runs except comment 1, which splits 2 to 3, so α = 0.45; 4 of 5 right), moves Qwen to the working set (α 0.90, 79%), then the other five models. Numbers from the guide,
      "Each model against itself" (working_100, one-line prompt, 5 runs each). Clicks: the two empty fragments after the demo. */
   /* Small looping animations. Each runs only while its slide is showing (and its fragment, if any, is visible). */
   const loopActive = (root) => {
@@ -811,9 +811,9 @@
 
   builders.relval = function (root) {
     const M = [["Claude Haiku", 0.94, 84], ["Gemini Flash-Lite", 0.88, 89], ["Ministral 8B", 0.93, 69], ["GPT-6 Luna", 0.88, 69], ["DeepSeek", 0.74, 79]];
-    const Q5 = [1.0, 60], Q100 = [0.90, 79];
+    const Q5 = [0.45, 80], Q100 = [0.90, 79];
     const W = 780, H = 480, L = 90, R = 30, T = 20, B = 70;
-    const X0 = 0.6, x = (v) => L + (v - X0) / (1 - X0) * (W - L - R), y = (v) => T + (100 - v) / 70 * (H - T - B);
+    const X0 = 0.4, x = (v) => L + (v - X0) / (1 - X0) * (W - L - R), y = (v) => T + (100 - v) / 70 * (H - T - B);
     const fs = (n) => `style="font-size:${n}px"`;
     let g = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img">`;
     g += `<rect x="${x(0.8)}" y="${y(100)}" width="${x(1) - x(0.8)}" height="${y(70) - y(100)}" fill="#f0efea"/>`;
@@ -821,8 +821,8 @@
     g += `<text x="${x(0.8) + 6}" y="${y(32)}" ${fs(18)} fill="#888">α = 0.8</text>`;
     g += `<text x="${x(0.99)}" y="${y(98)}" text-anchor="end" ${fs(20)} fill="#888">reliable and valid</text>`;
     g += `<g class="rv-late"><line x1="${x(X0)}" x2="${x(1)}" y1="${y(60)}" y2="${y(60)}" stroke="#888" stroke-dasharray="6 6" stroke-width="2"/>`;
-    g += `<text x="${x(0.61)}" y="${y(60) + 24}" ${fs(20)} fill="#888">always “no”: 60%</text></g>`;
-    for (const v of [0.6, 0.7, 0.8, 0.9, 1.0]) g += `<line x1="${x(v)}" y1="${y(30)}" x2="${x(v)}" y2="${y(30) + 6}" stroke="#111"/><text x="${x(v)}" y="${y(30) + 28}" text-anchor="middle" ${fs(20)} fill="#555">${v.toFixed(1)}</text>`;
+    g += `<text x="${x(X0 + 0.01)}" y="${y(60) + 24}" ${fs(20)} fill="#888">always “no”: 60%</text></g>`;
+    for (const v of [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]) g += `<line x1="${x(v)}" y1="${y(30)}" x2="${x(v)}" y2="${y(30) + 6}" stroke="#111"/><text x="${x(v)}" y="${y(30) + 28}" text-anchor="middle" ${fs(20)} fill="#555">${v.toFixed(1)}</text>`;
     for (const v of [30, 50, 70, 90]) g += `<line x1="${x(X0) - 6}" y1="${y(v)}" x2="${x(X0)}" y2="${y(v)}" stroke="#111"/><text x="${x(X0) - 10}" y="${y(v) + 6}" text-anchor="end" ${fs(20)} fill="#555">${v}%</text>`;
     g += `<line x1="${x(X0)}" y1="${y(30)}" x2="${x(1)}" y2="${y(30)}" stroke="#111" stroke-width="2"/><line x1="${x(X0)}" y1="${y(30)}" x2="${x(X0)}" y2="${y(100)}" stroke="#111" stroke-width="2"/>`;
     g += `<text x="${(x(X0) + x(1)) / 2}" y="${H - 8}" text-anchor="middle" ${fs(22)} fill="#111"><tspan style="font-weight:700">Reliability →</tspan><tspan dx="12" style="fill:#555">α across 5 runs</tspan></text>`;
@@ -833,7 +833,7 @@
       g += `<g class="rv-late"><circle cx="${x(a)}" cy="${y(b)}" r="10" fill="${hi ? "#d9481f" : "#111"}"/><text x="${x(a) + dx}" y="${y(b) + dy}" text-anchor="${anc}" ${fs(21)} fill="${hi ? "#d9481f" : "#111"}" >${n}</text></g>`;
     }
     g += `<circle class="rv-q" r="13" fill="#111" style="cx:${x(Q5[0])}px; cy:${y(Q5[1])}px"/>`;
-    g += `<text class="rv-ql" ${fs(22)} font-weight="700" fill="#111" x="${x(Q5[0]) - 18}" y="${y(Q5[1]) + 7}" text-anchor="end">Qwen, today’s 5 comments</text>`;
+    g += `<text class="rv-ql" ${fs(22)} font-weight="700" fill="#111" x="${x(Q5[0]) + 20}" y="${y(Q5[1]) + 7}" text-anchor="start">Qwen, today’s 5 comments</text>`;
     g += `<text class="rv-ql2" ${fs(21)} fill="#111" x="${x(Q100[0]) - 16}" y="${y(Q100[1]) + 7}" text-anchor="end">Qwen, 100 comments</text>`;
     g += `<text class="rv-ql3" ${fs(21)} fill="#111" x="${x(Q100[0]) - 16}" y="${y(Q100[1]) + 7}" text-anchor="end">Qwen</text>`;
     g += "</svg>";

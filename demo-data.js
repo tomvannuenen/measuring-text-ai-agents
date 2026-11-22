@@ -103,13 +103,13 @@ window.DEMO = {
  "coder5": [
   {
    "title": "",
-   "text": "I thought it was going to be some genuine excuse, like you got called into a work emergency, or something that happened... But you were tired? You are going to lose your daughters if you continue to play favorites. No wonder the relationship is rocky. Kids aren't stupid, they surely know you don't treat them the same.\n\nBe an adult, suck up the tiredness, have caffeine, and go to your daughter's birthday. This is a no brainer.",
+   "text": "Your daughter and husband need bonding time without you. If you feel like you aren’t getting enough attention from them, that is a separate issue.",
    "truth": "no",
    "qwen": [
     "yes",
-    "yes",
-    "yes",
-    "yes",
+    "no",
+    "no",
+    "no",
     "yes"
    ]
   },
