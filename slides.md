@@ -129,6 +129,13 @@
 
 ---
 
+## How text labeling has been done
+
+<div style="margin-top:14px;">
+<div class="fragment" style="display:grid; grid-template-columns:190px 1fr; gap:20px; align-items:baseline; margin:0 0 16px; text-align:left;"><span style="font-size:27px; font-weight:700; color:#d9481f;">1950s</span><span style="font-size:26px; line-height:1.35;">Coders read each text and fill in a coding sheet from a codebook.<br><span style="font-size:19px; color:#888;">Berelson 1952</span></span></div><div class="fragment" style="display:grid; grid-template-columns:190px 1fr; gap:20px; align-items:baseline; margin:0 0 16px; text-align:left;"><span style="font-size:27px; font-weight:700; color:#d9481f;">1960s</span><span style="font-size:26px; line-height:1.35;">Computers count words from a dictionary, such as a list of hostile words.<br><span style="font-size:19px; color:#888;">Stone et al. 1966, the General Inquirer</span></span></div><div class="fragment" style="display:grid; grid-template-columns:190px 1fr; gap:20px; align-items:baseline; margin:0 0 16px; text-align:left;"><span style="font-size:27px; font-weight:700; color:#d9481f;">1980s–90s</span><span style="font-size:26px; line-height:1.35;">Researchers tag passages by hand in coding software.<br><span style="font-size:19px; color:#888;">NUD*IST, MAXQDA, ATLAS.ti, NVivo · LIWC for word counts</span></span></div><div class="fragment" style="display:grid; grid-template-columns:190px 1fr; gap:20px; align-items:baseline; margin:0 0 16px; text-align:left;"><span style="font-size:27px; font-weight:700; color:#d9481f;">2000s–10s</span><span style="font-size:26px; line-height:1.35;">Crowd workers label for pay. Models learn from hand-coded examples.<br><span style="font-size:19px; color:#888;">Mechanical Turk, 2005 · Grimmer &amp; Stewart 2013</span></span></div><div class="fragment" style="display:grid; grid-template-columns:190px 1fr; gap:20px; align-items:baseline; margin:0 0 16px; text-align:left;"><span style="font-size:27px; font-weight:700; color:#d9481f;">2020s</span><span style="font-size:26px; line-height:1.35;">Language models label from a written instruction.<br><span style="font-size:19px; color:#888;">Gilardi, Alizadeh &amp; Kubli 2023</span></span></div></div>
+
+---
+
 ## Are language models the future of text labeling?
 
 <div style="display:flex; gap:32px; align-items:stretch;">
@@ -171,7 +178,7 @@
 <img src="img/aita_sidebar.png" alt="The r/AmItheAsshole sidebar: tell us about a non-violent conflict, give both sides, and find out if you're right or the asshole. 2.5 million members." style="height:430px; border:1px solid #ddd; border-radius:8px; margin:0;">
 </div>
 
-<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:14px; margin:12px 0 0 0;"><div style="flex:1; border:1px solid #ddd; border-radius:8px; background:#fff; padding:10px 16px; font-size:21px; line-height:1.4; text-align:left; color:#1a1a1b;">seriously!!!! Girlfriend makes you a whole giant tray of lasagna, you take it all home and you can’t even buy her a sandwich? <span style="border-bottom:3px solid #d9481f;">You’re awful.</span></div><div style="width:200px; font-size:26px; font-weight:700; line-height:1.25; color:#d9481f; text-align:left;">← a harder label</div></div>
+<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:14px; margin:12px 0 0 0;"><div style="flex:1; border:1px solid #ddd; border-radius:8px; background:#fff; padding:10px 16px; font-size:21px; line-height:1.4; text-align:left; color:#1a1a1b;">He broke up with you because you were ashamed to be with him. … First thing y’all did in public as a couple. <span style="border-bottom:3px solid #d9481f;">How cute :D</span></div><div style="width:200px; font-size:26px; font-weight:700; line-height:1.25; color:#d9481f; text-align:left;">← a harder label</div></div>
 
 ---
 
