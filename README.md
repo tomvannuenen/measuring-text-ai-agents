@@ -40,7 +40,7 @@ unzip it on my Desktop as ai-workshop, and tell me where
 the folder is. Then open the repository's page in my browser.
 ```
 
-Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `ai-workshop` on your Desktop. Check that it says **This computer**, then click **Create project**.
+Click **Choose project** above the chat box and create a new project. Click **Add** and choose the folder `ai-workshop` on your Desktop. Check that it says **This computer**, then click **Create project**.
 
 <img src="images/codex_create_project.png" alt="Create project, with the folder ai-workshop as its source folder" width="440">
 
