@@ -36,17 +36,17 @@ Click **New chat**, paste this, and click **Allow once** when Codex asks:
 
 ```
 Download the GitHub repository at tinyurl.com/mtai-workshop as a ZIP,
-unzip it on my Desktop as measuring-text-ai-agents, and tell me where
+unzip it on my Desktop as ai-workshop, and tell me where
 the folder is. Then open the repository's page in my browser.
 ```
 
-Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `measuring-text-ai-agents` on your Desktop. Check that it says **This computer**, then click **Create project**.
+Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `ai-workshop` on your Desktop. Check that it says **This computer**, then click **Create project**.
 
-<img src="images/codex_create_project.png" alt="Create project, with the folder measuring-text-ai-agents as its source folder" width="440">
+<img src="images/codex_create_project.png" alt="Create project, with the folder ai-workshop as its source folder" width="440">
 
-When Codex asks **Trust this folder?**, check that the path ends in `measuring-text-ai-agents`, then click **Trust folder**.
+When Codex asks **Trust this folder?**, check that the path ends in `ai-workshop`, then click **Trust folder**.
 
-If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`. Choose that folder for the project instead.
+If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`. Rename it to `ai-workshop` and choose it for the project.
 
 ## Step 2. Look at the data, then code five comments by hand
 
@@ -357,7 +357,7 @@ Open yours. In a group, look at someone else's too.
 
 To find your project again, click **⋯** in the left bar of Codex, then **Projects**. The **⋯** next to a project has the options to manage it, such as archiving or deleting it.
 
-The files stay in the folder `measuring-text-ai-agents` on your Desktop. To remove them, move that folder to the Trash.
+The files stay in the folder `ai-workshop` on your Desktop. To remove them, move that folder to the Trash.
 
 ## Use it on your own data
 
