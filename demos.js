@@ -528,6 +528,183 @@
   /* Reliability against validity (slide 47). Starts with Qwen on the five comments of slide 42 (the same label in all
      five runs, so plotted at α = 1; 3 of 5 right), moves Qwen to the working set (α 0.90, 79%), then the other five models. Numbers from the guide,
      "Each model against itself" (working_100, one-line prompt, 5 runs each). Clicks: the two empty fragments after the demo. */
+  /* Small looping animations. Each runs only while its slide is showing (and its fragment, if any, is visible). */
+  const loopActive = (root) => {
+    const sec = root.closest("section");
+    if (!window.Reveal || Reveal.getCurrentSlide() !== sec) return false;
+    const fr = root.closest(".fragment");
+    return !fr || fr.classList.contains("visible");
+  };
+
+  /* Slide 3: the next word is drawn again and again from the bars, so the sentence ends differently. */
+  builders.nextword = function (root) {
+    const sec = root.closest("section"), box = root.parentElement;
+    const blank = sec.querySelector('span[style*="border-bottom:4px"]');
+    const rows = [...box.children].filter((d) => d.querySelector && d.querySelector("div > div"));
+    if (!blank || rows.length < 2) return;
+    const P = rows.map((r) => parseFloat(r.lastElementChild.textContent) || 1);
+    const bars = rows.map((r) => r.querySelector("div > div")), names = rows.map((r) => r.firstElementChild);
+    blank.style.textAlign = "center"; blank.style.color = "#d9481f"; blank.style.width = "220px";
+    const show = (k) => rows.forEach((r, i) => { bars[i].style.background = i === k ? "#d9481f" : "#8a8a84"; names[i].style.fontWeight = i === k ? "700" : "400"; });
+    let phase = 0;
+    setInterval(() => {
+      if (!loopActive(root)) { phase = 0; return; }
+      if (phase === 0) {
+        let r = Math.random() * P.reduce((a, b) => a + b), k = 0;
+        while (r > P[k] && k < P.length - 1) { r -= P[k]; k++; }
+        show(k); blank.textContent = names[k].textContent;
+      } else if (phase === 3) { blank.innerHTML = "&nbsp;"; show(-1); }
+      phase = (phase + 1) % 4;
+    }, 800);
+  };
+
+  /* Slide 51: ten runs of the same comment. In each run a pin lands on the chance strip (no 62%, yes 38%).
+     Default: the pin lands at random, so some runs say yes. Greedy: the pin always lands on the most likely label. */
+  builders.stloop = function (root) {
+    const sec = root.closest("section"), cols = [...sec.querySelectorAll(".st-col")].slice(0, 2);
+    if (cols.length < 2) return;
+    const dots = cols.map((c) => [...c.querySelectorAll(".st-dots i")]);
+    const pins = cols.map((c) => c.querySelector(".st-pin"));
+    const segs = cols.map((c) => [c.querySelector(".st-strip .no"), c.querySelector(".st-strip .yes")]);
+    const reset = () => {
+      dots.forEach((ds) => ds.forEach((d) => { d.className = ""; }));
+      pins.forEach((p) => { p.style.opacity = 0; });
+      segs.forEach((ss) => ss.forEach((x) => x.classList.remove("hit")));
+    };
+    const land = (c, x, n) => {
+      const yes = x >= 62;
+      pins[c].style.opacity = 1; pins[c].style.left = x + "%";
+      segs[c][0].classList.toggle("hit", !yes); segs[c][1].classList.toggle("hit", yes);
+      dots[c][n].className = yes ? "y" : "n";
+    };
+    let n = -1;
+    setInterval(() => {
+      if (!loopActive(root)) { n = -1; reset(); return; }
+      if (n === -1) { reset(); n = 0; return; }
+      if (n < 10) { land(0, 2 + Math.random() * 96, n); land(1, 31, n); }
+      else segs.forEach((ss) => ss.forEach((x) => x.classList.remove("hit")));
+      n = n >= 14 ? -1 : n + 1;
+    }, 1000);
+  };
+
+  /* Slide 4: the agent works in a loop: the LLM calls a tool, looks at the result, and goes on. */
+  builders.agentloop = function (root) {
+    const svg = root.parentElement.querySelector("svg");
+    if (!svg) return;
+    const NS = "http://www.w3.org/2000/svg", O = "#d9481f";
+    const dot = document.createElementNS(NS, "circle");
+    dot.setAttribute("r", "11"); dot.setAttribute("fill", O); dot.style.display = "none";
+    svg.appendChild(dot);
+    const texts = [...svg.querySelectorAll("text")];
+    const label = (s) => texts.find((t) => t.textContent.trim() === s);
+    const legs = [
+      [[375, 145], [195, 72], "read and write files"],
+      [[375, 185], [195, 252], "run commands"],
+      [[525, 185], [705, 252], "check the results"],
+      [[375, 145], [195, 72], "read and write files"],
+      [[525, 145], [705, 72], "use the internet"],
+      [[525, 185], [705, 252], "check the results"],
+    ];
+    const LEG = 1600;
+    let t0 = null;
+    const frame = (now) => {
+      if (!loopActive(root)) { dot.style.display = "none"; texts.forEach((t) => { if (t.textContent.trim() !== "LLM") t.setAttribute("fill", "#111"); }); t0 = null; requestAnimationFrame(frame); return; }
+      if (t0 === null) t0 = now;
+      const t = (now - t0) % (LEG * legs.length), i = Math.floor(t / LEG), f = (t % LEG) / LEG;
+      const [a, b, name] = legs[i], u = f < 0.5 ? f * 2 : (1 - f) * 2;
+      dot.style.display = ""; dot.setAttribute("cx", a[0] + (b[0] - a[0]) * u); dot.setAttribute("cy", a[1] + (b[1] - a[1]) * u);
+      texts.forEach((tx) => { if (tx.textContent.trim() !== "LLM") tx.setAttribute("fill", tx === label(name) && f > 0.35 && f < 0.75 ? O : "#111"); });
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  };
+
+  /* Slide 18: the agent's log appears line by line, as if it were happening now, then starts again. */
+  builders.logtype = function (root) {
+    const pane = root.closest("section").querySelector(".mainpane");
+    if (!pane) return;
+    const lines = [...pane.children].filter((d) => !d.classList.contains("demo") && !d.classList.contains("user"));
+    lines.forEach((d) => { d.style.transition = "opacity .35s, transform .35s"; });
+    const set = (n) => lines.forEach((d, i) => { d.style.opacity = i < n ? "1" : "0"; d.style.transform = i < n ? "none" : "translateY(6px)"; });
+    let n = 0;
+    setInterval(() => {
+      if (!loopActive(root)) { set(lines.length); n = 0; return; }
+      set(n);
+      n = n >= lines.length + 4 ? 0 : n + 1;
+    }, 900);
+  };
+
+  /* Slide 34: one comment at a time goes from the text column through label.py and Qwen into the runs.
+     The gold label column never lights up. */
+  builders.colflow = function (root) {
+    const sec = root.closest("section");
+    const grid = sec.querySelector('div[style*="grid-template-columns:300px 50px 230px"]');
+    if (!grid) return;
+    const kids = [...grid.children];
+    const csv = kids.find((k) => k.textContent.includes("working_100.csv"));
+    const textCol = csv && csv.querySelector('div[style*="outline"]');
+    const rows = textCol ? [...textCol.children].slice(1) : [];
+    const py = kids.find((k) => k.textContent.trim().startsWith("label.py"));
+    const qwen = kids.find((k) => k.textContent.includes("Qwen"));
+    const arrows = kids.filter((k) => k.textContent.trim() === "→");
+    const stack = kids[kids.length - 1];
+    const cards = stack ? [...stack.children] : [];
+    const front = cards[cards.length - 1];
+    if (!rows.length || !py || !qwen || !front) return;
+    const O = "#d9481f";
+    const base = () => {
+      rows.forEach((r) => { r.style.color = "#555"; r.style.background = ""; });
+      [py, qwen].forEach((b) => { b.style.borderColor = "#111"; });
+      arrows.forEach((a) => { a.style.color = ""; });
+      front.style.borderColor = "#111";
+    };
+    const frontLines = front.innerHTML.split("<br>");
+    let tick = 0;
+    setInterval(() => {
+      if (!loopActive(root)) { base(); front.innerHTML = frontLines.join("<br>"); tick = 0; return; }
+      const row = Math.floor(tick / 5) % rows.length, ph = tick % 5;
+      base();
+      if (ph === 0) { rows[row].style.background = "#fbe3d9"; rows[row].style.color = "#111"; }
+      if (ph === 1) { arrows[0] && (arrows[0].style.color = O); py.style.borderColor = O; }
+      if (ph === 2) { arrows[1] && (arrows[1].style.color = O); qwen.style.borderColor = O; }
+      if (ph === 3) {
+        arrows[2] && (arrows[2].style.color = O); front.style.borderColor = O;
+        front.innerHTML = frontLines.map((l, i) => i === row + 1 ? `<b style="color:${O}">${l}</b>` : l).join("<br>");
+      }
+      if (ph === 4) front.innerHTML = frontLines.join("<br>");
+      tick++;
+    }, 650);
+  };
+
+  /* Slide 42: a second coder goes over the 21 judgment calls and says the opposite on some of them. */
+  builders.goldflip = function (root) {
+    const sec = root.closest("section");
+    const cells = [...sec.querySelectorAll('div[style*="width:28px; height:28px"]')];
+    const calls = cells.filter((c) => c.textContent.trim() === "?");
+    if (!calls.length) return;
+    const orig = calls.map((c) => c.getAttribute("style"));
+    const BLACK = "background:#111; color:#fff;", WHITE = "background:#fff; border:2px solid #bbb; color:#999;";
+    const legend = sec.querySelector('div[style*="margin-top:14px"]');
+    const cap = el("div", { style: "font-size:22px; margin-top:12px; min-height:30px; color:#d9481f; font-weight:600;" });
+    if (legend) legend.appendChild(cap);
+    const flipStyle = (s) => {
+      const head = s.split("font-weight:700;")[0] + "font-weight:700;";
+      return head + (s.includes("#111") ? WHITE : BLACK) + " outline:3px solid #d9481f; outline-offset:-1px;";
+    };
+    let tick = 0, pick = [];
+    setInterval(() => {
+      if (!loopActive(root)) { calls.forEach((c, i) => c.setAttribute("style", orig[i])); cap.textContent = ""; tick = 0; return; }
+      if (tick === 0) {
+        calls.forEach((c, i) => c.setAttribute("style", orig[i])); cap.textContent = "Our labels";
+        pick = calls.map((c, i) => i).sort(() => Math.random() - 0.5).slice(0, 8 + Math.floor(Math.random() * 6));
+      } else if (tick <= pick.length) {
+        const i = pick[tick - 1]; calls[i].setAttribute("style", flipStyle(orig[i]));
+        cap.textContent = `A second coder disagrees on ${tick} of 21`;
+      }
+      tick = tick >= pick.length + 6 ? 0 : tick + 1;
+    }, 420);
+  };
+
   /* "What is an API?": two ways into the same model. Before any click, one comment goes through the chat app
      again and again, and a paragraph comes back. Click: label.py sends 100 comments through the API and saves 100 labels. */
   builders.apiflow = function (root) {

@@ -763,9 +763,9 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## Settings: temperature, top_k, greedy
 
 <div class="st-row">
-<div class="st-col"><div class="h">Default</div><div class="st-bars"><div><span>no</span><i style="width:180px;"></i></div><div><span>yes</span><i style="width:110px;"></i></div></div><div class="st-dots"><i class=""></i><i class=""></i><i class="y"></i><i class=""></i><i class="y"></i><i class=""></i><i class=""></i><i class="y"></i><i class=""></i><i class="y"></i></div></div>
-<div class="st-col"><div class="h">Greedy</div><div class="st-bars"><div><span>no</span><i class="on" style="width:180px;"></i></div><div><span>yes</span><i style="width:110px;"></i></div></div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="st-cap">top_k = 1, or temperature = 0</div></div>
-<div class="st-col"><div class="h">Who lets you set it</div>
+<div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">With top_k = 1 or temperature = 0, it always takes the most likely label.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
 <div class="st-av"><span>Gemini</span><b>✓</b></div>
 <div class="st-av"><span>GPT-5 reasoning</span><b class="no">✗ mostly</b></div>
@@ -775,7 +775,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="demo" data-demo="stloop" style="display:none;"></div>
 
-<p class="st-foot">Hosted models: still some randomness <span class="muted">(Atil et al. 2025)</span></p>
+<p class="st-foot">Each dot is one run of the same comment. Orange means yes. Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</p>
 
 ---
 

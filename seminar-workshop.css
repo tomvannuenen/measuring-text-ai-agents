@@ -357,3 +357,15 @@
 .reveal .demo.redit .changed { color: #d9481f; font-weight: 700; margin-left: 4px; }
 .reveal .demo.redit .same { color: #6f6f69; margin-left: 4px; }
 .reveal .demo.redit .take { font-size: 26px; margin: 6px 0 4px; text-align: left; }
+
+/* 22 Nov: slide 51, a chance strip with a pin that lands once per run; dots: black ring = no, orange = yes. */
+.reveal .st-strip { position: relative; display: flex; height: 54px; font-size: 22px; font-weight: 700; margin-top: 14px; }
+.reveal .st-strip > div { display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s; }
+.reveal .st-strip .no { background: #e2e2dc; color: #111; }
+.reveal .st-strip .yes { background: #f6ddd3; color: #d9481f; }
+.reveal .st-strip .no.hit { background: #111; color: #fff; }
+.reveal .st-strip .yes.hit { background: #d9481f; color: #fff; }
+.reveal .st-pin { position: absolute; top: -20px; width: 0; height: 0; margin-left: -11px; border-left: 11px solid transparent; border-right: 11px solid transparent; border-top: 16px solid #d9481f; left: 50%; opacity: 0; transition: left .45s ease-out, opacity .2s; }
+.reveal .st-dots i { border-color: #e2e2dc; }
+.reveal .st-dots i.n { border-color: #111; background: #fff; }
+.reveal .st-dots i.y { border-color: #d9481f; background: #d9481f; }
