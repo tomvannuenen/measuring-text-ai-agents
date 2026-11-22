@@ -285,8 +285,8 @@
     "“Your daughter and husband need bonding time without you.”",
     "“She's just butthurt that your friend confided in you…”",
     "“There's no gray area. You knowingly stole.”",
-    "“Being an overprotective mama bear is going to do more harm than good…”",
-    "“…you sound like a prick. … You know she's family now too, right jack ass?”",
+    "“Being an overprotective mama bear…”",
+    "“…you sound like a prick.”",
   ];
   builders.labelresults = function (root) {
     const body = el("div");
