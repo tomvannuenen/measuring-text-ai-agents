@@ -990,25 +990,27 @@ Name a result from today that shows why one of these items matters.
 <div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 64</i></div>
 </div>
 
-<p class="muted sv-cite">Barrie, Palaiologou &amp; Törnberg (2025)</p>
-
 ---
 
-## Items to report
+## What to report
 
-<div class="two">
-<div class="card fragment"><b>The instrument</b><ul><li>The codebook, word for word</li><li>Model, version, provider and date</li><li>Settings and number of runs</li><li>Which texts you used to write the rules, and which to test them</li><li>Every prompt version you tried</li><li>Every second turn in the pipeline</li><li>Whether the agent could open the gold labels or the test texts</li></ul></div>
-<div class="card fragment"><b>The checks</b><ul><li>Agreement across runs and models</li><li>Agreement with hand labels, for each label and group</li><li>How the hand-labeled sample was chosen, and its size</li><li>A rerun, and the edits that matter for your question</li></ul></div>
-</div>
+<ul style="font-size:32px; line-height:1.5; margin-top:24px;">
+<li>The codebook, word for word</li>
+<li>The model, provider, settings and date</li>
+<li>Agreement across runs, and with your hand labels</li>
+<li>The decisions the agent made, from WORKFLOW.md</li>
+</ul>
 
 ---
 
 ## When to use a model
 
 <div class="two">
-<div class="card fragment"><b>Use a model</b><ul><li>Thousands of texts</li><li>A concept you can define in a few sentences</li><li>Meaning beyond keywords, such as stance, framing or irony</li><li>Time to hand-label a sample</li></ul></div>
-<div class="card fragment"><b>Skip it</b><ul><li>About 50 texts, which you can read yourself</li><li>The label is already in the metadata</li><li>A keyword rule works</li><li>A concept you cannot define, so the labels cannot be checked</li><li>Texts that must stay on your computer</li></ul></div>
+<div class="card fragment"><b>Use a model</b><ul><li>There are too many texts to read yourself.</li><li>You can define it in a few sentences.</li><li>The meaning goes beyond single words, like sarcasm.</li><li>You can hand-label a sample to check it.</li></ul></div>
+<div class="card fragment"><b>Skip it</b><ul><li>There are only about 50 texts.</li><li>The answer is already in your data.</li><li>A word search finds it, like every comment with “idiot”.</li><li>You can’t define what counts.</li></ul></div>
 </div>
+
+<p class="fragment" style="font-size:26px; line-height:1.4; margin-top:20px; text-align:left;">Through an API, your texts go to a company’s server. If they must stay private, run an open-weights model on your own computer.</p>
 
 ---
 
@@ -1041,18 +1043,7 @@ Name a result from today that shows why one of these items matters.
 
 ---
 
-## Recent work
-
-<div style="margin-top:16px;">
-<div style="border-left:4px solid #d9481f; padding:6px 0 6px 18px; margin:0 0 18px; text-align:left;"><div style="font-size:30px; font-weight:700; line-height:1.25;">Normative Evaluation of Large Language Models with Everyday Moral Dilemmas</div><div style="font-size:22px; color:#666; margin-top:4px;">Sachdeva &amp; van Nuenen · 2025, arXiv:2501.18081</div></div>
-<div style="border-left:4px solid #d9481f; padding:6px 0 6px 18px; margin:0 0 18px; text-align:left;"><div style="font-size:30px; font-weight:700; line-height:1.25;">The Fragility of Moral Judgment in Large Language Models</div><div style="font-size:22px; color:#666; margin-top:4px;">van Nuenen &amp; Sachdeva · FAccT 2026, arXiv:2603.05651</div></div>
-<div style="border-left:4px solid #d9481f; padding:6px 0 6px 18px; margin:0 0 18px; text-align:left;"><div style="font-size:30px; font-weight:700; line-height:1.25;">Interaction Protocol Shapes Moral Judgment in Multi-Agent Debate</div><div style="font-size:22px; color:#666; margin-top:4px;">Sachdeva &amp; van Nuenen · 2026, arXiv:2510.10002</div></div>
-<div style="border-left:4px solid #d9481f; padding:6px 0 6px 18px; margin:0 0 18px; text-align:left;"><div style="font-size:30px; font-weight:700; line-height:1.25;">Should AI Tell You to Break Up? Auditing the Romance Guardrail in Large Language Model Advice</div><div style="font-size:22px; color:#666; margin-top:4px;">van Nuenen · PNAS Nexus, 2026</div></div>
-</div>
-
----
-
-## Thank you
+## Q&A
 
 
 
