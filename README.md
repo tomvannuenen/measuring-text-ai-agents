@@ -112,7 +112,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - Use the codebook file I name as the system prompt. Send each comment as the user message: the column text, and nothing else.
 - The labels are yes and no. Restrict answers to them with structured output. If a codebook lists different labels, ask me before running.
 - API calls need network access, which the sandbox blocks. Ask for network access when you start each labeling job, instead of trying inside the sandbox first.
-- Send at most 8 requests at a time. Retry failed requests up to 5 times with increasing waits, and report how many still failed.
+- Send at most 4 requests at a time, with max_tokens set to 20. Retry failed requests up to 5 times with increasing waits, following any Retry-After header, and report how many still failed.
 - Append one line per labeling job to runs/LOG.md: date, data file, codebook, model, provider, settings, number of runs.
 - Before any labeling job, tell me how many calls it will make and estimate the cost from the token counts in runs/test_call.json and the model's price on openrouter.ai. Wait for my OK.
 
