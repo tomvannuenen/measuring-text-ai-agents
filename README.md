@@ -26,8 +26,6 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 
 Bring a laptop (macOS or Windows) with the ChatGPT app installed, and sign in. A free account is enough. We use [Codex](https://chatgpt.com/codex/), OpenAI's coding agent, which is a mode in the ChatGPT app.
 
-**No API?** If the key or the labeling model fails, the `backup` folder has our results. The steps say which file to use.
-
 ## Step 1. Get the project
 
 Open the ChatGPT app, click **ChatGPT ⌄** at the top left, and choose **Codex**.
@@ -42,13 +40,13 @@ unzip it on my Desktop as measuring-text-ai-agents, and tell me where
 the folder is. Then open the repository's page in my browser.
 ```
 
-Click **Choose project** under the chat box and create a new project. Click **Add** and choose only the folder `project`, inside `measuring-text-ai-agents` on your Desktop. Codex then cannot see the backup results next to it. Click **Create project**.
+Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `measuring-text-ai-agents` on your Desktop. Check that it says **This computer**, then click **Create project**.
 
-<img src="images/codex_create_project.png" alt="Create project, with the folder project as its source folder" width="440">
+<img src="images/codex_create_project.png" alt="Create project, with the folder measuring-text-ai-agents as its source folder" width="440">
 
-When Codex asks **Trust this folder?**, check that the path ends in `measuring-text-ai-agents/project`, then click **Trust folder**.
+When Codex asks **Trust this folder?**, check that the path ends in `measuring-text-ai-agents`, then click **Trust folder**.
 
-If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`, which works just as well.
+If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`. Choose that folder for the project instead.
 
 ## Step 2. Look at the data, then code five comments by hand
 
@@ -192,8 +190,6 @@ the line that reads the codebook, and the line that builds the message sent
 to the model. Which columns of the CSV go into that message?
 ```
 
-**No API?** Ask Codex to show you `../backup/coder5_v0_qwen.csv` as the same kind of table.
-
 ## Step 8. Label 100 comments, five times
 
 ```
@@ -202,8 +198,6 @@ saved to runs/working_v0_qwen.csv. Report the numbers AGENTS.md asks for.
 ```
 
 Write down **% identical** and **Krippendorff's alpha**.
-
-**No API?** Ask Codex to compute the same numbers from `../backup/working_v0_qwen.csv`.
 
 ## Step 9. Ask a stronger model (optional)
 
@@ -239,8 +233,6 @@ Show me 5 comments from data/working_100.csv where the five runs in
 runs/working_v0_qwen.csv did not all agree, with the full text as plain
 paragraphs and each run's label. Don't show the gold labels, and don't suggest any rules.
 ```
-
-**No API?** Use `../backup/working_v0_qwen.csv` in place of `runs/working_v0_qwen.csv`.
 
 Write **one rule** that settles your comment, in your own words, without looking at the gold labels.
 
@@ -280,8 +272,6 @@ data/heldout_100.csv. For each codebook, report: % identical across runs, how ma
 of the 100 match the gold labels, and the count of each label.
 Show me five comments the model got wrong with codebook_v1, with the text.
 ```
-
-**No API?** Use `../backup/heldout_v0_qwen.csv` and `../backup/heldout_v1_qwen_reference.csv` (made with our rules, in `../backup/codebook_reference.md`).
 
 ## Step 12. Same comment, other gender
 
@@ -382,11 +372,13 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 
 ## What's in the download
 
-- `project/`: the data, as a small research project. This is the only folder you open in Codex.
-- `backup/`: our results, in case the key or the labeling model fails.
+- `README.md`: this page.
+- `data/working_100.csv`: 100 comments to work with.
+- `data/heldout_100.csv`: 100 other comments, kept aside for testing.
+- `data/coder_5.csv`: 5 comments to code by hand.
 - `images/`: the pictures on this page.
 
-The comments come from the Reddit forum r/AmItheAsshole, in English. Each has our hand-coded label for hostility, in the column `hostile`. The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
+The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were in the wrong. Each file has the columns `id`, `text` and `hostile`: our hand-coded label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
 
 ## Further reading
 
