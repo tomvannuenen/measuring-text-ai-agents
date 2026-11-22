@@ -530,12 +530,16 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="text-align:center; font-size:46px;">→</div>
 <div style="position:relative; height:190px;"><div style="position:absolute; left:36px; top:36px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 5<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:27px; top:27px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 4<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:18px; top:18px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 3<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:9px; top:9px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 2<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:0px; top:0px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 1<br>yes<br>no<br>yes<br>no</div></div>
 </div>
-<div style="display:grid; grid-template-columns:auto auto; justify-content:center; column-gap:70px; row-gap:10px; margin-top:40px; font-size:28px; text-align:left; white-space:nowrap;">
+<div style="display:grid; grid-template-columns:auto auto; justify-content:center; column-gap:70px; row-gap:6px; margin-top:22px; font-size:27px; text-align:left; white-space:nowrap;">
 <span><span style="color:#2a7d2a; font-weight:700;">✓</span> never sees the key</span>
 <span><span style="color:#2a7d2a; font-weight:700;">✓</span> same every run</span>
 <span><span style="color:#2a7d2a; font-weight:700;">✓</span> can run it 5 times</span>
 <span><span style="color:#2a7d2a; font-weight:700;">✓</span> each comment alone <span style="color:#888;">(stateless)</span></span>
+<span class="fragment" data-fragment-index="1"><span style="color:#2a7d2a; font-weight:700;">✓</span> a fixed model version</span>
+<span class="fragment" data-fragment-index="1"><span style="color:#2a7d2a; font-weight:700;">✓</span> a fixed provider</span>
 </div>
+
+<p class="fragment" data-fragment-index="1" style="font-size:24px; line-height:1.35; margin-top:14px; text-align:left;">Hosted models change over time, which is called <b>drift</b>. GPT-4 scored 84% on one test in March 2023 and 51% in June. Pin the model version and the provider, and record the date. <span style="font-size:20px; color:#888;">Chen, Zaharia &amp; Zou 2023</span></p>
 
 <div class="demo" data-demo="colflow" style="display:none;"></div>
 
