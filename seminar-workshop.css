@@ -347,3 +347,13 @@
 .reveal .yt-box .more { color: #8a8a84; }
 .reveal .yt-copy { font-size: 24px !important; color: #6f6f69; margin: 6px 0 0 !important; text-align: left; }
 .reveal .yt-look { font-size: 27px !important; line-height: 1.4; margin: 16px 0 0 !important; text-align: left; }
+
+/* 22 Nov: slide 58, the swapped row made readable: bigger table, "changed" in orange, a one-line result. */
+.reveal .demo.redit .quote { font-size: 19px; line-height: 1.35; margin: 4px 0 10px; }
+.reveal .demo.redit .lab-table { font-size: 24px; margin: 2px 0 8px; }
+.reveal .demo.redit .lab-table td, .reveal .demo.redit .lab-table th { padding: 4px 28px 4px 0; }
+.reveal .demo.redit .lab-table .chip { font-size: 22px; }
+.reveal .demo.redit .lab-table tr.swap td { font-weight: 700; }
+.reveal .demo.redit .changed { color: #d9481f; font-weight: 700; margin-left: 4px; }
+.reveal .demo.redit .same { color: #6f6f69; margin-left: 4px; }
+.reveal .demo.redit .take { font-size: 26px; margin: 6px 0 4px; text-align: left; }
