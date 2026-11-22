@@ -328,7 +328,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 <div style="display:flex; font-size:20px; color:#555; margin-top:12px;"><div style="width:15%; padding:0 16px;">Reddit’s id</div><div style="flex:1; padding:0 16px;">the comment: all a coder sees</div><div style="width:16%; padding:0 16px; color:#d9481f;">our gold labels<br>40 of 100 “yes”</div></div>
 
-<p style="font-size:28px; margin:8px 0 0;">Now do <b>step 2</b> on the GitHub page. If Codex asks to control your screen, click Deny.</p>
+<p class="yt-copy">Copy them from step 2 on the GitHub page. If Codex asks to control your screen, click Deny.</p>
 
 ---
 
@@ -353,6 +353,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 <pre class="ft-code"><code class="nohighlight" style="font-size:26px; padding:18px 22px;">Label the 100 comments in data/working_100.csv by whether
 they are hostile, and tell me how reliable the labels are.</code></pre>
+
+<p class="yt-copy">Copy it from step 3 on the GitHub page.</p>
 
 ---
 
@@ -498,7 +500,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Working with an agent: plan, act, check
 
-<div class="ex-tag">Steps 4 and 5</div>
 
 
 <div style="display:flex; align-items:stretch; gap:12px; margin-top:24px;">
@@ -522,7 +523,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## The agent reads AGENTS.md first
 
-<div class="ex-tag">Step 5</div>
 
 <div style="display:grid; grid-template-columns:400px 1fr; gap:28px; margin-top:18px; text-align:left; align-items:start;">
 <div style="border:2px solid #111; border-radius:12px; padding:16px 18px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; white-space:nowrap; line-height:1.8; background:#fff;">measuring-text-ai-agents/<br>&nbsp;&nbsp;<b style="color:#d9481f; border:2px solid #d9481f; border-radius:6px; padding:0 6px;">AGENTS.md</b><br>&nbsp;&nbsp;README.md<br>&nbsp;&nbsp;data/</div>
@@ -536,14 +536,23 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; font-size:30px; line-height:1.4; text-align:left;">
 <p style="margin:0;">Codex reads it at the start of every conversation. Claude Code reads <code>CLAUDE.md</code> the same way.</p>
-<p style="margin:0;">Your first try ran without one. In step 5, you ask Codex to create it with our rules.</p>
+<p style="margin:0;">Your first try ran without one. Next, you ask Codex to create it with our rules.</p>
 </div>
+
+---
+
+## Ask for approval, then give your agent rules
+
+<div class="ex-tag">Steps 4 and 5</div>
+
+<div class="yt-row"><span class="n">1</span><div><div class="txt">Click the approval chip under the chat box and choose <b>Ask for approval</b>.</div></div></div><div class="yt-row"><span class="n">2</span><div><div class="yt-box">Create a file called AGENTS.md in this project with exactly this content:<br>&nbsp;<br># Project rules<br>- The comments are in data/. Never modify anything in data/.<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">3</span><div><div class="yt-box">Which columns could give away the answer, and how will you keep them away<br>from the labeling model?</div></div></div>
+
+<p class="yt-copy">Copy the prompts from steps 4 and 5 on the GitHub page.</p>
 
 ---
 
 ## API keys
 
-<div class="ex-tag">Step 6</div>
 
 
 <p style="font-size:28px; margin:4px 0 0; text-align:left;">An API key is a password that lets <code>label.py</code> use the API. Every call is charged to it.</p>
@@ -573,11 +582,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 </div>
 </div>
 
-<div class="fragment" data-fragment-index="3" style="display:flex; align-items:center; gap:22px; margin-top:18px; font-size:28px; text-align:left;">
-
-<div>Now do <b>step 6</b> on the GitHub page. Copy the key you were given into <code>.env</code> in your project folder.</div>
-</div>
-
 ---
 
 ## API keys in the news
@@ -586,6 +590,18 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <img class="a" src="img/news_register_metr.jpg" alt="The Register, 1 Sept 2026: Attacker stole a METR API key, used $600K worth of credits, and no one noticed for weeks">
 <img class="b" src="img/news_gitguardian_2026.jpg" alt="GitGuardian, 17 Mar 2026: The State of Secrets Sprawl 2026: AI-Service Leaks Surge 81% and 29M Secrets Hit Public GitHub">
 </div>
+
+---
+
+## Add your key
+
+<div class="ex-tag">Step 6</div>
+
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,<br>and open it in a text editor, so I can paste the key myself.</div></div></div><div class="yt-row"><span class="n">2</span><div><div style="display:flex; align-items:center; gap:22px;"><div class="txt">Copy the key you were given into the file that opens. Save it and close it.</div></div></div></div>
+
+<p class="yt-copy">Copy the prompt from step 6 on the GitHub page.</p>
+
+<p class="yt-look">Never paste the key into the chat.</p>
 
 ---
 
@@ -607,7 +623,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <p style="font-size:26px; line-height:1.45; margin:0; text-align:left;">The answer comes back as a file. It says which model and provider answered, and how many tokens the call used. <span style="color:#6f6f69;">Shortened here. Yours has more.</span></p>
 </div>
 
-<p style="font-size:26px; margin-top:16px;">Then go on to step 7 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 6 on the GitHub page.</p>
 
 ---
 
@@ -615,12 +631,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="ex-tag">Step 7</div>
 
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a file codebook_v0.md with exactly this text:<br>Is this comment hostile or insulting toward someone?<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">2</span><div><div class="yt-box">Write a script label.py that labels the comments in a CSV file using a codebook file<br>as the system prompt, following the rules in AGENTS.md.<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">3</span><div><div class="yt-box">Show me the lines in label.py that set the model, the settings and the labels,<br>the line that reads the codebook, and the line that builds the message sent<br><span class="more">…</span></div></div></div>
 
-<p style="font-size:28px; line-height:1.45; margin:6px 0 0; text-align:left;">Now do <b>step 7</b> on the GitHub page. The agent saves the one-line codebook, writes <code>label.py</code>, and runs it on your five comments, five times each.</p>
+<p class="yt-copy">Copy the three prompts from step 7 on the GitHub page.</p>
 
-<div style="display:flex; align-items:center; justify-content:center; gap:14px; margin:30px 0 10px;"><div style="display:flex; flex-direction:column; gap:10px;"><div style="border:2px solid #111; border-radius:10px; padding:10px 16px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; background:#fff; white-space:nowrap;">codebook_v0.md</div><div style="border:2px solid #111; border-radius:10px; padding:10px 16px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; background:#fff; white-space:nowrap;">data/coder_5.csv</div></div><div style="font-size:34px; color:#888;">→</div><div style="border:2px solid #d9481f; border-radius:10px; padding:10px 16px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; background:#fff; white-space:nowrap;">label.py</div><div style="font-size:34px; color:#888;">→</div><div style="border:2px solid #111; border-radius:10px; padding:10px 16px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; background:#fff; white-space:nowrap;">Qwen (API)</div><div style="font-size:34px; color:#888;">→</div><div style="border:2px solid #111; border-radius:10px; padding:10px 16px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; background:#fff; white-space:nowrap;">runs/coder5_v0.csv</div></div>
-
-<p style="font-size:28px; line-height:1.45; margin:24px 0 0; text-align:left;">Then ask it which columns of the CSV go into the message to Qwen. Only the comment text should go in.</p>
+<p class="yt-look">Check that only the comment text goes to Qwen.</p>
 
 ---
 
@@ -665,14 +680,23 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Same prompt, same comment, ten runs
+## Label 100 comments, five times
 
 <div class="ex-tag">Step 8</div>
 
+<div class="yt-box">Use label.py to label data/working_100.csv with codebook_v0.md, 5 runs,<br>saved to runs/working_v0_qwen.csv. Report the numbers AGENTS.md asks for.</div>
+
+<p class="yt-copy">Copy it from step 8 on the GitHub page.</p>
+
+<p class="yt-look">This takes a few minutes. Write down % identical and Krippendorff’s alpha.</p>
+
+---
+
+## Same prompt, same comment, ten runs
+
+
 
 <div class="demo" data-demo="dice"></div>
-
-<p style="font-size:28px; margin-top:18px;">Now do <b>step 8</b> on the GitHub page. Your agent labels the 100 comments five times, which takes a few minutes.</p>
 
 ---
 
@@ -705,7 +729,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Does a stronger model fix it?
 
-<div class="ex-tag">Step 9</div>
 
 
 <div class="fl-grid">
@@ -770,7 +793,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Recent research on codebook prompts
 
-<div class="ex-tag">Step 10</div>
 
 
 <div class="small">
@@ -785,7 +807,19 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 </div>
 
-<p style="font-size:28px; margin-top:18px;">Now do <b>step 10</b> on the GitHub page. In pairs, find a comment where the runs disagree, and write one rule that settles it.</p>
+---
+
+## Write a rule
+
+<div class="ex-tag">Step 10</div>
+
+<p class="yt-intro">Alone or in pairs, find a comment that is hard to code.</p>
+
+<div class="yt-box">Show me 5 comments from data/working_100.csv where the five runs in<br>runs/working_v0_qwen.csv did not all agree, with the full text as plain<br>paragraphs and each run’s label. Don’t show the gold labels, and don’t suggest any rules.</div>
+
+<p class="yt-copy">Copy it from step 10 on the GitHub page.</p>
+
+<p class="yt-look">Write one rule that settles your comment, in your own words, without looking at the gold labels.</p>
 
 ---
 
@@ -800,16 +834,37 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
+## Your codebook and the held-out test
+
+<div class="ex-tag">Step 11</div>
+
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Copy codebook_v0.md to codebook_v1.md. Just before the last line (“Answer with<br>the label only.”), add a line “Rules:” and then the rules below, exactly as I wrote them.<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">2</span><div><div class="yt-box">Held-out test: label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,<br>3 runs each, saved to runs/heldout_v0.csv and runs/heldout_v1.csv.<br><span class="more">…</span></div></div></div>
+
+<p class="yt-copy">Copy the two prompts from step 11 on the GitHub page.</p>
+
+<p class="yt-look">Paste the room’s three rules at the end of the first prompt.</p>
+
+---
+
 ## Same comment, other gender
 
-<div class="ex-tag">Step 12</div>
 
 
 <p style="font-size:26px; margin:0 0 10px; text-align:left;">If you compare how women and men are treated, the label should not depend on gender.</p>
 
 <div class="demo" data-demo="robustedit"></div>
 
-<p style="font-size:28px; margin:12px 0 0;">Now do <b>step 12</b> on the GitHub page.</p>
+---
+
+## Swap the gender words
+
+<div class="ex-tag">Step 12</div>
+
+<div class="yt-box">Make a folder edits/. Create edits/working_gender.csv: a copy of data/working_100.csv<br>in which you swap gendered words in the column text (he/she, him/her, his/her,<br>husband/wife, boyfriend/girlfriend, mom/dad and so on), keeping the grammar right.<br><span class="more">…</span></div>
+
+<p class="yt-copy">Copy it from step 12 on the GitHub page.</p>
+
+<p class="yt-look">Compare the swap with a plain rerun. Only the changes beyond the rerun point to gender.</p>
 
 ---
 
@@ -830,7 +885,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Multi-turn: one comment, two follow-ups
 
-<div class="ex-tag">Step 13</div>
 
 
 <div class="demo" data-demo="pushback"></div>
@@ -873,7 +927,9 @@ how the reliability numbers were computed, and every test and its results.
 
 End with a section "Decisions I did not ask for".</code></pre>
 
-<p style="font-size:28px; margin-top:18px;">Now do <b>step 14</b> on the GitHub page. What does a good entry in this file look like?</p>
+<p class="yt-copy">Copy it from step 14 on the GitHub page.</p>
+
+<p class="yt-look">What does a good entry in this file look like?</p>
 
 ---
 
@@ -901,13 +957,15 @@ End with a section "Decisions I did not ask for".</code></pre>
 <div class="ex-tag">Step 15</div>
 
 
-<p style="font-size:30px; margin:6px 0 0;">Research outputs don’t have to be static images pasted into slides. Copy this from step 15:</p>
+<p class="yt-intro">Research outputs don’t have to be static images pasted into slides.</p>
 
 <pre class="ft-code" style="margin:14px 0 0;"><code class="nohighlight" style="font-size:22px; padding:16px 20px;">Build an interactive dashboard in an HTML file from this project's data and runs:
 - a table of the 100 working comments, with my gold label and the label from each run
 - a filter for comments where the runs disagree, or where they disagree with my label
 - agreement with my labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got</code></pre>
+
+<p class="yt-copy">Copy it from step 15 on the GitHub page.</p>
 
 <p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
 
@@ -924,12 +982,12 @@ Name a result from today that shows why one of these items matters.
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 54</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 60</i></div>
 <div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 16</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 50</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 50</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 54</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 58</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 53</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 53</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 60</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 64</i></div>
 </div>
 
 <p class="muted sv-cite">Barrie, Palaiologou &amp; Törnberg (2025)</p>
