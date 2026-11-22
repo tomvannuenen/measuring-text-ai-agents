@@ -2,6 +2,8 @@
 
 These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open while you work. Every prompt is here to copy, and the steps work in a group or on your own.
 
+The slides are at [tomvannuenen.me/measuring-text-ai-agents](https://tomvannuenen.me/measuring-text-ai-agents/).
+
 Start a new chat in Codex for each step, unless the step says otherwise.
 
 1. [Get the project](#step-1-get-the-project)
