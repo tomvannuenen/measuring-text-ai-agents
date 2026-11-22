@@ -341,9 +341,9 @@
       live.poll("&action=" + name + "&token=" + encodeURIComponent(L.token));
       setTimeout(() => { if (live.busy === name) { live.busy = null; live.error = "No answer from the script. Try again."; render(); } }, secs * 1000);
     };
-    const qr = (img, url, line) => el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:14px;" },
+    const qr = (img, url, line, sh) => el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:14px;" },
       el("img", { src: img, alt: "", style: "height:160px; margin:0;", onerror: function () { this.remove(); } }),
-      el("div", { style: "font-size:32px;" }, el("b", {}, short(url)), el("div", { style: M + " margin-top:6px;" }, line)));
+      el("div", { style: "font-size:32px;" }, el("b", {}, sh || short(url)), el("div", { style: M + " margin-top:6px;" }, line)));
     const steps = (k) => el("div", { style: M + " margin-bottom:14px; font-size:24px;" },
       ["Propose", "Merge", "Vote", "Test"].map((t, n) => el("span", { style: `margin-right:22px; ${n === k ? "color:#111; font-weight:700;" : ""}` }, `${n + 1}. ${t}`)));
     const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : "Qwen is labeling the five comments…") : null;
@@ -361,13 +361,13 @@
           el("table", { style: "font-size:30px; border-collapse:collapse; margin:0 0 12px;" },
             row("One-line question", T.v0), row("The room's codebook", T.v1),
             live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, slide 42"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
-          el("div", { style: M }, `${T.model} labeled each comment ${T.runs} times with each codebook, as in the workshop steps.${T.failed ? ` ${T.failed} calls failed.` : ""} The codebook is now at ${short(L.proposeUrl)}.`),
+          el("div", { style: M }, `${T.model} labeled each comment ${T.runs} times with each codebook, as in the workshop steps.${T.failed ? ` ${T.failed} calls failed.` : ""} The codebook is now at ${L.proposeShort || short(L.proposeUrl)}.`),
           el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), busyNote(), err()));
         return;
       }
       if (C) {
         const maxv = Math.max(1, ...C.map((c) => live.votes[c.id] || 0));
-        swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted. Pick up to three.`),
+        swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted. Pick up to three.`, L.voteShort),
           C.map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
             el("div", { style: "width:52px; flex:none; font-size:26px;" }, c.id),
             el("div", { style: "flex:1; font-size:27px;" }, c.text, el("span", { style: M }, ` · ${c.pairs} ${c.pairs === 1 ? "pair" : "pairs"}`)),
@@ -377,7 +377,7 @@
         return;
       }
       const P = live.proposals;
-      swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. One rule per pair.`),
+      swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. One rule per pair.`, L.proposeShort),
         el("div", {}, P.slice(-6).map((r) => el("div", { style: M + " font-size:26px; margin:4px 0; font-style:italic;" }, `“${r.text}”`))),
         el("div", { class: "row", style: "margin-top:12px;" }, button("Merge with Claude", () => act("merge", 45), "primary"), busyNote(), err()));
     }
@@ -1050,7 +1050,7 @@
   const WH_Y = [["never used AI"], ["only a chatbot"], ["an agent too"]];
   builders.where = function (root) {
     const L = window.LIVE || {}, round = root.dataset.round === "end" ? "end" : "start";
-    const url = round === "end" ? L.whereNowUrl : L.whereUrl, qr = round === "end" ? "img/where_now_qr.png" : "img/where_qr.png";
+    const url = round === "end" ? L.whereNowUrl : L.whereUrl, sh = round === "end" ? L.whereNowShort : L.whereShort, qr = round === "end" ? "img/where_now_qr.png" : "img/where_qr.png";
     const W = 760, H = 500, Lm = 200, B = 70, T = 10, cw = (W - Lm - 10) / 3, ch = (H - B - T) / 3;
     const NS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(NS, "svg");
@@ -1069,7 +1069,7 @@
     const count = el("b", {}, "0"), word = el("span", {}, " answers");
     const side = el("div", { style: "text-align:center; width:230px;" },
       url ? el("img", { src: qr, alt: "", style: "width:220px; max-width:none; margin:0; border:none; box-shadow:none;", onerror: function () { this.remove(); } }) : null,
-      url ? el("div", { style: "font-size:21px; margin-top:6px;" }, url.replace(/^https?:\/\//, "")) : null,
+      url ? el("div", { style: "font-size:21px; margin-top:6px;" }, sh || url.replace(/^https?:\/\//, "")) : null,
       el("div", { style: "font-size:26px; margin-top:16px;" }, count, word));
     const pts = (r) => ((live.where && live.where[r]) || []).concat(ROOM.where[r]);
     const seen = {};
