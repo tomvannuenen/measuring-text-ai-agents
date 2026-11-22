@@ -1015,15 +1015,24 @@
     root.onshow = () => a.draw();
   };
 
+  /* "Your answers from the start": the room's questions from the start, again. Ask which ones people can now answer;
+     click a question to mark it (orange tick), click again to unmark. With no questions recorded, a few common ones show. */
   builders.roomrecap = function (root) {
     root.classList.add("handkeep", "recap");
-    const b = listColumn("results", "results from today");
+    const FALLBACK = ["Would the model give the same label if you asked again?", "Do the labels match what human coders say?",
+      "Which model, prompt and settings did they use?", "Could the agent see the answers?", "Would a small change in wording change the labels?"];
+    const marked = new Set();
     function draw() {
-      const left = el("div", { class: "col" }, el("div", { class: "eyebrow" }, ASK_TITLE),
-        ROOM.ask.length ? el("ul", { class: "items" }, ROOM.ask.map((s) => el("li", {}, s))) : el("p", { class: "note" }, "nothing recorded"));
-      b.draw();
-      swap(root, el("div", { class: "cols" }, left, b.node),
-        el("div", { class: "clear-row" }, clearBtn("Clear the results list on this slide? The questions on the left come from the earlier slide and stay.", () => { ROOM.results = []; draw(); })));
+      const qs = ROOM.ask.length ? ROOM.ask : FALLBACK;
+      const items = qs.map((q, k) => {
+        const li = el("li", { style: "cursor:pointer; font-size:28px; margin:8px 0;" + (marked.has(k) ? " color:#d9481f;" : "") },
+          marked.has(k) ? "✓ " : "", q);
+        li.addEventListener("click", () => { marked.has(k) ? marked.delete(k) : marked.add(k); draw(); });
+        return li;
+      });
+      swap(root, el("div", { class: "col" },
+        el("div", { class: "eyebrow" }, ROOM.ask.length ? "Your questions from the start" : "Questions people often ask"),
+        el("ul", { class: "items" }, items)));
       recenter();
     }
     root.onshow = draw; draw();

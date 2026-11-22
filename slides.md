@@ -973,7 +973,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Your answers from the start
 
-Name a result from today that shows why one of these items matters.
+Which of these questions can you answer now?
 
 <div class="demo" data-demo="roomrecap"></div>
 
