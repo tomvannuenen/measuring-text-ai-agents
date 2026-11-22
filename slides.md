@@ -440,7 +440,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <p style="font-size:28px; line-height:1.45; margin:0 0 10px; text-align:left;">Every big LLM has two ways in. People use a chat app. Programs use an <b>API</b>, which lets a program send the model text and get its answer back.</p>
 
 <div class="demo" data-demo="apiflow"></div>
-<span class="fragment af-step"></span><span class="fragment af-step"></span>
+<span class="fragment af-step"></span>
 
 ---
 
