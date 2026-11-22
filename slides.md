@@ -251,9 +251,9 @@
 <div class="tw-card fragment"><div class="h">The prompt</div>
 <div class="rows"><div>Prompt A → <span class="pill yes">yes</span></div><div>Prompt B → <span class="pill no">no</span></div></div>
 <div class="cap">another way to ask</div></div>
-<div class="tw-card fragment"><div class="h">Multi-turn</div>
+<div class="tw-card fragment"><div class="h">Sycophancy</div>
 <div class="chat"><div><span class="pill yes">yes</span></div><div class="bub">Are you sure? I think it's the opposite.</div><div><span class="pill no">no</span></div></div>
-<div class="cap">a follow-up question</div></div>
+<div class="cap">your view changes the label</div></div>
 </div>
 
 ---
@@ -900,17 +900,6 @@ End with a section "Decisions I did not ask for".</code></pre>
 <p class="yt-copy">Copy it from step 13 on the GitHub page.</p>
 
 <p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
-
----
-
-## What to report
-
-<ul style="font-size:32px; line-height:1.5; margin-top:24px;">
-<li>The codebook, word for word</li>
-<li>The model, provider, settings and date</li>
-<li>Agreement across runs, and with your hand labels</li>
-<li>The decisions the agent made, from WORKFLOW.md</li>
-</ul>
 
 ---
 
