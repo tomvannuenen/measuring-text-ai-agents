@@ -73,6 +73,8 @@ For each comment, write down yes or no, alone, using only this question:
 Is this comment hostile or insulting toward someone?
 ```
 
+Notice where the question leaves you unsure. If the definition is unclear to you, it is unclear to the model too.
+
 Send your answers with the form at [tinyurl.com/mtai-code](https://tinyurl.com/mtai-code), and keep them. In step 7 you compare them with the model's labels and with the column `hostile`.
 
 ## Step 3. First try
