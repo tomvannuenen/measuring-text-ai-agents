@@ -35,17 +35,18 @@ Open the ChatGPT app, click **ChatGPT ⌄** at the top left, and choose **Codex*
 Click **New chat**, paste this, and click **Allow once** when Codex asks:
 
 ```
-Download github.com/tomvannuenen/measuring-text-ai-agents as a ZIP,
-unzip it on my Desktop, and tell me where the folder is.
+Download the GitHub repository at tinyurl.com/mtai-workshop as a ZIP,
+unzip it on my Desktop as measuring-text-ai-agents, and tell me where
+the folder is. Then open the repository's page in my browser.
 ```
 
-Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `project` inside `measuring-text-ai-agents-main` on your Desktop. Click **Create project**.
+Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `project` inside `measuring-text-ai-agents` on your Desktop. Click **Create project**.
 
 <img src="images/codex_create_project.png" alt="Create project, with the folder project as its source folder" width="440">
 
-When Codex asks **Trust this folder?**, check that the path ends in `measuring-text-ai-agents-main/project`, then click **Trust folder**.
+When Codex asks **Trust this folder?**, check that the path ends in `measuring-text-ai-agents/project`, then click **Trust folder**.
 
-If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself.
+If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`, which works just as well.
 
 ## Step 2. Look at the data, then code five comments by hand
 
