@@ -48,6 +48,8 @@ When Codex asks **Trust this folder?**, check that the path ends in `ai-workshop
 
 If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`. Rename it to `ai-workshop` and choose it for the project.
 
+In Codex, start with **Light** effort. Raise the model or the effort only when a step needs it. The highest settings use up the free limits fast.
+
 ## Step 2. Look at the data, then code five comments by hand
 
 First look at the forum the comments come from:
