@@ -251,9 +251,6 @@
 <div class="tw-card fragment"><div class="h">The prompt</div>
 <div class="rows"><div>Prompt A → <span class="pill yes">yes</span></div><div>Prompt B → <span class="pill no">no</span></div></div>
 <div class="cap">another way to ask</div></div>
-<div class="tw-card fragment"><div class="h">Robustness</div>
-<div class="rows"><div>“…her <b>brother</b>…” → <span class="pill yes">yes</span></div><div>“…his <b class="or">sister</b>…” → <span class="pill no">no</span></div></div>
-<div class="cap">a small edit</div></div>
 <div class="tw-card fragment"><div class="h">Multi-turn</div>
 <div class="chat"><div><span class="pill yes">yes</span></div><div class="bub">Are you sure? I think it's the opposite.</div><div><span class="pill no">no</span></div></div>
 <div class="cap">a follow-up question</div></div>
@@ -728,8 +725,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="demo" data-demo="relval"></div>
 <span class="fragment rv-step"></span><span class="fragment rv-step"></span>
 
-<p class="fragment" style="font-size:26px; margin:14px 0 0; text-align:left;">A third check comes in step 11: the label should stay the same when only something irrelevant changes, like the gender in a comment.</p>
-
 ---
 
 ## Three versions of one prompt
@@ -851,7 +846,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Write it all down
 
-<div class="ex-tag">Step 13</div>
+<div class="ex-tag">Step 12</div>
 
 
 <p style="font-size:30px; margin:6px 0 0;">Today’s analysis lives in your files and in long chats full of decisions. Chats are where research decisions become opaque.</p>
@@ -864,7 +859,7 @@ how the reliability numbers were computed, and every test and its results.
 
 End with a section "Decisions I did not ask for".</code></pre>
 
-<p class="yt-copy">Copy it from step 13 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 12 on the GitHub page.</p>
 
 <p class="yt-look">What does a good entry in this file look like?</p>
 
@@ -872,7 +867,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Read WORKFLOW.md
 
-<div class="ex-tag">Step 13</div>
+<div class="ex-tag">Step 12</div>
 
 
 <p style="font-size:30px; margin:6px 0 10px;">Read it, especially the last section. Look for decisions you didn’t know were made. For instance:</p>
@@ -891,7 +886,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Build something with your results
 
-<div class="ex-tag">Step 14</div>
+<div class="ex-tag">Step 13</div>
 
 
 <p class="yt-intro">Research outputs don’t have to be static images pasted into slides.</p>
@@ -902,7 +897,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 - agreement with my labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got</code></pre>
 
-<p class="yt-copy">Copy it from step 14 on the GitHub page.</p>
+<p class="yt-copy">Copy it from step 13 on the GitHub page.</p>
 
 <p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
 
