@@ -58,6 +58,8 @@
 
 ## Get the workshop files
 
+<div class="ex-tag">Step 1</div>
+
 
 <p style="font-size:30px; line-height:1.45; margin:6px 0 12px; text-align:left;">The workshop files are in a GitHub repository: an online project folder that stores files, code, and revision history.</p>
 
@@ -78,6 +80,8 @@
 
 ## Make the folder a project
 
+<div class="ex-tag">Step 1</div>
+
 
 <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:34px; align-items:center; margin-top:10px;">
 <ol style="font-size:28px; line-height:1.45; margin:0; text-align:left;">
@@ -94,6 +98,8 @@
 ---
 
 ## All your projects
+
+<div class="ex-tag">Step 1</div>
 
 
 <p style="font-size:30px; line-height:1.45; margin:6px 0 16px; text-align:left;">To see all your projects, click <b>⋯</b> in the left bar of Codex, then <b>Projects</b>. The <b>⋯</b> next to a project lets you archive or delete it.</p>
@@ -309,6 +315,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 ## Open the data first
 
+<div class="ex-tag">Step 2</div>
+
 
 <div style="display:grid; grid-template-columns:auto 1fr; gap:8px 14px; align-items:center; margin:0 0 14px; text-align:left;"><span style="font-size:26px; font-weight:700; color:#d9481f;">1</span><pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:23px; padding:8px 18px;">Open reddit.com/r/AmItheAsshole in the Codex browser.</code></pre><span style="font-size:26px; font-weight:700; color:#d9481f;">2</span><pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:23px; padding:8px 18px;">Show me the first 10 rows of data/working_100.csv as a table.</code></pre></div>
 
@@ -325,6 +333,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 ---
 
 ## Code five comments by hand
+
+<div class="ex-tag">Step 2</div>
 
 
 <div class="demo" data-demo="label"></div>
@@ -351,6 +361,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 ---
 
 ## Your first try: one sentence
+
+<div class="ex-tag">Step 3</div>
 
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; margin-top:10px;">
@@ -505,6 +517,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Working with an agent: plan, act, check
 
+<div class="ex-tag">Steps 4 and 5</div>
+
 
 <div style="display:flex; align-items:stretch; gap:12px; margin-top:24px;">
 <div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
@@ -526,6 +540,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 ---
 
 ## API keys
+
+<div class="ex-tag">Step 6</div>
 
 
 <p style="font-size:28px; margin:4px 0 0; text-align:left;">An API key is a password that lets <code>label.py</code> use the API. Every call is charged to it.</p>
@@ -573,6 +589,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## One test call
 
+<div class="ex-tag">Step 6</div>
+
 
 <p style="font-size:27px; margin:0 0 12px; text-align:left;">Before labeling anything, check that the key works with one call to Qwen.</p>
 
@@ -592,6 +610,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ---
 
 ## Build the labeling script
+
+<div class="ex-tag">Step 7</div>
 
 
 <p style="font-size:28px; line-height:1.45; margin:6px 0 0; text-align:left;">Now do <b>step 7</b> on the GitHub page. The agent saves the one-line codebook, writes <code>label.py</code>, and runs it on your five comments, five times each.</p>
@@ -645,6 +665,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Same prompt, same comment, ten runs
 
+<div class="ex-tag">Step 8</div>
+
 
 <div class="demo" data-demo="dice"></div>
 
@@ -680,6 +702,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ---
 
 ## Does a stronger model fix it?
+
+<div class="ex-tag">Step 9</div>
 
 
 <div class="fl-grid">
@@ -744,6 +768,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Recent research on codebook prompts
 
+<div class="ex-tag">Step 10</div>
+
 
 <div class="small">
 
@@ -763,6 +789,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## The room's codebook
 
+<div class="ex-tag">Step 11</div>
+
 
 <div class="demo" data-demo="roomcodebook"></div>
 
@@ -771,6 +799,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ---
 
 ## Same comment, other gender
+
+<div class="ex-tag">Step 12</div>
 
 
 <p style="font-size:26px; margin:0 0 10px; text-align:left;">If you compare how women and men are treated, the label should not depend on gender.</p>
@@ -797,6 +827,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ---
 
 ## Multi-turn: one comment, two follow-ups
+
+<div class="ex-tag">Step 13</div>
 
 
 <div class="demo" data-demo="pushback"></div>
@@ -826,6 +858,8 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Write it all down
 
+<div class="ex-tag">Step 14</div>
+
 
 <p style="font-size:30px; margin:6px 0 0;">Today’s analysis lives in your files and in long chats full of decisions. Chats are where research decisions become opaque.</p>
 
@@ -843,6 +877,8 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 ## Read WORKFLOW.md
 
+<div class="ex-tag">Step 14</div>
+
 
 <p style="font-size:30px; margin:6px 0 10px;">Read it, especially the last section. Look for decisions you didn’t know were made. For instance:</p>
 
@@ -859,6 +895,8 @@ End with a section "Decisions I did not ask for".</code></pre>
 ---
 
 ## Build something with your results
+
+<div class="ex-tag">Step 15</div>
 
 
 <p style="font-size:30px; margin:6px 0 0;">Research outputs don’t have to be static images pasted into slides. Copy this from step 15:</p>
