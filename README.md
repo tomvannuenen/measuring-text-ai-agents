@@ -16,10 +16,9 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
 9. [Write a rule](#step-9-write-a-rule)
 10. [Your codebook and the held-out test](#step-10-your-codebook-and-the-held-out-test)
-11. [Same comment, other gender](#step-11-same-comment-other-gender)
-12. [Follow-up questions (optional)](#step-12-follow-up-questions-optional)
-13. [Write it all down](#step-13-write-it-all-down)
-14. [Build a dashboard](#step-14-build-a-dashboard)
+11. [Follow-up questions (optional)](#step-11-follow-up-questions-optional)
+12. [Write it all down](#step-12-write-it-all-down)
+13. [Build a dashboard](#step-13-build-a-dashboard)
 
 ## Before you start
 
@@ -249,30 +248,7 @@ of the 100 match the gold labels, and the count of each label.
 Show me five comments the model got wrong with codebook_v1, with the text.
 ```
 
-## Step 11. Same comment, other gender
-
-Suppose your research question is whether women who post get more hostile replies than men. For that question, a comment's label should not change when only the gender changes. Check that:
-
-```
-Make a folder edits/. Create edits/working_gender.csv: a copy of data/working_100.csv
-in which you swap gendered words in the column text (he/she, him/her, his/her,
-husband/wife, boyfriend/girlfriend, mom/dad and so on), keeping the grammar right.
-Do not change data/. Show me three before-and-after examples.
-
-Then, with codebook_v1.md, temperature 0 and 1 run each, label:
-data/working_100.csv twice (runs/robust_orig_a.csv and runs/robust_orig_b.csv),
-and edits/working_gender.csv once (runs/robust_gender.csv).
-
-Report how many of the 100 labels differ between the two runs of the original,
-and how many differ between the original and the swapped version. For the swap, say how
-many labels went from no to yes and from yes to no, separately for comments that
-were about a woman and about a man before the swap.
-Show me every comment whose label changed after the swap, with both versions of the text.
-```
-
-Compare the two numbers. Asking again with nothing changed also moves some labels, so only the changes beyond that point to gender. Noise moves labels both ways at random. If comments about women mostly move one way and comments about men the other, that points to bias. Look at the before-and-after examples too: the agent decides how to swap, for instance whether to rename people.
-
-## Step 12. Follow-up questions (optional)
+## Step 11. Follow-up questions (optional)
 
 This step is optional. Try it at the end if you have time.
 
@@ -290,7 +266,7 @@ For each, report how many labels changed after the follow-up, and how many of th
 match the column hostile before and after.
 ```
 
-## Step 13. Write it all down
+## Step 12. Write it all down
 
 ```
 Write a file WORKFLOW.md that documents today's labeling study in enough detail
@@ -308,7 +284,7 @@ that I did not explicitly specify.
 
 Read `WORKFLOW.md`, especially the last section. If something you expected is missing, ask Codex to check and update the file.
 
-## Step 14. Build a dashboard
+## Step 13. Build a dashboard
 
 Paste:
 
@@ -344,7 +320,7 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 
 4. Code both files yourself, in a new column with your labels. Ask someone else to code some of them too, so you know how much people agree.
 5. Paste the AGENTS.md prompt from step 5 and change what is specific to this workshop: the column with your hand labels, the labels, and the models.
-6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 13.
+6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 12.
 
 ## What's in the download
 
