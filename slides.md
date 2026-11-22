@@ -34,6 +34,8 @@
 <div class="fragment" style="text-align:left;"><div style="display:grid; grid-template-columns:150px 1fr 64px; align-items:center; gap:14px; margin:9px 0; font-size:26px;"><span style="text-align:right; font-weight:700;">book</span><div style="height:28px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:91.1%; height:100%; background:#d9481f;"></div></div><span style="color:#555;">41%</span></div><div style="display:grid; grid-template-columns:150px 1fr 64px; align-items:center; gap:14px; margin:9px 0; font-size:26px;"><span style="text-align:right; font-weight:400;">newspaper</span><div style="height:28px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:37.8%; height:100%; background:#8a8a84;"></div></div><span style="color:#555;">17%</span></div><div style="display:grid; grid-template-columns:150px 1fr 64px; align-items:center; gap:14px; margin:9px 0; font-size:26px;"><span style="text-align:right; font-weight:400;">letter</span><div style="height:28px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:24.4%; height:100%; background:#8a8a84;"></div></div><span style="color:#555;">11%</span></div><div style="display:grid; grid-template-columns:150px 1fr 64px; align-items:center; gap:14px; margin:9px 0; font-size:26px;"><span style="text-align:right; font-weight:400;">story</span><div style="height:28px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:17.8%; height:100%; background:#8a8a84;"></div></div><span style="color:#555;">8%</span></div><div style="display:grid; grid-template-columns:150px 1fr 64px; align-items:center; gap:14px; margin:9px 0; font-size:26px;"><span style="text-align:right; font-weight:400;">menu</span><div style="height:28px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:8.9%; height:100%; background:#8a8a84;"></div></div><span style="color:#555;">4%</span></div><div style="font-size:20px; color:#6f6f69; margin:10px 0 0 164px;">Chance of each next word (an example)</div><div class="demo" data-demo="nextword" style="display:none;"></div></div>
 </div>
 
+<p class="fragment" style="font-size:26px; line-height:1.4; margin-top:16px; text-align:left;">The <b>temperature</b> sets how spread out these chances are. At temperature 0, the model always picks the top word.</p>
+
 ---
 
 ## Context windows
@@ -631,20 +633,11 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
-## API keys in the news
-
-<div class="news-shots">
-<img class="a" src="img/news_register_metr.jpg" alt="The Register, 1 Sept 2026: Attacker stole a METR API key, used $600K worth of credits, and no one noticed for weeks">
-<img class="b" src="img/news_gitguardian_2026.jpg" alt="GitGuardian, 17 Mar 2026: The State of Secrets Sprawl 2026: AI-Service Leaks Surge 81% and 29M Secrets Hit Public GitHub">
-</div>
-
----
-
 ## Add your key
 
 <div class="ex-tag">Step 6</div>
 
-<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,<br>and open it in a text editor, so I can paste the key myself.</div></div></div><div class="yt-row"><span class="n">2</span><div><div style="display:flex; align-items:center; gap:22px;"><div class="txt">Copy the key you were given into the file that opens. Save it and close it.</div></div></div></div>
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Create a new file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,<br>and open it in a text editor. I will paste the key myself.<br>Don't open or read the file after that.</div></div></div><div class="yt-row"><span class="n">2</span><div><div style="display:flex; align-items:center; gap:22px;"><div class="txt">Copy the key you were given into the file that opens. Save it and close it.</div></div></div></div>
 
 <p class="yt-copy">Copy the prompt from step 6 on the GitHub page.</p>
 
@@ -1038,12 +1031,12 @@ Which of these questions can you answer now?
 ## Six sources of variation
 
 <div class="sv-grid">
-<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 62</i></div>
+<div class="sv"><b>Runs</b><div class="big">8 of 120</div><span>labels changed on a plain rerun</span><i>slide 61</i></div>
 <div class="sv"><b>Models</b><div class="big">44–74%</div><span>call the same 100 hostile</span><i>slide 18</i></div>
-<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 55</i></div>
-<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 55</i></div>
-<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 62</i></div>
-<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 66</i></div>
+<div class="sv"><b>Wording</b><div class="big">73 → 79%</div><span>match the gold labels, one line → codebook</span><i>slide 54</i></div>
+<div class="sv"><b>Settings</b><div class="big">78 → 97%</div><span>same label in 5 runs, top_k = 1</span><i>slide 54</i></div>
+<div class="sv"><b>Small edits</b><div class="big">16 of 120</div><span>labels changed by a gender swap</span><i>slide 61</i></div>
+<div class="sv"><b>Follow-ups</b><div class="big">76 of 120</div><span>flipped after “I think it’s the opposite”</span><i>slide 65</i></div>
 </div>
 
 ---
