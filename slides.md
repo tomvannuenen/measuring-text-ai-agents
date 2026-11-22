@@ -1,4 +1,4 @@
-## Get Codex on your laptop
+## Welcome! Get Codex on your laptop
 
 <ol style="font-size:34px; line-height:1.6;">
 <li>Download the ChatGPT app for macOS or Windows at <b>chatgpt.com/download</b>.</li>
