@@ -53,13 +53,13 @@ If the download doesn't work, click the green **Code** button on this page, then
 Paste this, and click **Allow once** when Codex asks:
 
 ```
-Open reddit.com/r/AmItheAsshole in my browser.
-Then open data/working_100.csv in my spreadsheet app.
+Open reddit.com/r/AmItheAsshole in the Codex browser.
+Then show me the first 10 rows of data/working_100.csv as a table.
 ```
 
-The first is the forum the comments come from. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
+The first is the forum the comments come from, in the browser built into Codex. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
 
-In Excel, widen the column `text` to read the comments. A yellow bar about possible data loss is normal. Close the file without saving.
+If Codex asks to control your screen or an app, click **Deny**. It does not need that for this workshop.
 
 Then code five comments yourself. Paste:
 
