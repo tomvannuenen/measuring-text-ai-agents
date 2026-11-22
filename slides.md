@@ -314,10 +314,7 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 <div class="ex-tag">Step 2 · Look at the data</div>
 
-<pre class="ft-code" style="margin:0 0 8px;"><code class="nohighlight" style="font-size:24px; padding:12px 20px;">Open reddit.com/r/AmItheAsshole in the Codex browser.
-Then show me the first 10 rows of data/working_100.csv as a table.</code></pre>
-
-<p style="font-size:24px; margin:0 0 14px; text-align:left;">With one sentence, the agent opens the forum in its own browser and shows the data as a table.</p>
+<div style="display:grid; grid-template-columns:auto 1fr; gap:8px 14px; align-items:center; margin:0 0 14px; text-align:left;"><span style="font-size:26px; font-weight:700; color:#d9481f;">1</span><pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:23px; padding:8px 18px;">Open reddit.com/r/AmItheAsshole in the Codex browser.</code></pre><span style="font-size:26px; font-weight:700; color:#d9481f;">2</span><pre class="ft-code" style="margin:0;"><code class="nohighlight" style="font-size:23px; padding:8px 18px;">Show me the first 10 rows of data/working_100.csv as a table.</code></pre></div>
 
 <table style="width:100%; border-collapse:collapse; margin:0;"><thead><tr><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111; width:15%;">id</th><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111;">text</th><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111; width:16%; color:#d9481f;">hostile</th></tr></thead><tbody>
 <tr><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-family:monospace; font-size:18px; color:#888;">t1_emiclu6</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:24px; line-height:1.3;">“If the guy wanted to close your bag, he could have told you that your bag was open. 99% chance he’s a pickpocket, 1% socially dysfunctional idiot.”</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:26px; font-weight:700; color:#d9481f; white-space:nowrap;">yes</td></tr>
