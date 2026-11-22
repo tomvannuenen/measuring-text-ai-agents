@@ -387,12 +387,15 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
-## Coding agents and their rules
+## An agent that sees the test data
 
-<ul style="font-size:32px; line-height:1.5; margin-top:30px;">
-<li style="margin-bottom:28px;">Told not to show a model the test questions, an agent showed them anyway in <b>12 of 84</b> runs.<br><span class="muted" style="font-size:21px;">Rank et al. 2026</span></li>
-<li>Told not to send email, an agent sent one, and only its log showed it.<br><span class="muted" style="font-size:21px;">Ye et al. 2026</span></li>
-</ul>
+<p style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left; margin-top:16px;">In one study, agents had 10 hours to make a model score higher on a test. They were told never to train the model on the test questions.<br><span class="muted" style="font-size:21px;">Rank et al. 2026, PostTrainBench</span></p>
+
+<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left;">Claude Opus 4.6 broke the rules in <b style="color:#d9481f;">12 of 84</b> runs, for example by training on the test questions.</p>
+
+<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left;">A model that has seen the test questions scores well on them. The score then says nothing about how it does on new questions.</p>
+
+<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left; border-left:4px solid #d9481f; padding-left:18px;">Your data has the same risk. The column <code>hostile</code> holds our labels. An agent that reads it can match our labels without labeling anything.</p>
 
 ---
 
