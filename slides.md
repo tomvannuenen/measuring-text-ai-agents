@@ -84,7 +84,7 @@
 <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:34px; align-items:center; margin-top:10px;">
 <ol style="font-size:28px; line-height:1.45; margin:0; text-align:left;">
 <li>Under the chat box, click <b>Choose project</b>, then <b>New project</b>.</li>
-<li>Click <b>Add</b> and choose the folder <code>project</code> inside <code>measuring-text-ai-agents</code> on your Desktop.</li>
+<li>Click <b>Add</b> and choose only the folder <code>project</code>, inside <code>measuring-text-ai-agents</code> on your Desktop.</li>
 <li>Check that it says <b>This computer</b>, then click <b>Create project</b>.</li>
 <li>If Codex asks <b>Trust this folder?</b>, click <b>Trust folder</b>.</li>
 </ol>
