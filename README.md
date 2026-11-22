@@ -60,6 +60,8 @@ Show me the first 10 rows of data/working_100.csv as a table.
 
 Each row is one comment. The column `hostile` already has a yes or no label for each comment.
 
+Open the file yourself too. In the folder `ai-workshop/data` on your Desktop, double-click `working_100.csv`. It opens in Excel, Numbers or another spreadsheet app.
+
 Then code five comments yourself. Paste:
 
 ```
@@ -144,7 +146,7 @@ and open it in a text editor. I will paste the key myself.
 Don't open or read the file after that.
 ```
 
-If the person running the workshop gives you a key, use that one. Otherwise, create a key at [openrouter.ai/keys](https://openrouter.ai/keys) and add a few dollars of credit. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
+If the person running the workshop gives you a key, use that one. Otherwise, create a key at [openrouter.ai/keys](https://openrouter.ai/keys) and add a few dollars of credit. In the editor, replace `paste-your-key-here` with the key. **Save the file** (⌘S on a Mac, Ctrl+S on Windows), then close it. Never paste a key into the chat.
 
 Then check that the key works with one call, in the same chat:
 
@@ -156,7 +158,7 @@ Save the whole response to runs/test_call.json. Then show me the answer,
 the model and provider that answered, and how many tokens it used.
 ```
 
-Open `runs/test_call.json` and find the answer, the model and the provider.
+Open `runs/test_call.json` and find the answer, the model and the provider. Then open `data/coder_5.csv` and read the first comment. Does the model's answer match the one you gave in step 2?
 
 ## Step 7. Build the pipeline
 
