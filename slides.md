@@ -697,6 +697,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 
 <div class="demo" data-demo="dice"></div>
+<span class="fragment dc-step"></span>
 
 ---
 
@@ -768,7 +769,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="st-col"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
 <div class="st-av"><span>Gemini</span><b>✓</b></div>
-<div class="st-av"><span>GPT-5 reasoning</span><b class="no">✗ mostly</b></div>
+<div class="st-av"><span>GPT-5 reasoning</span><b class="no">✗</b></div>
 <div class="st-av"><span>Claude, current API</span><b class="no">✗</b></div>
 </div>
 </div>
@@ -782,6 +783,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## The experiment on one comment
 
 <div class="demo" data-demo="steps"></div>
+<span class="fragment st-step"></span><span class="fragment st-step"></span><span class="fragment st-step"></span>
 
 ---
 

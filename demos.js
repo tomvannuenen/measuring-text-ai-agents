@@ -386,6 +386,19 @@
     put(root, body);
   };
 
+  /* Clicker steps: empty fragments with class cls after a demo. apply(n) gets the number of visible ones
+     whenever it changes on this slide, so the clicker (and going back) drives the demo. */
+  function fragSteps(root, cls, apply) {
+    const sec = root.closest("section");
+    let shown = -1;
+    const step = () => {
+      if (!window.Reveal || Reveal.getCurrentSlide() !== sec) return;
+      const n = sec.querySelectorAll("." + cls + ".visible").length;
+      if (n !== shown) { const prev = shown; shown = n; apply(n, prev); }
+    };
+    if (window.Reveal) { Reveal.on("fragmentshown", step); Reveal.on("fragmenthidden", step); Reveal.on("slidechanged", step); Reveal.on("ready", step); }
+  }
+
   /* 4. One comment, ten real runs per model, revealed one at a time (slide 46).
      The comment is comment 2 of the hand-coding slides, so the first five Qwen runs are the ones the room saw. */
   builders.dice = function (root) {
@@ -406,15 +419,20 @@
         if (!right) r.dots.classList.add("wrong");
       }
     });
-    const go = button("Next run", () => { if (n < max) n++; draw(); go.disabled = n >= max; }, "primary");
+    // One click plays the ten runs one after another; going back clears them.
+    let timer = null;
+    fragSteps(root, "dc-step", (k) => {
+      clearInterval(timer);
+      if (!k) { n = 0; draw(); return; }
+      timer = setInterval(() => { if (n < max) { n++; draw(); } else clearInterval(timer); }, 450);
+    });
     draw();
     root.classList.add("dice");
     put(root,
       el("div", { class: "dc-top" },
         el("div", { class: "dc-text" }, k5 >= 0 ? el("span", { class: "dc-k" }, `Comment ${k5 + 1} · `) : null, d.text),
         el("div", { class: "dc-key" }, el("div", {}, "gold label"), el("span", { class: "hc-key" + (d.truth === "yes" ? " y" : "") }, d.truth))),
-      d.models.map((mo, k) => el("div", { class: "dc-row" }, el("div", { class: "dc-name" }, mo.name), rows[k].dots, rows[k].tally)),
-      el("div", { class: "row dc-btns" }, go, button("Reset", () => { n = 0; draw(); go.disabled = false; }, "quiet")));
+      d.models.map((mo, k) => el("div", { class: "dc-row" }, el("div", { class: "dc-name" }, mo.name), rows[k].dots, rows[k].tally)));
   };
 
   /* 5. Each model against itself, then all six against each other. */
@@ -968,15 +986,16 @@
       swap(r.tally, `${ny} yes · ${r.st.runs.length - ny} no`, el("div", { class: right ? "dc-right" : "dc-wrong" }, right ? "right" : "wrong"));
       if (!right) r.dots.classList.add("wrong");
     };
-    const next = button("Next step", () => { if (n < rows.length) show(rows[n++]); next.disabled = n >= rows.length; }, "primary");
+    const hide = (r) => { swap(r.dots, r.st.runs.map(() => el("i", { class: "e" }))); swap(r.tally); r.dots.classList.remove("wrong"); };
+    // Each click shows the next prompt version; going back hides it again.
+    fragSteps(root, "st-step", (k) => { n = k; rows.forEach((r, i) => (i < k ? show(r) : hide(r))); });
     root.classList.add("dice");
     put(root,
       el("div", { class: "dc-top" },
         el("div", { class: "dc-text" }, k5 >= 0 ? el("span", { class: "dc-k" }, `Comment ${k5 + 1} · `) : null, X.text),
         el("div", { class: "dc-key" }, el("div", {}, "gold label"), el("span", { class: "hc-key" + (X.truth === "yes" ? " y" : "") }, X.truth))),
       el("div", { class: "dc-who" }, "Qwen"),
-      rows.map((r) => el("div", { class: "dc-row" }, el("div", { class: "dc-name" }, NAME[r.st.name] || r.st.name), r.dots, r.tally)),
-      el("div", { class: "row dc-btns" }, next));
+      rows.map((r) => el("div", { class: "dc-row" }, el("div", { class: "dc-name" }, NAME[r.st.name] || r.st.name), r.dots, r.tally)));
   };
 
   /* The experiment, 120 comments: two numbers per step and model. */
