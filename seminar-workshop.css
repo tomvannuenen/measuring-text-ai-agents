@@ -380,3 +380,10 @@
 /* 22 Nov: slide 51, three short definitions as bullets, one per click. */
 .reveal ul.st-defs { font-size: 24px !important; margin: 12px 0 0 1.1em !important; text-align: left; }
 .reveal ul.st-defs li { margin: 2px 0; }
+
+/* 22 Nov: slide 59 with a Luna column group. */
+.reveal .demo.redit .lab-table { font-size: 21px; }
+.reveal .demo.redit .lab-table td, .reveal .demo.redit .lab-table th { padding: 3px 16px 3px 0; }
+.reveal .demo.redit .lab-table .chip { font-size: 20px; }
+.reveal .demo.redit .lab-table tr.grp th { font-size: 20px; color: #111; border-bottom: 1px solid #ccc; text-align: left; }
+.reveal .demo.redit .take { font-size: 24px; }

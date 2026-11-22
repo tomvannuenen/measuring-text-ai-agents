@@ -1057,24 +1057,28 @@
 
   builders.robustedit = function (root) {
     const ex = RB.examples.edit;
+    // GPT-6 Luna (closed weights, default settings) on the same comment: base and base2 from data/runs/robust_luna_push.csv and
+    // robust_luna_naive_push.csv, the swap from robust_luna_gender1.csv and robust_luna_naive_gender1.csv (22 Nov). All "yes".
+    const LUNA = { naive: { base: "yes", base2: "yes", gender: "yes" }, codebook: { base: "yes", base2: "yes", gender: "yes" } };
     root.classList.add("robust", "redit");
     const A = ex.text.split(/(\s+)/), B = ex.swapped.split(/(\s+)/);
     const k = A.findIndex((w, i) => w.trim() && w !== B[i]);
     const from = A[k], to = B[k];
-    // The swapped row: say whether each prompt kept its label from the first run.
     const cell = (base, now) => el("td", {}, chip(now), base === now ? el("span", { class: "same" }, "same") : el("span", { class: "changed" }, "changed"));
-    const row = (name, n, c) => el("tr", {}, el("td", {}, name), el("td", {}, chip(n)), el("td", {}, chip(c)));
+    const cols = [ex.naive, ex.codebook, LUNA.naive, LUNA.codebook];
+    const row = (name, key) => el("tr", {}, el("td", {}, name), cols.map((c) => el("td", {}, chip(c[key]))));
     put(root,
       el("div", { class: "two-texts" },
         el("div", {}, el("div", { class: "eyebrow" }, "as written"), el("p", { class: "quote" }, diffWords(ex.swapped, ex.text))),
         el("div", {}, el("div", { class: "eyebrow" }, "genders swapped"), el("p", { class: "quote" }, diffWords(ex.text, ex.swapped)))),
       el("table", { class: "lab-table" },
-        el("tr", {}, el("th", {}, ""), el("th", {}, "one-line prompt"), el("th", {}, "codebook")),
-        row("as written", ex.naive.base, ex.codebook.base),
-        row("as written, asked again", ex.naive.base2, ex.codebook.base2),
-        el("tr", { class: "swap" }, el("td", {}, "genders swapped"), cell(ex.naive.base, ex.naive.gender), cell(ex.codebook.base, ex.codebook.gender))),
-      el("p", { class: "take" }, `Changing \u201c${from}\u201d to \u201c${to}\u201d flipped the one-line prompt\u2019s label. The codebook kept its label.`),
-      el("p", { class: "note" }, `Qwen, top_k = 1. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
+        el("tr", { class: "grp" }, el("th", {}, ""), el("th", { colspan: "2" }, "Qwen (open weights)"), el("th", { colspan: "2" }, "GPT-6 Luna (closed weights)")),
+        el("tr", {}, el("th", {}, ""), el("th", {}, "one-line prompt"), el("th", {}, "codebook"), el("th", {}, "one-line prompt"), el("th", {}, "codebook")),
+        row("as written", "base"),
+        row("as written, asked again", "base2"),
+        el("tr", { class: "swap" }, el("td", {}, "genders swapped"), cols.map((c) => cell(c.base, c.gender)))),
+      el("p", { class: "take" }, `Changing \u201c${from}\u201d to \u201c${to}\u201d flipped Qwen\u2019s label with the one-line prompt. Every other column kept its label.`),
+      el("p", { class: "note" }, `Qwen with top_k = 1. Luna at its default settings. Gold label: ${ex.key === "yes" ? "hostile" : "not hostile"}.`));
   };
 
   builders.robustbars = function (root) {
