@@ -42,7 +42,7 @@ unzip it on my Desktop as measuring-text-ai-agents, and tell me where
 the folder is. Then open the repository's page in my browser.
 ```
 
-Click **Choose project** under the chat box and create a new project. Click **Add** and choose the folder `project` inside `measuring-text-ai-agents` on your Desktop. Click **Create project**.
+Click **Choose project** under the chat box and create a new project. Click **Add** and choose only the folder `project`, inside `measuring-text-ai-agents` on your Desktop. Codex then cannot see the backup results next to it. Click **Create project**.
 
 <img src="images/codex_create_project.png" alt="Create project, with the folder project as its source folder" width="440">
 
@@ -355,6 +355,12 @@ Build an interactive dashboard in an HTML file from this project's data and runs
 ```
 
 Open yours. In a group, look at someone else's too.
+
+## When you're done
+
+To find your project again, click **⋯** in the left bar of Codex, then **Projects**. The **⋯** next to a project has the options to manage it, such as archiving or deleting it.
+
+The files stay in the folder `measuring-text-ai-agents` on your Desktop. To remove them, move that folder to the Trash.
 
 ## Use it on your own data
 
