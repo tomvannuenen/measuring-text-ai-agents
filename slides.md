@@ -189,7 +189,7 @@
 <div style="font-size:30px; font-weight:700; margin-bottom:10px;">The verdict: NTA or YTA</div>
 <ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
 <li>The commenter states it, often in the first word.</li>
-<li>A keyword search finds most verdicts.</li>
+<li>The forum asks for it and records it, so it is already in the data.</li>
 <li>Little interpretation is needed.</li>
 </ul>
 </div>
