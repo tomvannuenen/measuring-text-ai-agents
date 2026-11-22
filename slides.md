@@ -364,6 +364,8 @@ A study used an AI agent to label **10,000** texts. What would you ask about tho
 
 <div class="demo" data-demo="label"></div>
 
+<p class="fragment" style="font-size:30px; margin-top:18px; text-align:left;">If the definition is unclear to you, it is unclear to the model too.</p>
+
 ---
 
 ## Your first try: just ask for labels
