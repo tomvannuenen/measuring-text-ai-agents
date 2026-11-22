@@ -401,6 +401,8 @@
 /* Slide 6: the room's questions, one wide list in large type so the back of the room can read it */
 .reveal .demo.handkeep:not(.recap) .cols { grid-template-columns: 1fr; }
 .reveal .demo.handkeep:not(.recap) .items { font-size: 30px; line-height: 1.4; }
+.reveal .demo.handkeep.recap .items { font-size: 38px; line-height: 1.35; }
+.reveal .demo.handkeep.recap .items li { margin: 10px 0; }
 .reveal .demo.handkeep:not(.recap) .eyebrow { font-size: 22px !important; }
 .reveal .demo.handkeep:not(.recap) input { font-size: 26px; }
 

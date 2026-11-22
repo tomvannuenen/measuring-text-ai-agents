@@ -1015,24 +1015,20 @@
     root.onshow = () => a.draw();
   };
 
-  /* "Your answers from the start": the room's questions from the start, again. Ask which ones people can now answer;
-     click a question to mark it (orange tick), click again to unmark. With no questions recorded, a few common ones show. */
+  /* "Your answers from the start": the questions the room gave on "Reviewing a study that used model labels".
+     Click a question to tick it (orange), click again to untick. */
   builders.roomrecap = function (root) {
     root.classList.add("handkeep", "recap");
-    const FALLBACK = ["Would the model give the same label if you asked again?", "Do the labels match what human coders say?",
-      "Which model, prompt and settings did they use?", "Could the agent see the answers?", "Would a small change in wording change the labels?"];
     const marked = new Set();
     function draw() {
-      const qs = ROOM.ask.length ? ROOM.ask : FALLBACK;
-      const items = qs.map((q, k) => {
-        const li = el("li", { style: "cursor:pointer; font-size:28px; margin:8px 0;" + (marked.has(k) ? " color:#d9481f;" : "") },
-          marked.has(k) ? "✓ " : "", q);
+      const items = ROOM.ask.map((q, k) => {
+        const li = el("li", { style: "cursor:pointer;" + (marked.has(k) ? " color:#d9481f;" : "") }, marked.has(k) ? "\u2713 " : "", q);
         li.addEventListener("click", () => { marked.has(k) ? marked.delete(k) : marked.add(k); draw(); });
         return li;
       });
       swap(root, el("div", { class: "col" },
-        el("div", { class: "eyebrow" }, ROOM.ask.length ? "Your questions from the start" : "Questions people often ask"),
-        el("ul", { class: "items" }, items)));
+        el("div", { class: "eyebrow" }, "Your questions from the start"),
+        items.length ? el("ul", { class: "items", style: items.length > 8 ? "font-size:28px" : "" }, items) : el("p", { class: "note" }, "No questions were typed in at the start.")));
       recenter();
     }
     root.onshow = draw; draw();
