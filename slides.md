@@ -698,10 +698,12 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Reliability and validity
+## A reliable model can still be wrong
 
 <div class="demo" data-demo="relval"></div>
 <span class="fragment rv-step"></span><span class="fragment rv-step"></span>
+
+<p class="fragment" style="font-size:26px; line-height:1.4; margin:12px 0 0; text-align:left;">Two things move a model up and to the right: a clearer prompt for validity, and a lower temperature for reliability.</p>
 
 ---
 
