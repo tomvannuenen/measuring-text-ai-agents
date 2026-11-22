@@ -1002,23 +1002,27 @@
   builders.experiment = function (root) {
     const M = D.experiment.models;
     let cur = 0;
-    const mk = (name) => { const fill = el("div", { class: "fill" }), val = el("div", { class: "val" }); return { row: el("div", { class: "bar-row exp" }, el("div", {}, name), el("div", { class: "track" }, fill), val), fill, val }; };
+    const mk = (name) => { const fill = el("div", { class: "fill" }), val = el("div", { class: "val" }), na = el("span", { style: "display:none; position:absolute; left:0; top:50%; transform:translateY(-50%); font-size:20px; color:#6f6f69; white-space:nowrap;" }, "can\u2019t be set for this model"); return { row: el("div", { class: "bar-row exp" }, el("div", {}, name), el("div", { class: "track", style: "position:relative;" }, fill, na), val), fill, val, na }; };
     const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "Codebook, temperature 0" };
     const groups = M[0].steps.map((st) => ({ name: NAME[st.name] || st.name, rel: mk("Reliability"), val: mk("Validity") }));
     groups.forEach((g) => g.val.row.classList.add("all"));
     const seg = el("div", { class: "seg" });
-    M.forEach((m, k) => seg.append(button(m.name.split(" ")[0], () => { cur = k; draw(); })));
+    M.forEach((m, k) => seg.append(button(/Luna/.test(m.name) ? "GPT-6 Luna" : m.name.split(" ")[0], () => { cur = k; draw(); })));
     function draw() {
       M[cur].steps.forEach((st, k) => {
-        groups[k].rel.fill.style.width = 100 * st.identical + "%"; groups[k].rel.val.textContent = pct(st.identical);
-        groups[k].val.fill.style.width = 100 * st.correct + "%"; groups[k].val.val.textContent = pct(st.correct);
+        const none = st.identical == null;   // Luna: temperature can't be set
+        for (const [g, v] of [[groups[k].rel, st.identical], [groups[k].val, st.correct]]) {
+          g.fill.style.display = none ? "none" : ""; g.na.style.display = none && g === groups[k].rel ? "" : "none";
+          if (!none) g.fill.style.width = 100 * v + "%";
+          g.val.textContent = none ? "" : pct(v);
+        }
       });
       [...seg.children].forEach((b, k) => b.classList.toggle("on", k === cur));
     }
     root.classList.add("bars", "expdemo");
     put(root, el("div", { class: "row", style: "margin-bottom:8px" }, seg),
       groups.map((g) => el("div", { class: "expgroup" }, el("div", { class: "eyebrow" }, g.name), g.rel.row, g.val.row)),
-      el("p", { class: "note", style: "margin-top:8px;" }, "Our runs used top_k = 1, which has the same effect as temperature 0."));
+      el("p", { class: "note", style: "margin-top:8px;" }, "Qwen and DeepSeek ran with top_k = 1, which has the same effect as temperature 0. GPT-6 Luna does not accept a temperature setting."));
     draw();
   };
 

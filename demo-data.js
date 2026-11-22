@@ -490,6 +490,26 @@ window.DEMO = {
       "correct": 0.875
      }
     ]
+   },
+   {
+    "name": "GPT-6 Luna",
+    "steps": [
+     {
+      "name": "1. One-line prompt",
+      "identical": 0.892,
+      "correct": 0.775
+     },
+     {
+      "name": "2. Codebook",
+      "identical": 0.95,
+      "correct": 0.942
+     },
+     {
+      "name": "3. Codebook, top_k = 1",
+      "identical": null,
+      "correct": null
+     }
+    ]
    }
   ]
  }
