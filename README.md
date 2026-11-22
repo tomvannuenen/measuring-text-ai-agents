@@ -233,7 +233,7 @@ List them, one line each.
 
 ## Step 10. Write a rule
 
-Alone or in pairs, find a comment that is hard to code:
+Find a comment that is hard to code:
 
 ```
 Show me 5 comments from data/working_100.csv where the five runs in
