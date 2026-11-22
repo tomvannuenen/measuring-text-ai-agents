@@ -1,6 +1,6 @@
 # Measuring Text with AI Agents
 
-These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open during the workshop. The slides tell you which step to do, and every prompt is here to copy. You can also work through the steps on your own.
+These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open while you work. Every prompt is here to copy, and the steps work in a group or on your own.
 
 Start a new chat in Codex for each step, unless the step says otherwise.
 
@@ -14,7 +14,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 8. [Label 100 comments, five times](#step-8-label-100-comments-five-times)
 9. [Ask a stronger model (optional)](#step-9-ask-a-stronger-model-optional)
 10. [Write a rule](#step-10-write-a-rule)
-11. [The room's codebook and the held-out test](#step-11-the-rooms-codebook-and-the-held-out-test)
+11. [Your codebook and the held-out test](#step-11-your-codebook-and-the-held-out-test)
 12. [Small edits](#step-12-small-edits)
 13. [Follow-up questions (optional)](#step-13-follow-up-questions-optional)
 14. [Write it all down](#step-14-write-it-all-down)
@@ -139,7 +139,7 @@ Create a file called .env with one line, OPENROUTER_API_KEY=paste-your-key-here,
 and open it in a text editor, so I can paste the key myself.
 ```
 
-In the workshop, the slides show where to copy today's key. On your own, create a key at [openrouter.ai/keys](https://openrouter.ai/keys) and add a few dollars of credit. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
+If the person running the workshop gives you a key, use that one. Otherwise, create a key at [openrouter.ai/keys](https://openrouter.ai/keys) and add a few dollars of credit. In the editor, replace `paste-your-key-here` with the key, then save and close. Never paste a key into the chat.
 
 Then check that the key works with one call, in the same chat:
 
@@ -200,7 +200,7 @@ Write down **% identical** and **Krippendorff's alpha**.
 
 ## Step 9. Ask a stronger model (optional)
 
-In the workshop, this step is shown on the slides. Try it at the end if you have time.
+This step is optional. Try it at the end if you have time.
 
 Send only the comments where Qwen's five runs disagreed to a stronger model:
 
@@ -225,7 +225,7 @@ List them, one line each.
 
 ## Step 10. Write a rule
 
-In pairs, find a comment that is hard to code:
+Alone or in pairs, find a comment that is hard to code:
 
 ```
 Show me 5 comments from data/working_100.csv where the five runs in
@@ -237,9 +237,9 @@ run's label. Don't show the gold labels, and don't suggest any rules.
 
 Write **one rule** that settles your comment, in your own words, without looking at the gold labels.
 
-## Step 11. The room's codebook and the held-out test
+## Step 11. Your codebook and the held-out test
 
-In the workshop, the room votes on everyone's rules, and the slides show the three that win. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
+In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 10, or write two or three. Paste the rules into this prompt:
 
 ```
 Copy codebook_v0.md to codebook_v1.md. Insert the rules below just before the
@@ -284,7 +284,7 @@ Show me every comment whose label changed after the swap, with both versions of 
 
 ## Step 13. Follow-up questions (optional)
 
-In the workshop, this step is shown on the slides. Try it at the end if you have time.
+This step is optional. Try it at the end if you have time.
 
 ```
 Add an option --followup to label.py. When it is set, after the model answers,
@@ -330,7 +330,7 @@ Build an interactive dashboard in an HTML file from this project's data and runs
 - click a comment to see its full text and every label it got
 ```
 
-Open yours, then look at your neighbor's.
+Open yours. In a group, look at someone else's too.
 
 ## What's in the download
 
