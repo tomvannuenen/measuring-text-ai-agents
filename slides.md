@@ -539,33 +539,36 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <div class="ex-tag">Step 6 · Add the API key</div>
 
-<div style="display:flex; align-items:center; gap:20px; margin-top:30px;">
+<p style="font-size:28px; margin:4px 0 0; text-align:left;">An API key is a password that lets <code>label.py</code> use the API. Every call is charged to it.</p>
+
+<div style="display:flex; align-items:center; gap:20px; margin-top:22px;">
 <div style="flex:1.45; border:1px solid #d6d6cf; border-radius:6px; text-align:left;">
 <div style="background:#f0efea; color:#6f6f69; font-size:20px; padding:8px 14px; border-bottom:1px solid #e2e2dc;">● ● ● &nbsp; API keys</div>
-<div style="padding:20px 20px 26px;">
+<div style="padding:16px 20px 18px;">
 <div style="display:flex; justify-content:space-between; align-items:center;"><b style="font-size:32px;">Keys</b><span style="background:#111; color:#fff; border-radius:6px; padding:6px 16px; font-size:20px;">+ Create key</span></div>
 <table style="width:100%; border-collapse:collapse; font-size:24px; margin-top:14px;">
 <tr style="color:#888; border-bottom:1px solid #e2e2dc;"><td style="padding:8px 12px;">Name</td><td style="padding:8px 12px;">Key</td><td style="padding:8px 12px;">Spent</td><td></td></tr>
-<tr style="border-bottom:1px solid #eee;"><td style="padding:14px 12px;">table 1</td><td style="padding:14px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…7f2c</td><td style="padding:14px 12px;">$0.40</td><td style="padding:14px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:14px 12px;">table 2</td><td style="padding:14px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…a91e</td><td style="padding:14px 12px;">$0.31</td><td style="padding:14px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:14px 12px;">table 3</td><td style="padding:14px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…05bd</td><td style="padding:14px 12px;">$0.52</td><td style="padding:14px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:14px 12px;">table 4</td><td style="padding:14px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…c3d8</td><td style="padding:14px 12px;">$0.28</td><td style="padding:14px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr>
+<tr style="border-bottom:1px solid #eee;"><td style="padding:9px 12px;">table 1</td><td style="padding:9px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…7f2c</td><td style="padding:9px 12px;">$0.40</td><td style="padding:9px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:9px 12px;">table 2</td><td style="padding:9px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…a91e</td><td style="padding:9px 12px;">$0.31</td><td style="padding:9px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:9px 12px;">table 3</td><td style="padding:9px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;">sk-or-…05bd</td><td style="padding:9px 12px;">$0.52</td><td style="padding:9px 8px;"><span style="border:2px solid #d9481f; color:#d9481f; border-radius:6px; padding:3px 12px; font-size:20px;">Revoke</span></td></tr>
 </table>
 </div>
 </div>
-<div style="font-size:60px;">→</div>
-<div style="flex:1; display:flex; flex-direction:column; gap:40px;">
-<div style="border:2px solid #111; border-radius:10px; text-align:left;">
+<div class="fragment" data-fragment-index="1" style="font-size:60px;">→</div>
+<div style="flex:1; display:flex; flex-direction:column; gap:30px;">
+<div class="fragment" data-fragment-index="1"><div style="border:2px solid #111; border-radius:10px; text-align:left;">
 <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:22px; padding:8px 16px; border-bottom:1px solid #e2e2dc; color:#6f6f69;">.env</div>
 <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:23px; padding:18px 16px; line-height:1.5;">OPENROUTER_API_KEY=<br>sk-or-…7f2c</div>
 </div>
-<div style="display:flex; align-items:center; gap:18px; font-size:28px; text-align:left;">
+<div style="font-size:22px; color:#555; margin-top:8px; text-align:left;">a file in your project. <code>label.py</code> reads the key from here.</div></div>
+<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:18px; font-size:28px; text-align:left;">
 <div style="position:relative; background:#f0efea; border-radius:18px 18px 4px 18px; padding:14px 20px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:23px;">sk-or-…<span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-52%); color:#d9481f; font-size:70px; font-family:inherit;">✗</span></div>
 <span>never paste it into the agent's chat</span>
 </div>
 </div>
 </div>
 
-<div style="display:flex; align-items:center; gap:22px; margin-top:22px; font-size:28px; text-align:left;">
-<img src="img/key_qr.png" alt="" style="width:140px; margin:0; border:none; box-shadow:none;">
-<div>Now do <b>step 6</b> on the GitHub page. The workshop key is at <b>tinyurl.com/mtai-key</b>. Copy it into <code>.env</code> in your project folder.</div>
+<div class="fragment" data-fragment-index="3" style="display:flex; align-items:center; gap:22px; margin-top:18px; font-size:28px; text-align:left;">
+
+<div>Now do <b>step 6</b> on the GitHub page. Copy the key you were given into <code>.env</code> in your project folder.</div>
 </div>
 
 ---
