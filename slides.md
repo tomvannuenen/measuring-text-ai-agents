@@ -770,27 +770,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Does a stronger model fix it?
-
-
-
-<div class="fl-grid">
-<div class="fl-box fl-start"><b>100 comments</b><br>Qwen, 5 runs each</div>
-<div class="fl-arr">↗</div>
-<div class="fl-box"><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><i class="md y"></i><br>all 5 agree: <b>90</b></div>
-<div class="fl-arr fragment" data-fragment-index="2">→</div>
-<div class="fragment" data-fragment-index="2"><div class="fl-act">keep Qwen’s label</div><div class="fl-bar" style="width:450px;"><div style="flex:75; background:#111;"></div><div style="flex:15; background:#d9481f;"></div></div><div class="fl-res">75 right · <span class="fl-sw">15 steady and wrong</span></div></div>
-<div class="fl-arr">↘</div>
-<div class="fl-box"><i class="md y"></i><i class="md y"></i><i class="md"></i><i class="md y"></i><i class="md"></i><br>runs split: <b>10</b></div>
-<div class="fl-arr fragment" data-fragment-index="1">→</div>
-<div class="fragment" data-fragment-index="1"><div class="fl-act">ask Claude Opus 5.5, once</div><div class="fl-bar" style="width:50px;"><div style="flex:9; background:#111;"></div><div style="flex:1; background:#d9481f;"></div></div><div class="fl-res">9 right <span class="fl-grey">(Qwen alone: 4)</span></div></div>
-</div>
-
-<div class="fl-foot"><div class="fragment" data-fragment-index="1"><b>79 → 84</b> of 100 right</div><div class="fl-next fragment" data-fragment-index="2">only a better prompt can fix these 15 →</div></div>
-<p class="muted fl-cite">Li et al. (2026)</p>
-
----
-
 ## Three versions of one prompt
 
 <div class="pv-row">
