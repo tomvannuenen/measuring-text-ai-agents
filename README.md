@@ -324,3 +324,7 @@ Read `WORKFLOW.md`, especially the last section. If something you expected is mi
 - `images/`: the pictures on this page.
 
 The comments come from the Reddit forum r/AmItheAsshole, in English. Each has our hand-coded label for hostility, in the column `hostile`. The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
+
+## Further reading
+
+[Prompt engineering tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) by Anthropic. It has exercises on writing prompts, for example adding labeled examples or asking the model to reason before it answers. It uses Python notebooks and an Anthropic API key. You can test each of its tips with the method from step 12: change one thing in the codebook, label the same comments again, and count how many labels change.
