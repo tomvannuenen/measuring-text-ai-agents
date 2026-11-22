@@ -50,14 +50,21 @@ If the download doesn't work, click the green **Code** button on this page, then
 
 ## Step 2. Look at the data, then code five comments by hand
 
-Paste this, and click **Allow once** when Codex asks:
+First look at the forum the comments come from:
 
 ```
 Open reddit.com/r/AmItheAsshole in the Codex browser.
-Then show me the first 10 rows of data/working_100.csv as a table.
 ```
 
-The first is the forum the comments come from, in the browser built into Codex. The second is the data, with one comment per row. The column `hostile` already has a yes or no label for each comment.
+It opens in the browser built into Codex. If Reddit asks whether you are a robot, tick the box. Look around, then close the browser panel.
+
+Then look at the data:
+
+```
+Show me the first 10 rows of data/working_100.csv as a table.
+```
+
+Each row is one comment. The column `hostile` already has a yes or no label for each comment.
 
 If Codex asks to control your screen or an app, click **Deny**. It does not need that for this workshop.
 
