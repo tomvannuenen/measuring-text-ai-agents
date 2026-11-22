@@ -52,23 +52,13 @@ In Codex, start with **Light** effort. Raise the model or the effort only when a
 
 ## Step 2. Look at the data, then code five comments by hand
 
-First look at the forum the comments come from:
-
-```
-Open reddit.com/r/AmItheAsshole in the Codex browser.
-```
-
-It opens in the browser built into Codex. If Reddit asks whether you are a robot, tick the box. Look around, then close the browser panel.
-
-Then look at the data:
+First look at the data:
 
 ```
 Show me the first 10 rows of data/working_100.csv as a table.
 ```
 
 Each row is one comment. The column `hostile` already has a yes or no label for each comment.
-
-If Codex asks to control your screen or an app, click **Deny**. It does not need that for this workshop.
 
 Then code five comments yourself. Paste:
 
