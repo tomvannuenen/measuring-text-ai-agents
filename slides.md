@@ -761,11 +761,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Temperature, top_k and greedy settings
+## Greedy settings
 
 <div class="st-row">
 <div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-<div class="st-col"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">With top_k = 1 or temperature = 0, it always takes the most likely label.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Greedy means the model always takes the most likely label.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 <div class="st-col"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
 <div class="st-av"><span>Gemini</span><b>✓</b></div>
@@ -775,6 +775,9 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 </div>
 
 <div class="demo" data-demo="stloop" style="display:none;"></div>
+
+<p class="st-def">Temperature sets how much the chances spread out. At temperature 0, the top label always wins.</p>
+<p class="st-def">top_k limits the draw to the k most likely labels. With top_k = 1, only the top label is left.</p>
 
 <p class="st-foot">Each dot is one run of the same comment. Orange means yes. Even with greedy settings, hosted models keep some randomness <span class="muted">(Atil et al. 2025)</span>.</p>
 

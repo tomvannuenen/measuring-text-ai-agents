@@ -369,3 +369,7 @@
 .reveal .st-dots i { border-color: #e2e2dc; }
 .reveal .st-dots i.n { border-color: #111; background: #fff; }
 .reveal .st-dots i.y { border-color: #d9481f; background: #d9481f; }
+
+/* 22 Nov: slide 51, one line each for temperature and top_k. */
+.reveal .st-def { font-size: 24px !important; margin: 10px 0 0 !important; text-align: left; }
+.reveal .st-def + .st-foot, .reveal .st-def ~ .st-foot { margin-top: 18px !important; }
