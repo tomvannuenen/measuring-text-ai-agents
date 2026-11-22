@@ -15,7 +15,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 9. [Ask a stronger model (optional)](#step-9-ask-a-stronger-model-optional)
 10. [Write a rule](#step-10-write-a-rule)
 11. [Your codebook and the held-out test](#step-11-your-codebook-and-the-held-out-test)
-12. [Small edits](#step-12-small-edits)
+12. [Same comment, other gender](#step-12-same-comment-other-gender)
 13. [Follow-up questions (optional)](#step-13-follow-up-questions-optional)
 14. [Write it all down](#step-14-write-it-all-down)
 15. [Build a dashboard (optional)](#step-15-build-a-dashboard-optional)
@@ -280,7 +280,9 @@ Show me five comments the model got wrong with codebook_v1, with the text.
 
 **No API?** Use `../backup/heldout_v0_qwen.csv` and `../backup/heldout_v1_qwen_reference.csv` (made with our rules, in `../backup/codebook_reference.md`).
 
-## Step 12. Small edits
+## Step 12. Same comment, other gender
+
+Suppose your research question is whether women who post get more hostile replies than men. For that question, a comment's label should not change when only the gender changes. Check that:
 
 ```
 Make a folder edits/. Create edits/working_gender.csv: a copy of data/working_100.csv
@@ -296,6 +298,8 @@ Report how many of the 100 labels differ between the two runs of the original,
 and how many differ between the original and the swapped version.
 Show me every comment whose label changed after the swap, with both versions of the text.
 ```
+
+Compare the two numbers. Asking again with nothing changed also moves some labels, so only the changes beyond that point to gender. Look at the before-and-after examples too: the agent decides how to swap, for instance whether to rename people.
 
 ## Step 13. Follow-up questions (optional)
 
