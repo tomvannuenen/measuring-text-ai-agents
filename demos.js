@@ -329,7 +329,7 @@
   };
 
   /* The room's codebook: people propose rules, Claude merges them, the room votes,
-     and Claude labels the five comments with the one-line question and with the top three rules. */
+     and Qwen labels 100 new comments with the one-line question and with the top three rules. */
   builders.roomcodebook = function (root) {
     const L = window.LIVE || {};
     const f = (a) => a == null ? "–" : a.toFixed(2);
@@ -348,13 +348,13 @@
     const WHAT = [
       "Send one or more rules. All rules go into one list.",
       "Claude combines rules that say the same thing into at most 8. Rules that disagree stay separate.",
-      "Claude combined rules that say the same thing. Pick up to three on your phone.",
-      "Qwen labels the five comments five times, with the one-line question and with the three winning rules.",
+      "Claude combined similar rules. Pick up to three on your phone.",
+      "Qwen labels 100 new comments three times with each codebook.",
     ];
     const steps = (k) => el("div", { style: "margin-bottom:14px;" },
       el("div", { style: M + " font-size:24px;" }, ["Propose", "Merge", "Vote", "Test"].map((t, n) => el("span", { style: `margin-right:22px; ${n === k ? "color:#111; font-weight:700;" : ""}` }, `${n + 1}. ${t}`))),
-      el("div", { style: "font-size:26px; color:#111; margin-top:8px; max-width:640px;" }, WHAT[k]));
-    const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : live.busy === "reset" ? "Starting over…" : "Qwen is labeling the five comments…") : null;
+      el("div", { style: "font-size:26px; color:#111; margin-top:8px; max-width:560px;" }, WHAT[k]));
+    const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : live.busy === "reset" ? "Starting over…" : "Qwen is labeling 100 new comments with both codebooks. This takes about three minutes…") : null;
     /* "Start over" clears today's rules, merge, votes and test, for a fresh session after a practice run.
        The first click asks; a second click within 4 seconds runs the reset. No confirm() pop-up, see clearBtn. */
     const startOver = () => {
@@ -374,30 +374,30 @@
     function render() {
       const T = live.test, C = live.candidates;
       if (T) {
-        const truth = D.coder5.map((c) => c.truth);
-        const hits = (U) => U.filter((u, k) => (u.yes > u.no ? "yes" : u.no > u.yes ? "no" : "tie") === truth[k]).length;
-        const row = (label, U) => el("tr", {}, el("td", { style: "padding:6px 24px 6px 0; border:none;" }, label),
-          el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(U)))),
-          el("td", { style: "padding:6px 0 6px 24px; border:none;" }, el("b", {}, `${hits(U)} of 5`), " match the gold label"));
+        const n = T.n || 100, pct = (k) => `${Math.round(100 * k / n)}%`;
+        const td = "padding:6px 28px 6px 0; border:none;";
+        const row = (label, v) => el("tr", {}, el("td", { style: td }, label),
+          el("td", { style: td }, el("b", {}, pct(v.identical))),
+          el("td", { style: td }, el("b", {}, `${v.match} of ${n}`)));
         swap(body, steps(3),
-          el("div", { style: "font-size:28px; margin-bottom:16px; max-width:900px;" }, T.rules.map((r, n) => el("div", { style: "margin:4px 0;" }, `${n + 1}. ${r.text}`))),
+          el("div", { style: "font-size:28px; margin-bottom:16px; max-width:900px;" }, T.rules.map((r, k) => el("div", { style: "margin:4px 0;" }, `${k + 1}. ${r.text}`))),
           el("table", { style: "font-size:30px; border-collapse:collapse; margin:0 0 12px;" },
-            row("One-line question", T.v0), row("The room's codebook", T.v1),
-            live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, by hand"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
-          el("div", { style: M }, `The codebook is now at ${L.proposeShort || short(L.proposeUrl)}.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
-          el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), startOver(), busyNote(), err()));
+            el("tr", {}, el("td", { style: M + td }), el("td", { style: M + td }, "% identical"), el("td", { style: M + td }, "Match the gold labels")),
+            row("One-line question", T.v0), row("The room's codebook", T.v1)),
+          el("div", { style: M }, `Qwen, ${T.runs} runs on ${n} new comments. To run it yourself, open ${L.proposeShort || short(L.proposeUrl)}.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
+          el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 360), "quiet tiny-btn"), startOver(), busyNote(), err()));
         return;
       }
       if (C) {
         const maxv = Math.max(1, ...C.map((c) => live.votes[c.id] || 0));
         swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted.`, L.voteShort),
-          C.length > 5 ? el("div", { style: M + " margin:0 0 6px;" }, `The five rules with the most votes so far, of ${C.length}`) : null,
-          C.slice().sort((a, b) => (live.votes[b.id] || 0) - (live.votes[a.id] || 0)).slice(0, 5).map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
+          C.length > 3 ? el("div", { style: M + " margin:0 0 6px;" }, `The three rules with the most votes so far, of ${C.length}`) : null,
+          C.slice().sort((a, b) => (live.votes[b.id] || 0) - (live.votes[a.id] || 0)).slice(0, 3).map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
             el("div", { style: "width:40px; flex:none; font-size:26px;" }, c.id),
             el("div", { style: "flex:1; font-size:26px; line-height:1.25;" }, c.text),
             el("div", { style: "width:170px; flex:none; background:#ecebe6; height:24px;" }, el("div", { style: `height:24px; width:${100 * (live.votes[c.id] || 0) / maxv}%; background:#111;` })),
             el("div", { style: "width:44px; flex:none; font-size:26px;" }, String(live.votes[c.id] || 0)))),
-          el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 150), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), startOver(), busyNote(), err()));
+          el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 360), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), startOver(), busyNote(), err()));
         return;
       }
       const P = live.proposals;
