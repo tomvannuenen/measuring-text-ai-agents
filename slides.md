@@ -764,13 +764,15 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="ex-tag">Step 8</div>
 
-<p class="yt-intro">Go back to the comment you were least sure about in step 2.</p>
+<p class="yt-intro">Pick the comment you found hardest to code in step 2.</p>
 
 <div class="yt-box">Show me the five comments in data/coder_5.csv again, numbered, with the full text only.<br>Don’t show the column hostile.</div>
 
 <p class="yt-copy">Copy it from step 8 on the GitHub page.</p>
 
-<p class="yt-look">Write one rule that settles that comment, in your own words, without looking at the gold labels.</p>
+<p class="yt-look">Write one rule that tells a coder if that comment is hostile. Start it like this:</p>
+
+<p style="font-size:32px; line-height:1.5; margin:10px 0 0 36px; text-align:left; color:#d9481f; font-weight:700;">A comment is hostile when…<br>A comment is not hostile when…</p>
 
 ---
 
