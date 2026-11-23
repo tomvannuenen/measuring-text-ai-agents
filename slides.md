@@ -149,16 +149,24 @@
 
 ---
 
-## How published papers check model labels
+## Reliability and validity
 
-<p style="font-size:30px; line-height:1.3;"><b>27</b> papers in eight leading social science journals used model labels. They checked them in different ways.<br><span style="font-size:22px; color:#888;">Desai, Card &amp; Jacobs 2026</span></p>
-
-<div style="max-width:1000px; margin-top:44px;">
-<div style="font-size:26px; color:#6f6f69; margin:0 0 14px;">Checks in the papers’ 50 measurement tasks</div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:500px; font-size:30px; text-align:right; white-space:nowrap;">Compared with other labels (validity)</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:76%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">38</div></div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:500px; font-size:30px; text-align:right; white-space:nowrap;">A known hypothesis (validity)</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:18%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">9</div></div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:500px; font-size:30px; text-align:right; white-space:nowrap;">Repeated runs (reliability)</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:10%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">5</div></div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:500px; font-size:30px; text-align:right; white-space:nowrap;">No check</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:16%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">8</div></div>
+<div style="display:flex; gap:40px; align-items:stretch; margin-top:24px; text-align:left;">
+<div style="flex:1;">
+<p style="font-size:34px; font-weight:700; margin:0 0 10px;">Reliability</p>
+<p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The same comment gets the same label when you ask again.</p>
+<div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment, five runs</div>
+<div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span></div>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you run the model several times on the same comments.</p>
+</div>
+<div style="width:4px; background:var(--accent);"></div>
+<div style="flex:1;">
+<p style="font-size:34px; font-weight:700; margin:0 0 10px;">Validity</p>
+<p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label matches what we mean.</p>
+<div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment</div>
+<div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">model says yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">gold label says yes</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✓</span></div>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with gold labels from careful human coders.</p>
+</div>
 </div>
 
 ---
