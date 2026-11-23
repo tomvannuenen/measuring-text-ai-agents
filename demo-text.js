@@ -7,5 +7,8 @@ window.DEMO_TEXT = {
   },
   "robustedit": {
     "Changing “aunt” to “uncle” flipped the one-line prompt’s label. The codebook kept its label.": "Changing “aunt” to “uncle” flipped the one-line prompt’s label. This is bad."
+  },
+  "experiment": {
+    "The scale starts at 50%. Qwen and DeepSeek ran with top_k = 1, which has the same effect as temperature 0. GPT-6 Luna does not accept a temperature setting.": "Scale starts at 50%. GPT-6 Luna does not accept a temperature setting."
   }
 };
