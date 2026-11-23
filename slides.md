@@ -811,15 +811,17 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Your codebook and the held-out test
+## Test the room's codebook on 100 new comments
 
 <div class="ex-tag">Step 9</div>
 
-<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Copy codebook_v0.md to codebook_v1.md. Just before the last line (“Answer with<br>the label only.”), add a line “Rules:” and then the rules below, exactly as I wrote them.<br><span class="more">…</span></div></div></div><div class="yt-row"><span class="n">2</span><div><div class="yt-box">Held-out test: label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,<br>3 runs each, saved to runs/heldout_v0.csv and runs/heldout_v1.csv.<br><span class="more">…</span></div></div></div>
+<p>The room wrote its rules for the five warm-up comments. Both codebooks now label 100 new comments.</p>
 
-<p class="yt-copy">Copy the two prompts from step 9 on the GitHub page.</p>
+<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Make codebook_v1.md: a copy of codebook_v0.md with a line “Rules:” and the rules<br>below added just before the last line. Change nothing else.<br><span class="more">…</span></div></div></div>
 
-<p class="yt-look">Paste the room’s three rules at the end of the first prompt. For each codebook, write down % identical and how many match the gold labels.</p>
+<p class="yt-copy">Copy the prompt from step 9 on the GitHub page.</p>
+
+<p class="yt-look">Add the room’s three rules at the bottom. For each codebook, write down % identical and how many match the gold labels.</p>
 
 ---
 
