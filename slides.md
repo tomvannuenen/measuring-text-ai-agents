@@ -379,9 +379,9 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <text x="192" y="236" style="font-size:21px;" fill="#6f6f69">yes / no</text>
 </svg></div>
 <ul style="font-size:30px; line-height:1.3; margin:0 0 0 1em;">
-<li style="margin-bottom:18px;">Many people always pick the highest effort.</li>
-<li class="fragment" style="margin-bottom:18px;">Longer thinking made yes-or-no labels worse. It helped with 27 categories.<br><span style="font-size:22px; color:#888;">Huang &amp; Wang 2026</span></li>
-<li class="fragment" style="margin-bottom:18px;">Reasoning on easy questions took 20 times more tokens, for the same answer.<br><span style="font-size:22px; color:#888;">Chen et al. 2024</span></li>
+<li style="margin-bottom:18px;">It may be tempting to always pick the highest effort.</li>
+<li class="fragment" style="margin-bottom:18px;">But: longer thinking has been shown to make yes-or-no labels worse in some cases.<br><span style="font-size:22px; color:#888;">Huang &amp; Wang 2026</span></li>
+<li class="fragment" style="margin-bottom:18px;">Reasoning on easy questions can cost many times more tokens, for the same answer.<br><span style="font-size:22px; color:#888;">Chen et al. 2024</span></li>
 <li class="fragment" style="margin-bottom:18px;">High effort helps on long tasks. One label is a short task.</li>
 </ul>
 </div>
