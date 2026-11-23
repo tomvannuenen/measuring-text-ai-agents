@@ -255,8 +255,8 @@
 ## Model and effort
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px; align-items:start;">
-<div><img src="img/codex-model-select.png" alt="The model picker" style="height:190px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
-<div><img src="img/codex-effort.png" alt="The effort picker: Light, Medium, High, Extra High, Ultra" style="height:190px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
+<div><img src="img/codex-model-select.png" alt="The model picker" style="height:160px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
+<div><img src="img/codex-effort.png" alt="The effort picker: Light, Medium, High, Extra High, Ultra" style="height:160px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
 </div>
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:14px; text-align:left;">
@@ -264,7 +264,8 @@
 <ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;"><li><b>Effort</b> is how long it thinks.</li><li>More effort helps on hard tasks, and uses more of your limit.</li></ul>
 </div>
 
-<div class="fragment" style="margin-top:18px; text-align:left;"><div style="font-size:24px; color:#6f6f69; margin-bottom:8px;">Codex messages per 5 hours, Plus plan</div><div style="display:flex; gap:16px;"><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">small model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 350–3,000</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">Sol</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 17–180</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">biggest model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 6–50</div></div></div></div>
+<p class="fragment" style="font-size:28px; margin:16px 0 0; text-align:left;">Codex lets you do a set amount of work every 5 hours. This is your <b>usage limit</b>.</p>
+<div class="fragment" style="margin-top:12px; text-align:left;"><div style="font-size:24px; color:#6f6f69; margin-bottom:8px;">Codex messages per 5 hours, Plus plan (note: you are on a Free plan!)</div><div style="display:flex; gap:16px;"><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">small model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 350–3,000</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">Sol</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 17–180</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">biggest model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 6–50</div></div></div></div>
 <p class="fragment" style="font-size:28px; margin:16px 0 0; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> See your usage at chatgpt.com/codex/settings/usage.<br><span style="font-size:21px; color:#888;">OpenAI, Codex pricing page, November 2026</span></p>
 
 ---
