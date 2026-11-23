@@ -172,7 +172,7 @@
 <div style="width:4px; background:var(--accent);"></div>
 <div style="flex:1;">
 <p style="font-size:34px; font-weight:700; margin:0 0 10px;">Validity</p>
-<p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label matches what we mean.</p>
+<p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label matches what we mean (a "gold label")</p>
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">model says yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">gold label says yes</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✓</span></div>
 <p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with our gold labels.</p>
@@ -203,9 +203,9 @@
 <div style="border:2px solid #bbb; border-radius:12px; padding:18px 22px;">
 <div style="font-size:30px; font-weight:700; margin-bottom:10px;">The verdict: NTA or YTA</div>
 <ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
-<li>The commenter states it, often in the first word.</li>
-<li>The forum asks for it and records it, so it is already in the data.</li>
-<li>Little interpretation is needed.</li>
+<li>The commenter says it (often as the first word)</li>
+<li>Reddit records it as metadata, so we don't need to label it.</li>
+<li></li>
 </ul>
 </div>
 <div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:18px 22px;">
@@ -213,7 +213,7 @@
 <ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
 <li>The researcher defines the concept.</li>
 <li>Coders have to read for mockery, sarcasm and the target of an attack.</li>
-<li>Careful coders disagree on about one comment in six.</li>
+<li>Careful coders could reasonably disagree on certain comments.</li>
 </ul>
 </div>
 </div>

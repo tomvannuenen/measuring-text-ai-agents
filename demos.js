@@ -424,7 +424,7 @@
     const LO = 50, W = 1000, x = (m) => W * (Math.max(LO, Math.min(100, m)) - LO) / (100 - LO);
     function render() {
       const S = live.score || {}, rows = S.rows || [];
-      const link = S.short ? S.short.replace(/^https?:\/\//, "") : "";
+      const link = "tinyurl.com/mtai-score";   // points to the score form (forms.gle/paMST9W4XW5QbqDk6)
       const head = el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:18px;" },
         el("img", { src: "img/form_score_qr.png", alt: "", style: "height:120px; margin:0;", onerror: function () { this.remove(); } }),
         el("div", { style: "font-size:30px;" }, link ? el("div", { style: "font-size:40px; font-weight:700; color:#d9481f;" }, link) : null,
