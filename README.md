@@ -106,7 +106,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - Save each labeling job as a new CSV in runs/, with one row per comment per run and the columns id, run, label. Never overwrite an earlier file.
 
 ## Labeling
-- Call the labeling model through OpenRouter, with the openai Python package. Read the key from OPENROUTER_API_KEY in the .env file in this folder. Never print the key or copy it into any other file. Never open, read or show the .env file yourself; your scripts load it.
+- Call the labeling model through OpenRouter, with the openai Python package. Read the key from OPENROUTER_API_KEY in the .env file in this folder. Never print the key or copy it into any other file. Never read, print or show the .env file yourself; your scripts load it.
 - Labeling models: qwen/qwen3-235b-a22b-2507 (the default) and deepseek/deepseek-v4-flash. Use provider DeepInfra only for both, with no fallbacks, and require providers to support every parameter we send.
 - Use the codebook file I name as the system prompt. Send each comment as the user message: the column text, and nothing else.
 - The labels are yes and no. Restrict answers to them with structured output. If a codebook lists different labels, ask me before running.
@@ -227,7 +227,7 @@ match the column hostile.
 [paste your rule here]
 ```
 
-Write down **% identical** (reliability) and **how many match the gold labels** (validity).
+Write down **% identical** (reliability) and **how many match the gold labels** (validity). Then send your rule and both numbers with the score form. Its link is on the slides and in the chat.
 
 ## Step 10. Sycophancy: follow-up questions (optional)
 
@@ -271,9 +271,9 @@ Paste:
 
 ```
 Build an interactive dashboard in an HTML file from this project's data and runs:
-- a table of the 100 held-out comments, with my gold label and the label from each run
-- a filter for comments where the runs disagree, or where they disagree with my label
-- agreement with my labels and Krippendorff's alpha for each codebook I tried
+- a table of the 100 held-out comments, with the gold label (column hostile) and the label from each run
+- a filter for comments where the runs disagree, or where they disagree with the gold label
+- agreement with the gold labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got
 ```
 
