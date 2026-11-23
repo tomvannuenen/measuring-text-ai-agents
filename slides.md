@@ -126,7 +126,7 @@
 
 ## Text labeling in the social sciences
 
-<ul style="font-size:25px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “hostile” or “not hostile”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.<br><span style="font-size:21px; color:#888;">Grimmer &amp; Stewart 2013 · Coe, Kenski &amp; Rains 2014</span></li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels, compare groups and use the labels as variables in models. Errors in the labels carry into these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments, and we check its labels.</li></ul>
+<ul style="font-size:25px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “hostile” or “not hostile”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.<br><span style="font-size:21px; color:#888;">Grimmer &amp; Stewart 2013 · Coe, Kenski &amp; Rains 2014</span></li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels, compare groups and use the labels as variables in models. Errors in the labels also change these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments, and we check its labels.</li></ul>
 
 <div class="fragment" style="max-width:1000px; margin:0;">
 <div style="display:grid; grid-template-columns:1fr 50px 110px; gap:14px; font-size:22px; color:#6f6f69; margin-bottom:12px;"><span style="text-align:left;">Reddit comment</span><span></span><span>Hostile?</span></div>
@@ -294,11 +294,11 @@
 </div>
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:18px; font-size:27px; line-height:1.4; text-align:left;">
-<p style="margin:0;">The <b>model</b> is the brain that does the work. Bigger, newer models do more, and use up your limits faster.</p>
-<p style="margin:0;"><b>Effort</b> is how long it thinks. More effort helps on hard tasks, and also uses up limits faster.</p>
+<p style="margin:0;">The <b>model</b> is the brain that does the work. Bigger, newer models do more, and you reach your usage limit sooner.</p>
+<p style="margin:0;"><b>Effort</b> is how long it thinks. More effort helps on hard tasks, and you also reach the limit sooner.</p>
 </div>
 
-<p style="font-size:27px; margin-top:20px; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> Raise the model or the effort only when a step needs it. The highest settings use up the free limits fast.</p>
+<p style="font-size:27px; margin-top:20px; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> Raise the model or the effort only when a step needs it. With the highest settings, you reach the free limit quickly.</p>
 
 ---
 
@@ -370,7 +370,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <li style="margin-bottom:18px;">The box shows what the model saw.</li>
 <li style="margin-bottom:18px;">Open your own log. Did a command print <code>hostile</code>?</li>
 <li class="fragment" style="margin-bottom:18px;">The log never shows why the agent chose a label.</li>
-<li class="fragment" style="margin-bottom:18px;">A reason per label helps with disagreements. It is still the model’s own story.<br><span style="font-size:22px; color:#888;">Turpin et al. 2023</span></li>
+<li class="fragment" style="margin-bottom:18px;">A reason per label helps with disagreements. The model writes that reason itself, so it may not be the real reason.<br><span style="font-size:22px; color:#888;">Turpin et al. 2023</span></li>
 </ul>
 </div>
 
@@ -405,7 +405,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Light or high effort
 
-<p style="font-size:24px; margin:0 0 6px; color:#555;">GPT-6.2 Sol, the same request, in two fresh copies of the project. Light is the free default.</p>
+<p style="font-size:24px; margin:0 0 6px; color:#555;">GPT-6.2 Sol, the same request, in two new copies of the project. Light is the free default.</p>
 
 <div style="display:grid; grid-template-columns:1fr 40px 1fr; text-align:left;">
 <div style="font-size:30px; font-weight:700;">Light</div><div></div><div style="font-size:30px; font-weight:700; color:#d9481f;">High</div>
@@ -422,7 +422,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## What is an API?
 
-<p style="font-size:28px; line-height:1.45; margin:0 0 10px; text-align:left;">Every big LLM has two ways in. People use a chat app. Programs use an <b>API</b>, which lets a program send the model text and get its answer back.</p>
+<p style="font-size:28px; line-height:1.45; margin:0 0 10px; text-align:left;">You can use a big LLM in two ways. People use a chat app. Programs use an <b>API</b>, which lets a program send the model text and get its answer back.</p>
 
 <div class="demo" data-demo="apiflow"></div>
 <span class="fragment af-step"></span>
@@ -462,15 +462,15 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 ## Open and closed models
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:16px;">
-<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Closed weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><text x="40" y="112" text-anchor="middle" font-size="26" font-weight="400" fill="#111">you</text><line x1="78" y1="92" x2="200" y2="92" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="80" text-anchor="middle" font-size="20" font-weight="400" fill="#555">your text</text><line x1="200" y1="132" x2="78" y2="132" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="158" text-anchor="middle" font-size="20" font-weight="400" fill="#555">an answer</text><rect x="212" y="22" width="240" height="176" rx="12" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/><text x="332" y="52" text-anchor="middle" font-size="20" font-weight="400" fill="#555">the company’s servers</text><rect x="262" y="78" width="140" height="76" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="332" y="125" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Only the company has the model. It can change or retire the model at any time.</p><p style="font-size:23px; color:#555; margin:0;">GPT-6.2 Sol and GPT-6 Luna (OpenAI), Claude Opus 5.5 (Anthropic), Gemini (Google)</p></div>
+<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Closed weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><text x="40" y="112" text-anchor="middle" font-size="26" font-weight="400" fill="#111">you</text><line x1="78" y1="92" x2="200" y2="92" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="80" text-anchor="middle" font-size="20" font-weight="400" fill="#555">your text</text><line x1="200" y1="132" x2="78" y2="132" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="158" text-anchor="middle" font-size="20" font-weight="400" fill="#555">an answer</text><rect x="212" y="22" width="240" height="176" rx="12" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/><text x="332" y="52" text-anchor="middle" font-size="20" font-weight="400" fill="#555">the company’s servers</text><rect x="262" y="78" width="140" height="76" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="332" y="125" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Only the company has the model. It can change or remove the model at any time.</p><p style="font-size:23px; color:#555; margin:0;">GPT-6.2 Sol and GPT-6 Luna (OpenAI), Claude Opus 5.5 (Anthropic), Gemini (Google)</p></div>
 <div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Open weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><rect x="165" y="6" width="140" height="70" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="235" y="50" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text><text x="318" y="47" text-anchor="start" font-size="20" font-weight="400" fill="#555">public download</text><line x1="205" y1="78" x2="115" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><line x1="265" y1="78" x2="355" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><rect x="20" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="115" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">your computer</text><rect x="260" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="355" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">any provider</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Anyone can download the model and run it. The same version stays available, so others can repeat your study.</p><p style="font-size:23px; color:#555; margin:0;">Qwen3 (Alibaba), DeepSeek V4 (DeepSeek), Llama (Meta), gpt-oss (OpenAI), Mistral</p></div>
 </div>
 
-<p style="font-size:27px; margin-top:26px;">Codex runs on Sol, a closed model. Our labels come from Qwen, an open model, through OpenRouter (a managed AI gateway and routing platform)</p>
+<p style="font-size:27px; margin-top:26px;">Codex runs on Sol, a closed model. Our labels come from Qwen, an open model, through OpenRouter (a service that passes your request to a model provider)</p>
 
 ---
 
-## Better: the agent builds, a model labels through the API
+## The agent and the labeling model
 
 <div style="display:grid; grid-template-columns:300px 50px 230px 50px 220px 50px 150px; justify-content:center; align-items:center; margin-top:20px; row-gap:6px;">
 <div></div><div></div>
@@ -506,7 +506,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <span class="fragment" data-fragment-index="1"><span style="color:#2a7d2a; font-weight:700;">✓</span> a fixed provider</span>
 </div>
 
-<p class="fragment" data-fragment-index="1" style="font-size:24px; line-height:1.35; margin-top:14px; text-align:left;">Hosted models change over time, which is called <b>drift</b>. GPT-4 scored 84% on one test in March 2023 and 51% in June. Pin the model version and the provider, and record the date. <span style="font-size:20px; color:#888;">Chen, Zaharia &amp; Zou 2023</span></p>
+<p class="fragment" data-fragment-index="1" style="font-size:24px; line-height:1.35; margin-top:14px; text-align:left;">Hosted models change over time, which is called <b>drift</b>. GPT-4 scored 84% on one test in March 2023 and 51% in June. Fix the model version and the provider, and write down the date. <span style="font-size:20px; color:#888;">Chen, Zaharia &amp; Zou 2023</span></p>
 
 <div class="demo" data-demo="colflow" style="display:none;"></div>
 
@@ -515,8 +515,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 ## One long chat or one call per comment
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; text-align:left;">
-<div style="border:2px solid #bbb; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px;">One long chat</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; opacity:.35; text-decoration:line-through;">your instructions</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">files it listed</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">commands and their output</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">comment 1, comment 2 … comment 100</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">the labels so far</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label depends on everything before it. Early instructions can fall out of the window.</p><p style="font-size:21px; color:#111; line-height:1.35; margin:8px 0 0; text-align:left;">Human coders <b>drift</b> over a long session. A model in a long chat can drift too, because its earlier labels stay in the window.</p></div>
-<div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px; color:#d9481f;">One call per comment</div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 1</div></div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 2</div></div><div style="font-size:20px; color:#6f6f69;">… one call for each comment</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label sees the same codebook and one comment. This is what <code>label.py</code> does through the API.</p></div>
+<div style="border:2px solid #bbb; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px;">One long chat</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; opacity:.35; text-decoration:line-through;">your instructions</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">files it listed</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">commands and their output</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">comment 1, comment 2 … comment 100</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">the labels so far</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label depends on everything before it. When the window is full, early instructions get lost.</p><p style="font-size:21px; color:#111; line-height:1.35; margin:8px 0 0; text-align:left;">Human coders <b>change how they label</b> over a long session. A model in a long chat can change too, because its earlier labels stay in the window.</p></div>
+<div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px; color:#d9481f;">One call per comment</div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 1</div></div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 2</div></div><div style="font-size:20px; color:#6f6f69;">… one call for each comment</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label sees the same codebook and one comment. <code>label.py</code> works this way.</p></div>
 </div>
 
 ---
@@ -646,7 +646,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## What happens in a test call
 
 <div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">1</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the first comment in <code>data/coder_5.csv</code></span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Your daughter and husband need…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">2</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">writes a short Python script</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">client.chat.completions.create(<br>&nbsp;&nbsp;model="qwen/qwen3-235b…",<br>&nbsp;&nbsp;messages=[question, comment])</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">3</span><span style="font-size:22px; font-weight:700; color:#111;">the script</span><span style="font-size:24px; line-height:1.3;">sends the comment to the API with your key</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">POST openrouter.ai/api/v1/…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#d9481f; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">4</span><span style="font-size:22px; font-weight:700; color:#d9481f;">Qwen</span><span style="font-size:24px; line-height:1.3;">answers, and the script saves the answer</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">runs/test_call.json<br>"content": "yes"</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">5</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the file and tells you in the chat</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Qwen answered “yes”.</span></div>
-<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:14px; text-align:left;">Two models take part. Codex (using GPT Sol 6.2) writes and runs the code and reports back. Qwen 3, behind the API, gives the label.</p>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:14px; text-align:left;">Two models take part. Codex (using GPT-6.2 Sol) writes and runs the code and tells you the result. Qwen 3 gives the label through the API.</p>
 
 ---
 
@@ -722,7 +722,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <table style="width:100%; border-collapse:collapse; font-size:28px; margin-top:22px;"><tr style="color:#555; border-bottom:1px solid #bbb;"><td style="padding:8px; text-align:left;"></td><td style="padding:8px;">Luna</td><td style="padding:8px;">Sol</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Price per million output tokens (a token is about ¾ of a word)</td><td style="padding:10px 8px;">$0.50</td><td style="padding:10px 8px;">$10</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, one-line prompt, of 120</td><td style="padding:10px 8px;">92</td><td style="padding:10px 8px;">105</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, codebook, of 120</td><td style="padding:10px 8px;">110</td><td style="padding:10px 8px;">113</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Cost of the codebook test, 720 calls</td><td style="padding:10px 8px;">$0.06</td><td style="padding:10px 8px;">$0.78</td></tr></table>
 
-<p style="font-size:28px; margin-top:22px;">With a codebook, the small model comes close at under a tenth of the cost.</p>
+<p style="font-size:28px; margin-top:22px;">With a codebook, the small model does almost as well for under a tenth of the cost.</p>
 
 ---
 
@@ -731,7 +731,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 | Finding | Source |
 |---|---|
 | Clear definitions help more than prompt tricks. | Çelebi &amp; Penczynski (2026) |
-| Models fill in vague definitions on their own. Bigger models do this too. | Halterman &amp; Keith (2026) |
+| When a definition is vague, models add their own meaning. Bigger models do this too. | Halterman &amp; Keith (2026) |
 | Small wording changes shift the labels. | Atreja et al. (2024); Barrie et al. (2025) |
 
 ---
@@ -822,7 +822,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="ex-tag">Step 11</div>
 
 
-<p style="font-size:30px; margin:6px 0 0;">Today’s analysis lives in your files and in long chats full of decisions. Chats are where research decisions become opaque.</p>
+<p style="font-size:30px; margin:6px 0 0;">Today’s analysis is spread over your files and long chats. Decisions made in a chat are hard to see later.</p>
 
 <pre class="ft-code" style="margin:14px 0 0;"><code class="nohighlight" style="font-size:22px; padding:16px 20px;">Write a file WORKFLOW.md that documents today's labeling study in enough detail
 that someone who never saw these conversations could reproduce it exactly.
@@ -846,10 +846,10 @@ End with a section "Decisions I did not ask for".</code></pre>
 <p style="font-size:30px; margin:6px 0 10px;">Read it, especially the last section. Look for decisions you didn’t know were made. For instance:</p>
 
 <ul style="font-size:28px; line-height:1.5;">
-<li>which provider answered, and whether it fell back to another one</li>
+<li>which provider answered, and whether a different provider answered instead</li>
 <li>how failed calls were retried, and how many still failed</li>
 <li>how a tie between runs was counted</li>
-<li>whether answers like “Yes.” were cleaned up before counting</li>
+<li>whether answers like “Yes.” were changed before counting</li>
 <li>whether the codebook was changed before it was sent</li>
 </ul>
 
@@ -872,7 +872,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 <p class="yt-copy">Copy it from step 12 on the GitHub page.</p>
 
-<p style="font-size:30px; margin-top:22px;">Open yours, then look at your neighbor’s. Do they look different from yours?</p>
+<p style="font-size:30px; margin-top:22px;">Open yours. Each person’s dashboard will look different.</p>
 
 ---
 
