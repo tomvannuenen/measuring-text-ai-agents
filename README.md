@@ -213,7 +213,7 @@ Open the links and check that each paper exists and says what the agent claims. 
 
 ## Step 9. Your codebook and the held-out test
 
-In a group, collect everyone's rules in one place, such as a shared document, and vote. Keep the three rules with the most votes. On your own, use your rule from step 8, or write two or three. Paste the rules into this prompt:
+Use the three rules the room voted for, which are on the slides. You can also use your own rule from step 8. Paste the rules into this prompt:
 
 ```
 Copy codebook_v0.md to codebook_v1.md. Just before the last line ("Answer with
@@ -287,7 +287,7 @@ Build an interactive dashboard in an HTML file from this project's data and runs
 - click a comment to see its full text and every label it got
 ```
 
-Open yours. In a group, look at someone else's too.
+Open your dashboard in a browser.
 
 ## When you're done
 
