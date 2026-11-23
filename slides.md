@@ -367,13 +367,12 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 </defs>
 <text x="190" y="32" text-anchor="middle" style="font-size:22px; font-weight:800; letter-spacing:1px;" fill="#d9481f">MAXIMUM EFFORT</text>
 <g transform="rotate(16 186 206)">
-<rect x="206" y="112" width="140" height="17" rx="6" fill="url(#wood)" stroke="#7a5228" stroke-width="1.5"/>
-<rect x="312" y="110" width="36" height="21" rx="7" fill="#2b2b2b"/>
+<rect x="206" y="130" width="140" height="17" rx="6" fill="url(#wood)" stroke="#7a5228" stroke-width="1.5"/>
+<rect x="312" y="128" width="36" height="21" rx="7" fill="#2b2b2b"/>
 <rect x="160" y="72" width="52" height="134" rx="6" fill="url(#steel)" stroke="#3f444b" stroke-width="2"/>
 <rect x="160" y="72" width="52" height="13" rx="4" fill="#4a4f57"/>
 <rect x="160" y="193" width="52" height="13" rx="4" fill="#4a4f57"/>
 </g>
-<path d="M128 92 q-16 8 -16 24 M112 80 q-20 12 -20 32" stroke="#d9481f" stroke-width="3" fill="none" stroke-linecap="round"/>
 <ellipse cx="170" cy="232" rx="11" ry="7" fill="#c8a26a" stroke="#8a6a3a" stroke-width="2"/>
 <line x1="30" y1="241" x2="350" y2="241" stroke="#bbb" stroke-width="2"/>
 <text x="192" y="236" style="font-size:21px;" fill="#6f6f69">yes / no</text>
