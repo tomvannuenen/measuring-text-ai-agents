@@ -65,6 +65,16 @@
 
 ---
 
+## What makes it an agent
+
+<div style="margin-top:28px;">
+<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">1</span><p style="font-size:34px; line-height:1.4; margin:0;">The agent works inside a <b>project folder</b> on your machine. That folder is its world.</p></div>
+<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">2</span><p style="font-size:34px; line-height:1.4; margin:0;">Everything it does is <b>recorded</b>. You can inspect every command it ran.</p></div>
+<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">3</span><p style="font-size:34px; line-height:1.4; margin:0;">It asks for <b>permission</b> before it runs commands or edits files.</p></div>
+</div>
+
+---
+
 ## Get the workshop files
 
 <div class="ex-tag">Step 1</div>
@@ -215,7 +225,7 @@
 ## Today's task
 
 <div class="tk-reply">
-<img src="img/aita_reply_plain.png" alt="A reply: NTA. Sounds like your parents are offering to pay. She is their daughter after all, they signed up for supporting her.">
+<div style="border:1px solid #ddd; border-radius:8px; background:#fff; padding:16px 22px; font-size:27px; line-height:1.45; text-align:left; color:#1a1a1b;">You could have at least apologized. Jesus. Sure, it was an accident but I guarantee you would react the exact same way if someone had spilled your drink, kid or not. You have a child, act like an adult.</div>
 </div>
 <div class="tk-row v2">
 <div class="tk-q"><div>Hostile or insulting toward someone?</div><span>Yes</span> <span>No</span></div>
@@ -295,40 +305,6 @@
 </div>
 
 <div class="demo" data-demo="logtype" style="display:none;"></div>
-
----
-
-## What makes it an agent
-
-<div style="margin-top:28px;">
-<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">1</span><p style="font-size:34px; line-height:1.4; margin:0;">The agent works inside a <b>project folder</b> on your machine. That folder is its world.</p></div>
-<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">2</span><p style="font-size:34px; line-height:1.4; margin:0;">Everything it does is <b>recorded</b>. You can inspect every command it ran.</p></div>
-<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">3</span><p style="font-size:34px; line-height:1.4; margin:0;">It asks for <b>permission</b> before it runs commands or edits files.</p></div>
-</div>
-
----
-
-## Open and closed models
-
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:16px;">
-<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Closed weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><text x="40" y="112" text-anchor="middle" font-size="26" font-weight="400" fill="#111">you</text><line x1="78" y1="92" x2="200" y2="92" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="80" text-anchor="middle" font-size="20" font-weight="400" fill="#555">your text</text><line x1="200" y1="132" x2="78" y2="132" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="158" text-anchor="middle" font-size="20" font-weight="400" fill="#555">an answer</text><rect x="212" y="22" width="240" height="176" rx="12" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/><text x="332" y="52" text-anchor="middle" font-size="20" font-weight="400" fill="#555">the company’s servers</text><rect x="262" y="78" width="140" height="76" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="332" y="125" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Only the company has the model. It can change or retire the model at any time.</p><p style="font-size:23px; color:#555; margin:0;">GPT-6.2 Sol and GPT-6 Luna (OpenAI), Claude Opus 5.5 (Anthropic), Gemini (Google)</p></div>
-<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Open weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><rect x="165" y="6" width="140" height="70" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="235" y="50" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text><text x="318" y="47" text-anchor="start" font-size="20" font-weight="400" fill="#555">public download</text><line x1="205" y1="78" x2="115" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><line x1="265" y1="78" x2="355" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><rect x="20" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="115" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">your computer</text><rect x="260" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="355" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">any provider</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Anyone can download the model and run it. The same version stays available, so others can repeat your study.</p><p style="font-size:23px; color:#555; margin:0;">Qwen3 (Alibaba), DeepSeek V4 (DeepSeek), Llama (Meta), gpt-oss (OpenAI), Mistral</p></div>
-</div>
-
-<p style="font-size:27px; margin-top:26px;">Codex runs on Sol, a closed model. Our labels come from Qwen, an open model, through OpenRouter (a managed AI gateway and routing platform)</p>
-
----
-
-## Smaller and bigger models
-
-<p style="font-size:26px; color:#555; margin:0 0 14px;">OpenAI doesn’t publish how big Sol and Luna are (the price is the best clue)</p>
-
-<div style="font-size:22px; color:#555; text-align:left;">Price per million tokens of output (a token is about ¾ of a word)</div>
-<div style="display:grid; grid-template-columns:120px 1fr 150px; align-items:center; gap:16px; margin:10px 0; font-size:26px;"><b>Luna</b><div style="height:26px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:5.0%; height:100%; background:#8a8a84;"></div></div><span style="text-align:right;">$0.50</span></div><div style="display:grid; grid-template-columns:120px 1fr 150px; align-items:center; gap:16px; margin:10px 0; font-size:26px;"><b>Sol</b><div style="height:26px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:100.0%; height:100%; background:#d9481f;"></div></div><span style="text-align:right;">$10</span></div>
-
-<table style="width:100%; border-collapse:collapse; font-size:26px; margin-top:22px;"><tr style="color:#555; border-bottom:1px solid #bbb;"><td style="padding:8px; text-align:left;">My test, 120 comments</td><td style="padding:8px;">Luna</td><td style="padding:8px;">Sol</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, one-line prompt</td><td style="padding:10px 8px;">92</td><td style="padding:10px 8px;">105</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, codebook</td><td style="padding:10px 8px;">110</td><td style="padding:10px 8px;">113</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Cost of the codebook test, 720 calls</td><td style="padding:10px 8px;">$0.06</td><td style="padding:10px 8px;">$0.78</td></tr></table>
-
-<p style="font-size:27px; margin-top:22px;">With a good codebook, the small model comes close for less than a tenth of the cost.</p>
 
 ---
 
@@ -507,6 +483,17 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="margin-top:auto; font-size:24px; color:#888; text-align:center;">🔑 key &nbsp;·&nbsp; $ per call</div>
 </div>
 </div>
+
+---
+
+## Open and closed models
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:16px;">
+<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Closed weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><text x="40" y="112" text-anchor="middle" font-size="26" font-weight="400" fill="#111">you</text><line x1="78" y1="92" x2="200" y2="92" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="80" text-anchor="middle" font-size="20" font-weight="400" fill="#555">your text</text><line x1="200" y1="132" x2="78" y2="132" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><text x="139" y="158" text-anchor="middle" font-size="20" font-weight="400" fill="#555">an answer</text><rect x="212" y="22" width="240" height="176" rx="12" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/><text x="332" y="52" text-anchor="middle" font-size="20" font-weight="400" fill="#555">the company’s servers</text><rect x="262" y="78" width="140" height="76" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="332" y="125" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Only the company has the model. It can change or retire the model at any time.</p><p style="font-size:23px; color:#555; margin:0;">GPT-6.2 Sol and GPT-6 Luna (OpenAI), Claude Opus 5.5 (Anthropic), Gemini (Google)</p></div>
+<div style="text-align:left;"><h3 style="font-size:38px; margin:0 0 14px;">Open weights</h3><svg viewBox="0 0 470 210" width="470" height="210" style="font-family:inherit; overflow:visible; display:block; margin:0 auto;"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><rect x="165" y="6" width="140" height="70" rx="12" fill="#111" stroke="#111" stroke-width="2"/><text x="235" y="50" text-anchor="middle" font-size="26" font-weight="600" fill="#fff">model</text><text x="318" y="47" text-anchor="start" font-size="20" font-weight="400" fill="#555">public download</text><line x1="205" y1="78" x2="115" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><line x1="265" y1="78" x2="355" y2="128" stroke="#111" stroke-width="2.5" marker-end="url(#ah)"/><rect x="20" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="115" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">your computer</text><rect x="260" y="132" width="190" height="62" rx="12" fill="#fff" stroke="#111" stroke-width="2"/><text x="355" y="170" text-anchor="middle" font-size="23" font-weight="400" fill="#111">any provider</text></svg><p style="font-size:26px; line-height:1.4; margin:18px 0 10px;">Anyone can download the model and run it. The same version stays available, so others can repeat your study.</p><p style="font-size:23px; color:#555; margin:0;">Qwen3 (Alibaba), DeepSeek V4 (DeepSeek), Llama (Meta), gpt-oss (OpenAI), Mistral</p></div>
+</div>
+
+<p style="font-size:27px; margin-top:26px;">Codex runs on Sol, a closed model. Our labels come from Qwen, an open model, through OpenRouter (a managed AI gateway and routing platform)</p>
 
 ---
 
@@ -753,6 +740,19 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## The codebook helps all three models
 
 <div class="demo" data-demo="experiment"></div>
+
+---
+
+## Smaller and bigger models
+
+<p style="font-size:26px; color:#555; margin:0 0 14px;">OpenAI doesn’t publish how big Sol and Luna are (the price is the best clue)</p>
+
+<div style="font-size:22px; color:#555; text-align:left;">Price per million tokens of output (a token is about ¾ of a word)</div>
+<div style="display:grid; grid-template-columns:120px 1fr 150px; align-items:center; gap:16px; margin:10px 0; font-size:26px;"><b>Luna</b><div style="height:26px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:5.0%; height:100%; background:#8a8a84;"></div></div><span style="text-align:right;">$0.50</span></div><div style="display:grid; grid-template-columns:120px 1fr 150px; align-items:center; gap:16px; margin:10px 0; font-size:26px;"><b>Sol</b><div style="height:26px; background:linear-gradient(#e2e2dc,#e2e2dc) left center / 100% 1px no-repeat;"><div style="width:100.0%; height:100%; background:#d9481f;"></div></div><span style="text-align:right;">$10</span></div>
+
+<table style="width:100%; border-collapse:collapse; font-size:26px; margin-top:22px;"><tr style="color:#555; border-bottom:1px solid #bbb;"><td style="padding:8px; text-align:left;">My test, 120 comments</td><td style="padding:8px;">Luna</td><td style="padding:8px;">Sol</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, one-line prompt</td><td style="padding:10px 8px;">92</td><td style="padding:10px 8px;">105</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, codebook</td><td style="padding:10px 8px;">110</td><td style="padding:10px 8px;">113</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Cost of the codebook test, 720 calls</td><td style="padding:10px 8px;">$0.06</td><td style="padding:10px 8px;">$0.78</td></tr></table>
+
+<p style="font-size:27px; margin-top:22px;">With a good codebook, the small model comes close for less than a tenth of the cost.</p>
 
 ---
 
