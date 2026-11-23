@@ -554,6 +554,165 @@
     return !fr || fr.classList.contains("visible");
   };
 
+  /* Slide 3: a chat. Before each new word the model reads the whole conversation (orange sweep),
+     shows the chances for the next word, draws one, and adds it to its reply. Steps 3 and 4 are real draws,
+     so the reply changes from loop to loop. Runs while its fragment is showing. */
+  builders.llmchat = function (root) {
+    const STEPS = [
+      { fixed: 0, opts: [["Yes,", 0.58], ["No,", 0.27], ["It", 0.09], ["Maybe", 0.06]] },
+      { fixed: 0, opts: [["it", 0.71], ["the", 0.14], ["this", 0.09], ["that", 0.06]] },
+      { opts: [["is", 0.48], ["sounds", 0.31], ["reads", 0.12], ["seems", 0.09]] },
+      { opts: [["dismissive.", 0.44], ["rude.", 0.26], ["harsh.", 0.18], ["hostile.", 0.12]] },
+    ];
+    const words = (s) => s.split(" ").map((w) => el("span", {}, w + " "));
+    const user = el("div", { class: "lc-msg lc-user" }, words("Is this comment hostile? “Get over yourself.”"));
+    const reply = el("div", { class: "lc-msg lc-model" });
+    const chat = el("div", { class: "lc-chat" }, el("div", { class: "lc-who r" }, "you"), user, el("div", { class: "lc-who" }, "model"), reply);
+    const bars = el("div", { class: "lc-bars" });
+    put(root, el("div", { class: "lc-wrap" }, chat,
+      el("div", { class: "lc-side" }, el("div", { class: "lc-head" }, "Chances for the next word"), bars,
+        el("div", { class: "lc-cap" }, "The model draws one word, weighted by these chances."))));
+    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    let run = 0, running = false;
+    const reset = () => { swap(reply); swap(bars); chat.querySelectorAll(".rd").forEach((w) => w.classList.remove("rd")); };
+    async function loop(id) {
+      while (id === run) {
+        reset(); await wait(700);
+        for (const st of STEPS) {
+          for (const w of chat.querySelectorAll(".lc-msg span")) { if (id !== run) return; w.classList.add("rd"); await wait(60); }
+          await wait(250); if (id !== run) return;
+          chat.querySelectorAll(".rd").forEach((w) => w.classList.remove("rd"));
+          const max = Math.max(...st.opts.map((o) => o[1]));
+          const rows = st.opts.map(([w, p]) => {
+            const fill = el("div", { class: "lc-fill" });
+            const r = el("div", { class: "lc-row" }, el("span", { class: "lc-w" }, w), el("div", { class: "lc-track" }, fill), el("span", { class: "lc-p" }, Math.round(100 * p) + "%"));
+            r.go = () => { fill.style.width = (90 * p) / max + "%"; };
+            return r;
+          });
+          swap(bars, rows);
+          requestAnimationFrame(() => requestAnimationFrame(() => rows.forEach((r) => r.go())));
+          await wait(1000); if (id !== run) return;
+          let k = st.fixed;
+          if (k == null) { let x = Math.random(); k = 0; while (x > st.opts[k][1] && k < st.opts.length - 1) { x -= st.opts[k][1]; k++; } }
+          rows[k].classList.add("pick");
+          await wait(800); if (id !== run) return;
+          reply.append(el("span", { class: "new" }, st.opts[k][0] + " "));
+          await wait(700);
+        }
+        swap(bars); await wait(2600);
+      }
+    }
+    setInterval(() => {
+      const on = loopActive(root);
+      if (on && !running) { running = true; loop(++run); }
+      else if (!on && running) { running = false; run++; reset(); }
+    }, 300);
+  };
+
+  /* Slide 4: temperature. The chances for the next word after "Yes, it", recomputed for the chosen temperature
+     (each chance raised to the power 1/T, then rescaled). Ten draws below refresh every 1.4 s.
+     Clicks (the bullets, class tp-step) move the temperature: 1, 1.6, 0.4, 0. The slider works too. */
+  builders.tempdial = function (root) {
+    const W = [["is", 0.48], ["sounds", 0.31], ["reads", 0.12], ["seems", 0.06], ["feels", 0.02], ["looks", 0.01]];
+    let T = 1;
+    const probs = (t) => {
+      if (t < 0.05) return W.map((_, i) => (i === 0 ? 1 : 0));
+      const a = W.map(([, p]) => Math.pow(p, 1 / t)), s = a.reduce((x, y) => x + y, 0);
+      return a.map((x) => x / s);
+    };
+    const rows = W.map(([w]) => {
+      const fill = el("div", { class: "lc-fill" }), val = el("span", { class: "lc-p" });
+      return { row: el("div", { class: "lc-row" }, el("span", { class: "lc-w" }, w), el("div", { class: "lc-track" }, fill), val), fill, val };
+    });
+    const chips = Array.from({ length: 10 }, () => el("span", { class: "tp-chip" }));
+    const sl = slider("Temperature", 0, 2, 0.1, 1, (v) => v.toFixed(1), (v) => { T = v; draw(); sample(); });
+    const draw = () => {
+      const ps = probs(T);
+      rows.forEach((r, i) => {
+        r.fill.style.width = 100 * ps[i] + "%";
+        r.val.textContent = ps[i] > 0 && ps[i] < 0.005 ? "<1%" : Math.round(100 * ps[i]) + "%";
+        r.row.classList.toggle("pick", i === 0 && T < 0.05);
+      });
+    };
+    const sample = () => {
+      const ps = probs(T);
+      chips.forEach((c) => { let x = Math.random(), k = 0; while (x > ps[k] && k < ps.length - 1) { x -= ps[k]; k++; } c.textContent = W[k][0]; c.classList.toggle("top", k === 0); });
+    };
+    put(root, el("div", { class: "tp-wrap" },
+      el("div", { class: "tp-left" }, el("div", { class: "tp-ctx" }, "Yes, it ", el("span", { class: "tp-blank" }, "___")), el("div", { class: "lc-bars" }, rows.map((r) => r.row))),
+      el("div", { class: "tp-right" }, sl, el("div", { class: "tp-head" }, "Ten draws"), el("div", { class: "tp-chips" }, chips))));
+    draw(); sample();
+    setInterval(() => { if (loopActive(root)) sample(); }, 1400);
+    let anim = 0;
+    fragSteps(root, "tp-step", (k) => {
+      const to = [1, 1.6, 0.4, 0][Math.min(k, 3)], from = T, id = ++anim;
+      tween(700, (e) => { if (id !== anim) return; T = from + (to - from) * e; sl.set(Math.round(T * 10) / 10); draw(); });
+      setTimeout(() => { if (id === anim) sample(); }, 720);
+    });
+  };
+
+  /* Slide 5: the context window as a box that fills up. Clicks (empty fragments, class cw-step):
+     1 a chat fills it, 2 it is full, 3 it is compacted into a summary, 4 a new chat starts empty.
+     The captions on the right follow the clicks. Block heights are shares of the window. */
+  builders.ctxwin = function (root) {
+    const A = [["your instructions", 8], ["your question", 6], ["its answer", 10], ["a file it read", 22], ["command output", 14], ["your next question", 6], ["its answer", 10]];
+    const B = [["another file", 16], ["more output", 8]];
+    const STATES = [
+      [],
+      A,
+      A.concat(B),
+      [["summary of the earlier work", 12, "sum"]].concat(B),
+      [],
+    ];
+    const CAPS = [
+      "The context window is everything the model sees at once. It is the model’s memory.",
+      "Your messages, its answers and every file it reads all go in.",
+      "The window has a limit. A long chat fills it up.",
+      "Codex then compacts the chat into a short summary. Some details get lost.",
+      "A new chat starts with an empty window. The model remembers nothing from the old chat.",
+    ];
+    const H = 460;
+    const stack = el("div", { class: "cw-stack" });
+    const meterFill = el("div", { class: "cw-mfill" }), meterTxt = el("div", { class: "cw-mtxt" });
+    const title = el("div", { class: "cw-title" }, "Context window");
+    const box = el("div", { class: "cw-box", style: `height:${H}px;` }, stack);
+    const caps = CAPS.map((c) => el("li", {}, c));
+    put(root, el("div", { class: "cw-wrap" },
+      el("div", { class: "cw-left" }, title, el("div", { class: "cw-row" }, box, el("div", { class: "cw-meter", style: `height:${H}px;` }, meterFill)), meterTxt),
+      el("ul", { class: "cw-caps" }, caps)));
+    const block = ([name, size, cls]) => el("div", { class: "cw-blk " + (cls || ""), style: `height:${(size / 100) * H - 4}px;` }, name);
+    const used = (st) => st.reduce((a, b) => a + b[1], 0);
+    let timers = [];
+    const clear = () => { timers.forEach(clearTimeout); timers = []; };
+    const meter = (st) => { const u = used(st); meterFill.style.height = u + "%"; meterTxt.textContent = u ? u + "% full" : "empty"; box.classList.toggle("full", u >= 100); meterFill.classList.toggle("full", u >= 100); };
+    const showCaps = (k) => caps.forEach((c, i) => { c.style.display = i <= k ? "" : "none"; c.classList.toggle("now", i === k); });
+    const apply = (k, prev) => {
+      clear(); k = Math.min(k, 4); showCaps(k);
+      title.textContent = k === 4 ? "A new chat" : "Context window";
+      const st = STATES[k];
+      if (prev === k - 1 && (k === 1 || k === 2)) {          // forward: new blocks drop in one by one
+        const old = STATES[k - 1];
+        swap(stack, old.map(block)); meter(old);
+        st.slice(old.length).forEach((b, i) => timers.push(setTimeout(() => {
+          const n = block(b); n.classList.add("in"); stack.append(n);
+          meter(st.slice(0, old.length + i + 1));
+        }, 250 + i * 550)));
+      } else if (prev === 2 && k === 3) {                    // compact: older blocks squeeze into a summary
+        const kids = [...stack.children], n = A.length;
+        kids.slice(0, n).forEach((c) => c.classList.add("squeeze"));
+        timers.push(setTimeout(() => {
+          swap(stack, block(st[0]), ...kids.slice(n));
+          stack.firstChild.classList.add("in"); meter(st);
+        }, 900));
+      } else if (prev === 3 && k === 4) {                    // new chat: everything fades out
+        [...stack.children].forEach((c) => c.classList.add("out"));
+        timers.push(setTimeout(() => { swap(stack); meter(st); }, 700));
+      } else { swap(stack, st.map(block)); meter(st); }
+    };
+    apply(0, -1);
+    fragSteps(root, "cw-step", apply);
+  };
+
   /* Slide 3: the next word is drawn again and again from the bars, so the sentence ends differently. */
   builders.nextword = function (root) {
     const sec = root.closest("section"), box = root.parentElement;
