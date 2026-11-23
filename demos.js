@@ -315,9 +315,9 @@
       });
       swap(body,
         el("div", { class: "hc-grid" },
-          el("div", {}), el("div", { class: "hd" }, U ? `the room (${live.coders})` : "the room"), el("div", { class: "hd hc-qwen" }, "Qwen (API) ×5"), el("div", { class: "hd key hc-keycell" }, "gold label"),
+          el("div", {}), el("div", { class: "hd" }, U ? `the room (${live.coders})` : "the room"), el("div", { class: "hd hc-qwen" }, "My Qwen run ×5"), el("div", { class: "hd key hc-keycell" }, "gold label"),
           rows),
-        el("div", { class: "hc-alpha" }, U ? el("div", {}, "The room: α = ", el("b", {}, f(ar))) : null, el("div", { class: "hc-qwen" }, aq == null && qwen.every((u) => u.yes === 0 || u.no === 0) ? ["Qwen (API), five runs: ", el("b", {}, "the same label every time")] : ["Qwen (API), five runs: α = ", el("b", {}, f(aq))])));
+        el("div", { class: "hc-alpha" }, U ? el("div", {}, "The room: α = ", el("b", {}, f(ar))) : null, el("div", { class: "hc-qwen" }, aq == null && qwen.every((u) => u.yes === 0 || u.no === 0) ? ["My Qwen run, five runs: ", el("b", {}, "the same label every time")] : ["My Qwen run, five runs: α = ", el("b", {}, f(aq))])));
     };
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
     render();
