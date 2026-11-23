@@ -821,7 +821,15 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <p class="yt-copy">Copy the prompt from step 9 on the GitHub page.</p>
 
-<p class="yt-look">Write down % identical and how many match the gold labels.</p>
+<p class="yt-look">Write down % identical and how many match the gold labels. Then send both with your rule on the next slide.</p>
+
+---
+
+## Everyone's rules on 100 new comments
+
+<div class="ex-tag">Step 9</div>
+
+<div class="demo" data-demo="roomscores"></div>
 
 ---
 
@@ -893,9 +901,9 @@ End with a section "Decisions I did not ask for".</code></pre>
 <p class="yt-intro">Research outputs don’t have to be static images pasted into slides.</p>
 
 <pre class="ft-code" style="margin:14px 0 0;"><code class="nohighlight" style="font-size:22px; padding:16px 20px;">Build an interactive dashboard in an HTML file from this project's data and runs:
-- a table of the 100 held-out comments, with my gold label and the label from each run
-- a filter for comments where the runs disagree, or where they disagree with my label
-- agreement with my labels and Krippendorff's alpha for each codebook I tried
+- a table of the 100 held-out comments, with the gold label (column hostile) and the label from each run
+- a filter for comments where the runs disagree, or where they disagree with the gold label
+- agreement with the gold labels and Krippendorff's alpha for each codebook I tried
 - click a comment to see its full text and every label it got</code></pre>
 
 <p class="yt-copy">Copy it from step 12 on the GitHub page.</p>

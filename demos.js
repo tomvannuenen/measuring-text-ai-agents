@@ -211,7 +211,7 @@
     if (n < 2 || ny * nn === 0) return null;
     return 1 - (n - 1) * d / (2 * ny * nn);
   }
-  const live = { units: null, coders: 0, proposals: [], candidates: null, votes: {}, voters: 0, test: null, where: null, error: null, busy: null, listeners: [] };
+  const live = { units: null, coders: 0, proposals: [], candidates: null, votes: {}, voters: 0, test: null, score: null, where: null, error: null, busy: null, listeners: [] };
   (function startLive() {
     const L = window.LIVE || {};
     if (!L.dataUrl) return;
@@ -235,6 +235,7 @@
       live.votes = d.votes || {};
       live.voters = d.voters || 0;
       live.test = d.test || null;
+      live.score = d.score || null;
       live.where = d.where || null;
       live.error = d.error || null;
       live.busy = null;
@@ -249,7 +250,7 @@
     };
     live.poll = poll;
     poll();
-    setInterval(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.querySelector('[data-demo="where"], [data-demo="label"], [data-demo="labelresults"], [data-demo="roomcodebook"]') && !live.busy) poll(); }, 5000);
+    setInterval(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.querySelector('[data-demo="where"], [data-demo="label"], [data-demo="labelresults"], [data-demo="roomcodebook"], [data-demo="roomscores"]') && !live.busy) poll(); }, 5000);
   })();
 
   function splitBar(u, wide) {
@@ -408,6 +409,46 @@
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
     render();
     root.classList.add("roomcb");
+    put(root, body);
+  };
+
+  /* Everyone's rules (the slide after step 9): each person sends their rule from step 8 and its score on the
+     100 new comments through the score form. One dot per person on a line from 50 to 100 matches, with marks for
+     the one-line question and the room's codebook from the room's test, and the three best rules below. */
+  builders.roomscores = function (root) {
+    const body = el("div");
+    const M = "color:#6f6f69; font-size:22px;";
+    const LO = 50, W = 1000, x = (m) => W * (Math.max(LO, Math.min(100, m)) - LO) / (100 - LO);
+    function render() {
+      const S = live.score || {}, rows = S.rows || [], T = live.test;
+      const link = S.short ? S.short.replace(/^https?:\/\//, "") : "";
+      const head = el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:18px;" },
+        el("img", { src: "img/form_score_qr.png", alt: "", style: "height:120px; margin:0;", onerror: function () { this.remove(); } }),
+        el("div", { style: "font-size:30px;" }, link ? el("b", {}, link) : null,
+          el("div", { style: M + " margin-top:6px;" }, `${rows.length} ${rows.length === 1 ? "person has" : "people have"} sent a score. Send your rule and how many of the 100 match the gold labels.`)));
+      const seen = {}, tall = {};
+      rows.forEach((r) => { const k = Math.round(r.match); tall[k] = (tall[k] || 0) + 1; });
+      const step = Math.min(24, 110 / Math.max(1, ...Object.values(tall)));
+      const dots = rows.map((r) => { const k = Math.round(r.match); seen[k] = (seen[k] || 0) + 1;
+        return el("div", { style: `position:absolute; left:${x(k) - 11}px; bottom:${(seen[k] - 1) * step}px; width:22px; height:22px; border-radius:50%; background:#111;` }); });
+      const mark = (m, label, color, up) => m == null ? null : el("div", { style: `position:absolute; left:${x(m) - 1}px; bottom:-8px; width:3px; height:${up ? 170 : 130}px; background:${color};` },
+        el("div", { style: `position:absolute; top:-30px; ${up ? "left:8px;" : "right:8px;"} white-space:nowrap; font-size:22px; color:${color};` }, `${label}: ${m}`));
+      const ticks = [50, 60, 70, 80, 90, 100].map((t) => el("div", { style: `position:absolute; left:${x(t) - 20}px; top:10px; width:40px; text-align:center; font-size:21px; color:#6f6f69;` }, String(t)));
+      const strip = el("div", { style: `position:relative; width:${W}px; height:190px; margin:44px 0 0;` },
+        el("div", { style: "position:absolute; left:0; right:0; bottom:0; height:150px;" }, dots,
+          T ? mark(T.v0.match, "One-line question", "#6f6f69", false) : null,
+          T ? mark(T.v1.match, "The room's codebook", "#d9481f", true) : null),
+        el("div", { style: "position:absolute; left:0; right:0; bottom:-2px; border-top:2px solid #111;" }));
+      const axis = el("div", { style: `position:relative; width:${W}px; height:44px;` }, ticks);
+      const best = rows.slice().sort((a, b) => b.match - a.match).slice(0, 3);
+      swap(body, head, strip, axis,
+        el("div", { style: M + " margin:-6px 0 0;" }, "Matches with the gold labels, out of 100. One dot per person."),
+        best.length ? el("div", { style: "margin-top:16px;" }, el("div", { style: M }, "The three rules with the most matches"),
+          best.map((r) => el("div", { style: "display:flex; gap:18px; font-size:28px; margin:6px 0; line-height:1.25;" },
+            el("b", { style: "width:44px; flex:none;" }, String(Math.round(r.match))), el("div", {}, r.rule)))) : null);
+    }
+    live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
+    render();
     put(root, body);
   };
 
