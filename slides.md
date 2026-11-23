@@ -18,7 +18,7 @@
 
 <img src="img/codex_menu.png" alt="The menu at the top left, before and after: ChatGPT, then Codex" style="width:80%; margin:18px auto 0; display:block; border-radius:10px; box-shadow:none;">
 
-<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now -you need Codex in about 10 minutes.</p>
+<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now -you need Codex for step 1, in a few minutes.</p>
 
 <p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install it, follow along on the shared screen.</p>
 
