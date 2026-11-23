@@ -160,9 +160,9 @@
 
 ---
 
-## Reliability and validity
+## Reliability, validity and labeler bias
 
-<div style="display:flex; gap:40px; align-items:stretch; margin-top:24px; text-align:left;">
+<div style="display:flex; gap:30px; align-items:stretch; margin-top:24px; text-align:left;">
 <div style="flex:1;">
 <p style="font-size:34px; font-weight:700; margin:0 0 10px;">Reliability</p>
 <p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The same comment gets the same label when you ask again.</p>
@@ -177,6 +177,14 @@
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">model says yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">gold label says yes</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✓</span></div>
 <p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with our gold labels.</p>
+</div>
+<div style="width:4px; background:var(--accent);"></div>
+<div style="flex:1;">
+<p style="font-size:34px; font-weight:700; margin:0 0 10px;">Labeler bias</p>
+<p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label changes when something changes that should not matter.</p>
+<div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment, two versions</div>
+<div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">as written: yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">he → she: no</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✗</span></div>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Later you see how models react to changes like this.</p>
 </div>
 </div>
 
@@ -797,15 +805,19 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Bonus: Measuring sycophancy
+## Labeler bias
 
+<p style="font-size:30px; margin:0 0 12px; text-align:left;">The label changes when something changes that should not matter.</p>
 
+<ul style="font-size:28px; line-height:1.4; margin:0 0 10px 1em; text-align:left;"><li><b>In the comment:</b> swap the genders, such as “he” and “she”.</li><li><b>From the user:</b> say what you think the label is. This is called sycophancy.</li></ul>
 
-<div class="demo" data-demo="pushback"></div>
+<table style="border-collapse:collapse; font-size:28px; margin:6px 0 0; text-align:left;"><tr style="color:#6f6f69; font-size:22px;"><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc;">Labels that changed, of 120</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">Asked again</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">Genders swapped</td></tr><tr><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc;">Qwen, one-line prompt</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">8</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right; font-weight:700;">16</td></tr><tr><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc;">Qwen, codebook</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">5</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right; font-weight:700;">13</td></tr><tr><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc;">DeepSeek, one-line prompt</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">5</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right; font-weight:700;">4</td></tr><tr><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc;">DeepSeek, codebook</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right;">2</td><td style="padding:8px 14px; border-bottom:1px solid #e2e2dc; text-align:right; font-weight:700;">3</td></tr></table>
+
+<p class="fragment" style="font-size:28px; margin-top:16px; text-align:left;">Human coders show labeler bias too. Their beliefs and identity change their labels.<br><span style="font-size:21px; color:#888;">Sap et al. 2022, “Annotators with Attitudes”</span></p>
 
 ---
 
-## Sycophancy: pushback after the answer
+## Labeler bias: the user’s opinion
 
 <div class="demo" data-demo="pushbars"></div>
 
@@ -895,6 +907,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 | Validation and risk | Desai, Card &amp; Jacobs (2026), arXiv:2607.07915 · Baumann et al. (2025), arXiv:2509.08825 |
 | Agents and test data | Rank et al. (2026), PostTrainBench, arXiv:2603.08640 |
 | Robustness | van Nuenen &amp; Sachdeva (2026), arXiv:2603.05651 |
+| Human labeler bias | Sap et al. (2022), “Annotators with Attitudes”, NAACL |
 | Multi-turn | Sachdeva &amp; van Nuenen (2026), arXiv:2510.10002 |
 | Reliability of models | Atil et al. (2025), arXiv:2408.04667 · Kim et al. (2025), ICML, "Correlated Errors in Large Language Models" |
 | Correcting estimates | Angelopoulos et al. (2023), *Science* · Egami et al. (2023) |
