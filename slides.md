@@ -105,19 +105,6 @@
 
 ---
 
-## All your projects
-
-<div class="ex-tag">Step 1</div>
-
-
-<p style="font-size:30px; line-height:1.45; margin:6px 0 16px; text-align:left;">To see all your projects, click <b>⋯</b> in the left bar of Codex, then <b>Projects</b>. The <b>⋯</b> next to a project lets you archive or delete it.</p>
-
-<img src="img/codex_projects.png" alt="Codex: the menu under the three dots in the left bar, with Projects, and the list of projects" style="width:84%; margin:0 auto; display:block; border-radius:10px; box-shadow:none;">
-
-<p style="font-size:28px; margin-top:16px;">Deleting a project leaves the files on your Desktop.</p>
-
----
-
 ## Your perceptions
 
 <div class="demo" data-demo="where" data-round="start"></div>
@@ -270,30 +257,6 @@
 
 ---
 
-## An agent at work
-
-<div class="appwin">
-  <div class="titlebar"><span class="dots"><i></i><i></i><i></i></span><span>Codex: starter</span></div>
-  <div class="appbody">
-    <div class="sidebar">
-      <div class="thread active">Label comments</div>
-      <div class="thread">New thread</div>
-    </div>
-    <div class="mainpane">
-      <div class="msg user">Label the comments in comments.csv.</div>
-      <div class="step err">Ran <code>python label.py</code> · FileNotFoundError: comments.csv</div>
-      <div class="step">Listed files · found <code>data/working_100.csv</code></div>
-      <div class="step">Edited <code>label.py</code></div>
-      <div class="step ok">Ran <code>python label.py</code></div>
-      <div class="reply">The file was in <code>data/</code>, so I updated the path. Labels saved to <code>runs/working_v0.csv</code>.</div>
-    </div>
-  </div>
-</div>
-
-<div class="demo" data-demo="logtype" style="display:none;"></div>
-
----
-
 ## Model and effort
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px; align-items:start;">
@@ -400,7 +363,18 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 ## Maximum effort for everything?
 
 <div style="display:grid; grid-template-columns:380px 1fr; gap:40px; align-items:start; margin-top:14px; text-align:left;">
-<div><img src="img/codex-effort.png" alt="The Codex menu with Model, Effort and Speed. The effort options are Light, Medium, High, Extra High and Ultra, which consumes usage limits faster." style="width:100%; border-radius:8px; margin:0;"><div style="font-size:21px; color:#6f6f69; margin-top:8px;">The effort menu in Codex</div></div>
+<div><img src="img/codex-effort.png" alt="The Codex menu with Model, Effort and Speed. The effort options are Light, Medium, High, Extra High and Ultra, which consumes usage limits faster." style="width:100%; border-radius:8px; margin:0;"><div style="font-size:21px; color:#6f6f69; margin-top:8px;">The effort menu in Codex</div><svg viewBox="0 0 380 260" width="100%" role="img" aria-label="Meme: a giant sledgehammer labeled maximum effort above one tiny nut labeled yes or no. Caption: Me, labeling one comment." style="display:block; margin-top:16px; background:#fff; border:1px solid #d6d6cf; border-radius:8px;">
+<g transform="rotate(-14 190 128)">
+<rect x="182" y="8" width="16" height="96" rx="5" fill="#9a6a3a"/>
+<rect x="100" y="100" width="180" height="56" rx="8" fill="#111"/>
+<text x="190" y="135" text-anchor="middle" style="font-size:19px; font-weight:800; letter-spacing:1px;" fill="#fff">MAXIMUM EFFORT</text>
+</g>
+<path d="M78 120 q-12 14 -4 30 M300 98 q14 12 8 30" stroke="#d9481f" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="190" cy="196" rx="12" ry="8" fill="#c8a26a" stroke="#8a6a3a" stroke-width="2"/>
+<line x1="40" y1="205" x2="340" y2="205" stroke="#bbb" stroke-width="2"/>
+<text x="214" y="200" style="font-size:21px;" fill="#6f6f69">yes / no</text>
+<text x="190" y="245" text-anchor="middle" style="font-size:24px; font-weight:800;" fill="#111">Me, labeling one comment</text>
+</svg></div>
 <ul style="font-size:30px; line-height:1.3; margin:0 0 0 1em;">
 <li style="margin-bottom:18px;">Many people always pick the highest effort.</li>
 <li class="fragment" style="margin-bottom:18px;">Longer thinking made yes-or-no labels worse. It helped with 27 categories.<br><span style="font-size:22px; color:#888;">Huang &amp; Wang 2026</span></li>
@@ -437,36 +411,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
-## Agents and APIs
-
-<div style="display:flex; align-items:stretch; margin-top:20px; min-height:520px;">
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
-<div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">Agent</b><span style="font-size:26px; color:#888;">Codex</span></div>
-<div style="background:#f0efea; padding:10px 18px; border-radius:12px; font-size:27px; margin-top:18px; align-self:flex-end;">Label the comments.</div>
-<div style="font-size:26px; line-height:1.7; margin:14px 0 0 4px; color:#3a3a37; text-align:left;"><span class="fragment" data-fragment-index="1">read <code>data/</code></span><br><span class="fragment" data-fragment-index="2">wrote <code>label.py</code></span><br><span class="fragment" data-fragment-index="3">ran <code>label.py</code>, fixed an error</span><br><span class="fragment" data-fragment-index="4">ran it again …</span></div>
-<div style="border:1px solid #cfcfc8; border-radius:14px; padding:12px 16px; margin-top:auto; text-align:left;">
-<div style="color:#aaa; font-size:22px;">Ask anything</div>
-<div style="display:flex; gap:12px; margin-top:8px;"><span style="border:1px solid #cfcfc8; border-radius:999px; padding:5px 16px; font-size:22px; background:#fff; white-space:nowrap;">GPT-6.2 Sol Light</span><span style="border:1px solid #cfcfc8; border-radius:999px; padding:5px 16px; font-size:22px; background:#fff; white-space:nowrap;">Ask for approval</span></div>
-</div>
-<div style="display:flex; gap:12px; font-size:22px; color:#d9481f; margin-top:6px; text-align:left;"><span style="width:168px; padding-left:16px;">model, effort</span><span style="padding-left:16px;">permissions</span></div>
-</div>
-<div class="fragment fade-right" data-fragment-index="3" style="width:140px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-<code style="font-size:22px; background:none !important;">label.py</code>
-<div style="font-size:64px; line-height:1;">→</div>
-<div style="font-size:22px; color:#888;">calls</div>
-</div>
-<div class="fragment fade-up" data-fragment-index="3" style="flex:1; border:2px solid #111; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column;">
-<div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:46px;">API</b><span style="font-size:26px; color:#888;">one call</span></div>
-<div style="display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap;"><span style="font-size:22px; color:#888;">model</span><span style="border:1px solid #cfcfc8; color:#555; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">gpt-6.2-sol</span><span style="border:2px solid #d9481f; color:#d9481f; font-weight:700; border-radius:999px; padding:4px 14px; font-size:22px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; white-space:nowrap;">qwen3-235b</span><span style="font-size:20px; color:#d9481f;">today: cheap</span></div>
-<div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; line-height:1.65; padding:16px 20px; margin-top:12px; text-align:left;">temperature: <b>0</b><br>prompt: codebook<br>text: "Your aunt is a…"</div>
-<div style="font-size:44px; text-align:center; color:#888; line-height:1.2;">↓</div>
-<div style="align-self:center; background:#111; color:#fff; border-radius:999px; padding:6px 34px; font-size:32px;">yes</div>
-<div style="margin-top:auto; font-size:24px; color:#888; text-align:center;">🔑 key &nbsp;·&nbsp; $ per call</div>
-</div>
-</div>
-
----
-
 ## Open and closed models
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:16px;">
@@ -480,15 +424,15 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## The agent and the labeling model
 
+<p style="font-size:28px; margin:6px 0 4px; text-align:left;"><b style="color:#d9481f;">1</b>&nbsp; The agent writes <code>label.py</code> once. It never sees the API key.</p>
+<p style="font-size:28px; margin:0 0 6px; text-align:left;"><b style="color:#d9481f;">2</b>&nbsp; <code>label.py</code> sends one comment at a time to Qwen and saves the labels.</p>
+
 <div style="display:grid; grid-template-columns:300px 50px 230px 50px 220px 50px 150px; justify-content:center; align-items:center; margin-top:20px; row-gap:6px;">
-<div></div><div></div>
-<div style="text-align:center;"><div style="display:inline-block; background:#f0efea; border-radius:12px; padding:10px 22px; font-size:28px;">Agent</div><div style="font-size:22px; color:#888; margin-top:4px;">writes ↓</div></div>
-<div></div><div></div><div></div><div></div>
 <div style="border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:0; overflow:hidden;">
 <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; padding:8px 12px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">working_100.csv</div>
 <div style="display:flex; font-size:22px;">
 <div style="flex:1.3; outline:3px solid #d9481f; outline-offset:-3px;"><div style="padding:8px 12px; font-weight:700;">text</div><div style="padding:4px 12px; color:#555;">Your aunt is…</div><div style="padding:4px 12px; color:#555;">She can choose…</div><div style="padding:4px 12px; color:#555;">Honestly…</div><div style="padding:4px 12px 12px; color:#555;">ESH, both…</div></div>
-<div style="flex:1; color:#bbb; border-left:1px solid #e2e2dc;"><div style="padding:8px 12px; font-weight:700; line-height:1.15;">gold label</div><div style="font-size:60px; text-align:center; padding-top:10px;">🔒</div></div>
+<div style="flex:1; color:#bbb; border-left:1px solid #e2e2dc;"><div style="padding:8px 12px; font-weight:700; line-height:1.15;">gold label</div><div style="font-size:60px; text-align:center; padding-top:10px;">🔒</div><div style="font-size:19px; text-align:center; color:#888;">never sent</div></div>
 </div>
 </div>
 <div style="text-align:center; font-size:46px;">→</div>
@@ -505,16 +449,9 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="text-align:center; font-size:46px;">→</div>
 <div style="position:relative; height:190px;"><div style="position:absolute; left:36px; top:36px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 5<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:27px; top:27px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 4<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:18px; top:18px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 3<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:9px; top:9px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 2<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:0px; top:0px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 1<br>yes<br>no<br>yes<br>no</div></div>
 </div>
-<div style="display:grid; grid-template-columns:auto auto; justify-content:center; column-gap:70px; row-gap:6px; margin-top:22px; font-size:27px; text-align:left; white-space:nowrap;">
-<span><span style="color:#2a7d2a; font-weight:700;">✓</span> never sees the key</span>
-<span><span style="color:#2a7d2a; font-weight:700;">✓</span> same every run</span>
-<span><span style="color:#2a7d2a; font-weight:700;">✓</span> can run it 5 times</span>
-<span><span style="color:#2a7d2a; font-weight:700;">✓</span> each comment alone <span style="color:#888;">(stateless)</span></span>
-<span class="fragment" data-fragment-index="1"><span style="color:#2a7d2a; font-weight:700;">✓</span> a fixed model version</span>
-<span class="fragment" data-fragment-index="1"><span style="color:#2a7d2a; font-weight:700;">✓</span> a fixed provider</span>
-</div>
 
-<p class="fragment" data-fragment-index="1" style="font-size:24px; line-height:1.35; margin-top:14px; text-align:left;">Hosted models change over time, which is called <b>drift</b>. GPT-4 scored 84% on one test in March 2023 and 51% in June. Fix the model version and the provider, and write down the date. <span style="font-size:20px; color:#888;">Chen, Zaharia &amp; Zou 2023</span></p>
+
+<p class="fragment" style="font-size:28px; line-height:1.35; margin-top:16px; text-align:left;">Hosted models change over time, which is called <b>drift</b>. Write down the model version, the provider and the date. <span style="font-size:21px; color:#888;">Chen, Zaharia &amp; Zou 2023</span></p>
 
 <div class="demo" data-demo="colflow" style="display:none;"></div>
 
@@ -525,29 +462,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; text-align:left;">
 <div style="border:2px solid #bbb; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px;">One long chat</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; opacity:.35; text-decoration:line-through;">your instructions</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">files it listed</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">commands and their output</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">comment 1, comment 2 … comment 100</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">the labels so far</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label depends on everything before it. When the window is full, early instructions get lost.</p><p style="font-size:21px; color:#111; line-height:1.35; margin:8px 0 0; text-align:left;">Human coders <b>change how they label</b> over a long session. A model in a long chat can change too, because its earlier labels stay in the window.</p></div>
 <div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:14px 18px;"><div style="font-size:26px; font-weight:700; margin-bottom:10px; color:#d9481f;">One call per comment</div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 1</div></div><div style="border:2px solid #111; border-radius:8px; padding:6px 6px 0; margin:0 0 8px;"><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111;">codebook</div><div style="display:block; border-radius:6px; padding:4px 12px; margin:0 0 4px; font-size:20px; text-align:left; background:#e2e2dc; color:#111; background:#f6ddd3;">comment 2</div></div><div style="font-size:20px; color:#6f6f69;">… one call for each comment</div><p style="font-size:21px; color:#555; line-height:1.35; margin:10px 0 0; text-align:left;">Each label sees the same codebook and one comment. <code>label.py</code> works this way.</p></div>
-</div>
-
----
-
-## Working with an agent: plan, act, check
-
-
-
-<div style="display:flex; align-items:stretch; gap:12px; margin-top:24px;">
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
-<div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The user plans</div>
-<div style="background:#f0efea; border:1px solid #e2e2dc; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.5; padding:16px;"><div style="font-weight:700; margin-bottom:6px;">AGENTS.md</div>- Never modify anything in data/.<br>- The labels are yes and no.</div>
-</div>
-<div style="align-self:center; font-size:44px; color:#888;">→</div>
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
-<div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The agent acts</div>
-<div style="border:1px solid #e2e2dc; padding:16px; font-size:24px;"><div>Run <code style="font-size:22px;">python label.py</code>?</div><div style="display:flex; gap:12px; margin-top:20px;"><span style="background:#111; color:#fff; padding:8px 20px; border-radius:6px;">Approve</span><span style="border:1px solid #111; padding:8px 20px; border-radius:6px;">Deny</span></div></div>
-</div>
-<div style="align-self:center; font-size:44px; color:#888;">→</div>
-<div style="flex:1; border:2px solid #111; border-radius:14px; padding:28px 22px; display:flex; flex-direction:column; gap:30px; min-height:400px;">
-<div style="font-size:31px; font-weight:700; text-align:center; white-space:nowrap;">The user checks</div>
-<div style="display:flex; flex-direction:column; gap:12px;"><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Show me the lines that set the model.</div><div style="background:#111; color:#fff; border-radius:18px 18px 4px 18px; padding:12px 16px; font-size:22px; line-height:1.3;">Which decisions did you make that I didn't ask for?</div></div>
-</div>
 </div>
 
 ---
@@ -651,7 +565,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## What happens in a test call
+## What happens when an agent makes an  API call
 
 <div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">1</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the first comment in <code>data/coder_5.csv</code></span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Your daughter and husband need…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">2</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">writes a short Python script</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">client.chat.completions.create(<br>&nbsp;&nbsp;model="qwen/qwen3-235b…",<br>&nbsp;&nbsp;messages=[question, comment])</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">3</span><span style="font-size:22px; font-weight:700; color:#111;">the script</span><span style="font-size:24px; line-height:1.3;">sends the comment to the API with your key</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">POST openrouter.ai/api/v1/…</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#d9481f; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">4</span><span style="font-size:22px; font-weight:700; color:#d9481f;">Qwen</span><span style="font-size:24px; line-height:1.3;">answers, and the script saves the answer</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">runs/test_call.json<br>"content": "yes"</span></div><div class="fragment" style="display:grid; grid-template-columns:44px 140px 1.3fr 1fr; gap:14px; align-items:center; margin:0 0 12px; text-align:left;"><span style="display:inline-flex; width:40px; height:40px; border-radius:50%; background:#111; color:#fff; align-items:center; justify-content:center; font-size:22px; font-weight:700;">5</span><span style="font-size:22px; font-weight:700; color:#111;">Codex</span><span style="font-size:24px; line-height:1.3;">reads the file and tells you in the chat</span><span style="background:#1b1b1b; color:#e6e6e6; border-radius:8px; padding:7px 12px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px; line-height:1.4;">Qwen answered “yes”.</span></div>
 <p class="fragment" style="font-size:25px; line-height:1.4; margin-top:14px; text-align:left;">Two models take part. Codex (using GPT-6.2 Sol) writes and runs the code and tells you the result. Qwen 3 gives the label through the API.</p>
@@ -731,16 +645,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <table style="width:100%; border-collapse:collapse; font-size:28px; margin-top:22px;"><tr style="color:#555; border-bottom:1px solid #bbb;"><td style="padding:8px; text-align:left;"></td><td style="padding:8px;">Luna</td><td style="padding:8px;">Sol</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Price per million output tokens (a token is about ¾ of a word)</td><td style="padding:10px 8px;">$0.50</td><td style="padding:10px 8px;">$10</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, one-line prompt, of 120</td><td style="padding:10px 8px;">92</td><td style="padding:10px 8px;">105</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Agree with the labels in the data, codebook, of 120</td><td style="padding:10px 8px;">110</td><td style="padding:10px 8px;">113</td></tr><tr style="border-bottom:1px solid #e2e2dc;"><td style="padding:10px 8px; text-align:left;">Cost of the codebook test, 720 calls</td><td style="padding:10px 8px;">$0.06</td><td style="padding:10px 8px;">$0.78</td></tr></table>
 
 <p style="font-size:28px; margin-top:22px;">With a codebook, the small model does almost as well for under a tenth of the cost.</p>
-
----
-
-## Recent research on codebook prompts
-
-| Finding | Source |
-|---|---|
-| Clear definitions help more than prompt tricks. | Çelebi &amp; Penczynski (2026) |
-| When a definition is vague, models add their own meaning. Bigger models do this too. | Halterman &amp; Keith (2026) |
-| Small wording changes shift the labels. | Atreja et al. (2024); Barrie et al. (2025) |
 
 ---
 
@@ -841,26 +745,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 
 <p class="yt-copy">Copy it from step 11 on the GitHub page.</p>
 
-<p class="yt-look">What does a good entry in this file look like?</p>
-
----
-
-## Read WORKFLOW.md
-
-<div class="ex-tag">Step 11</div>
-
-
-<p style="font-size:30px; margin:6px 0 10px;">Read it, especially the last section. Look for decisions you didn’t know were made. For instance:</p>
-
-<ul style="font-size:28px; line-height:1.5;">
-<li>which provider answered, and whether a different provider answered instead</li>
-<li>how failed calls were retried, and how many still failed</li>
-<li>how a tie between runs was counted</li>
-<li>whether answers like “Yes.” were changed before counting</li>
-<li>whether the codebook was changed before it was sent</li>
-</ul>
-
-<p style="font-size:30px; margin-top:16px;">If any of these are missing, ask the agent to investigate and update the file.</p>
+<p class="yt-look">Read it, especially the last section. Look for decisions you didn’t know were made. If something is missing, ask the agent to update the file.</p>
 
 ---
 
