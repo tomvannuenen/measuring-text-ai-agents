@@ -14,7 +14,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Write a rule](#step-8-write-a-rule)
-9. [Your codebook and the held-out test](#step-9-your-codebook-and-the-held-out-test)
+9. [Test the room's codebook on 100 new comments](#step-9-test-the-rooms-codebook-on-100-new-comments)
 10. [Sycophancy: follow-up questions (optional)](#step-10-sycophancy-follow-up-questions-optional)
 11. [Write it all down](#step-11-write-it-all-down)
 12. [Build a dashboard](#step-12-build-a-dashboard)
@@ -211,30 +211,20 @@ with links to the papers. For each, tell me how it could help improve this rule:
 
 Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
 
-## Step 9. Your codebook and the held-out test
+## Step 9. Test the room's codebook on 100 new comments
 
-Use the three rules the room voted for, which are on the slides. You can also use your own rule from step 8. Paste the rules into this prompt:
+The room's rules were written for the five comments you coded by hand, so they need new comments for a fair test. Both codebooks, the one-line question and the room's version, label the same 100 comments.
 
-```
-Copy codebook_v0.md to codebook_v1.md. Just before the last line ("Answer with
-the label only."), add a line "Rules:" and then the rules below, exactly as I wrote them.
-If I also give changes to the question or the label definitions, make
-exactly those changes. Do not add, remove, or rephrase anything else.
-Then show me the whole new codebook.
-
-[paste the rules here]
-```
-
-Then test the rules on 100 comments nobody has looked at:
+Paste this prompt. At the bottom, add the three rules the room voted for, which are on the slide. You can add your own rule from step 8 too.
 
 ```
-Held-out test: label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,
-3 runs each, saved to runs/heldout_v0.csv and runs/heldout_v1.csv.
+Make codebook_v1.md: a copy of codebook_v0.md with a line "Rules:" and the rules
+below added just before the last line. Change nothing else.
+Then label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,
+3 runs each, saved in runs/. For each codebook, tell me the % identical across
+runs and how many of the 100 match the column hostile.
 
-Then compare the majority labels with the column hostile in
-data/heldout_100.csv. For each codebook, report: % identical across runs, how many
-of the 100 match the gold labels, and the count of each label.
-Show me five comments the model got wrong with codebook_v1, with the text.
+[paste the room's rules here]
 ```
 
 For each codebook, write down **% identical** (reliability) and **how many match the gold labels** (validity).
