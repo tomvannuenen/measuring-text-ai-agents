@@ -255,16 +255,17 @@
 ## Model and effort
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px; align-items:start;">
-<div><img src="img/codex-model-select.png" alt="The model picker" style="width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
-<div><img src="img/codex-effort.png" alt="The effort picker: Light, Medium, High, Extra High, Ultra" style="width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
+<div><img src="img/codex-model-select.png" alt="The model picker" style="height:190px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
+<div><img src="img/codex-effort.png" alt="The effort picker: Light, Medium, High, Extra High, Ultra" style="height:190px; width:auto; max-width:100%; margin:0; border-radius:10px; box-shadow:none; display:block;"></div>
 </div>
 
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:18px; font-size:27px; line-height:1.4; text-align:left;">
-<p style="margin:0;">The <b>model</b> is the brain that does the work. Bigger, newer models do more, and you reach your usage limit sooner.</p>
-<p style="margin:0;"><b>Effort</b> is how long it thinks. More effort helps on hard tasks, and you also reach the limit sooner.</p>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:14px; text-align:left;">
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;"><li>The <b>model</b> is the brain of the agent.</li><li>Bigger, newer models do more, and use more of your limit.</li></ul>
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;"><li><b>Effort</b> is how long it thinks.</li><li>More effort helps on hard tasks, and uses more of your limit.</li></ul>
 </div>
 
-<p style="font-size:27px; margin-top:20px; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> Raise the model or the effort only when a step needs it. With the highest settings, you reach the free limit quickly.</p>
+<ul class="fragment" style="font-size:28px; line-height:1.35; margin:18px 0 0 1em; text-align:left;"><li><b>Usage limits</b> reset every 5 hours. There is also a weekly limit.</li><li>On the Plus plan, the small model allows about 350–3,000 messages in 5 hours. The biggest allows about 6–50. Free limits are lower.</li><li><b style="color:#d9481f;">Start with Light effort.</b> See your usage at chatgpt.com/codex/settings/usage.</li></ul>
+<p class="fragment" style="font-size:21px; color:#888; margin-top:6px; text-align:left;">OpenAI, Codex pricing page, November 2026</p>
 
 ---
 
