@@ -451,7 +451,8 @@
 .reveal .era-row .y { font-size: 28px; font-weight: 700; color: #d9481f; }
 .reveal .era-row .t { font-size: 28px; line-height: 1.28; }
 .reveal .era-row .s { font-size: 21px; color: #888; }
-.reveal .era-row.visible.past .t, .reveal .era-row.visible.past .y { opacity: .45; }
+/* Earlier eras stay fully visible: every method is still in use. */
+.reveal .era-row .y .since { display: block; font-size: 21px; font-weight: 400; color: #888; line-height: 1; }
 .reveal .era-stage { position: relative; height: 540px; }
 .reveal .era-fig { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .4s; display: flex; flex-direction: column; justify-content: center; }
 .reveal .era-fig.on { opacity: 1; }
