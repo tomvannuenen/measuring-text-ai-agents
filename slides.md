@@ -265,8 +265,7 @@
 </div>
 
 <div class="fragment" style="display:flex; gap:16px; align-items:center; margin-top:18px; text-align:left;"><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">small model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 350–3,000</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">Sol</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 17–180</div></div><div style="border:2px solid #111; border-radius:10px; padding:6px 16px; text-align:center; background:#fff;"><div style="font-size:21px; color:#6f6f69;">biggest model</div><div style="font-size:30px; font-weight:700; white-space:nowrap;">💬 6–50</div></div><div style="font-size:24px; line-height:1.3; color:#333;">messages per 5 hours<br>on Plus. Free: fewer.<br>Weekly limit too.</div></div>
-<p class="fragment" style="font-size:28px; margin:16px 0 0; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> See your usage at chatgpt.com/codex/settings/usage.</p>
-<p class="fragment" style="font-size:21px; color:#888; margin-top:6px; text-align:left;">OpenAI, Codex pricing page, November 2026</p>
+<p class="fragment" style="font-size:28px; margin:16px 0 0; text-align:left;"><b style="color:#d9481f;">Start with Light effort.</b> See your usage at chatgpt.com/codex/settings/usage.<br><span style="font-size:21px; color:#888;">OpenAI, Codex pricing page, November 2026</span></p>
 
 ---
 
