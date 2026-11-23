@@ -805,12 +805,6 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Sycophancy: your view in the question
-
-<div class="demo" data-demo="framebars"></div>
-
----
-
 ## Sycophancy: pushback after the answer
 
 <div class="demo" data-demo="pushbars"></div>
