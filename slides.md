@@ -12,7 +12,7 @@
 
 ---
 
-# Labeling Text with LLMs and Agents
+# Using AI Agents to Label Text
 
 
 <p class="muted">Tom van Nuenen · UC Berkeley D-Lab · São Paulo, November 2026</p>
