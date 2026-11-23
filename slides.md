@@ -175,7 +175,7 @@
 <p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label matches what we mean.</p>
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">model says yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">gold label says yes</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✓</span></div>
-<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with gold labels from careful human coders.</p>
+<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with our gold labels.</p>
 </div>
 </div>
 
