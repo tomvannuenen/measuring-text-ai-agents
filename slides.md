@@ -68,20 +68,21 @@
 <div class="ex-tag">Step 1</div>
 
 
-<p style="font-size:30px; line-height:1.45; margin:6px 0 12px; text-align:left;">The workshop files are in a GitHub repository: an online project folder that stores files, code, and revision history.</p>
+<p style="font-size:30px; line-height:1.45; margin:6px 0 4px; text-align:left;">Every prompt today is on our GitHub page, a website that stores project files. Open it now and keep it open.</p>
+
+<div style="font-size:44px; font-weight:700; color:#d9481f; margin:0 0 14px; text-align:left;">tinyurl.com/mtai-workshop</div>
 
 <div class="fragment">
-<p style="font-size:30px; margin:0 0 12px; text-align:left;">In Codex, click <b>New chat</b>, type this, and click <b>Allow once</b> when it asks.</p>
+<p style="font-size:30px; margin:0 0 12px; text-align:left;">Copy the step 1 prompt into a <b>New chat</b> in Codex. Click <b>Allow once</b>.</p>
 
 <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:center;">
 <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:30px; background:#f0efea; color:#111; border-radius:3px; padding:16px 20px; text-align:left;">Download the GitHub repository at<br><span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; color:#d9481f; font-weight:700;">tinyurl.com/mtai-workshop</span> as a ZIP, unzip it<br>on my Desktop as ai-workshop,<br>and tell me where the folder is. Then open<br>the repository's page in my browser.</div>
 <img src="img/codex_allow_download.png" alt="Codex asks to connect to the internet and edit the Desktop: Allow once" style="width:100%; margin:0; border-radius:10px; box-shadow:none;">
 </div>
 
-<p style="font-size:28px; margin-top:20px;">Keep the GitHub page open. Every step and prompt today is on that page.</p>
 </div>
 
-<p class="fragment" style="font-size:28px; line-height:1.4; color:#6f6f69; margin-top:14px; text-align:left;">If you don't want to use Codex in your browser, open tinyurl.com/mtai-workshop yourself, click Code → Download ZIP, and rename the unzipped folder to ai-workshop.</p>
+<p class="fragment" style="font-size:28px; line-height:1.4; color:#6f6f69; margin-top:14px; text-align:left;">You can also open the link yourself, click Code → Download ZIP, and rename the folder ai-workshop.</p>
 
 ---
 
