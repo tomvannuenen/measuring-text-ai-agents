@@ -800,22 +800,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## The room's codebook
-
-<div class="ex-tag">Step 9</div>
-
-
-<div class="demo" data-demo="roomcodebook"></div>
-
-<div class="ho-lock"><div class="g"><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span>🔒</span></div><div><b>The test: 100 new comments</b><br>no rules came from these</div></div>
-
----
-
 ## Test your rule on 100 new comments
 
 <div class="ex-tag">Step 9</div>
 
-<p>The room's rules run on the slides. Your own rule from step 8 runs on your laptop, on the same 100 comments.</p>
+<p>You wrote your rule for the five warm-up comments. Now it labels 100 new comments that nobody wrote rules from.</p>
 
 <div class="yt-row"><span class="n">1</span><div><div class="yt-box">Make codebook_v1.md: a copy of codebook_v0.md with a line “Rules:” and my rule<br>below added just before the last line. Change nothing else.<br><span class="more">…</span></div></div></div>
 
