@@ -780,13 +780,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 <div class="ex-tag">Step 9</div>
 
-<p>You wrote your rule for the five warm-up comments. Now it labels 100 new comments that nobody wrote rules from.</p>
+<p class="yt-intro">This prompt adds your rule to the codebook. Then the agent labels 100 new comments with it, three times.</p>
 
-<div class="yt-row"><span class="n">1</span><div><div class="yt-box">Make codebook_v1.md: a copy of codebook_v0.md with a line “Rules:” and my rule<br>below added just before the last line. Change nothing else.<br><span class="more">…</span></div></div></div>
+<div class="yt-box">Make codebook_v1.md: a copy of codebook_v0.md with a line “Rules:” and my rule<br>below added just before the last line. Change nothing else.<br>Then run a held-out test: label data/heldout_100.csv with codebook_v1.md, 3 runs,<br>saved in runs/. Tell me the % identical across runs and how many of the 100<br>match the column hostile.<br><br>[paste your rule here]</div>
 
-<p class="yt-copy">Copy the prompt from step 9 on the GitHub page.</p>
-
-<p class="yt-look">Write down % identical and how many match the gold labels. Then send both with your rule on the next slide.</p>
+<p class="yt-copy">Copy it from step 9 on the GitHub page, and paste your rule at the bottom.</p>
 
 ---
 

@@ -428,7 +428,8 @@
       const head = el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:18px;" },
         el("img", { src: "img/form_score_qr.png", alt: "", style: "height:120px; margin:0;", onerror: function () { this.remove(); } }),
         el("div", { style: "font-size:30px;" }, link ? el("div", { style: "font-size:40px; font-weight:700; color:#d9481f;" }, link) : null,
-          el("div", { style: M + " margin-top:6px;" }, `${rows.length} ${rows.length === 1 ? "person has" : "people have"} sent a score.`)),
+          el("div", { style: "font-size:28px; margin-top:6px;" }, "Send your rule and the two numbers your agent reported."),
+          el("div", { style: M + " margin-top:4px;" }, `${rows.length} ${rows.length === 1 ? "person has" : "people have"} sent a score.`)),
         el("div", { style: "margin-left:auto; align-self:flex-start; white-space:nowrap;" }, startOver()));
       const seen = {}, tall = {};
       rows.forEach((r) => { const k = Math.round(r.match); tall[k] = (tall[k] || 0) + 1; });
