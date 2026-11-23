@@ -384,7 +384,7 @@
           el("table", { style: "font-size:30px; border-collapse:collapse; margin:0 0 12px;" },
             el("tr", {}, el("td", { style: M + td }), el("td", { style: M + td }, "% identical"), el("td", { style: M + td }, "Match the gold labels")),
             row("One-line question", T.v0), row("The room's codebook", T.v1)),
-          el("div", { style: M }, `Qwen, ${T.runs} runs on ${n} new comments. To run it yourself, open ${L.proposeShort || short(L.proposeUrl)}.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
+          el("div", { style: M }, `Qwen, ${T.runs} runs on ${n} new comments.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
           el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 360), "quiet tiny-btn"), startOver(), busyNote(), err()));
         return;
       }
