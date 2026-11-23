@@ -1,4 +1,4 @@
-# Labeling Text with LLMs and Agents
+# Using AI Agents to Label Text
 
 These are the materials for a two-hour workshop by Tom van Nuenen (UC Berkeley D-Lab). Keep this page open while you work. Every prompt is here to copy.
 
