@@ -768,11 +768,11 @@
     const label = (s) => texts.find((t) => t.textContent.trim() === s);
     const legs = [
       [[375, 145], [195, 72], "read and write files"],
-      [[375, 185], [195, 252], "run commands"],
-      [[525, 185], [705, 252], "check the results"],
+      [[375, 185], [195, 252], "write and run code"],
+      [[525, 185], [705, 252], "make a chart"],
       [[375, 145], [195, 72], "read and write files"],
-      [[525, 145], [705, 72], "use the internet"],
-      [[525, 185], [705, 252], "check the results"],
+      [[525, 145], [705, 72], "search the web"],
+      [[525, 185], [705, 252], "make a chart"],
     ];
     const LEG = 1600;
     let t0 = null;
