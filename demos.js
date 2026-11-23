@@ -610,8 +610,7 @@
   };
 
   /* Slide 4: temperature. The chances for the next word after "Big, busy and", recomputed for the chosen temperature
-     (each chance raised to the power 1/T, then rescaled). Ten draws below refresh every 1.4 s.
-     Clicks (the bullets, class tp-step) move the temperature: 1, 1.6, 0.4, 0. The slider works too. */
+     (each chance raised to the power 1/T, then rescaled). Clicks (the bullets, class tp-step) move the temperature: 1, 1.6, 0.4, 0. The slider works too. */
   builders.tempdial = function (root) {
     const W = [["exciting", 0.41], ["alive", 0.26], ["creative", 0.19], ["chaotic", 0.09], ["green", 0.03], ["beautiful", 0.02]];
     let T = 1;
@@ -624,8 +623,7 @@
       const fill = el("div", { class: "lc-fill" }), val = el("span", { class: "lc-p" });
       return { row: el("div", { class: "lc-row" }, el("span", { class: "lc-w" }, w), el("div", { class: "lc-track" }, fill), val), fill, val };
     });
-    const chips = Array.from({ length: 10 }, () => el("span", { class: "tp-chip" }));
-    const sl = slider("Temperature", 0, 2, 0.1, 1, (v) => v.toFixed(1), (v) => { T = v; draw(); sample(); });
+    const sl = slider("Temperature", 0, 2, 0.1, 1, (v) => v.toFixed(1), (v) => { T = v; draw(); });
     const draw = () => {
       const ps = probs(T);
       rows.forEach((r, i) => {
@@ -634,20 +632,14 @@
         r.row.classList.toggle("pick", i === 0 && T < 0.05);
       });
     };
-    const sample = () => {
-      const ps = probs(T);
-      chips.forEach((c) => { let x = Math.random(), k = 0; while (x > ps[k] && k < ps.length - 1) { x -= ps[k]; k++; } c.textContent = W[k][0]; c.classList.toggle("top", k === 0); });
-    };
     put(root, el("div", { class: "tp-wrap" },
       el("div", { class: "tp-left" }, el("div", { class: "tp-ctx" }, "Big, busy and ", el("span", { class: "tp-blank" }, "___")), el("div", { class: "lc-bars" }, rows.map((r) => r.row))),
-      el("div", { class: "tp-right" }, sl, el("div", { class: "tp-head" }, "Ten draws"), el("div", { class: "tp-chips" }, chips))));
-    draw(); sample();
-    setInterval(() => { if (loopActive(root)) sample(); }, 1400);
+      el("div", { class: "tp-right" }, sl)));
+    draw();
     let anim = 0;
     fragSteps(root, "tp-step", (k) => {
       const to = [1, 1.6, 0.4, 0][Math.min(k, 3)], from = T, id = ++anim;
       tween(700, (e) => { if (id !== anim) return; T = from + (to - from) * e; sl.set(Math.round(T * 10) / 10); draw(); });
-      setTimeout(() => { if (id === anim) sample(); }, 720);
     });
   };
 
