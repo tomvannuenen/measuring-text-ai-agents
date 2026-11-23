@@ -361,7 +361,7 @@
 <table style="width:100%; border-collapse:collapse; margin:0;"><thead><tr><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111; width:15%;">id</th><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111;">text</th><th style="padding:10px 16px; text-align:left; font-family:monospace; font-size:26px; border-bottom:2px solid #111; width:16%; color:#d9481f;">hostile</th></tr></thead><tbody>
 <tr><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-family:monospace; font-size:18px; color:#888;">t1_emiclu6</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:24px; line-height:1.3;">“If the guy wanted to close your bag, he could have told you that your bag was open. 99% chance he’s a pickpocket, 1% socially dysfunctional idiot.”</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:26px; font-weight:700; color:#d9481f; white-space:nowrap;">yes</td></tr>
 <tr><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-family:monospace; font-size:18px; color:#888;">t1_ejielm1</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:24px; line-height:1.3;">“Don’t pick up random drinks in a club, that’s just plain rude. Also, don’t get blackout drunk/high when you’re out with someone.”</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:26px; font-weight:700; color:#111; white-space:nowrap;">no</td></tr>
-<tr><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-family:monospace; font-size:18px; color:#888;">t1_eci2a24</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:24px; line-height:1.3;">“She’s playing the Shitty Life Olympics. It’d be one thing to bring it up in a productive and mature way, but…”</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:26px; font-weight:700; color:#d9481f; white-space:nowrap;">yes<div style="font-size:16px; font-weight:400; color:#888;">judgment call</div></td></tr>
+<tr><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-family:monospace; font-size:18px; color:#888;">t1_eci2a24</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:24px; line-height:1.3;">“She’s playing the Shitty Life Olympics. It’d be one thing to bring it up in a productive and mature way, but…”</td><td style="padding:12px 16px; border-bottom:1px solid #ddd; vertical-align:top; font-size:26px; font-weight:700; color:#d9481f; white-space:nowrap;">yes<div style="font-size:16px; font-weight:400; color:#888;">ambiguous</div></td></tr>
 </tbody></table>
 
 <div style="display:flex; font-size:20px; color:#555; margin-top:12px;"><div style="width:15%; padding:0 16px;">Reddit’s id</div><div style="flex:1; padding:0 16px;">the comment: all a coder sees</div><div style="width:16%; padding:0 16px; color:#d9481f;">our gold labels<br>40 of 100 “yes”</div></div>
@@ -752,7 +752,9 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Gold labels are an interpretation too
+## Human label variation
+
+<p class="muted lv-cite" style="margin-top:0 !important;">Plank (2022); Aroyo &amp; Welty (2015)</p>
 
 <div style="display:flex; gap:48px; align-items:flex-start; margin-top:24px;">
 <div>
@@ -760,14 +762,14 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div style="margin-top:14px;">
 <div style="display:flex; align-items:center; gap:10px; font-size:22px; margin:6px 0;"><span style="width:20px; height:20px; border-radius:3px; display:inline-block; box-sizing:border-box; background:#111;"></span>hostile: 40</div>
 <div style="display:flex; align-items:center; gap:10px; font-size:22px; margin:6px 0;"><span style="width:20px; height:20px; border-radius:3px; display:inline-block; box-sizing:border-box; background:#fff; border:2px solid #bbb;"></span>not hostile: 60</div>
-<div style="display:flex; align-items:center; gap:10px; font-size:22px; margin:6px 0;"><span style="width:20px; height:20px; border-radius:3px; display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; border:2px solid #bbb; color:#999; font-weight:700; font-size:15px;">?</span>a judgment call: 21</div>
+<div style="display:flex; align-items:center; gap:10px; font-size:22px; margin:6px 0;"><span style="width:20px; height:20px; border-radius:3px; display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; border:2px solid #bbb; color:#999; font-weight:700; font-size:15px;">?</span>ambiguous: 21</div>
 </div>
 </div>
 <div style="flex:1;">
 <div style="border:1px solid #ddd; border-radius:8px; padding:14px 18px; font-size:22px; line-height:1.4; background:#fff; margin-bottom:8px;">You don’t feel comfortable having sex with strangers but you’ve also had three one-night stands? Get over yourself.</div>
-<div style="font-size:20px; color:#d9481f; font-weight:600; margin:0 0 22px 6px;">our label: hostile, a judgment call</div>
+<div style="font-size:20px; color:#d9481f; font-weight:600; margin:0 0 22px 6px;">our label: hostile, ambiguous</div>
 <div style="border:1px solid #ddd; border-radius:8px; padding:14px 18px; font-size:22px; line-height:1.4; background:#fff; margin-bottom:8px;">Come on, you’re a grown-ass adult, you presumably function in society, surely you can figure out how to run a vacuum cleaner…</div>
-<div style="font-size:20px; color:#d9481f; font-weight:600; margin:0 0 22px 6px;">our label: not hostile, a judgment call</div>
+<div style="font-size:20px; color:#d9481f; font-weight:600; margin:0 0 22px 6px;">our label: not hostile, ambiguous</div>
 </div>
 </div>
 
