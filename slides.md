@@ -137,12 +137,12 @@
 ## Are language models the future of text labeling?
 
 <div style="display:flex; gap:32px; align-items:stretch;">
-<div style="flex:1;">
+<div class="fragment" data-fragment-index="1" style="flex:1;">
 <p style="font-size:30px; line-height:1.3; min-height:130px;">ChatGPT labeled tweets more accurately than MTurk crowd workers, at <b>1/30 the cost</b><br><span style="font-size:22px; color:#888;">Gilardi, Alizadeh &amp; Kubli 2023, PNAS</span></p>
 <img src="img/mturk_closed.png" alt="mturk.com: Mechanical Turk is no longer available. Amazon Mechanical Turk permanently closed on September 30, 2026." style="width:100%; border:1px solid #ddd; margin:48px 0 0;">
 </div>
-<div style="width:4px; background:var(--accent);"></div>
-<div style="flex:1;">
+<div class="fragment" data-fragment-index="2" style="width:4px; background:var(--accent);"></div>
+<div class="fragment" data-fragment-index="2" style="flex:1;">
 <p style="font-size:30px; line-height:1.3; min-height:130px;"><b>46%</b> of NLP papers in 2025 used a language model to evaluate their results. <b>43%</b> used people.<br><span style="font-size:22px; color:#888;">Yang et al. 2026</span></p>
 <img src="img/llm_judge_trend_yang2026.png" alt="Share of NLP papers using each evaluation method, 2020 to 2025. LLM-as-a-judge rises from under 1% to 46% and passes human evaluation at 43%." style="width:108%; max-width:none; margin:0;">
 </div>
