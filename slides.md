@@ -744,19 +744,11 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Recent research on codebook prompts
 
-
-
-<div class="small">
-
 | Finding | Source |
 |---|---|
-| The content of a prompt matters more than prompting techniques. | Çelebi &amp; Penczynski (2026) |
-| Models fill in vague definitions without saying so. Better models keep the same bias. | Halterman &amp; Keith (2026) |
-| The best prompt style depends on the task. Personas and step-by-step instructions can lower accuracy. | McLaren et al. (2026) |
-| Small changes in wording shift the labels. | Atreja et al. (2024); Barrie et al. (2025) |
-| A separate prompt for each category works better than one prompt for all categories. | Dunivin (2025) |
-
-</div>
+| Clear definitions help more than prompt tricks. | Çelebi &amp; Penczynski (2026) |
+| Models fill in vague definitions on their own. Bigger models do this too. | Halterman &amp; Keith (2026) |
+| Small wording changes shift the labels. | Atreja et al. (2024); Barrie et al. (2025) |
 
 ---
 
