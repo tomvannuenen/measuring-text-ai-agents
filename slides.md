@@ -20,11 +20,11 @@
 
 <p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now. You will need Codex in a few minutes.</p>
 
-<p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install Codex, please follow along on the shared screen.</p>
+<p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install Codex, just follow along.</p>
 
 ---
 
-## Your perceptions
+## Two questions
 
 <div class="demo" data-demo="where" data-round="start"></div>
 
