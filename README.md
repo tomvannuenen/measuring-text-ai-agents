@@ -14,7 +14,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Write a rule](#step-8-write-a-rule)
-9. [Run the room's test yourself (optional)](#step-9-run-the-rooms-test-yourself-optional)
+9. [Test your rule on 100 new comments](#step-9-test-your-rule-on-100-new-comments)
 10. [Sycophancy: follow-up questions (optional)](#step-10-sycophancy-follow-up-questions-optional)
 11. [Write it all down](#step-11-write-it-all-down)
 12. [Build a dashboard](#step-12-build-a-dashboard)
@@ -111,7 +111,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - Use the codebook file I name as the system prompt. Send each comment as the user message: the column text, and nothing else.
 - The labels are yes and no. Restrict answers to them with structured output. If a codebook lists different labels, ask me before running.
 - API calls need network access, which the sandbox blocks. Ask for network access when you start each labeling job, instead of trying inside the sandbox first.
-- Send at most 4 requests at a time, with max_tokens set to 20. Retry failed requests up to 5 times with increasing waits, following any Retry-After header, and report how many still failed.
+- Send at most 10 requests at a time, with max_tokens set to 20. Retry failed requests up to 5 times with increasing waits, following any Retry-After header, and report how many still failed.
 - Append one line per labeling job to runs/LOG.md: date, data file, codebook, model, provider, settings, number of runs.
 - Before any labeling job, tell me how many calls it will make and estimate the cost from the token counts in runs/test_call.json and the model's price on openrouter.ai. Wait for my OK.
 
@@ -211,25 +211,23 @@ with links to the papers. For each, tell me how it could help improve this rule:
 
 Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
 
-## Step 9. Run the room's test yourself (optional)
+## Step 9. Test your rule on 100 new comments
 
-On the slides, Qwen labels 100 new comments with the one-line question and with the room's codebook. The room wrote its rules for the five comments you coded by hand, so the test uses comments nobody wrote rules from.
+On the slides, the room's three rules are tested on 100 new comments. Test your own rule from step 8 on the same comments. You wrote it for the five comments you coded by hand, so the new comments give it a fair test.
 
-To run the same test on your laptop, open the room's codebook link from the slides or the chat. After the test, that page shows this prompt with the room's rules filled in. Copy it into Codex:
+Paste this prompt, with your rule at the bottom:
 
 ```
-Make codebook_v1.md: a copy of codebook_v0.md with a line "Rules:" and the rules
+Make codebook_v1.md: a copy of codebook_v0.md with a line "Rules:" and my rule
 below added just before the last line. Change nothing else.
-Then label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,
-3 runs each, saved in runs/. For each codebook, tell me the % identical across
-runs and how many of the 100 match the column hostile.
+Then run a held-out test: label data/heldout_100.csv with codebook_v1.md, 3 runs,
+saved in runs/. Tell me the % identical across runs and how many of the 100
+match the column hostile.
 
-1. [the room's first rule]
-2. [the second rule]
-3. [the third rule]
+[paste your rule here]
 ```
 
-Compare your two numbers with the room's result on the slide.
+Write down **% identical** (reliability) and **how many match the gold labels** (validity).
 
 ## Step 10. Sycophancy: follow-up questions (optional)
 
