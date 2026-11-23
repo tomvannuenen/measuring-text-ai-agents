@@ -191,14 +191,14 @@ to the model. Which columns of the CSV go into that message?
 
 ## Step 8. Write a rule
 
-Go back to the comment you were least sure about when you coded by hand in step 2. To see the five comments again, paste:
+Pick the comment you found hardest to code in step 2. To see the five comments again, paste:
 
 ```
 Show me the five comments in data/coder_5.csv again, numbered, with the full text only.
 Don't show the column hostile.
 ```
 
-Write **one rule** that settles that comment, in your own words, without looking at the gold labels.
+Write **one rule** that tells a coder if that comment is hostile. Start with "A comment is hostile when…" or "A comment is not hostile when…". Use your own words, and don't look at the gold labels.
 
 If you have time, check your rule against published work:
 
