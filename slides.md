@@ -198,13 +198,26 @@
 
 ---
 
-## Today's task
+## This workshop has two parts
 
-<div class="tk-reply">
-<div style="border:1px solid #ddd; border-radius:8px; background:#fff; padding:16px 22px; font-size:27px; line-height:1.45; text-align:left; color:#1a1a1b;">You could have at least apologized. Jesus. Sure, it was an accident but I guarantee you would react the exact same way if someone had spilled your drink, kid or not. You have a child, act like an adult.</div>
+<div class="tw-task">
+<img src="img/aita_reply_plain.png" style="height:96px;">
+<span class="arr">→</span>
+<span style="white-space:nowrap;">Hostile or insulting toward someone?</span> <span class="pill yes">yes</span> <span class="pill no">no</span>
 </div>
-<div class="tk-row v2">
-<div class="tk-q"><div>Hostile or insulting toward someone?</div><span>Yes</span> <span>No</span></div>
+<div class="tw-cards">
+<div class="tw-card fragment"><div class="h">1. Working with an agent</div>
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
+<li>What an agent is, and how it works in a project folder</li>
+<li>Rules for the agent, and checking its log</li>
+<li>The agent writes a script, and a model labels through the API</li>
+</ul></div>
+<div class="tw-card fragment"><div class="h">2. Checking the labels</div>
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
+<li><b>Reliability:</b> the same label when you ask again</li>
+<li><b>Validity:</b> the label matches the gold label</li>
+<li><b>Labeler bias:</b> something irrelevant changes the label</li>
+</ul></div>
 </div>
 
 ---
@@ -239,30 +252,6 @@
 
 ---
 
-## This workshop has two parts
-
-<div class="tw-task">
-<img src="img/aita_reply_plain.png">
-<span class="arr">→</span>
-<span>Hostile?</span> <span class="pill yes">yes</span> <span class="pill no">no</span>
-</div>
-<div class="tw-cards">
-<div class="tw-card fragment"><div class="h">1. Working with an agent</div>
-<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
-<li>What an agent is, and how it works in a project folder</li>
-<li>Rules for the agent, and checking its log</li>
-<li>The agent writes a script, and a model labels through the API</li>
-</ul></div>
-<div class="tw-card fragment"><div class="h">2. Checking the labels</div>
-<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
-<li><b>Reliability:</b> the same label when you ask again</li>
-<li><b>Validity:</b> the label matches the gold label</li>
-<li><b>Labeler bias:</b> something irrelevant changes the label</li>
-</ul></div>
-</div>
-
----
-
 ## Model and effort
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px; align-items:start;">
@@ -279,7 +268,7 @@
 
 ---
 
-## What you downloaded
+## The folder you downloaded
 
 <div style="display:grid; grid-template-columns:auto 1fr; column-gap:40px; margin-top:14px; text-align:left; border:2px solid #111; border-radius:12px; padding:18px 26px; background:#fff;"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 0px; color:#d9481f; font-weight:700;">ai-workshop/</div><div style="font-size:24px; color:#d9481f; padding:3px 0;">your Codex project</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">README.md</div><div style="font-size:24px; color:#555; padding:3px 0;">the workshop page, with every step</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/coder_5.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">5 comments to label by hand</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/working_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments to label</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">data/heldout_100.csv</div><div style="font-size:24px; color:#555; padding:3px 0;">100 comments kept for testing</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:24px; padding:3px 0 3px 30px;">images/</div><div style="font-size:24px; color:#555; padding:3px 0;">pictures for the workshop page</div></div>
 
