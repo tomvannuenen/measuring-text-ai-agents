@@ -24,6 +24,12 @@
 
 ---
 
+## Your perceptions
+
+<div class="demo" data-demo="where" data-round="start"></div>
+
+---
+
 ## Large language models (LLMs)
 
 <ul style="font-size:27px; line-height:1.4; margin:0 0 20px 1em; text-align:left;"><li class="fragment">An LLM is trained on huge amounts of text.</li><li class="fragment">ChatGPT, Claude and Gemini are powered by LLMs.</li><li class="fragment">An LLM writes by picking the next word, again and again.</li></ul>
@@ -105,12 +111,6 @@
 </div>
 
 <p style="font-size:28px; margin-top:24px;">Start every new chat in this project. Codex then works only inside this folder.</p>
-
----
-
-## Your perceptions
-
-<div class="demo" data-demo="where" data-round="start"></div>
 
 ---
 
