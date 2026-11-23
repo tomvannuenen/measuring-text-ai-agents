@@ -1249,7 +1249,7 @@
 
   /* The experiment, 120 comments: two numbers per step and model. */
   builders.experiment = function (root) {
-    const M = D.experiment.models;
+    const M = D.experiment.models, LO = 0.5;
     let cur = 0;
     const mk = (name) => { const fill = el("div", { class: "fill" }), val = el("div", { class: "val" }), na = el("span", { style: "display:none; position:absolute; left:0; top:50%; transform:translateY(-50%); font-size:20px; color:#6f6f69; white-space:nowrap;" }, "can\u2019t be set for this model"); return { row: el("div", { class: "bar-row exp" }, el("div", {}, name), el("div", { class: "track", style: "position:relative;" }, fill, na), val), fill, val, na }; };
     const NAME = { "1. One-line prompt": "One-line prompt", "2. Codebook": "Codebook", "3. Codebook, top_k = 1": "Codebook, temperature 0" };
@@ -1262,7 +1262,7 @@
         const none = st.identical == null;   // Luna: temperature can't be set
         for (const [g, v] of [[groups[k].rel, st.identical], [groups[k].val, st.correct]]) {
           g.fill.style.display = none ? "none" : ""; g.na.style.display = none && g === groups[k].rel ? "" : "none";
-          if (!none) g.fill.style.width = 100 * v + "%";
+          if (!none) g.fill.style.width = 100 * Math.max(0, v - LO) / (1 - LO) + "%";   // the scale starts at 50%
           g.val.textContent = none ? "" : pct(v);
         }
       });
@@ -1271,7 +1271,8 @@
     root.classList.add("bars", "expdemo");
     put(root, el("div", { class: "row", style: "margin-bottom:8px" }, seg),
       groups.map((g) => el("div", { class: "expgroup" }, el("div", { class: "eyebrow" }, g.name), g.rel.row, g.val.row)),
-      el("p", { class: "note", style: "margin-top:8px;" }, "Qwen and DeepSeek ran with top_k = 1, which has the same effect as temperature 0. GPT-6 Luna does not accept a temperature setting."));
+      el("div", { class: "exp-axis" }, el("div"), el("div", { class: "ticks" }, [50, 75, 100].map((t) => el("span", { style: `left:${100 * (t / 100 - LO) / (1 - LO)}%;` }, t + "%"))), el("div")),
+      el("p", { class: "note", style: "margin-top:8px;" }, "The scale starts at 50%. Qwen and DeepSeek ran with top_k = 1, which has the same effect as temperature 0. GPT-6 Luna does not accept a temperature setting."));
     draw();
   };
 
