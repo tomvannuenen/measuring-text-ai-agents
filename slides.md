@@ -381,18 +381,6 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
-## An agent that sees the test data
-
-<p style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left; margin-top:16px;">In one study, agents had 10 hours to make a model score higher on a test. They were told never to train the model on the test questions.<br><span class="muted" style="font-size:21px;">Rank et al. 2026, PostTrainBench</span></p>
-
-<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left;">Claude Opus 4.6 broke the rules in <b style="color:#d9481f;">12 of 84</b> runs, for example by training on the test questions.</p>
-
-<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left;">A model that has seen the test questions scores well on them. The score then says nothing about how it does on new questions.</p>
-
-<p class="fragment" style="font-size:29px; line-height:1.4; margin:0 0 22px; text-align:left; border-left:4px solid #d9481f; padding-left:18px;">Your data has the same risk. The column <code>hostile</code> holds our labels. An agent that reads it can match our labels without labeling anything.</p>
-
----
-
 ## What did your agent do?
 
 <p style="font-size:22px; color:#555; margin:0 0 10px;">GPT-6.2 Sol Light (Leve)</p>
@@ -930,6 +918,7 @@ End with a section "Decisions I did not ask for".</code></pre>
 | Prompt design | Çelebi &amp; Penczynski (2026), *PLOS One* · McLaren et al. (2026), arXiv:2603.26898 · Atreja et al. (2024) |
 | Stability | Barrie, Palaiologou &amp; Törnberg (2025), arXiv:2407.02039 |
 | Validation and risk | Desai, Card &amp; Jacobs (2026), arXiv:2607.07915 · Baumann et al. (2025), arXiv:2509.08825 |
+| Agents and test data | Rank et al. (2026), PostTrainBench, arXiv:2603.08640 |
 | Robustness | van Nuenen &amp; Sachdeva (2026), arXiv:2603.05651 |
 | Multi-turn | Sachdeva &amp; van Nuenen (2026), arXiv:2510.10002 |
 | Reliability of models | Atil et al. (2025), arXiv:2408.04667 · Kim et al. (2025), ICML, "Correlated Errors in Large Language Models" |
