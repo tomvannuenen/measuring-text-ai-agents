@@ -183,42 +183,19 @@
 
 ## r/AmItheAsshole
 
+<p style="font-size:28px; margin:0 0 4px; text-align:left;">People describe a conflict and ask strangers to judge them.</p>
+
 <div style="display:flex; gap:40px; align-items:flex-start; justify-content:space-between; margin-top:10px;">
 <div style="width:640px;">
-<img src="img/aita_post.png" alt="A post: AITA for refusing to lend my sister money after she spent months judging my financial decisions?" style="width:100%; border:1px solid #ddd; border-radius:8px; margin:0 0 10px;">
+<img src="img/aita_post.png" alt="A post: AITA for refusing to lend my sister money after she spent months judging my financial decisions?" style="width:84%; border:1px solid #ddd; border-radius:8px; margin:0 0 8px;">
 <img src="img/aita_reply.png" alt="A reply: NTA. Sounds like your parents are offering to pay. She is their daughter after all, they signed up for supporting her." style="width:84%; margin:0 0 0 16%; border:1px solid #ddd; border-radius:8px;">
-<div class="fragment" data-fragment-index="1" style="margin:4px 0 0 calc(16% + 64px); font-size:26px; font-weight:700; color:#d9481f; text-align:left;">↑ an easy label</div>
+<div class="fragment" data-fragment-index="1" style="margin:4px 0 0 calc(16% + 64px); font-size:26px; font-weight:700; color:#d9481f; text-align:left;">↑ The verdict is written out.</div>
 
 </div>
-<img src="img/aita_sidebar.png" alt="The r/AmItheAsshole sidebar: tell us about a non-violent conflict, give both sides, and find out if you're right or the asshole. 2.5 million members." style="height:430px; border:1px solid #ddd; border-radius:8px; margin:0;">
+<img src="img/aita_sidebar.png" alt="The r/AmItheAsshole sidebar: tell us about a non-violent conflict, give both sides, and find out if you're right or the asshole. 2.5 million members." style="height:400px; border:1px solid #ddd; border-radius:8px; margin:0;">
 </div>
 
-<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:14px; margin:12px 0 0 0;"><div style="flex:1; border:1px solid #ddd; border-radius:8px; background:#fff; padding:10px 16px; font-size:21px; line-height:1.4; text-align:left; color:#1a1a1b;">He broke up with you because you were ashamed to be with him. … First thing y’all did in public as a couple. <span style="border-bottom:3px solid #d9481f;">How cute :D</span></div><div style="width:200px; font-size:26px; font-weight:700; line-height:1.25; color:#d9481f; text-align:left;">← a harder label</div></div>
-
----
-
-## The verdict and hostility
-
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:12px; text-align:left;">
-<div style="border:2px solid #bbb; border-radius:12px; padding:18px 22px;">
-<div style="font-size:30px; font-weight:700; margin-bottom:10px;">The verdict: NTA or YTA</div>
-<ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
-<li>The commenter says it (often as the first word)</li>
-<li>Reddit records it as metadata, so we don't need to label it.</li>
-<li>The commenter does the interpreting and picks one of five set answers.</li>
-</ul>
-</div>
-<div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:18px 22px;">
-<div style="font-size:30px; font-weight:700; margin-bottom:10px; color:#d9481f;">Hostility</div>
-<ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
-<li>The researcher defines the concept.</li>
-<li>Coders have to read for mockery, sarcasm and the target of an attack.</li>
-<li>Careful coders could reasonably disagree on certain comments.</li>
-</ul>
-</div>
-</div>
-
-<ul style="font-size:27px; line-height:1.4; margin:24px 0 0 1.1em; padding:0; text-align:left;"><li class="fragment">LLMs read meaning in context.</li><li class="fragment">They can apply a codebook to thousands of texts.</li><li class="fragment">This is also where their labels need the most checking.</li></ul>
+<div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; gap:14px; margin:12px 0 0 0;"><div style="flex:1; border:1px solid #ddd; border-radius:8px; background:#fff; padding:10px 16px; font-size:21px; line-height:1.4; text-align:left; color:#1a1a1b;">He broke up with you because you were ashamed to be with him. … First thing y’all did in public as a couple. <span style="border-bottom:3px solid #d9481f;">How cute :D</span></div><div style="width:250px; font-size:26px; font-weight:700; line-height:1.25; color:#d9481f; text-align:left;">← Hostility has to be read for.</div></div>
 
 ---
 
