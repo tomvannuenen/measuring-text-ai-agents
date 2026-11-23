@@ -213,7 +213,7 @@ Open the links and check that each paper exists and says what the agent claims. 
 
 ## Step 9. Test your rule on 100 new comments
 
-On the slides, the room's three rules are tested on 100 new comments. Test your own rule from step 8 on the same comments. You wrote it for the five comments you coded by hand, so the new comments give it a fair test.
+You wrote your rule from step 8 for the five comments you coded by hand. Test it on 100 new comments that nobody wrote rules from.
 
 Paste this prompt, with your rule at the bottom:
 
