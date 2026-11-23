@@ -293,7 +293,8 @@
     const marked = D.coder5.map(() => null);
     const roomBar = (u) => {
       const m = u.yes + u.no, w = m ? 100 * u.yes / m : 0;
-      return el("div", { class: "hc-bar" }, el("div", { class: "y", style: `width:${w}%` }, m ? String(u.yes) : ""), el("div", { class: "n" }, m ? String(u.no) : "–"));
+      return el("div", { class: "hc-room" }, el("div", { class: "hc-bar" }, el("div", { class: "y", style: `width:${w}%` }), el("div", { class: "n" })),
+        el("div", { class: "hc-rt" }, m ? [el("b", {}, String(u.yes)), " yes · ", el("b", {}, String(u.no)), " no"] : "no answers yet"));
     };
     const render = () => {
       const U = live.units;
@@ -342,10 +343,17 @@
       setTimeout(() => { if (live.busy === name) { live.busy = null; live.error = "No answer from the script. Try again."; render(); } }, secs * 1000);
     };
     const qr = (img, url, line, sh) => el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:14px;" },
-      el("img", { src: img, alt: "", style: "height:160px; margin:0;", onerror: function () { this.remove(); } }),
+      el("img", { src: img, alt: "", style: "height:130px; margin:0;", onerror: function () { this.remove(); } }),
       el("div", { style: "font-size:32px;" }, el("b", {}, sh || short(url)), el("div", { style: M + " margin-top:6px;" }, line)));
-    const steps = (k) => el("div", { style: M + " margin-bottom:14px; font-size:24px;" },
-      ["Propose", "Merge", "Vote", "Test"].map((t, n) => el("span", { style: `margin-right:22px; ${n === k ? "color:#111; font-weight:700;" : ""}` }, `${n + 1}. ${t}`)));
+    const WHAT = [
+      "Send one or more rules. All rules go into one list.",
+      "Claude combines rules that say the same thing into at most 8. Rules that disagree stay separate.",
+      "Claude combined rules that say the same thing. Pick up to three on your phone.",
+      "Qwen labels the five comments five times, with the one-line question and with the three winning rules.",
+    ];
+    const steps = (k) => el("div", { style: "margin-bottom:14px;" },
+      el("div", { style: M + " font-size:24px;" }, ["Propose", "Merge", "Vote", "Test"].map((t, n) => el("span", { style: `margin-right:22px; ${n === k ? "color:#111; font-weight:700;" : ""}` }, `${n + 1}. ${t}`))),
+      el("div", { style: "font-size:26px; color:#111; margin-top:8px; max-width:640px;" }, WHAT[k]));
     const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : "Qwen is labeling the five comments…") : null;
     const err = () => live.error ? el("span", { style: "color:#d9481f; font-size:22px;" }, live.error) : null;
     function render() {
@@ -357,20 +365,21 @@
           el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(U)))),
           el("td", { style: "padding:6px 0 6px 24px; border:none;" }, el("b", {}, `${hits(U)} of 5`), " match the gold label"));
         swap(body, steps(3),
-          el("div", { style: "font-size:30px; margin-bottom:16px;" }, T.rules.map((r, n) => el("div", { style: "margin:4px 0;" }, `${n + 1}. ${r.text} `, el("span", { style: M }, `(${r.votes} ${r.votes === 1 ? "vote" : "votes"})`)))),
+          el("div", { style: "font-size:28px; margin-bottom:16px; max-width:900px;" }, T.rules.map((r, n) => el("div", { style: "margin:4px 0;" }, `${n + 1}. ${r.text}`))),
           el("table", { style: "font-size:30px; border-collapse:collapse; margin:0 0 12px;" },
             row("One-line question", T.v0), row("The room's codebook", T.v1),
-            live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, slide 42"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
-          el("div", { style: M }, `${T.model} labeled each comment ${T.runs} times with each codebook, as in the workshop steps.${T.failed ? ` ${T.failed} calls failed.` : ""} The codebook is now at ${L.proposeShort || short(L.proposeUrl)}.`),
+            live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, by hand"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
+          el("div", { style: M }, `The codebook is now at ${L.proposeShort || short(L.proposeUrl)}.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
           el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), busyNote(), err()));
         return;
       }
       if (C) {
         const maxv = Math.max(1, ...C.map((c) => live.votes[c.id] || 0));
-        swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted. Pick up to three.`, L.voteShort),
-          C.map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
-            el("div", { style: "width:52px; flex:none; font-size:26px;" }, c.id),
-            el("div", { style: "flex:1; font-size:27px;" }, c.text, el("span", { style: M }, ` · ${c.pairs} ${c.pairs === 1 ? "proposal" : "proposals"}`)),
+        swap(body, steps(2), qr("img/form_vote_qr.png", L.voteUrl, `${live.voters} ${live.voters === 1 ? "person has" : "people have"} voted.`, L.voteShort),
+          C.length > 5 ? el("div", { style: M + " margin:0 0 6px;" }, `The five rules with the most votes so far, of ${C.length}`) : null,
+          C.slice().sort((a, b) => (live.votes[b.id] || 0) - (live.votes[a.id] || 0)).slice(0, 5).map((c) => el("div", { style: "display:flex; align-items:center; gap:14px; margin:5px 0;" },
+            el("div", { style: "width:40px; flex:none; font-size:26px;" }, c.id),
+            el("div", { style: "flex:1; font-size:26px; line-height:1.25;" }, c.text),
             el("div", { style: "width:170px; flex:none; background:#ecebe6; height:24px;" }, el("div", { style: `height:24px; width:${100 * (live.votes[c.id] || 0) / maxv}%; background:#111;` })),
             el("div", { style: "width:44px; flex:none; font-size:26px;" }, String(live.votes[c.id] || 0)))),
           el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 150), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), busyNote(), err()));
@@ -378,11 +387,12 @@
       }
       const P = live.proposals;
       swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. Everyone can send rules.`, L.proposeShort),
-        el("div", {}, P.slice(-6).map((r) => el("div", { style: M + " font-size:26px; margin:4px 0; font-style:italic;" }, `“${r.text}”`))),
+        el("div", {}, P.slice(-5).map((r) => el("div", { style: M + " font-size:26px; margin:4px 0; font-style:italic;" }, `“${String(r.text).trim().replace(/^["“”]+|["“”]+$/g, "")}”`))),
         el("div", { class: "row", style: "margin-top:12px;" }, button("Merge with Claude", () => act("merge", 45), "primary"), busyNote(), err()));
     }
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
     render();
+    root.classList.add("roomcb");
     put(root, body);
   };
 

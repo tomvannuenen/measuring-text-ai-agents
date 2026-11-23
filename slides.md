@@ -400,37 +400,14 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Your agent’s reliability number
 
-<p style="font-size:38px; line-height:1.35; margin:40px 0 18px; text-align:left;">Which number did your agent report as reliability?<br>How did it get that number?</p>
+<p style="font-size:36px; line-height:1.35; margin:30px 0 10px; text-align:left;">Which number did your agent report as reliability?<br>How did it get that number?</p>
 
-<div class="fragment" style="margin-top:46px; text-align:left;">
-<div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:16px 20px; font-size:26px; line-height:1.45; max-width:980px;">My labels agreed with the existing hand-coded labels on 98 of 100 comments, with Cohen’s κ = 0.96.</div>
-<div style="font-size:20px; color:#6f6f69; margin-top:8px;">My agent, GPT-6.2 Sol on Light</div>
+<div class="fragment" style="margin-top:34px; text-align:left;">
+<div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:16px 20px; font-size:28px; line-height:1.4; max-width:1000px;">My labels agreed with the existing hand-coded labels on 98 of 100 comments, with Cohen’s κ = 0.96.</div>
+<div style="font-size:22px; color:#6f6f69; margin-top:8px;">My agent, GPT-6.2 Sol on Light</div>
 </div>
 
----
-
-## What my agent did
-
-<div style="display:grid; grid-template-columns:1.4fr 1fr; gap:26px; margin-top:16px; text-align:left;">
-<div>
-<p style="font-size:28px; margin:0 0 12px;"><b>1.</b> It printed every row, with my label at the end.</p>
-<div style="background:#1b1b1b; color:#e6e6e6; border-radius:12px; padding:18px 20px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:1.6;">
-['id', 'text', <b style="color:#ff8a4c;">'hostile'</b>]<br>
-1 ['t1_ef1h4r8', 'You pretended to…', <b style="color:#ff8a4c;">'yes'</b>]<br>
-2 ['t1_eg1squv', 'you asked her nicely…', <b style="color:#ff8a4c;">'yes'</b>]<br>
-3 ['t1_ejs5jya', 'It was his Wedding Day…', <b style="color:#ff8a4c;">'yes'</b>]<br>
-4 ['t1_ekcsth6', 'you weren’t worried…', <b style="color:#ff8a4c;">'no'</b>]<br>
-<span style="color:#9a9a9a;">… 100 rows</span></div>
-</div>
-<div>
-<p style="font-size:28px; margin:0 0 12px;"><b>2.</b> Then it wrote its labels as a list of row numbers.</p>
-<div style="background:#1b1b1b; color:#e6e6e6; border-radius:12px; padding:18px 20px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:1.6;">hostile = {1, 2, 3, 7, 13,<br>&nbsp;&nbsp;14, 15, 19, 22, 24,<br>&nbsp;&nbsp;28, 29, 32, 36, …}</div>
-<p style="font-size:32px; margin:20px 0 0;"><b style="color:#d9481f;">98 of 100</b> match mine.</p>
-<p style="font-size:24px; line-height:1.35; color:#555; margin:12px 0 0;">It had already read my labels. This says nothing about reliability.</p>
-</div>
-</div>
-
-<p style="font-size:30px; color:#333; margin-top:22px; text-align:left;">In its own words: “I saw the original labels during inspection, so the comparison is unblinded.”</p>
+<p class="fragment" style="font-size:30px; line-height:1.35; margin-top:30px; text-align:left;">It had read my labels before it labeled. The 98 says nothing about reliability.<br><span style="color:#6f6f69;">In its own words: “The comparison is unblinded.”</span></p>
 
 ---
 
@@ -709,7 +686,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Your answers, Qwen and the gold labels
 
-<p style="font-size:22px; color:#6f6f69; margin:0 0 6px; text-align:left;">Compare this with your own table from step 7.</p>
+<p style="font-size:24px; color:#6f6f69; margin:0 0 6px; text-align:left;">Compare this with your own table from step 7. Black means yes.</p>
 
 <div class="demo" data-demo="labelresults"></div>
 <p class="fragment hc-step rv-def">Reliability means the same label when you ask again.</p>

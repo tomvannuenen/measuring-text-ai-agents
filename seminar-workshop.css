@@ -123,21 +123,22 @@
 .reveal .demo.handcode .hc-q { font-size: 44px; display: flex; align-items: center; gap: 16px; }
 .reveal .demo.handcode .hc-q .pill { font-size: 32px; padding: 2px 24px; }
 .reveal .demo.handcode .hc-sub { font-size: 28px; color: #555; margin-top: 14px; }
-.reveal .demo.handcode .hc-grid { display: grid; grid-template-columns: 1fr 220px 170px 120px; column-gap: 22px; row-gap: 24px; align-items: center; font-size: 26px; margin-top: 10px; }
-.reveal .demo.handcode .hc-grid .hd { color: #555; font-size: 20px; white-space: nowrap; }
+.reveal .demo.handcode .hc-grid { display: grid; grid-template-columns: 1fr 240px 170px 120px; column-gap: 22px; row-gap: 16px; align-items: center; font-size: 26px; margin-top: 10px; }
+.reveal .demo.handcode .hc-grid .hd { color: #555; font-size: 22px; white-space: nowrap; }
 .reveal .demo.handcode .hc-grid .hd.key { color: #d9481f; font-weight: 600; }
 .reveal .demo.handcode .hc-text { line-height: 1.25; }
-.reveal .demo.handcode .hc-bar { display: flex; height: 30px; border: 2px solid #111; border-radius: 5px; overflow: hidden; font-size: 18px; }
-.reveal .demo.handcode .hc-bar .y { background: #111; color: #fff; padding-left: 6px; display: flex; align-items: center; }
-.reveal .demo.handcode .hc-bar .n { flex: 1; padding-left: 6px; display: flex; align-items: center; }
+.reveal .demo.handcode .hc-bar { display: flex; height: 16px; border: 2px solid #111; border-radius: 4px; overflow: hidden; }
+.reveal .demo.handcode .hc-rt { font-size: 24px; margin-top: 4px; white-space: nowrap; }
+.reveal .demo.handcode .hc-bar .y { background: #111; }
+.reveal .demo.handcode .hc-bar .n { flex: 1; }
 .reveal .demo.handcode .hc-mark { display: flex; gap: 8px; }
 .reveal .demo.handcode .hc-mark button { font-size: 20px; padding: 4px 16px; }
 .reveal .demo.handcode .hc-dots { display: flex; gap: 5px; }
 .reveal .demo.handcode .hc-dots i { display: inline-block; width: 22px; height: 22px; border-radius: 50%; border: 2px solid #111; box-sizing: border-box; background: #fff; }
 .reveal .demo.handcode .hc-dots i.y { background: #111; }
-.reveal .demo.handcode .hc-key { display: inline-block; border: 2px solid #d9481f; color: #d9481f; background: #fff; border-radius: 20px; padding: 0 14px; font-size: 22px; font-weight: 600; }
+.reveal .demo.handcode .hc-key { display: inline-block; border: 2px solid #d9481f; color: #d9481f; background: #fff; border-radius: 20px; padding: 0 14px; font-size: 24px; font-weight: 600; }
 .reveal .demo.handcode .hc-key.y { background: #d9481f; color: #fff; }
-.reveal .demo.handcode .hc-alpha { display: flex; gap: 60px; margin-top: 26px; font-size: 30px; }
+.reveal .demo.handcode .hc-alpha { display: flex; gap: 60px; margin-top: 16px; font-size: 30px; }
 .reveal .demo.handcode .hc-bar .y:empty { padding: 0; }
 .reveal .demo.handcode .hc-mark button.picked { background: #111; color: #fff; }
 .reveal .demo.handcode .hc-q:first-child { font-size: 56px; margin-top: 20px; }
@@ -375,7 +376,7 @@
 .reveal .st-def + .st-foot, .reveal .st-def ~ .st-foot { margin-top: 18px !important; }
 
 /* 22 Nov: slide 42, one line per click naming reliability (Qwen column) and validity (gold column). */
-.reveal .rv-def { font-size: 24px !important; margin: 6px 0 0 !important; text-align: left; }
+.reveal .rv-def { font-size: 28px !important; margin: 6px 0 0 !important; text-align: left; }
 
 /* 22 Nov: slide 51, three short definitions as bullets, one per click. */
 .reveal ul.st-defs { font-size: 24px !important; margin: 12px 0 0 1.1em !important; text-align: left; }
@@ -461,3 +462,4 @@
 .reveal .era-sheet .hd span { font-weight: 400; }
 .reveal .era-sheet .ln { margin: 10px 0; }
 .reveal .era-sheet, .reveal .era-sheet * { font-family: "Courier New", Courier, monospace !important; }
+.reveal .demo.roomcb button { font-size: 22px !important; padding: 8px 18px !important; }
