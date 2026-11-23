@@ -4,7 +4,7 @@
 
 <p class="muted">Tom van Nuenen · UC Berkeley D-Lab · São Paulo, November 2026</p>
 
-<p style="font-size:30px; margin-top:40px;">The slides are at <b style="color:#d9481f;">tomvannuenen.me/measuring-text-ai-agents</b></p>
+<p style="font-size:30px; margin-top:40px;">Slides: <b style="color:#d9481f;">tomvannuenen.me/measuring-text-ai-agents</b></p>
 
 ---
 
@@ -18,7 +18,7 @@
 
 <img src="img/codex_menu.png" alt="The menu at the top left, before and after: ChatGPT, then Codex" style="width:80%; margin:18px auto 0; display:block; border-radius:10px; box-shadow:none;">
 
-<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now. You need Codex in about 10 minutes.</p>
+<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now -you need Codex in about 10 minutes.</p>
 
 <p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install it, follow along on the shared screen.</p>
 
