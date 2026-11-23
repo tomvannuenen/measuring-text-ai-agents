@@ -12,9 +12,10 @@ window.DEMO_TEXT = {
     "The scale starts at 50%. Qwen and DeepSeek ran with top_k = 1, which has the same effect as temperature 0. GPT-6 Luna does not accept a temperature setting.": "Scale starts at 50%. GPT-6 Luna does not accept a temperature setting."
   },
   "ctxwin": {
-    "A new chat starts with an empty window. The model remembers nothing from the old chat.": "If you start a new chat, it starts with an empty window. The model remembers nothing from the old chat."
+    "A new chat starts with an empty window. The model remembers nothing from the old chat.": "If you start a new chat, it starts with an empty window. The model remembers nothing from the old chat.",
+    "Your messages, its answers and every file it reads all go in.": "Your messages, its answers, and every file the model reads are a part of it."
   },
   "llmchat": {
-    "Chances for the next word": "Probability for the next word"
+    "Probabilities for the next word": "Probability for the next word"
   }
 };

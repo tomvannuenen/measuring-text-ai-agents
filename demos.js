@@ -756,10 +756,10 @@
       [],
     ];
     const CAPS = [
-      "The context window is everything the model sees at once. It is the model’s memory.",
+      ["The context window is everything the model sees at once. It is the model’s ", el("b", { style: "color:#d9481f;" }, "memory"), "."],
       "Your messages, its answers and every file it reads all go in.",
-      "The window has a limit. A long chat fills it up.",
-      "Codex then compacts the chat into a short summary. Some details get lost.",
+      "The window has a limit, about 1 million tokens for GPT-6.2 Sol. A long chat fills it up.",
+      ["Codex then ", el("b", { style: "color:#d9481f;" }, "compacts"), " the chat into a short summary. Some details get lost."],
       "A new chat starts with an empty window. The model remembers nothing from the old chat.",
     ];
     const H = 460;
