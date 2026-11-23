@@ -8,7 +8,7 @@
 
 <img src="img/codex_menu.png" alt="The menu at the top left, before and after: ChatGPT, then Codex" style="width:80%; margin:18px auto 0; display:block; border-radius:10px; box-shadow:none;">
 
-<p class="muted" style="margin-top:18px;">If you're on Linux or a Chromebook, please work with a neighbor!</p>
+<p class="muted" style="margin-top:18px;"></p>
 
 ---
 
@@ -53,12 +53,12 @@
 
 ---
 
-## What makes it an agent
+## How agents work
 
 <div style="margin-top:28px;">
-<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">1</span><p style="font-size:34px; line-height:1.4; margin:0;">The agent works inside a <b>project folder</b> on your machine. That folder is its world.</p></div>
+<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">1</span><p style="font-size:34px; line-height:1.4; margin:0;">The agent works inside a <b>project folder</b> on your machine. That folder is its world. It reads and changes the files inside it.</p></div>
 <div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">2</span><p style="font-size:34px; line-height:1.4; margin:0;">Everything it does is <b>recorded</b>. You can inspect every command it ran.</p></div>
-<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">3</span><p style="font-size:34px; line-height:1.4; margin:0;">It asks for <b>permission</b> before it runs commands or edits files.</p></div>
+<div class="fragment" style="display:flex; gap:22px; align-items:baseline; margin:0 0 30px; text-align:left;"><span style="font-size:56px; font-weight:800; color:#d9481f; width:50px;">3</span><p style="font-size:34px; line-height:1.4; margin:0;">It asks for <b>permission</b> before it goes outside the folder or online.</p></div>
 </div>
 
 ---
