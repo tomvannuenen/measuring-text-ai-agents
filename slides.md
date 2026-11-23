@@ -398,15 +398,13 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
-## What did your agent do?
+## Your agent’s reliability number
 
-<p style="font-size:22px; color:#555; margin:0 0 10px;">GPT-6.2 Sol Light (Leve)</p>
+<p style="font-size:38px; line-height:1.35; margin:40px 0 18px; text-align:left;">Which number did your agent report as reliability?<br>How did it get that number?</p>
 
-<div class="wa-grid">
-<div class="wa" style="padding:16px 18px;"><b>Wrote code, or read and decided?</b><div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:12px 16px; font-size:20px; line-height:1.45; margin-top:12px; text-align:left;"><span style="color:#9a9a9a;">Ran</span> <span style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:18px;">python3 -c '… hostile = {1, 2, 3, 7, 13, 14, …}'</span></div></div>
-<div class="wa" style="padding:16px 18px;"><b>Mentioned the <code>hostile</code> column?</b><div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:12px 16px; font-size:20px; line-height:1.45; margin-top:12px; text-align:left;">The CSV already contains hand-coded labels. I’ll preserve those, add my judgments in a separate column, and report agreement with the existing labels.</div></div>
-<div class="wa" style="padding:16px 18px;"><b>“Reliable” meant… which number?</b><div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:12px 16px; font-size:20px; line-height:1.45; margin-top:12px; text-align:left;">My labels agreed with the existing hand-coded labels on 98 of 100 comments, with Cohen’s κ = 0.96.</div><div style="font-size:21px; color:#6f6f69; line-height:1.35; margin-top:8px; text-align:left;">This is agreement with labels it had already read. It says nothing about reliability.</div></div>
-<div class="wa" style="padding:16px 18px;"><b>Saved the labels to a file?</b><div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:12px 16px; font-size:20px; line-height:1.45; margin-top:12px; text-align:left;">I labeled all 100 comments in <span style="color:#7fb3ff;">working_100_labeled.csv</span>.</div><div style="font-size:21px; color:#6f6f69; line-height:1.35; margin-top:8px; text-align:left;">In a second run with the same model, it also added a column “borderline”, a label nobody asked for.</div></div>
+<div class="fragment" style="margin-top:46px; text-align:left;">
+<div style="background:#1b1b1b; color:#ececec; border-radius:10px; padding:16px 20px; font-size:26px; line-height:1.45; max-width:980px;">My labels agreed with the existing hand-coded labels on 98 of 100 comments, with Cohen’s κ = 0.96.</div>
+<div style="font-size:20px; color:#6f6f69; margin-top:8px;">My agent, GPT-6.2 Sol on Light</div>
 </div>
 
 ---
@@ -427,7 +425,8 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div>
 <p style="font-size:28px; margin:0 0 12px;"><b>2.</b> Then it wrote its labels as a list of row numbers.</p>
 <div style="background:#1b1b1b; color:#e6e6e6; border-radius:12px; padding:18px 20px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:20px; line-height:1.6;">hostile = {1, 2, 3, 7, 13,<br>&nbsp;&nbsp;14, 15, 19, 22, 24,<br>&nbsp;&nbsp;28, 29, 32, 36, …}</div>
-<p style="font-size:32px; margin:20px 0 0;"><b style="color:#d9481f;">98 of 100</b> are the same as mine.</p>
+<p style="font-size:32px; margin:20px 0 0;"><b style="color:#d9481f;">98 of 100</b> match mine.</p>
+<p style="font-size:24px; line-height:1.35; color:#555; margin:12px 0 0;">It had already read my labels. This says nothing about reliability.</p>
 </div>
 </div>
 
