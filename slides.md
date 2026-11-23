@@ -586,7 +586,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ## Your answers, Qwen and the gold labels
 
-<p style="font-size:24px; color:#6f6f69; margin:0 0 6px; text-align:left;">This is my Qwen run. Compare it with your table from step 7. Black means yes.</p>
+<p style="font-size:24px; color:#6f6f69; margin:0 0 6px; text-align:left;">This is my Qwen run. Compare it with <b style="color:#d9481f;">your table from step 7</b>. Black means yes.</p>
 
 <div class="demo" data-demo="labelresults"></div>
 <p class="fragment hc-step rv-def">Reliability means the same label when you ask again.</p>
