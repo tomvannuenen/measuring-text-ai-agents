@@ -967,7 +967,7 @@
         pick = calls.map((c, i) => i).sort(() => Math.random() - 0.5).slice(0, 8 + Math.floor(Math.random() * 6));
       } else if (tick <= pick.length) {
         const i = pick[tick - 1]; calls[i].setAttribute("style", flipStyle(orig[i]));
-        cap.textContent = `A second coder disagrees on ${tick} of 21`;
+        cap.textContent = `A second labeler disagrees on ${tick} of 21`;
       }
       tick = tick >= pick.length + 6 ? 0 : tick + 1;
     }, 420);
@@ -1516,7 +1516,7 @@
     for (let i = 0; i <= 3; i++) g += `<line x1="${Lm + cw * i}" x2="${Lm + cw * i}" y1="${T}" y2="${H - B}" stroke="#e2e2dc" stroke-width="2"/>`;
     for (let j = 0; j <= 3; j++) g += `<line x1="${Lm}" x2="${W - 10}" y1="${T + ch * j}" y2="${T + ch * j}" stroke="#e2e2dc" stroke-width="2"/>`;
     WH_X.forEach((x, i) => g += `<text x="${Lm + cw * (i + 0.5)}" y="${H - B + 32}" text-anchor="middle" style="font-size:25px" fill="#111">${x}</text>`);
-    g += `<text x="${Lm + (W - 10 - Lm) / 2}" y="${H - 4}" text-anchor="middle" style="font-size:22px" fill="#555">trust AI to code your texts →</text>`;
+    g += `<text x="${Lm + (W - 10 - Lm) / 2}" y="${H - 4}" text-anchor="middle" style="font-size:22px" fill="#555">trust AI to label your texts →</text>`;
     WH_Y.forEach((y, j) => y.forEach((s, k) => g += `<text x="${Lm - 14}" y="${T + ch * (2 - j + 0.5) + 8 + (k - (y.length - 1) / 2) * 28}" text-anchor="end" style="font-size:23px" fill="#111">${s}</text>`));
     for (let j = 0; j < 3; j++) for (let i = 0; i < 3; i++) g += `<rect class="wh-cell" data-d="${j}" data-t="${i}" x="${Lm + cw * i}" y="${T + ch * (2 - j)}" width="${cw}" height="${ch}" fill="transparent" style="cursor:pointer"/>`;
     g += `<g class="wh-dots" style="pointer-events:none"></g>`;
