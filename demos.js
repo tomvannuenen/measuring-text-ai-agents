@@ -559,13 +559,13 @@
      so the reply changes from loop to loop. Runs while its fragment is showing. */
   builders.llmchat = function (root) {
     const STEPS = [
-      { fixed: 0, opts: [["Yes,", 0.58], ["No,", 0.27], ["It", 0.09], ["Maybe", 0.06]] },
-      { fixed: 0, opts: [["it", 0.71], ["the", 0.14], ["this", 0.09], ["that", 0.06]] },
-      { opts: [["is", 0.48], ["sounds", 0.31], ["reads", 0.12], ["seems", 0.09]] },
-      { opts: [["dismissive.", 0.44], ["rude.", 0.26], ["harsh.", 0.18], ["hostile.", 0.12]] },
+      { fixed: 0, opts: [["Big,", 0.46], ["Huge,", 0.24], ["Busy,", 0.18], ["A", 0.12]] },
+      { opts: [["busy", 0.52], ["loud", 0.21], ["crowded", 0.16], ["diverse", 0.11]] },
+      { fixed: 0, opts: [["and", 0.83], ["but", 0.09], ["yet", 0.05], ["with", 0.03]] },
+      { opts: [["exciting.", 0.41], ["alive.", 0.26], ["creative.", 0.19], ["chaotic.", 0.14]] },
     ];
     const words = (s) => s.split(" ").map((w) => el("span", {}, w + " "));
-    const user = el("div", { class: "lc-msg lc-user" }, words("Is this comment hostile? “Get over yourself.”"));
+    const user = el("div", { class: "lc-msg lc-user" }, words("Describe São Paulo in a few words."));
     const reply = el("div", { class: "lc-msg lc-model" });
     const chat = el("div", { class: "lc-chat" }, el("div", { class: "lc-who r" }, "you"), user, el("div", { class: "lc-who" }, "model"), reply);
     const bars = el("div", { class: "lc-bars" });
@@ -609,11 +609,11 @@
     }, 300);
   };
 
-  /* Slide 4: temperature. The chances for the next word after "Yes, it", recomputed for the chosen temperature
+  /* Slide 4: temperature. The chances for the next word after "Big, busy and", recomputed for the chosen temperature
      (each chance raised to the power 1/T, then rescaled). Ten draws below refresh every 1.4 s.
      Clicks (the bullets, class tp-step) move the temperature: 1, 1.6, 0.4, 0. The slider works too. */
   builders.tempdial = function (root) {
-    const W = [["is", 0.48], ["sounds", 0.31], ["reads", 0.12], ["seems", 0.06], ["feels", 0.02], ["looks", 0.01]];
+    const W = [["exciting", 0.41], ["alive", 0.26], ["creative", 0.19], ["chaotic", 0.09], ["green", 0.03], ["beautiful", 0.02]];
     let T = 1;
     const probs = (t) => {
       if (t < 0.05) return W.map((_, i) => (i === 0 ? 1 : 0));
@@ -639,7 +639,7 @@
       chips.forEach((c) => { let x = Math.random(), k = 0; while (x > ps[k] && k < ps.length - 1) { x -= ps[k]; k++; } c.textContent = W[k][0]; c.classList.toggle("top", k === 0); });
     };
     put(root, el("div", { class: "tp-wrap" },
-      el("div", { class: "tp-left" }, el("div", { class: "tp-ctx" }, "Yes, it ", el("span", { class: "tp-blank" }, "___")), el("div", { class: "lc-bars" }, rows.map((r) => r.row))),
+      el("div", { class: "tp-left" }, el("div", { class: "tp-ctx" }, "Big, busy and ", el("span", { class: "tp-blank" }, "___")), el("div", { class: "lc-bars" }, rows.map((r) => r.row))),
       el("div", { class: "tp-right" }, sl, el("div", { class: "tp-head" }, "Ten draws"), el("div", { class: "tp-chips" }, chips))));
     draw(); sample();
     setInterval(() => { if (loopActive(root)) sample(); }, 1400);
