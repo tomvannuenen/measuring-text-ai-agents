@@ -153,28 +153,28 @@
 ## Reliability, validity and labeler bias
 
 <div style="display:flex; gap:30px; align-items:stretch; margin-top:24px; text-align:left;">
-<div style="flex:1;">
+<div class="fragment" data-fragment-index="1" style="flex:1;">
 <p style="font-size:34px; font-weight:700; margin:0 0 10px;">Reliability</p>
 <p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The same comment gets the same label when you ask again.</p>
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment, five runs</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">yes</span></div>
-<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you run the model several times on the same comments.</p>
+<p style="font-size:25px; line-height:1.4; margin-top:26px;">Today you run the model several times on the same comments.</p>
 </div>
-<div style="width:4px; background:var(--accent);"></div>
-<div style="flex:1;">
+<div class="fragment" data-fragment-index="2" style="width:4px; background:var(--accent);"></div>
+<div class="fragment" data-fragment-index="2" style="flex:1;">
 <p style="font-size:34px; font-weight:700; margin:0 0 10px;">Validity</p>
 <p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label matches what we mean (a "gold label")</p>
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">model says yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">gold label says yes</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✓</span></div>
-<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with our gold labels.</p>
+<p style="font-size:25px; line-height:1.4; margin-top:26px;">Today you compare the model’s labels with our gold labels.</p>
 </div>
-<div style="width:4px; background:var(--accent);"></div>
-<div style="flex:1;">
+<div class="fragment" data-fragment-index="3" style="width:4px; background:var(--accent);"></div>
+<div class="fragment" data-fragment-index="3" style="flex:1;">
 <p style="font-size:34px; font-weight:700; margin:0 0 10px;">Labeler bias</p>
 <p style="font-size:28px; line-height:1.35; margin:0 0 26px; min-height:76px;">The label changes when something changes that should not matter.</p>
 <div style="font-size:20px; color:#6f6f69; margin-bottom:8px;">One comment, two versions</div>
 <div><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">as written: yes</span><span style="display:inline-block; padding:6px 16px; border-radius:6px; background:#e2e2dc; color:#111; font-size:24px; margin:0 6px 6px 0;">he → she: no</span><span style="font-size:30px; color:#d9481f; font-weight:700; vertical-align:middle;">✗</span></div>
-<p class="fragment" style="font-size:25px; line-height:1.4; margin-top:26px;">Later you see how models react to changes like this.</p>
+<p style="font-size:25px; line-height:1.4; margin-top:26px;">Later you see how models react to changes like this.</p>
 </div>
 </div>
 
@@ -239,7 +239,7 @@
 
 ---
 
-## This workshop: how labeling changes with setup
+## This workshop: how labeling depends on setup
 
 <div class="tw-task">
 <img src="img/aita_reply_plain.png">
