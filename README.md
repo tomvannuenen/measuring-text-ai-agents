@@ -14,7 +14,7 @@ Start a new chat in Codex for each step, unless the step says otherwise.
 6. [Add the API key and test it](#step-6-add-the-api-key-and-test-it)
 7. [Build the pipeline](#step-7-build-the-pipeline)
 8. [Write a rule](#step-8-write-a-rule)
-9. [Test the room's codebook on 100 new comments](#step-9-test-the-rooms-codebook-on-100-new-comments)
+9. [Run the room's test yourself (optional)](#step-9-run-the-rooms-test-yourself-optional)
 10. [Sycophancy: follow-up questions (optional)](#step-10-sycophancy-follow-up-questions-optional)
 11. [Write it all down](#step-11-write-it-all-down)
 12. [Build a dashboard](#step-12-build-a-dashboard)
@@ -211,11 +211,11 @@ with links to the papers. For each, tell me how it could help improve this rule:
 
 Open the links and check that each paper exists and says what the agent claims. Agents sometimes cite papers that don't exist.
 
-## Step 9. Test the room's codebook on 100 new comments
+## Step 9. Run the room's test yourself (optional)
 
-The room's rules were written for the five comments you coded by hand, so they need new comments for a fair test. Both codebooks, the one-line question and the room's version, label the same 100 comments.
+On the slides, Qwen labels 100 new comments with the one-line question and with the room's codebook. The room wrote its rules for the five comments you coded by hand, so the test uses comments nobody wrote rules from.
 
-Paste this prompt. At the bottom, add the three rules the room voted for, which are on the slide. You can add your own rule from step 8 too.
+To run the same test on your laptop, open the room's codebook link from the slides or the chat. After the test, that page shows this prompt with the room's rules filled in. Copy it into Codex:
 
 ```
 Make codebook_v1.md: a copy of codebook_v0.md with a line "Rules:" and the rules
@@ -224,10 +224,12 @@ Then label data/heldout_100.csv with codebook_v0.md and with codebook_v1.md,
 3 runs each, saved in runs/. For each codebook, tell me the % identical across
 runs and how many of the 100 match the column hostile.
 
-[paste the room's rules here]
+1. [the room's first rule]
+2. [the second rule]
+3. [the third rule]
 ```
 
-For each codebook, write down **% identical** (reliability) and **how many match the gold labels** (validity).
+Compare your two numbers with the room's result on the slide.
 
 ## Step 10. Sycophancy: follow-up questions (optional)
 
