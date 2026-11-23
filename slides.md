@@ -389,7 +389,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ## Light or high effort
 
-<p style="font-size:24px; margin:0 0 6px; color:#555;">GPT-6.2 Sol, the same request, in two new copies of the project. Light is the free default.</p>
+<p style="font-size:24px; margin:0 0 6px; color:#555;">GPT-6.2 Sol, the same request, in two new copies of the project. Light is the default effort.</p>
 
 <div style="display:grid; grid-template-columns:1fr 40px 1fr; text-align:left;">
 <div style="font-size:30px; font-weight:700;">Light</div><div></div><div style="font-size:30px; font-weight:700; color:#d9481f;">High</div>
@@ -420,10 +420,10 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 <div style="display:grid; grid-template-columns:300px 50px 230px 50px 220px 50px 150px; justify-content:center; align-items:center; margin-top:20px; row-gap:6px;">
 <div style="border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:0; overflow:hidden;">
-<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; padding:8px 12px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">working_100.csv</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; padding:8px 12px; color:#6f6f69; border-bottom:1px solid #e2e2dc;">working_100.csv</div>
 <div style="display:flex; font-size:22px;">
 <div style="flex:1.3; outline:3px solid #d9481f; outline-offset:-3px;"><div style="padding:8px 12px; font-weight:700;">text</div><div style="padding:4px 12px; color:#555;">Your aunt is…</div><div style="padding:4px 12px; color:#555;">She can choose…</div><div style="padding:4px 12px; color:#555;">Honestly…</div><div style="padding:4px 12px 12px; color:#555;">ESH, both…</div></div>
-<div style="flex:1; color:#bbb; border-left:1px solid #e2e2dc;"><div style="padding:8px 12px; font-weight:700; line-height:1.15;">gold label</div><div style="font-size:60px; text-align:center; padding-top:10px;">🔒</div><div style="font-size:19px; text-align:center; color:#888;">never sent</div></div>
+<div style="flex:1; color:#bbb; border-left:1px solid #e2e2dc;"><div style="padding:8px 12px; font-weight:700; line-height:1.15;">gold label</div><div style="font-size:60px; text-align:center; padding-top:10px;">🔒</div><div style="font-size:21px; text-align:center; color:#888;">never sent</div></div>
 </div>
 </div>
 <div style="text-align:center; font-size:46px;">→</div>
@@ -438,7 +438,7 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="font-size:21px; color:#555; margin-top:14px;">every call<br>logged</div>
 </div>
 <div style="text-align:center; font-size:46px;">→</div>
-<div style="position:relative; height:190px;"><div style="position:absolute; left:36px; top:36px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 5<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:27px; top:27px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 4<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:18px; top:18px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 3<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:9px; top:9px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 2<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:0px; top:0px; width:110px; height:150px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:19px; line-height:1.4;">run 1<br>yes<br>no<br>yes<br>no</div></div>
+<div style="position:relative; height:218px;"><div style="position:absolute; left:36px; top:36px; width:122px; height:178px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.4;">run 5<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:27px; top:27px; width:122px; height:178px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.4;">run 4<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:18px; top:18px; width:122px; height:178px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.4;">run 3<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:9px; top:9px; width:122px; height:178px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.4;">run 2<br>yes<br>no<br>yes<br>no</div><div style="position:absolute; left:0px; top:0px; width:122px; height:178px; border:2px solid #111; border-radius:12px; padding:18px; text-align:left; background:#fff; padding:10px; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important; font-size:21px; line-height:1.4;">run 1<br>yes<br>no<br>yes<br>no</div></div>
 </div>
 
 
