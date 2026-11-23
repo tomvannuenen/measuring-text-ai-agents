@@ -669,8 +669,8 @@
     const chat = el("div", { class: "lc-chat" }, el("div", { class: "lc-who r" }, "you"), user, el("div", { class: "lc-who" }, "model"), reply);
     const bars = el("div", { class: "lc-bars" });
     put(root, el("div", { class: "lc-wrap" }, chat,
-      el("div", { class: "lc-side" }, el("div", { class: "lc-head" }, "Chances for the next word"), bars,
-        el("div", { class: "lc-cap" }, "The model draws one word, weighted by these chances."))));
+      el("div", { class: "lc-side" }, el("div", { class: "lc-head" }, "Probabilities for the next word"), bars,
+        el("div", { class: "lc-cap" }, "The model draws one word, weighted by these probabilities."))));
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     let run = 0, running = false;
     const reset = () => { swap(reply); swap(bars); chat.querySelectorAll(".rd").forEach((w) => w.classList.remove("rd")); };

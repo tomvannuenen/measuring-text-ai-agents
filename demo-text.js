@@ -13,5 +13,8 @@ window.DEMO_TEXT = {
   },
   "ctxwin": {
     "A new chat starts with an empty window. The model remembers nothing from the old chat.": "If you start a new chat, it starts with an empty window. The model remembers nothing from the old chat."
+  },
+  "llmchat": {
+    "Chances for the next word": "Probability for the next word"
   }
 };

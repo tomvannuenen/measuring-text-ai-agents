@@ -40,7 +40,7 @@
 
 ## Temperature
 
-<ul style="font-size:27px; line-height:1.4; margin:0 0 6px 1em; text-align:left;"><li>Temperature sets how spread out the chances are.</li><li class="fragment tp-step">A high temperature spreads the chances over more words.</li><li class="fragment tp-step">A low temperature gives the top word almost all the chance.</li><li class="fragment tp-step">Temperature 0 always picks the top word.</li></ul>
+<ul style="font-size:27px; line-height:1.4; margin:0 0 6px 1em; text-align:left;"><li>Temperature sets how spread out the probabilities are.</li><li class="fragment tp-step">A high temperature spreads the probabilities over more words.</li><li class="fragment tp-step">A low temperature gives the top word almost all the probability.</li><li class="fragment tp-step">Temperature 0 always picks the top word.</li></ul>
 
 <div class="demo" data-demo="tempdial"></div>
 
@@ -611,7 +611,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 ## Importance of temperature
 
 <div class="st-row">
-<div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these chances.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="st-col"><div class="h">Default</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">The model draws a label at random, weighted by these probabilities.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 <div class="st-col fragment" data-fragment-index="1"><div class="h">Greedy</div><div class="st-strip"><div class="no" style="width:62%;">no 62%</div><div class="yes" style="width:38%;">yes 38%</div><i class="st-pin"></i></div><div class="st-cap">Set the temperature to 0.</div><div style="font-size:20px; font-weight:700; color:#d9481f; line-height:1.3; text-align:left;">↑ Closed-weight models don’t always allow this.</div><div class="st-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 <div class="st-col fragment" data-fragment-index="4"><div class="h">Models with greedy</div>
 <div class="st-av"><span>Open models (Qwen, DeepSeek)</span><b>✓</b></div>
@@ -624,7 +624,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 <div class="demo" data-demo="stloop" style="display:none;"></div>
 
 <ul class="st-defs">
-<li class="fragment" data-fragment-index="2">Temperature sets how spread out the chances are.</li>
+<li class="fragment" data-fragment-index="2">Temperature sets how spread out the probabilities are.</li>
 <li class="fragment" data-fragment-index="3">Greedy always takes the most likely label.</li>
 </ul>
 
