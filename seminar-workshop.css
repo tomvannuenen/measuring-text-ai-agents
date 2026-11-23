@@ -445,17 +445,17 @@
 .reveal .tp-right .slider input { width: 100%; }
 
 /* Labeling history slide: eras on the left, an example for the current era on the right (22 Nov) */
-.reveal .era-wrap { display: grid; grid-template-columns: 560px 1fr; gap: 40px; align-items: start; margin-top: 10px; text-align: left; }
-.reveal .era-row { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: baseline; margin: 0 0 14px; }
-.reveal .era-row .y { font-size: 24px; font-weight: 700; color: #d9481f; }
-.reveal .era-row .t { font-size: 22px; line-height: 1.32; }
-.reveal .era-row .s { font-size: 17px; color: #888; }
+.reveal .era-wrap { display: grid; grid-template-columns: 640px 1fr; gap: 34px; align-items: start; margin-top: 10px; text-align: left; }
+.reveal .era-row { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: baseline; margin: 0 0 12px; }
+.reveal .era-row .y { font-size: 28px; font-weight: 700; color: #d9481f; }
+.reveal .era-row .t { font-size: 28px; line-height: 1.28; }
+.reveal .era-row .s { font-size: 21px; color: #888; }
 .reveal .era-row.visible.past .t, .reveal .era-row.visible.past .y { opacity: .45; }
 .reveal .era-stage { position: relative; height: 540px; }
 .reveal .era-fig { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .4s; display: flex; flex-direction: column; justify-content: center; }
 .reveal .era-fig.on { opacity: 1; }
 .reveal .era-fig img { max-width: 100%; max-height: 460px; object-fit: contain; border: 1px solid #ddd; border-radius: 6px; align-self: center; }
-.reveal .era-fig figcaption { font-size: 19px; color: #6f6f69; margin-top: 10px; line-height: 1.35; }
+.reveal .era-fig figcaption { font-size: 22px; color: #6f6f69; margin-top: 10px; line-height: 1.35; }
 .reveal .era-sheet { align-self: center; width: 470px; background: #fbf8ef; border: 1px solid #cfc8b4; box-shadow: 3px 3px 0 #e6dfcc; padding: 20px 24px; font-family: "Courier New", Courier, monospace !important; font-size: 21px; line-height: 1.5; color: #222; }
 .reveal .era-sheet .hd { font-weight: 700; border-bottom: 2px solid #222; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; }
 .reveal .era-sheet .hd span { font-weight: 400; }
