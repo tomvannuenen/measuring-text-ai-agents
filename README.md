@@ -45,7 +45,7 @@ When Codex asks **Trust this folder?**, check that the path ends in `ai-workshop
 
 If the download doesn't work, click the green **Code** button on this page, then **Download ZIP**, and unzip it yourself. The folder is then called `measuring-text-ai-agents-main`. Rename it to `ai-workshop` and choose it for the project.
 
-In Codex, start with **Light** effort. Raise the model or the effort only when a step needs it. The highest settings use up the free limits fast.
+In Codex, start with **Light** effort. Raise the model or the effort only when a step needs it. With the highest settings, you reach the free limit quickly.
 
 ## Step 2. Look at the data, then code five comments by hand
 
@@ -70,7 +70,7 @@ For each comment, write down yes or no, alone, using only this question:
 
 > **Is this comment hostile or insulting toward someone?**
 
-Notice where the question leaves you unsure. If the definition is unclear to you, it is unclear to the model too. You will write a rule for the hardest comment in step 8.
+Note which comments you are unsure about. If the definition is unclear to you, it is unclear to the model too. You will write a rule for the hardest comment in step 8.
 
 Send your answers with the form at [tinyurl.com/mtai-code](https://tinyurl.com/mtai-code), and keep them. In step 7 you compare them with the model's labels and with the column `hostile`.
 
@@ -85,7 +85,7 @@ they are hostile, and tell me how reliable the labels are.
 
 ## Step 4. Ask for approval
 
-Click the approval chip in the text box and choose **Ask for approval**. From now on, Codex asks before it runs a command or uses the internet.
+Click the approval button in the text box and choose **Ask for approval**. From now on, Codex asks before it runs a command or uses the internet.
 
 <img src="images/codex_permissions.png" alt="The approval setting: Ask for approval, Approve for me, and Full access" width="440">
 
@@ -129,7 +129,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 Then check that it follows them, in the same chat:
 
 ```
-Which columns could give away the answer, and how will you keep them away
+Which columns could reveal the answer, and how will you keep them away
 from the labeling model?
 ```
 
@@ -170,7 +170,7 @@ Labels:
 Answer with the label only.
 ```
 
-Then have Codex write the labeling script and run it on the five comments you coded by hand:
+Then ask Codex to write the labeling script and run it on the five comments you coded by hand:
 
 ```
 Write a script label.py that labels the comments in a CSV file using a codebook file
@@ -213,7 +213,7 @@ Open the links and check that each paper exists and says what the agent claims. 
 
 ## Step 9. Test your rule on 100 new comments
 
-You wrote your rule from step 8 for the five comments you coded by hand. Test it on 100 new comments that nobody wrote rules from.
+You wrote your rule from step 8 for the five comments you coded by hand. Test it on 100 new comments that nobody used to write rules.
 
 Paste this prompt, with your rule at the bottom:
 
@@ -291,7 +291,7 @@ The same steps work for your own texts and your own concept.
 
 1. Make a new folder with a subfolder `data/`. Put your texts in a CSV file there, one text per row, with the columns `id` and `text`.
 2. Open the folder in Codex and choose **Ask for approval**, as in step 4.
-3. Set aside a sample to code by hand before any model labels anything:
+3. Choose a sample to code by hand before any model labels anything:
 
 ```
 Draw 200 random rows from data/[your file].csv. Save 100 of them as
@@ -307,8 +307,8 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 
 - `README.md`: this page.
 - `data/working_100.csv`: 100 comments to work with.
-- `data/heldout_100.csv`: 100 other comments, kept aside for testing.
+- `data/heldout_100.csv`: 100 other comments, kept for testing.
 - `data/coder_5.csv`: 5 comments to code by hand.
 - `images/`: the pictures on this page.
 
-The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were in the wrong. Each file has the columns `id`, `text` and `hostile`: our hand-coded label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
+The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were wrong. Each file has the columns `id`, `text` and `hostile`: our hand-coded label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
