@@ -796,7 +796,7 @@ the model and provider that answered, and how many tokens it used.</code></pre>
 
 ---
 
-## Measuring sycophancy
+## Bonus: Measuring sycophancy
 
 
 
@@ -905,14 +905,6 @@ End with a section "Decisions I did not ask for".</code></pre>
 | Correcting estimates | Angelopoulos et al. (2023), *Science* · Egami et al. (2023) |
 
 </div>
-
----
-
-## How this workshop was built
-
-<img src="img/claude_in_my_browser.png" alt="Chrome showing Claude working in the Apps Script project for this workshop's live slides" style="width:100%; border:1px solid #ddd; margin:10px 0 12px;">
-
-<p class="muted">Claude setting up this workshop's live slides in my browser, 16 November.</p>
 
 ---
 
