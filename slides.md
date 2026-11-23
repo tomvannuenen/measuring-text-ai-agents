@@ -25,8 +25,6 @@
 
 ## Large language models (LLMs)
 
-<p style="font-size:26px; color:#555; margin:0 0 18px;">This workshop is about using LLMs, agents, and about labeling text.</p>
-
 <ul style="font-size:27px; line-height:1.4; margin:0 0 20px 1em; text-align:left;"><li class="fragment">An LLM is trained on huge amounts of text.</li><li class="fragment">ChatGPT, Claude and Gemini all run on one.</li><li class="fragment">It writes by picking the next word, again and again.</li><li class="fragment">In a chat, it reads the whole conversation before each new word.</li></ul>
 
 <div class="fragment"><div class="demo" data-demo="llmchat"></div></div>
