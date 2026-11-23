@@ -396,7 +396,7 @@
       const n = sec.querySelectorAll("." + cls + ".visible").length;
       if (n !== shown) { const prev = shown; shown = n; apply(n, prev); }
     };
-    if (window.Reveal) { Reveal.on("fragmentshown", step); Reveal.on("fragmenthidden", step); Reveal.on("slidechanged", step); Reveal.on("ready", step); }
+    if (window.Reveal) { Reveal.on("fragmentshown", step); Reveal.on("fragmenthidden", step); Reveal.on("slidechanged", step); Reveal.on("ready", step); setTimeout(step, 0); }
   }
 
   /* 4. One comment, ten real runs per model, revealed one at a time (slide 46).
@@ -552,6 +552,17 @@
     if (!window.Reveal || Reveal.getCurrentSlide() !== sec) return false;
     const fr = root.closest(".fragment");
     return !fr || fr.classList.contains("visible");
+  };
+
+  /* Labeling history slide: each click shows the next era (class era-step) and its example on the right.
+     Earlier eras fade a little, so the current one stands out. */
+  builders.eras = function (root) {
+    const sec = root.closest("section");
+    const rows = [...sec.querySelectorAll(".era-row")], figs = [...sec.querySelectorAll(".era-fig")];
+    fragSteps(root, "era-step", (k) => {
+      figs.forEach((f, i) => f.classList.toggle("on", i === k - 1));
+      rows.forEach((r, i) => r.classList.toggle("past", i < k - 1));
+    });
   };
 
   /* Slide 3: a chat. Before each new word the model reads the whole conversation (orange sweep),

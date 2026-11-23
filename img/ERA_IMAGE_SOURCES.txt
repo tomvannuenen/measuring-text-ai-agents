@@ -1,0 +1,5 @@
+Images added 22 Nov for the labeling-history slide:
+- era_ibm7090.jpg: Wikimedia Commons "IBM 7090 computer.jpg", NASA Ames, public domain
+- era_cap_brazil.png: screenshot of compagendas.la.utexas.edu/brazil (Comparative Agendas Project)
+- era_wikipedia_detox.png: Wulczyn, Thain & Dixon 2017, arXiv 1610.08914, Figure 2, CC BY 4.0
+- era_gilardi2023.jpg: Gilardi, Alizadeh & Kubli 2023, PNAS, Figure 1, CC BY 4.0 (via PMC10372638)
