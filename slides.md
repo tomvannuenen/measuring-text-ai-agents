@@ -381,6 +381,23 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
+## The agent’s log
+
+<div class="ex-tag">Step 3</div>
+
+<div style="display:grid; grid-template-columns:600px 1fr; gap:34px; align-items:start; margin-top:10px; text-align:left;">
+<div><img src="img/codex_log_expanded.png" alt="Codex activity: Read files, ran a command, opened to show a Python command and the comments it printed, then Success." style="width:100%; border-radius:8px; margin:0;"></div>
+<ul style="font-size:23px; line-height:1.35; margin:0 0 0 1em;">
+<li style="margin-bottom:14px;">Click a line such as <b>Read files, ran a command</b>, then click a command.</li>
+<li style="margin-bottom:14px;">The box shows the command and what it printed. The model saw exactly that.</li>
+<li style="margin-bottom:14px;">Open the log of your own run. Did any command print the column <code>hostile</code>?</li>
+<li class="fragment" style="margin-bottom:14px;">The log shows what the agent saw and did. It never shows why.</li>
+<li class="fragment" style="margin-bottom:14px;">Researchers often ask for a reason with each label. That helps when you read disagreements. The reason is still the model’s own account.<br><span style="font-size:19px; color:#888;">Turpin et al. 2023</span></li>
+</ul>
+</div>
+
+---
+
 ## What did your agent do?
 
 <p style="font-size:22px; color:#555; margin:0 0 10px;">GPT-6.2 Sol Light (Leve)</p>
@@ -418,6 +435,20 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 
 ---
 
+## Maximum effort for everything?
+
+<div style="display:grid; grid-template-columns:430px 1fr; gap:36px; align-items:start; margin-top:14px; text-align:left;">
+<div><img src="img/codex-effort.png" alt="The Codex menu with Model, Effort and Speed. The effort options are Light, Medium, High, Extra High and Ultra, which consumes usage limits faster." style="width:100%; border-radius:8px; margin:0;"><div style="font-size:19px; color:#6f6f69; margin-top:8px;">The effort menu in Codex</div></div>
+<ul style="font-size:25px; line-height:1.35; margin:0 0 0 1em;">
+<li style="margin-bottom:14px;">Many people always pick the highest effort.</li>
+<li class="fragment" style="margin-bottom:14px;">Longer thinking made simple yes-or-no labels worse, by up to 20 points. It helped a task with 27 categories, by up to 16 points.<br><span style="font-size:19px; color:#888;">Huang &amp; Wang 2026</span></li>
+<li class="fragment" style="margin-bottom:14px;">On easy questions, reasoning models spent 20 times more tokens to reach the same answer.<br><span style="font-size:19px; color:#888;">Chen et al. 2024</span></li>
+<li class="fragment" style="margin-bottom:14px;">High effort helps on long tasks with many steps. One yes-or-no label is a short task.</li>
+</ul>
+</div>
+
+---
+
 ## Light or high effort
 
 <p style="font-size:24px; margin:0 0 6px; color:#555;">GPT-6.2 Sol, the same request, in two fresh copies of the project. Light is the free default.</p>
@@ -427,11 +458,11 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">time</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:21%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">39 s</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">3 min 06 s</b></div>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">commands</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:40%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">4</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">10</b></div>
 <div style="font-size:24px; color:#555; padding:10px 0 4px;">tokens it wrote, thinking included</div><div></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:25%; background:#bbb; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">1,500</b></div><div></div><div style="display:flex; align-items:center; gap:12px;"><div style="flex:1;"><div style="height:26px; width:100%; background:#d9481f; border-radius:4px;"></div></div><b style="font-size:28px; width:150px;">6,000</b></div>
-<div style="font-size:24px; color:#d9481f; padding:14px 0 4px; font-weight:700;">what it read</div><div></div><div></div><div style="font-size:26px;">every row, with my labels</div><div></div><div style="font-size:26px;">the text only, plus my 5 warm-up labels</div>
+<div style="font-size:24px; color:#d9481f; padding:14px 0 4px; font-weight:700;">what it read</div><div></div><div></div><div style="font-size:26px;">every row, with my labels</div><div></div><div style="font-size:26px;">the text, and how many of my labels say hostile (40)</div>
 <div style="font-size:24px; color:#555; padding:14px 0 4px;">same as mine</div><div></div><div></div><div style="font-size:30px; font-weight:700;">98 of 100</div><div></div><div style="font-size:30px; font-weight:700; color:#d9481f;">97 of 100</div>
 </div>
 
-<p style="font-size:28px; margin-top:22px; text-align:left;">Light matched more because it read my labels. High did not look, and still matched 97.</p>
+<p style="font-size:28px; margin-top:22px; text-align:left;">High took five times as long, for the same score.</p>
 
 ---
 
