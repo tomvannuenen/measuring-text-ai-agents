@@ -7,7 +7,7 @@ The slides are at [tomvannuenen.me/measuring-text-ai-agents](https://tomvannuene
 Start a new chat in Codex for each step, unless the step says otherwise.
 
 1. [Get the project](#step-1-get-the-project)
-2. [Look at the data, then code five comments by hand](#step-2-look-at-the-data-then-code-five-comments-by-hand)
+2. [Look at the data, then label five comments by hand](#step-2-look-at-the-data-then-label-five-comments-by-hand)
 3. [First try](#step-3-first-try)
 4. [Ask for approval](#step-4-ask-for-approval)
 5. [Give your agent rules](#step-5-give-your-agent-rules)
@@ -47,7 +47,7 @@ If the download doesn't work, click the green **Code** button on this page, then
 
 In Codex, start with **Light** effort. Raise the model or the effort only when a step needs it. With the highest settings, you reach the free limit quickly.
 
-## Step 2. Look at the data, then code five comments by hand
+## Step 2. Look at the data, then label five comments by hand
 
 First look at the data:
 
@@ -59,7 +59,7 @@ Each row is one comment. The column `hostile` already has a yes or no label for 
 
 Open the file yourself too. In the folder `ai-workshop/data` on your Desktop, double-click `working_100.csv`. It opens in Excel, Numbers or another spreadsheet app.
 
-Then code five comments yourself. Paste:
+Then label five comments yourself. Paste:
 
 ```
 Show me the five comments in data/coder_5.csv, numbered, with the full text only.
@@ -102,7 +102,7 @@ Create a file called AGENTS.md in this project with exactly this content:
 - The comments are in data/. Never modify anything in data/.
 - Never open or read data/heldout_100.csv unless I explicitly ask for a held-out test.
 - Work only inside this folder. Never read or write files outside it unless I ask.
-- The column hostile holds our hand-coded gold labels. Never send it to a labeling model, and never use it to write a codebook.
+- The column hostile holds our hand-labeled gold labels. Never send it to a labeling model, and never use it to write a codebook.
 - Save each labeling job as a new CSV in runs/, with one row per comment per run and the columns id, run, label. Never overwrite an earlier file.
 
 ## Labeling
@@ -170,7 +170,7 @@ Labels:
 Answer with the label only.
 ```
 
-Then ask Codex to write the labeling script and run it on the five comments you coded by hand:
+Then ask Codex to write the labeling script and run it on the five comments you labeled by hand:
 
 ```
 Write a script label.py that labels the comments in a CSV file using a codebook file
@@ -191,7 +191,7 @@ to the model. Which columns of the CSV go into that message?
 
 ## Step 8. Write a rule
 
-Pick the comment you found hardest to code in step 2. To see the five comments again, paste:
+Pick the comment you found hardest to label in step 2. To see the five comments again, paste:
 
 ```
 Show me the five comments in data/coder_5.csv again, numbered, with the full text only.
@@ -213,7 +213,7 @@ Open the links and check that each paper exists and says what the agent claims. 
 
 ## Step 9. Test your rule on 100 new comments
 
-You wrote your rule from step 8 for the five comments you coded by hand. Test it on 100 new comments that nobody used to write rules.
+You wrote your rule from step 8 for the five comments you labeled by hand. Test it on 100 new comments that nobody used to write rules.
 
 Paste this prompt, with your rule at the bottom:
 
@@ -291,7 +291,7 @@ The same steps work for your own texts and your own concept.
 
 1. Make a new folder with a subfolder `data/`. Put your texts in a CSV file there, one text per row, with the columns `id` and `text`.
 2. Open the folder in Codex and choose **Ask for approval**, as in step 4.
-3. Choose a sample to code by hand before any model labels anything:
+3. Choose a sample to label by hand before any model labels anything:
 
 ```
 Draw 200 random rows from data/[your file].csv. Save 100 of them as
@@ -299,7 +299,7 @@ data/working_100.csv and the other 100 as data/heldout_100.csv.
 Never open data/heldout_100.csv again unless I ask for a held-out test.
 ```
 
-4. Code both files yourself, in a new column with your labels. Ask someone else to code some of them too, so you know how much people agree.
+4. Label both files yourself, in a new column. Ask someone else to label some of them too, so you know how much people agree.
 5. Paste the AGENTS.md prompt from step 5 and change what is specific to this workshop: the column with your hand labels, the labels, and the models.
 6. Write a one-line codebook for your concept, as in step 7. Then follow steps 6 to 11.
 
@@ -308,7 +308,7 @@ Never open data/heldout_100.csv again unless I ask for a held-out test.
 - `README.md`: this page.
 - `data/working_100.csv`: 100 comments to work with.
 - `data/heldout_100.csv`: 100 other comments, kept for testing.
-- `data/coder_5.csv`: 5 comments to code by hand.
+- `data/coder_5.csv`: 5 comments to label by hand.
 - `images/`: the pictures on this page.
 
-The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were wrong. Each file has the columns `id`, `text` and `hostile`: our hand-coded label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
+The comments are replies on the Reddit forum r/AmItheAsshole from 2019, in English, where people describe a conflict and ask strangers whether they were wrong. Each file has the columns `id`, `text` and `hostile`: our hand-labeled gold label for "is this comment hostile or insulting toward someone?" (yes or no). The method follows Omer Yalcin's *Labeling Text with LLMs* (UMass Amherst).
