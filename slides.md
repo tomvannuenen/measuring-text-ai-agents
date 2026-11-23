@@ -205,7 +205,7 @@
 <ul style="font-size:25px; line-height:1.4; margin:0 0 0 1.1em; padding:0; text-align:left; width:auto; display:block;">
 <li>The commenter says it (often as the first word)</li>
 <li>Reddit records it as metadata, so we don't need to label it.</li>
-<li></li>
+<li>The commenter does the interpreting and picks one of five set answers.</li>
 </ul>
 </div>
 <div class="fragment" style="border:2px solid #d9481f; border-radius:12px; padding:18px 22px;">
