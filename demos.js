@@ -354,7 +354,22 @@
     const steps = (k) => el("div", { style: "margin-bottom:14px;" },
       el("div", { style: M + " font-size:24px;" }, ["Propose", "Merge", "Vote", "Test"].map((t, n) => el("span", { style: `margin-right:22px; ${n === k ? "color:#111; font-weight:700;" : ""}` }, `${n + 1}. ${t}`))),
       el("div", { style: "font-size:26px; color:#111; margin-top:8px; max-width:640px;" }, WHAT[k]));
-    const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : "Qwen is labeling the five comments…") : null;
+    const busyNote = () => live.busy ? el("div", { style: M }, live.busy === "merge" ? "Claude is merging the proposals…" : live.busy === "reset" ? "Starting over…" : "Qwen is labeling the five comments…") : null;
+    /* "Start over" clears today's rules, merge, votes and test, for a fresh session after a practice run.
+       The first click asks; a second click within 4 seconds runs the reset. No confirm() pop-up, see clearBtn. */
+    const startOver = () => {
+      let armed = null;
+      const b = button("Start over", () => {
+        if (!armed) {
+          b.textContent = "Click again to clear all rules"; b.classList.add("armed");
+          armed = setTimeout(() => { armed = null; b.textContent = "Start over"; b.classList.remove("armed"); }, 4000);
+          return;
+        }
+        clearTimeout(armed); armed = null; b.textContent = "Start over"; b.classList.remove("armed");
+        act("reset", 45);
+      }, "quiet tiny-btn clear-btn");
+      return b;
+    };
     const err = () => live.error ? el("span", { style: "color:#d9481f; font-size:22px;" }, live.error) : null;
     function render() {
       const T = live.test, C = live.candidates;
@@ -370,7 +385,7 @@
             row("One-line question", T.v0), row("The room's codebook", T.v1),
             live.units ? el("tr", {}, el("td", { style: M + " padding:6px 24px 6px 0; border:none;" }, "The room, by hand"), el("td", { style: "padding:6px 24px; border:none;" }, "α = ", el("b", {}, f(kalpha(live.units)))), el("td", { style: "border:none;" })) : null),
           el("div", { style: M }, `The codebook is now at ${L.proposeShort || short(L.proposeUrl)}.${T.failed ? ` ${T.failed} calls failed.` : ""}`),
-          el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), busyNote(), err()));
+          el("div", { class: "row", style: "margin-top:10px;" }, button("Test again", () => act("test", 150), "quiet tiny-btn"), startOver(), busyNote(), err()));
         return;
       }
       if (C) {
@@ -382,13 +397,13 @@
             el("div", { style: "flex:1; font-size:26px; line-height:1.25;" }, c.text),
             el("div", { style: "width:170px; flex:none; background:#ecebe6; height:24px;" }, el("div", { style: `height:24px; width:${100 * (live.votes[c.id] || 0) / maxv}%; background:#111;` })),
             el("div", { style: "width:44px; flex:none; font-size:26px;" }, String(live.votes[c.id] || 0)))),
-          el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 150), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), busyNote(), err()));
+          el("div", { class: "row", style: "margin-top:12px;" }, button("Test the top three with Qwen", () => act("test", 150), "primary"), button("Merge again", () => act("merge", 45), "quiet tiny-btn"), startOver(), busyNote(), err()));
         return;
       }
       const P = live.proposals;
       swap(body, steps(0), qr("img/form_propose_qr.png", L.proposeUrl, `${P.length} ${P.length === 1 ? "rule" : "rules"} proposed. Everyone can send rules.`, L.proposeShort),
         el("div", {}, P.slice(-5).map((r) => el("div", { style: M + " font-size:26px; margin:4px 0; font-style:italic;" }, `“${String(r.text).trim().replace(/^["“”]+|["“”]+$/g, "")}”`))),
-        el("div", { class: "row", style: "margin-top:12px;" }, button("Merge with Claude", () => act("merge", 45), "primary"), busyNote(), err()));
+        el("div", { class: "row", style: "margin-top:12px;" }, button("Merge with Claude", () => act("merge", 45), "primary"), startOver(), busyNote(), err()));
     }
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) render(); });
     render();
