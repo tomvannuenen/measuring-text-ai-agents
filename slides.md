@@ -136,12 +136,12 @@
 
 <div style="display:flex; gap:32px; align-items:stretch;">
 <div style="flex:1;">
-<p style="font-size:30px; line-height:1.3; min-height:130px;">More accurate than MTurk crowd workers, at <b>1/30 the cost</b><br><span style="font-size:22px; color:#888;">Gilardi, Alizadeh &amp; Kubli 2023, PNAS</span></p>
+<p style="font-size:30px; line-height:1.3; min-height:130px;">ChatGPT labeled tweets more accurately than MTurk crowd workers, at <b>1/30 the cost</b><br><span style="font-size:22px; color:#888;">Gilardi, Alizadeh &amp; Kubli 2023, PNAS</span></p>
 <img src="img/mturk_closed.png" alt="mturk.com: Mechanical Turk is no longer available. Amazon Mechanical Turk permanently closed on September 30, 2026." style="width:100%; border:1px solid #ddd; margin:48px 0 0;">
 </div>
 <div style="width:4px; background:var(--accent);"></div>
 <div style="flex:1;">
-<p style="font-size:30px; line-height:1.3; min-height:130px;">Language-model judges overtook people: <b>46%</b> vs <b>43%</b> of papers<br><span style="font-size:22px; color:#888;">Yang et al. 2026, NLP papers in 2025</span></p>
+<p style="font-size:30px; line-height:1.3; min-height:130px;"><b>46%</b> of NLP papers in 2025 used a language model to evaluate their results. <b>43%</b> used people.<br><span style="font-size:22px; color:#888;">Yang et al. 2026</span></p>
 <img src="img/llm_judge_trend_yang2026.png" alt="Share of NLP papers using each evaluation method, 2020 to 2025. LLM-as-a-judge rises from under 1% to 46% and passes human evaluation at 43%." style="width:108%; max-width:none; margin:0;">
 </div>
 </div>
@@ -150,14 +150,14 @@
 
 ## If that is true, we should check the models’ labels
 
-<p style="font-size:30px; line-height:1.3;"><b>Few</b> of 27 papers in flagship journals checked the model labels they used<br><span style="font-size:22px; color:#888;">Desai, Card &amp; Jacobs 2026</span></p>
+<p style="font-size:30px; line-height:1.3;"><b>27</b> papers in eight leading social science journals used model labels. Only <b>5</b> of their 50 tasks checked repeated runs.<br><span style="font-size:22px; color:#888;">Desai, Card &amp; Jacobs 2026</span></p>
 
 <div style="max-width:1000px; margin-top:44px;">
 <div style="font-size:26px; color:#6f6f69; margin:0 0 14px;">Checks in the papers’ 50 measurement tasks</div>
 <div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">Compared with other labels</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:76%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">38</div></div>
 <div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">A known hypothesis</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:18%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">9</div></div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">Reliability (repeated runs)</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:10%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">5</div></div>
-<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">Nothing</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:16%; height:48px; background:#d9481f;"></div></div><div style="width:60px; font-size:32px;">8</div></div>
+<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">Reliability (repeated runs)</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:10%; height:48px; background:#d9481f;"></div></div><div style="width:60px; font-size:32px;">5</div></div>
+<div style="display:flex; align-items:center; gap:14px; margin:20px 0;"><div style="width:400px; font-size:32px; text-align:right; white-space:nowrap;">Nothing</div><div style="flex:1; background:#ecebe6; height:48px;"><div style="width:16%; height:48px; background:#111;"></div></div><div style="width:60px; font-size:32px;">8</div></div>
 </div>
 
 ---
