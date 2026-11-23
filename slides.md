@@ -23,7 +23,7 @@
 
 ## Large language models (LLMs)
 
-<ul style="font-size:27px; line-height:1.4; margin:0 0 20px 1em; text-align:left;"><li class="fragment">An LLM is trained on huge amounts of text.</li><li class="fragment">ChatGPT, Claude and Gemini are all LLMs.</li><li class="fragment">An LLM writes by picking the next word, again and again.</li></ul>
+<ul style="font-size:27px; line-height:1.4; margin:0 0 20px 1em; text-align:left;"><li class="fragment">An LLM is trained on huge amounts of text.</li><li class="fragment">ChatGPT, Claude and Gemini are powered by LLMs.</li><li class="fragment">An LLM writes by picking the next word, again and again.</li></ul>
 
 <div class="fragment"><div class="demo" data-demo="llmchat"></div></div>
 

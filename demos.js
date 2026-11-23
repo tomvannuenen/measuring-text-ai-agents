@@ -427,7 +427,7 @@
       const link = S.short ? S.short.replace(/^https?:\/\//, "") : "";
       const head = el("div", { style: "display:flex; align-items:center; gap:18px; margin-bottom:18px;" },
         el("img", { src: "img/form_score_qr.png", alt: "", style: "height:120px; margin:0;", onerror: function () { this.remove(); } }),
-        el("div", { style: "font-size:30px;" }, link ? el("b", {}, link) : null,
+        el("div", { style: "font-size:30px;" }, link ? el("div", { style: "font-size:40px; font-weight:700; color:#d9481f;" }, link) : null,
           el("div", { style: M + " margin-top:6px;" }, `${rows.length} ${rows.length === 1 ? "person has" : "people have"} sent a score.`)),
         el("div", { style: "margin-left:auto; align-self:flex-start; white-space:nowrap;" }, startOver()));
       const seen = {}, tall = {};
@@ -1505,7 +1505,7 @@
   builders.where = function (root) {
     const L = window.LIVE || {}, round = root.dataset.round === "end" ? "end" : "start";
     const url = round === "end" ? L.whereNowUrl : L.whereUrl, sh = round === "end" ? L.whereNowShort : L.whereShort, qr = round === "end" ? "img/where_now_qr.png" : "img/where_qr.png";
-    const W = 760, H = 500, Lm = 200, B = 70, T = 10, cw = (W - Lm - 10) / 3, ch = (H - B - T) / 3;
+    const W = 760, H = 440, Lm = 200, B = 70, T = 10, cw = (W - Lm - 10) / 3, ch = (H - B - T) / 3;
     const NS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
@@ -1521,10 +1521,12 @@
     svg.innerHTML = g;
     const dots = svg.querySelector(".wh-dots");
     const count = el("b", {}, "0"), word = el("span", {}, " answers");
-    const side = el("div", { style: "text-align:center; width:230px;" },
-      url ? el("img", { src: qr, alt: "", style: "width:220px; max-width:none; margin:0; border:none; box-shadow:none;", onerror: function () { this.remove(); } }) : null,
-      url ? el("div", { style: "font-size:21px; margin-top:6px;" }, sh || url.replace(/^https?:\/\//, "")) : null,
-      el("div", { style: "font-size:26px; margin-top:16px;" }, count, word));
+    const side = el("div", { style: "text-align:center; width:200px;" },
+      url ? el("img", { src: qr, alt: "", style: "width:190px; max-width:none; margin:0; border:none; box-shadow:none;", onerror: function () { this.remove(); } }) : null);
+    // The link sits large above the grid, so people on Zoom can type it; the QR code is for people in the room.
+    const head = el("div", { style: "display:flex; align-items:baseline; gap:28px; margin:2px 0 4px;" },
+      url ? el("div", { style: "font-size:44px; font-weight:700; color:#d9481f;" }, sh || url.replace(/^https?:\/\//, "")) : null,
+      el("div", { style: "font-size:28px; color:#555;" }, count, word));
     const pts = (r) => ((live.where && live.where[r]) || []).concat(ROOM.where[r]);
     const seen = {};
     const tally = (list) => { const c = {}; list.forEach(([d, t]) => { const k = d + "," + t; c[k] = (c[k] || 0) + 1; }); return c; };
@@ -1571,7 +1573,7 @@
     live.listeners.push(() => { const cur = window.Reveal && Reveal.getCurrentSlide(); if (cur && cur.contains(root)) draw(); });
     root.classList.add("where");
     const clear = clearBtn("Clear the dots you clicked on this slide? Answers sent from phones stay.", () => { ROOM.where[round] = []; draw(); });
-    put(root, el("div", { style: "display:flex; align-items:center; justify-content:center; gap:40px; margin-top:6px;" }, svg, side), el("div", { class: "clear-row" }, clear));
+    put(root, head, el("div", { style: "display:flex; align-items:center; justify-content:center; gap:40px; margin-top:6px;" }, svg, side), el("div", { class: "clear-row" }, clear));
     root.onshow = draw; draw();
   };
 
