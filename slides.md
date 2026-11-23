@@ -12,9 +12,7 @@
 
 ---
 
-# Measuring Text with AI Agents
-
-<p class="subtitle">Reliability, validity and reporting</p>
+# Labeling Text with LLMs and Agents
 
 
 <p class="muted">Tom van Nuenen · UC Berkeley D-Lab · São Paulo, November 2026</p>
