@@ -18,9 +18,9 @@
 
 <img src="img/codex_menu.png" alt="The menu at the top left, before and after: ChatGPT, then Codex" style="width:80%; margin:18px auto 0; display:block; border-radius:10px; box-shadow:none;">
 
-<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now -you need Codex for step 1, in a few minutes.</p>
+<p style="font-size:30px; font-weight:700; color:#d9481f; margin-top:18px;">Do this now. You will need Codex in a few minutes.</p>
 
-<p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install it, follow along on the shared screen.</p>
+<p class="muted" style="font-size:24px; margin-top:8px;">If you can’t install Codex, please follow along on the shared screen.</p>
 
 ---
 
@@ -116,7 +116,7 @@
 
 ## Text labeling in the social sciences
 
-<ul style="font-size:28px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “positive” or “negative”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.</li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels and compare groups.</li><li class="fragment" style="margin-bottom:8px;">Errors in the labels change these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments, and we check its labels.</li></ul>
+<ul style="font-size:28px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “positive” or “negative”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.</li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels and compare groups.</li><li class="fragment" style="margin-bottom:8px;">Errors in the labels change these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments for <b>hostility</b>, and we check its labels.</li></ul>
 
 <div class="fragment" style="max-width:1000px; margin:0;">
 <div style="display:grid; grid-template-columns:1fr 50px 110px; gap:14px; font-size:22px; color:#6f6f69; margin-bottom:12px;"><span style="text-align:left;">Reddit comment</span><span></span><span>Hostile?</span></div>
@@ -126,7 +126,7 @@
 
 ---
 
-## How text labeling has been done
+## Text labeling through the years
 
 <div class="era-wrap"><div class="era-list"><div class="fragment era-step era-row"><span class="y">1950s</span><span class="t">Coders fill in coding sheets.<br><span class="s">Berelson 1952</span></span></div><div class="fragment era-step era-row"><span class="y">1960s</span><span class="t">Computers count dictionary words.<br><span class="s">Stone et al. 1966</span></span></div><div class="fragment era-step era-row"><span class="y">1980s–90s</span><span class="t">Researchers tag text in software.<br><span class="s">ATLAS.ti, NVivo</span></span></div><div class="fragment era-step era-row"><span class="y">2000s–10s</span><span class="t">Crowd workers label for pay.<br><span class="s">Mechanical Turk, 2005</span></span></div><div class="fragment era-step era-row"><span class="y">2020s</span><span class="t">Language models label from a written instruction.<br><span class="s">Gilardi, Alizadeh &amp; Kubli 2023</span></span></div></div><div class="era-stage"><figure class="era-fig"><div class="era-sheet"><div class="hd">CODING SHEET <span>Story no. 0412</span></div><div class="ln">Topic: &nbsp;☐ politics &nbsp;☒ economy &nbsp;☐ crime</div><div class="ln">Tone toward the government:<br>☐ positive &nbsp;☒ neutral &nbsp;☐ negative</div><div class="ln">Coder: R.M. &nbsp;&nbsp; Date: 3/11/1952</div></div><figcaption>An illustration of a paper coding sheet</figcaption></figure><figure class="era-fig"><img src="img/era_ibm7090.jpg" alt="An IBM 7090 mainframe room in the early 1960s"><figcaption>The General Inquirer ran on IBM mainframes like this 7090. Photo: NASA, public domain.</figcaption></figure><figure class="era-fig"><img src="img/era_cap_us.png" alt="The United States page of the Comparative Agendas Project, with a chart of bills, hearings and laws by policy topic since 1946"><figcaption>The US Policy Agendas Project. Two trained coders label most bills and laws by policy topic.</figcaption></figure><figure class="era-fig"><img src="img/era_wikipedia_detox.png" alt="Crowd workers were asked: Does the comment contain a personal attack or harassment? Five options follow."><figcaption>Crowd workers answered this question for over 100,000 Wikipedia comments. Wulczyn, Thain &amp; Dixon 2017</figcaption></figure><figure class="era-fig"><img src="img/era_gilardi2023.jpg" alt="Bar charts: ChatGPT accuracy and agreement compared with MTurk workers and trained annotators, on tweets and news articles"><figcaption>ChatGPT against MTurk workers and trained coders on tweets and news. Gilardi, Alizadeh &amp; Kubli 2023</figcaption></figure></div></div>
 
