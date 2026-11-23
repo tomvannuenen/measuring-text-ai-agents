@@ -239,7 +239,7 @@
 
 ---
 
-## This workshop: how labeling depends on setup
+## This workshop has two parts
 
 <div class="tw-task">
 <img src="img/aita_reply_plain.png">
@@ -247,15 +247,18 @@
 <span>Hostile?</span> <span class="pill yes">yes</span> <span class="pill no">no</span>
 </div>
 <div class="tw-cards">
-<div class="tw-card fragment"><div class="h">Agents vs APIs</div>
-<div class="req"><span class="hl">Label</span> the comments by whether they are <span class="hl">hostile</span></div>
-<div class="cap">advantages of the API</div></div>
-<div class="tw-card fragment"><div class="h">The prompt</div>
-<div class="rows"><div>Prompt A → <span class="pill yes">yes</span></div><div>Prompt B → <span class="pill no">no</span></div></div>
-<div class="cap">another way to ask</div></div>
-<div class="tw-card fragment"><div class="h">Labeler bias</div>
-<div class="chat"><div><span class="pill yes">yes</span></div><div class="bub">Are you sure? I think it's the opposite.</div><div><span class="pill no">no</span></div></div>
-<div class="cap">your view changes the label</div></div>
+<div class="tw-card fragment"><div class="h">1. Working with an agent</div>
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
+<li>What an agent is, and how it works in a project folder</li>
+<li>Rules for the agent, and checking its log</li>
+<li>The agent writes a script, and a model labels through the API</li>
+</ul></div>
+<div class="tw-card fragment"><div class="h">2. Checking the labels</div>
+<ul style="font-size:28px; line-height:1.35; margin:0 0 0 1em; text-align:left;">
+<li><b>Reliability:</b> the same label when you ask again</li>
+<li><b>Validity:</b> the label matches the gold label</li>
+<li><b>Labeler bias:</b> something irrelevant changes the label</li>
+</ul></div>
 </div>
 
 ---
