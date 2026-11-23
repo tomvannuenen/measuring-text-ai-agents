@@ -353,24 +353,30 @@ they are hostile, and tell me how reliable the labels are.</code></pre>
 <div style="font-size:22px; color:#6f6f69; margin-top:8px;">My agent, GPT-6.2 Sol on Light</div>
 </div>
 
-<p class="fragment" style="font-size:30px; line-height:1.35; margin-top:30px; text-align:left;">It had read my labels before it labeled. The 98 says nothing about reliability.<br><span style="color:#6f6f69;">In its own words: “The comparison is unblinded.”</span></p>
+<p class="fragment" style="font-size:30px; line-height:1.35; margin-top:30px; text-align:left;">Codex had read my labels before it labeled. The score says nothing about reliability.<br><span style="color:#6f6f69;">In Codex's own words: “The comparison is unblinded.”</span></p>
 
 ---
 
 ## Maximum effort for everything?
 
 <div style="display:grid; grid-template-columns:380px 1fr; gap:40px; align-items:start; margin-top:14px; text-align:left;">
-<div><img src="img/codex-effort.png" alt="The Codex menu with Model, Effort and Speed. The effort options are Light, Medium, High, Extra High and Ultra, which consumes usage limits faster." style="width:100%; border-radius:8px; margin:0;"><div style="font-size:21px; color:#6f6f69; margin-top:8px;">The effort menu in Codex</div><svg viewBox="0 0 380 260" width="100%" role="img" aria-label="Meme: a giant sledgehammer labeled maximum effort above one tiny nut labeled yes or no. Caption: Me, labeling one comment." style="display:block; margin-top:16px; background:#fff; border:1px solid #d6d6cf; border-radius:8px;">
-<g transform="rotate(-14 190 128)">
-<rect x="182" y="8" width="16" height="96" rx="5" fill="#9a6a3a"/>
-<rect x="100" y="100" width="180" height="56" rx="8" fill="#111"/>
-<text x="190" y="135" text-anchor="middle" style="font-size:19px; font-weight:800; letter-spacing:1px;" fill="#fff">MAXIMUM EFFORT</text>
+<div><img src="img/codex-effort.png" alt="The Codex menu with Model, Effort and Speed. The effort options are Light, Medium, High, Extra High and Ultra, which consumes usage limits faster." style="width:100%; border-radius:8px; margin:0;"><div style="font-size:21px; color:#6f6f69; margin-top:8px;">The effort menu in Codex</div><svg viewBox="0 0 380 256" width="100%" role="img" aria-label="A big sledgehammer labeled maximum effort above one tiny nut labeled yes or no." style="display:block; margin-top:16px; background:#fff; border:1px solid #d6d6cf; border-radius:8px;">
+<defs>
+<linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9bec6"/><stop offset=".5" stop-color="#7d838c"/><stop offset="1" stop-color="#555b63"/></linearGradient>
+<linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b07a43"/><stop offset=".5" stop-color="#d39a5c"/><stop offset="1" stop-color="#9c6a38"/></linearGradient>
+</defs>
+<text x="190" y="32" text-anchor="middle" style="font-size:22px; font-weight:800; letter-spacing:1px;" fill="#d9481f">MAXIMUM EFFORT</text>
+<g transform="rotate(-14 192 160)">
+<rect x="183" y="48" width="18" height="96" rx="6" fill="url(#wood)" stroke="#7a5228" stroke-width="1.5"/>
+<rect x="181" y="48" width="22" height="34" rx="7" fill="#2b2b2b"/>
+<rect x="120" y="140" width="144" height="52" rx="6" fill="url(#steel)" stroke="#3f444b" stroke-width="2"/>
+<rect x="120" y="140" width="14" height="52" rx="4" fill="#4a4f57"/>
+<rect x="250" y="140" width="14" height="52" rx="4" fill="#4a4f57"/>
 </g>
-<path d="M78 120 q-12 14 -4 30 M300 98 q14 12 8 30" stroke="#d9481f" stroke-width="3" fill="none" stroke-linecap="round"/>
-<ellipse cx="190" cy="196" rx="12" ry="8" fill="#c8a26a" stroke="#8a6a3a" stroke-width="2"/>
-<line x1="40" y1="205" x2="340" y2="205" stroke="#bbb" stroke-width="2"/>
-<text x="214" y="200" style="font-size:21px;" fill="#6f6f69">yes / no</text>
-<text x="190" y="245" text-anchor="middle" style="font-size:24px; font-weight:800;" fill="#111">Me, labeling one comment</text>
+<path d="M98 150 q-14 10 -10 26 M84 140 q-18 14 -12 34" stroke="#d9481f" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="192" cy="232" rx="11" ry="7" fill="#c8a26a" stroke="#8a6a3a" stroke-width="2"/>
+<line x1="30" y1="241" x2="350" y2="241" stroke="#bbb" stroke-width="2"/>
+<text x="212" y="236" style="font-size:21px;" fill="#6f6f69">yes / no</text>
 </svg></div>
 <ul style="font-size:30px; line-height:1.3; margin:0 0 0 1em;">
 <li style="margin-bottom:18px;">Many people always pick the highest effort.</li>
