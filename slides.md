@@ -53,18 +53,6 @@
 
 ---
 
-## Text labeling in the social sciences
-
-<ul style="font-size:25px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “hostile” or “not hostile”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.<br><span style="font-size:21px; color:#888;">Grimmer &amp; Stewart 2013 · Coe, Kenski &amp; Rains 2014</span></li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels, compare groups and use the labels as variables in models. Errors in the labels carry into these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments, and we check its labels.</li></ul>
-
-<div class="fragment" style="max-width:1000px; margin:0;">
-<div style="display:grid; grid-template-columns:1fr 50px 110px; gap:14px; font-size:22px; color:#6f6f69; margin-bottom:12px;"><span style="text-align:left;">Reddit comment</span><span></span><span>Hostile?</span></div>
-<div style="display:grid; grid-template-columns:1fr 50px 110px; align-items:center; gap:14px; margin:0 0 12px;"><div style="font-size:25px; line-height:1.4; text-align:left; border-left:3px solid #bbb; padding-left:16px;">“Protect your son. He is a child and an emotionally vulnerable one with special needs.”</div><span style="font-size:32px; color:#999;">→</span><span><span class="pill no" style="font-size:26px; padding:2px 22px;">no</span></span></div><div style="display:grid; grid-template-columns:1fr 50px 110px; align-items:center; gap:14px; margin:0 0 12px;"><div style="font-size:25px; line-height:1.4; text-align:left; border-left:3px solid #bbb; padding-left:16px;">“…you knocked her up like a dumbass. You don’t get to impose your will as you see fit.”</div><span style="font-size:32px; color:#999;">→</span><span><span class="pill yes" style="font-size:26px; padding:2px 22px;">yes</span></span></div>
-<div style="text-align:right; font-size:26px; margin-top:4px;">Hostile: <b style="color:#d9481f;">1 of 2</b></div>
-</div>
-
----
-
 ## What makes it an agent
 
 <div style="margin-top:28px;">
@@ -132,6 +120,18 @@
 ## Your perceptions
 
 <div class="demo" data-demo="where" data-round="start"></div>
+
+---
+
+## Text labeling in the social sciences
+
+<ul style="font-size:25px; line-height:1.3; margin:2px 0 14px 1em; max-width:1040px; text-align:left;"><li class="fragment" style="margin-bottom:8px;">Labeling assigns each text to a category, such as “hostile” or “not hostile”. It is the core of content analysis.<br><span style="font-size:21px; color:#888;">Krippendorff 2018</span></li><li class="fragment" style="margin-bottom:8px;">Social scientists label speeches, news, party manifestos and online comments to measure concepts such as policy positions or incivility.<br><span style="font-size:21px; color:#888;">Grimmer &amp; Stewart 2013 · Coe, Kenski &amp; Rains 2014</span></li><li class="fragment" style="margin-bottom:8px;">Researchers count the labels, compare groups and use the labels as variables in models. Errors in the labels carry into these results.<br><span style="font-size:21px; color:#888;">TeBlunthuis, Hase &amp; Chan 2024</span></li><li class="fragment">Today an LLM labels Reddit comments, and we check its labels.</li></ul>
+
+<div class="fragment" style="max-width:1000px; margin:0;">
+<div style="display:grid; grid-template-columns:1fr 50px 110px; gap:14px; font-size:22px; color:#6f6f69; margin-bottom:12px;"><span style="text-align:left;">Reddit comment</span><span></span><span>Hostile?</span></div>
+<div style="display:grid; grid-template-columns:1fr 50px 110px; align-items:center; gap:14px; margin:0 0 12px;"><div style="font-size:25px; line-height:1.4; text-align:left; border-left:3px solid #bbb; padding-left:16px;">“Protect your son. He is a child and an emotionally vulnerable one with special needs.”</div><span style="font-size:32px; color:#999;">→</span><span><span class="pill no" style="font-size:26px; padding:2px 22px;">no</span></span></div><div style="display:grid; grid-template-columns:1fr 50px 110px; align-items:center; gap:14px; margin:0 0 12px;"><div style="font-size:25px; line-height:1.4; text-align:left; border-left:3px solid #bbb; padding-left:16px;">“…you knocked her up like a dumbass. You don’t get to impose your will as you see fit.”</div><span style="font-size:32px; color:#999;">→</span><span><span class="pill yes" style="font-size:26px; padding:2px 22px;">yes</span></span></div>
+<div style="text-align:right; font-size:26px; margin-top:4px;">Hostile: <b style="color:#d9481f;">1 of 2</b></div>
+</div>
 
 ---
 
