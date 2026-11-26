@@ -6,6 +6,8 @@
 
 <p style="font-size:30px; margin-top:40px;">Slides: <b style="color:#d9481f;">tomvannuenen.me/measuring-text-ai-agents</b></p>
 
+<div style="margin-top:70px;"><img src="img/dlab-berkeley-2025.svg" alt="UC Berkeley D-Lab, Social Sciences Data Lab" style="display:block; width:430px; height:auto; max-width:none; margin:0; border:0; box-shadow:none;"></div>
+
 ---
 
 ## Get Codex on your laptop
